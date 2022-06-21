@@ -2,7 +2,7 @@
 
 ---
 
-### :fire: My Stats :
+### :fire: My Stats : https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0
 
 ---
 
