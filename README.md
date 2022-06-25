@@ -12,7 +12,7 @@ You can find me on [![YouTube][1.2]][1]
 
 <!-- Icons -->
 
-[1.2]: https://imgur.com/gallery/RQbS88X
+[1.2]: https://imgur.com/jnilOpb
 
 <!-- Links to your social media accounts -->
 
