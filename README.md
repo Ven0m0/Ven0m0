@@ -7,3 +7,13 @@ I am working on scripts in my free time.
 ---
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0)](https://github.com/anuraghazra/github-readme-stats)
+
+You can find me on [![YouTube][1.2]][1]
+
+<!-- Icons -->
+
+[1.2]: https://imgur.com/gallery/RQbS88X
+
+<!-- Links to your social media accounts -->
+
+[1]: https://www.youtube.com/channel/UCgRZ6y1F3uDF9UR3LFRgFXg
