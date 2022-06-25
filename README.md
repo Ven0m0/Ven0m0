@@ -4,11 +4,6 @@
 <img height="160em" alt="MyMostUsedLanguages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&theme=nord&hide_border=true">
 </p>
 
-### Ways to reach me
-<a style="text-decoration:none" href="mailto:jannik.joergensen@proton.me">
-    <img height="32" src="https://img.shields.io/badge/ProtonMail-454660?style=flat-square&logo=ProtonMail&logoColor=white" alt="ProtonMail">
-</a>
-
 ### I am feeling confident at
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
     <img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
