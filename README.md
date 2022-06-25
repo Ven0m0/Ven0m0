@@ -12,6 +12,7 @@
 ### I am feeling confident at
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
     <img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
+</a>
 
 ### I am currently learning
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
@@ -27,4 +28,9 @@
 </a>
 <a style="text-decoration:none" href="https://visualstudio.microsoft.com/">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" alt="VSStudio">
+</a>
+    
+### Besides programming I adore
+<a href="https://opensource.dev/" style="text-decoration:none">
+    <img height="42" src="https://img.icons8.com/color/100/000000/open-source--v1.png" alt="OpenSource">
 </a>
