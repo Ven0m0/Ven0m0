@@ -11,7 +11,7 @@
 
 ### I am currently learning
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
-    <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Modern_AutoHotkey_Logo_%28no_text%29.svg" alt="AHK">
+    <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Autokey-logo.svg" alt="AHK">
 </a>
   <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation/">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
