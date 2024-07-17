@@ -8,7 +8,6 @@
 ### I am feeling confident at [^1]
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
     <img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
-</a>
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Autokey-logo.svg" alt="AHK">
 </a>
@@ -36,3 +35,4 @@
 [^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
 [^2]: I started using them in practice
 [^3]: I use these helping software to create software.
+
