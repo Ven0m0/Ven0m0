@@ -9,6 +9,12 @@
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
 <img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
 </a>
+<a style="text-decoration:none" href="http://www.Autohotkey.com/">
+    <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Autokey-logo.svg" alt="AHK">
+</a>
+<a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation/">
+    <img height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
+</a>
 
 ### I am currently learning [^2]
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
