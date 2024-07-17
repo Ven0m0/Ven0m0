@@ -36,8 +36,8 @@
 <a href="https://www.linux.org/" style="text-decoration:none">
     <img height="42" src="https://img.icons8.com/color/100/000000/open-source--v1.png" alt="OpenSource">
 </a>
-<a href="https://opensource.dev/" style="text-decoration:none">
-    <img height="42" src="https://en.wikipedia.org/wiki/File:Tux.svg" alt="Linux">
+<a href="https://www.linux.org/" style="text-decoration:none">
+    <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png" alt="Linux">
 </a>
 
 
