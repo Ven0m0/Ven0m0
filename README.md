@@ -7,6 +7,7 @@
 
 ### I am feeling confident at [^1]
 <img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
+
 ### I am currently learning [^2]
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Autokey-logo.svg" alt="AHK">
