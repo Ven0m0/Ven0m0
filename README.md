@@ -6,8 +6,8 @@
 </p>
 
 ### I am feeling confident at [^1]
-<img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
-    <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
+<a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
+    <img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
 </a>
 ### I am currently learning [^2]
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
