@@ -33,9 +33,13 @@
 </a>
     
 ### Besides programming I adore
-<a href="https://opensource.dev/" style="text-decoration:none">
+<a href="https://www.linux.org/" style="text-decoration:none">
     <img height="42" src="https://img.icons8.com/color/100/000000/open-source--v1.png" alt="OpenSource">
 </a>
+<a href="https://opensource.dev/" style="text-decoration:none">
+    <img height="42" src="https://en.wikipedia.org/wiki/File:Tux.svg" alt="Linux">
+
+
 
 [^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
 [^2]: I started using them in practice
