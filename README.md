@@ -39,6 +39,9 @@
 <a href="https://www.linux.org/" style="text-decoration:none">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png" alt="Linux">
 </a>
+<a href="https://www.android.com/" style="text-decoration:none">
+    <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" alt="Android">
+</a>
 
 
 [^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
