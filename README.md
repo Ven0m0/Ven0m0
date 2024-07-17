@@ -38,7 +38,7 @@
 </a>
 <a href="https://opensource.dev/" style="text-decoration:none">
     <img height="42" src="https://en.wikipedia.org/wiki/File:Tux.svg" alt="Linux">
-
+</a>
 
 
 [^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
