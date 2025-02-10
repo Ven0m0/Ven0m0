@@ -5,7 +5,7 @@
     <img height="150em" alt="MostUsedLanguages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&theme=nord&hide_border=true">
 </p>
 
-# My projects
+### My projects
 [Pi-hole adlists/domains](https://github.com/Ven0m0/Pihole-Lists)
 
 [MY autohotkey scripts and misc tools](https://github.com/Ven0m0/Scripts)
