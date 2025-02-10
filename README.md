@@ -50,7 +50,9 @@
 <a href="https://www.android.com/" style="text-decoration:none">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" alt="Android">
 </a>
-
+<a href="https://www.https://pi-hole.net//" style="text-decoration:none">
+    <img height="42" src="https://upload.wikimedia.org/wikipedia/en/1/15/Pi-hole_vector_logo.svg" alt="Pihole">
+</a>
 
 [^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
 [^2]: I started using them in practice
