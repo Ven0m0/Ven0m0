@@ -8,11 +8,9 @@
 ### My projects
 [Pi-hole adlists/domains](https://github.com/Ven0m0/Pihole-Lists)
 
-[My autohotkey scripts and misc tools](https://github.com/Ven0m0/Scripts)
+https://upload.wikimedia.org/wikipedia/commons/0/05/UBlock_Origin.svg [My autohotkey scripts and misc tools](https://github.com/Ven0m0/Scripts)
 
-[My ublock adblock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
-
-<img height="25" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Autokey-logo.svg" alt="AHK"> [Scripts](https://github.com/Ven0m0/Scripts) 
+<img height="25" src="https://upload.wikimedia.org/wikipedia/commons/0/05/UBlock_Origin.svg" alt="uBlock"> [My ublock adblock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
 
 
 ### I am feeling confident at [^1]
