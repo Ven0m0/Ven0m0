@@ -12,6 +12,8 @@
 
 [My ublock adblock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
 
+[Scripts](https://github.com/Ven0m0/Scripts)
+
 
 ### I am feeling confident at [^1]
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
