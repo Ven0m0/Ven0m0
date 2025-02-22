@@ -12,6 +12,8 @@
 
 <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/0/05/UBlock_Origin.svg" alt="uBlock"> [My ublock adblock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
 
+<img height="25" src="https://www.flaticon.com/free-icon/firewall_8734481" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
+
 
 ### I am feeling confident at [^1]
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
