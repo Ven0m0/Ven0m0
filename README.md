@@ -6,7 +6,7 @@
 </p>
 
 ### My projects
-[Pi-hole adlists/domains](https://github.com/Ven0m0/Pihole-Lists)
+<img height="30" src="https://upload.wikimedia.org/wikipedia/en/1/15/Pi-hole_vector_logo.svg" alt="Pihole"> [Pi-hole adlists/domains](https://github.com/Ven0m0/Pihole-Lists)
 
 <img height="30" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Autokey-logo.svg" alt="AHK"> [My autohotkey scripts and misc tools](https://github.com/Ven0m0/Scripts)
 
