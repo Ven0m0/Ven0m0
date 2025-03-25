@@ -50,7 +50,6 @@
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" alt="Android">
 </a>
 <a href="https://pi-hole.net//" style="text-decoration:none">
-</a>
     <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.png" alt="Pihole">
 </a>
 
