@@ -20,7 +20,7 @@
 <img height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
 </a>
 <a style="text-decoration:none" href="http://www.Autohotkey.com/">
-    <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.png" alt="AHK">
+    <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK">
 </a>
 <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation/">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
@@ -28,18 +28,10 @@
 
 ### I am currently learning [^2]
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
-    <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.png" alt="AHK">
+    <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK">
 </a>
   <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation/">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
-</a>
-
-### My toolkit [^3]
-<a style="text-decoration:none" href="https://code.visualstudio.com/">
-    <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VSCode">
-</a>
-<a style="text-decoration:none" href="https://visualstudio.microsoft.com/">
-    <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" alt="VSStudio">
 </a>
     
 ### Besides programming I adore
@@ -50,7 +42,7 @@
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" alt="Android">
 </a>
 <a href="https://pi-hole.net//" style="text-decoration:none">
-    <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.png" alt="Pihole">
+    <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole">
 </a>
 
 [^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
