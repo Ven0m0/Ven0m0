@@ -30,10 +30,15 @@
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
     <img height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK">
 </a>
-  <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation/">
+  <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
 </a>
-    
+  <a style="text-decoration:none" href="https://www.rust-lang.org">
+      <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg" alt="Rust">
+  <a style="text-decoration:none" href="https://en.wikipedia.org/wiki/C%2B%2B">
+      <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++">
+</a>
+
 ### Besides programming I adore
 <a href="https://www.linux.org/" style="text-decoration:none">
     <img height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png" alt="Linux">
