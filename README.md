@@ -12,7 +12,7 @@
 
 <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
 
-<img height="25" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Firewall"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches)
+<img height="25" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Firewall"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) ;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches)
 
 <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
