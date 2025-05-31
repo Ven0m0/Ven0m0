@@ -6,10 +6,9 @@
 </p>
 
 ### My projects
-<img height="30" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
+<img height="30" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
 
-
-<img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
+<img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
 <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Firewall"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp;&nbsp;&nbsp; [Firefox Tweaks](https://github.com/Ven0m0/Firefox-opt)
 
