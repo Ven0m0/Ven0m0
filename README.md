@@ -6,9 +6,8 @@
 </p>
 
 ### My projects
-<img height="30" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists)
+<img height="30" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
-<img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
 <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock)
 
