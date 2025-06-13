@@ -10,7 +10,7 @@
 
 <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
-<img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Linux.avif" alt="Linux"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp;&nbsp;&nbsp; [Firefox Tweaks](https://github.com/Ven0m0/Firefox-opt) &nbsp;&nbsp;&nbsp; <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/firefox.avif" alt="Firefox">  [Arch PKG's](https://github.com/Ven0m0/PKG)
+<img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Linux.avif" alt="Linux"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp;&nbsp;&nbsp; [Firefox Tweaks](https://github.com/Ven0m0/Firefox-opt) &nbsp;&nbsp;&nbsp; <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/firefox.avif" alt="Firefox"> &nbsp;[Arch PKG's](https://github.com/Ven0m0/PKG)
 
 ### I am feeling confident at [^1]
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
