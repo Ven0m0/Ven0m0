@@ -5,22 +5,19 @@
   <td align="center">
     <img 
       loading="lazy"
-      src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
+      src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
       alt="GitHub Stats"
     />
   </td>
   <td align="center">
     <img 
       loading="lazy"
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
       alt="Top Languages"
     />
   </td>
 </tr>
 </table>
-
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Ven0m0&theme=dark&show_icons=true&hide_border=true&count_private=true)
 
 ### My projects
 <img height="30" loading="lazy" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
