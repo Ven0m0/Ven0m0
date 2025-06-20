@@ -5,6 +5,12 @@
     <img height="150em" alt="MostUsedLanguages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&theme=nord&hide_border=true">
 </p>
 
+
+<p float="left">
+    <img height="150em" alt="GitHubStats" src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8">
+    <img height="150em" alt="MostUsedLanguages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8">
+</p>
+
 ### My projects
 <img height="30" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
