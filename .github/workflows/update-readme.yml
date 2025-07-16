@@ -30,7 +30,13 @@ jobs:
           plugin_languages: yes
           plugin_languages_limit: 4
           plugin_repositories: yes
-          plugin_repositories_featured: Ven0m0/Linux-OS,Ven0m0/Scripts,Ven0m0/Ven0m0-Adblock,Ven0m0/Pihole-Lists,Ven0m0/MC-Server,Ven0m0/PKG
+          plugin_repositories_featured: >
+            Ven0m0/Linux-OS,
+            Ven0m0/Scripts,
+            Ven0m0/Ven0m0-Adblock,
+            Ven0m0/Pihole-Lists,
+            Ven0m0/MC-Server,
+            Ven0m0/PKG
           plugin_stars: yes
           plugin_traffic: yes
           plugin_calendar: yes
