@@ -1,10 +1,10 @@
 ## I am working on scripts in my free time. <img alt="HiGif" height="32" src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif">
 
-<p align="center"><img loading="lazy"
+<p align="left"><img loading="lazy"
     src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
     alt="GitHub Stats"
 /></p>
-<p align="center"><img loading="lazy"
+<p align="right"><img loading="lazy"
     src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
     alt="Top Languages"
 /></p>
