@@ -21,6 +21,13 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
+          use_prebuilt_image: yes
+          optimize: svg, css, xml
+          experimental_features: --optimize-svg
+          config_display: regular
+          # config_display: columns
+          retries: 3
+          retries_delay: 300
           filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
           user: Ven0m0
