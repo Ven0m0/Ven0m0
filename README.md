@@ -22,7 +22,7 @@
 </table>
 
 <div align="center">
-  <img loading="lazy" src="/metrics.classic.svg" alt="Metrics" width="400">
+  <img src="/metrics.classic.svg" alt="Metrics" width="400" height="200" style="max-width:100%; height:auto;" loading="lazy">
 </div>
 
 ### My projects
