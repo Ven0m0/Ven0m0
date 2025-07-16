@@ -4,7 +4,7 @@
   <a href="https://github.com/Ven0m0">
     <img
       loading="lazy"
-      src="https://github-readme-stats.vercel.app/api?..."
+      src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8"
       alt="GitHub Stats"
       style="width:100%; max-width:400px; height:auto;"
     />
@@ -12,7 +12,7 @@
   <a href="https://github.com/Ven0m0">
     <img
       loading="lazy"
-      src="https://github-readme-stats.vercel.app/api/top-langs?..."
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8"
       alt="Top Languages"
       style="width:100%; max-width:400px; height:auto;"
     />
