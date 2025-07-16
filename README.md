@@ -21,6 +21,11 @@
   </tr>
 </table>
 
+<div width="50%" align="center">
+  <img loading="lazy" src="/metrics.classic.svg" alt="Metrics" max-width:100%; height:auto">
+</div>
+
+
 <div align="center">
   <img loading="lazy" src="/metrics.classic.svg" alt="Metrics" width="100%">
 </div>
