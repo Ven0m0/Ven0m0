@@ -19,8 +19,12 @@ jobs:
       group: metrics-update
       cancel-in-progress: true
     steps:
+      - uses: actions/checkout@v4
       - uses: lowlighter/metrics@latest
         with:
+          output_action: commit
+          committer_branch: metrics-renders
+          committer_message: "chore: update metrics"
           use_prebuilt_image: yes
           optimize: svg, css, xml
           experimental_features: --optimize-svg
