@@ -24,22 +24,21 @@
 <div align="center">
   <img src="/metrics.classic.svg" alt="Metrics" width="400" height="200" style="max-width:100%; height:auto;" loading="lazy">
 </div>
-<img src="" alt="Metrics" width="400" height="200" style="max-width:100%; height:auto;" loading="lazy">
-src="/Images/Pihole.avif"
+
 
 ### My projects
-<img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
+<img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
-<img loading="lazy" height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
+<img loading="lazy" height="25" src="/Images//autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
-<img loading="lazy" height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Linux.avif" alt="Linux"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/firefox.avif" alt="Firefox"> [Firefox Tweaks](https://github.com/Ven0m0/Firefox-opt) &nbsp;&nbsp;&nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
+<img loading="lazy" height="25" src="/Images//Linux.avif" alt="Linux"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firefox.avif" alt="Firefox"> [Firefox Tweaks](https://github.com/Ven0m0/Firefox-opt) &nbsp;&nbsp;&nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
 
 ### I am feeling confident at [^1]
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
 <img loading="lazy" height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
 </a>
 <a style="text-decoration:none" href="http://www.Autohotkey.com/">
-    <img loading="lazy" height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK">
+    <img loading="lazy" height="42" src="/Images//autohotkey.avif" alt="AHK">
 </a>
 <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation/">
     <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
@@ -47,7 +46,7 @@ src="/Images/Pihole.avif"
 
 ### I am currently learning [^2]
   <a style="text-decoration:none" href="http://www.Autohotkey.com/">
-    <img loading="lazy" height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/autohotkey.avif" alt="AHK">
+    <img loading="lazy" height="42" src="/Images//autohotkey.avif" alt="AHK">
 </a>
   <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation">
     <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
@@ -66,7 +65,7 @@ src="/Images/Pihole.avif"
     <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" alt="Android">
 </a>
 <a href="https://pi-hole.net//" style="text-decoration:none">
-    <img loading="lazy" height="42" src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/refs/heads/main/Images/Pihole.avif" alt="Pihole">
+    <img loading="lazy" height="42" src="/Images//Pihole.avif" alt="Pihole">
 </a>
 
 [^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
