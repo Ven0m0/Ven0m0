@@ -1,0 +1,45 @@
+# Visit https://github.com/lowlighter/metrics#-documentation for full reference
+name: Metrics
+on:
+  # Schedule daily updates
+  schedule: [{cron: "0 0 * * *"}]
+
+  # Schedule updates (every 3 hours)
+  # schedule: [{cron: "0 */3 * * *"}]
+
+  # Lines below let you run workflow manually and on each commit
+  workflow_dispatch:
+  push: {branches: ["master", "main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    environment: 
+      name: production
+    permissions:
+      contents: write
+    concurrency:
+      group: metrics-update
+      cancel-in-progress: true
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.classic.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Ven0m0
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Europe/Berlin
+          plugin_languages: yes
+          plugin_languages_limit: 4
+          plugin_repositories: yes
+          plugin_repositories_featured: Ven0m0/Linux-OS,Ven0m0/Scripts,Ven0m0/Ven0m0-Adblock,Ven0m0/Pihole-Lists,,Ven0m0/MC-Server,Ven0m0/PKG
+          plugin_stars: yes
+          plugin_traffic: yes
+          plugin_calendar: yes
+          plugin_calendar_limit: 1
+          plugin_habits: yes
+          plugin_habits_charts_type: classic
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_notable: yes
+          config_order: base.header, repositories, languages, stars, traffic, habits, notable, calendar
