@@ -22,16 +22,16 @@ jobs:
       - uses: actions/checkout@v4
       - uses: lowlighter/metrics@latest
         with:
-          output_action: commit
-          committer_branch: metrics-renders
-          committer_message: "chore: update metrics"
-          use_prebuilt_image: yes
-          optimize: svg, css, xml
-          experimental_features: --optimize-svg
-          config_display: regular
+          #output_action: commit
+          #committer_branch: metrics-renders
+          #committer_message: "chore: update metrics"
+          #use_prebuilt_image: yes
+          #optimize: svg, css, xml
+          #experimental_features: --optimize-svg
+          #config_display: regular
           # config_display: columns
-          retries: 3
-          retries_delay: 300
+          #retries: 3
+          #retries_delay: 300
           filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
           user: Ven0m0
@@ -41,13 +41,13 @@ jobs:
           plugin_languages: yes
           plugin_languages_limit: 4
           plugin_repositories: yes
-          plugin_repositories_featured: >
-            Ven0m0/Linux-OS,
-            Ven0m0/Scripts,
-            Ven0m0/Ven0m0-Adblock,
-            Ven0m0/Pihole-Lists,
-            Ven0m0/MC-Server,
-            Ven0m0/PKG
+          #plugin_repositories_featured: >
+            #Ven0m0/Linux-OS,
+            #Ven0m0/Scripts,
+            #Ven0m0/Ven0m0-Adblock,
+            #Ven0m0/Pihole-Lists,
+            #Ven0m0/MC-Server,
+            #Ven0m0/PKG
           plugin_stars: yes
           plugin_traffic: yes
           plugin_calendar: yes
@@ -57,4 +57,6 @@ jobs:
           plugin_habits_days: 14
           plugin_habits_facts: yes
           plugin_notable: yes
-          config_order: base.header, base.activity, repositories, languages, base.community, base.metadata, stars, traffic, habits, notable, calendar, base.repositories
+          #config_order: base.header, base.activity, repositories, languages, base.community, base.metadata, stars, traffic, habits, notable, calendar, base.repositories
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
