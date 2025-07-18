@@ -5,7 +5,7 @@
     <td width="50%" align="center">
       <img
         loading="lazy"
-        src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8"
+        src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&theme=transparent"
         alt="GitHub Stats"
         style="max-width:100%; height:auto;"
       />
@@ -13,7 +13,7 @@
     <td width="50%" align="center">
       <img
         loading="lazy"
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8"
+        src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&count_private=true&theme=transparent"
         alt="Top Languages"
         style="max-width:100%; height:auto;"
       />
