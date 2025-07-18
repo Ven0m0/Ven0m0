@@ -5,7 +5,7 @@
     <td width="50%" align="center">
       <img
         loading="lazy"
-        src="https://github-readme-stats.vercel.app/api?username=Ven0m0&layout=compact&show_icons=true&hide_border=true&count_private=true&theme=transparent&disable_animations=true"
+        src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&theme=transparent&disable_animations=true"
         alt="GitHub Stats"
         style="max-width:100%; height:auto;"
       />
