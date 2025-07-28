@@ -17,7 +17,7 @@ jobs:
     concurrency:
       group: metrics-update
       cancel-in-progress: true
-      
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Generate metrics
-      - uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@latest
         with:
           #output_action: commit
           #committer_branch: metrics-renders
@@ -44,7 +44,6 @@ jobs:
           use_prebuilt_image: yes
           optimize: svg, css, xml
           experimental_features: --optimize-svg
-          #config_display: regular
           config_display: columns
           retries: 3
           retries_delay: 300
