@@ -1,26 +1,5 @@
 ## I am working on scripts in my free time. <img alt="HiGif" height="32" src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif">
 
-<table width="100%">
-  <tr>
-    <td width="50%" align="center">
-      <img
-        loading="lazy"
-        src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&theme=transparent&disable_animations=true"
-        alt="GitHub Stats"
-        style="max-width:100%; height:auto;"
-      />
-    </td>
-    <td width="50%" align="center">
-      <img
-        loading="lazy"
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&hide_border=true&count_private=true&theme=transparent&disable_animations=true"
-        alt="Top Languages"
-        style="max-width:100%; height:auto;"
-      />
-    </td>
-  </tr>
-</table>
-
 <div align="center">
   <img src="/metrics.classic.svg" alt="Metrics" width="100%" loading="lazy">
 </div>
