@@ -1,4 +1,26 @@
-## I am working on scripts in my free time. <img alt="HiGif" height="32" src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif">
+```
+ _______________________________________________________
+/ Ven0m0@github.com                                     \
+| -----------------------                               |
+| Name: Ven0m0                                          |
+| Host: Germany                                         |
+| Uptime: 19 years                                      |
+| Locale: English, German                               |
+| Hobbies: Airsoft, Music, Gaming, Tinkering            |
+|                                                       |
+| Browser: Firefox                                      |
+| OS: Cachyos, Dietpi                                   |
+| DE: Kde Plasma (Wayland)                              |
+| Theme: Breeze
+| Current Setup: Rio, Bash, Fish, Firefox, Lapce        |
+/ Languages: Shell, Rust, Python                        /
+ -------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
 
 <div align="center">
   <img src="/metrics.classic.svg" alt="Metrics" width="100%" loading="lazy">
