@@ -67,7 +67,6 @@
 </a>
 
 ### Besides programming I adore
-
 <a href="https://www.android.com/" style="text-decoration:none">
     <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" alt="Android">
 </a>
