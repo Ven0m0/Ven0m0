@@ -43,6 +43,9 @@
 <a style="text-decoration:none" href="https://www.gnu.org/software/bash/">
     <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg" alt="Bash">
 </a>
+<a style="text-decoration:none" href="https://www.linux.org/">
+    <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png" alt="Linux">
+</a>
 <a style="text-decoration:none" href="http://www.Autohotkey.com/">
     <img loading="lazy" height="42" src="/Images//autohotkey.avif" alt="AHK">
 </a>
@@ -64,9 +67,7 @@
 </a>
 
 ### Besides programming I adore
-<a href="https://www.linux.org/" style="text-decoration:none">
-    <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png" alt="Linux">
-</a>
+
 <a href="https://www.android.com/" style="text-decoration:none">
     <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/511px-Android_robot.svg.png" alt="Android">
 </a>
