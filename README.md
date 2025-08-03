@@ -22,13 +22,6 @@
                 ||     ||
 ```
 
-<details>
-  <summary>More...</summary>
-    <div align="center">
-      <img src="/metrics.classic.svg" alt="Metrics" width="100%" loading="lazy">
-    </div>
-</details>
-
 ### My projects
 <img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
@@ -36,9 +29,19 @@
 
 <img loading="lazy" height="25" src="/Images//Linux.avif" alt="Linux"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firefox.avif" alt="Firefox"> [Firefox Tweaks](https://github.com/Ven0m0/Firefox-opt) &nbsp;&nbsp;&nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
 
+<details>
+  <summary>More...</summary>
+    <div align="center">
+      <img src="/metrics.classic.svg" alt="Metrics" width="100%" loading="lazy">
+    </div>
+</details>
+
 ### I am feeling confident at [^1]
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
 <img loading="lazy" height="42" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
+</a>
+<a style="text-decoration:none" href="https://www.gnu.org/software/bash/">
+    <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg" alt="Bash">
 </a>
 <a style="text-decoration:none" href="http://www.Autohotkey.com/">
     <img loading="lazy" height="42" src="/Images//autohotkey.avif" alt="AHK">
