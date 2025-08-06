@@ -30,6 +30,16 @@
        三三三三三三三三三三三三三三三三三三三三三三三三三三三三
 ```
 
+<table>
+<tr>
+  <td align="right">
+    <img 
+      loading="lazy"
+      src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
+      alt="GitHub Stats"
+    />
+  </td>
+
 ![](https://komarev.com/ghpvc/?username=Ven0m0) [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
 
 ### My projects
