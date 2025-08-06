@@ -35,15 +35,7 @@
 ### My projects
 <img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
-<table>
-<tr>
-  <td align="right">
-    <img 
-      loading="lazy"
-      src="https://github-readme-stats.vercel.app/api?username=Ven0m0&show_icons=true&hide_border=true&count_private=true&bg_color=0D1117&title_color=90CAF9&text_color=64B5F6&icon_color=CE93D8" 
-      alt="GitHub Stats"
-    />
-  </td>
+<img align="right" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=Ven0m0&count_private=true&show_icons=true&theme=chartreuse-dark&include_all_commits=true&hide_border=true">
 
 <img loading="lazy" height="25" src="/Images//autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
