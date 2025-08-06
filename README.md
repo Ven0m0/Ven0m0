@@ -37,7 +37,12 @@
 ![](https://komarev.com/ghpvc/?username=Ven0m0) [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
 
 ### My projects
-<img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
+<img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; 
+
+<a style="text-decoration:none" href="https://www.gnu.org/software/bash/">
+ <img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; 
+
+<img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
 
 
@@ -70,11 +75,11 @@
 </a>
 
 ### I am currently learning [^2]
-  <a style="text-decoration:none" href="http://www.Autohotkey.com/">
-    <img loading="lazy" height="42" src="/Images//autohotkey.avif" alt="AHK">
+<a style="text-decoration:none" href="http://www.Autohotkey.com/">
+ <img loading="lazy" height="42" src="/Images//autohotkey.avif" alt="AHK">
 </a>
-  <a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation">
-    <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
+<a style="text-decoration:none" href="https://docs.microsoft.com/en-us/documentation">
+ <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
 </a>
   <a style="text-decoration:none" href="https://www.rust-lang.org">
       <img loading="lazy" height="42" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg" alt="Rust">
