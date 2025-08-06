@@ -11,7 +11,7 @@
 | Browser: Firefox                                      |
 | OS: Cachyos, Dietpi                                   |
 | DE: Kde Plasma (Wayland)                              |
-| Theme: Breeze
+| Theme: Breeze                                         |
 | Current Setup: Rio, Bash, Fish, Firefox, Lapce        |
 / Languages: Shell, Rust, Python                        /
  -------------------------------------------------------
@@ -30,7 +30,10 @@
        三三三三三三三三三三三三三三三三三三三三三三三三三三三三
 ```
 
+![](https://komarev.com/ghpvc/?username=Ven0m0) [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
 
+### My projects
+<img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
 <table>
 <tr>
@@ -41,11 +44,6 @@
       alt="GitHub Stats"
     />
   </td>
-
-![](https://komarev.com/ghpvc/?username=Ven0m0) [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
-
-### My projects
-<img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
 <img loading="lazy" height="25" src="/Images//autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
