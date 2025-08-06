@@ -39,8 +39,9 @@
 ### My projects
 <img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; 
 
-<a style="text-decoration:none" href="https://www.gnu.org/software/bash/">
- <img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pihole"> [Pi-hole adlists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;&nbsp;&nbsp; 
+<a style="text-decoration:none" href="https://github.com/Ven0m0/Pihole-Lists">
+ <img height="30" loading="lazy" src="/Images/Pihole.avif" alt="Pi-hole adlists">
+</a>
 
 <img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
 
