@@ -1,5 +1,5 @@
 
-<img align="right" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=Ven0m0&count_private=true&show_icons=true&theme=chartreuse-dark&include_all_commits=true&hide_border=true">
+
 
 ```
  _______________________________________________________
@@ -13,7 +13,7 @@
 |                                                       |
 | Browser: Firefox                                      |
 | OS: Cachyos, Dietpi                                   |
-| DE: Kde Plasma (Wayland)                              |
+| DE: Kde Plasma (Wayland)                              | 
 | Theme: Breeze                                         |
 | Current Setup: Rio, Bash, Fish, Firefox, Lapce        |
 / Languages: Shell, Rust, Python                        /
@@ -32,6 +32,7 @@
      三三三三三三三三三三三三三三三三三三三三三三三三三三三三
        三三三三三三三三三三三三三三三三三三三三三三三三三三三三
 ```
+<img align="right" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=Ven0m0&count_private=true&show_icons=true&theme=chartreuse-dark&include_all_commits=true&hide_border=true">
 
 ![](https://komarev.com/ghpvc/?username=Ven0m0) [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
 
