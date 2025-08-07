@@ -49,17 +49,14 @@
 <a href="https://github.com/Ven0m0/Scripts">
   <img src="/Images/autohotkey.avif" alt="AHK" height="25" loading="lazy">
 </a>
-
-
 <a href="https://github.com/Ven0m0/Linux-OS">
   <img src="/Images/Linux.avif" alt="" height="25" loading="lazy">
 </a>
-
-[Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
-
 <a href="https://github.com/Ven0m0/">
   <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
 </a>
+
+[Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
 
 <details>
   <summary>More...</summary>
