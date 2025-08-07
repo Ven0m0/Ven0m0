@@ -7,11 +7,11 @@
 | -----------------------                               |
 | Name: Ven0m0                                          |
 | Host: Germany                                         |
-| Uptime: 19 years                                      |
+| Uptime: since 15/09/2005                              |
 | Locale: English, German                               |
 | Hobbies: Airsoft, Music, Gaming, Tinkering            |
 |                                                       |
-| Browser: Firefox                                      |
+| 💗💜💙                                                |
 | OS: Cachyos, Dietpi                                   |
 | DE: Kde Plasma (Wayland)                              | 
 | Theme: Breeze                                         |
