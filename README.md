@@ -46,10 +46,22 @@
 <a href="https://github.com/Ven0m0/Firewall">
   <img src="/Images/firewall.avif" alt="uBlock" height="25" loading="lazy">
 </a>
+<a href="https://github.com/Ven0m0/Scripts">
+  <img src="/Images/autohotkey.avif" alt="AHK" height="25" loading="lazy">
+</a>
 
-<img loading="lazy" height="25" src="/Images//autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
-<img loading="lazy" height="25" src="/Images//Linux.avif" alt="Linux"> [Linux Stuff](https://github.com/Ven0m0/Linux-OS) &nbsp;&nbsp;&nbsp; [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firefox.avif" alt="Firefox"> [Firefox Tweaks](https://github.com/Ven0m0/Firefox-opt) &nbsp;&nbsp;&nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
+<a href="https://github.com/Ven0m0/Linux-OS">
+  <img src="/Images/Linux.avif" alt="" height="25" loading="lazy">
+</a>
+
+[Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches)
+
+<a href="https://github.com/Ven0m0/">
+  <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
+</a>
+
+[Arch PKG's](https://github.com/Ven0m0/PKG)
 
 <details>
   <summary>More...</summary>
