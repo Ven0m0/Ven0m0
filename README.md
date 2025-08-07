@@ -55,13 +55,13 @@
   <img src="/Images/Linux.avif" alt="" height="25" loading="lazy">
 </a>
 
-[Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches)
+[Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) [Arch PKG's](https://github.com/Ven0m0/PKG)
 
 <a href="https://github.com/Ven0m0/">
   <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
 </a>
 
-[Arch PKG's](https://github.com/Ven0m0/PKG)
+
 
 <details>
   <summary>More...</summary>
