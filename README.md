@@ -40,9 +40,12 @@
 <a href="https://github.com/Ven0m0/Pihole-Lists">
   <img src="/Images/Pihole.avif" alt="Pi-hole adlists" height="25" loading="lazy">
 </a>
-<img loading="lazy" height="25" src="/Images//uBlock-origin.avif" alt="uBlock"> [uBlock lists](https://github.com/Ven0m0/Ven0m0-Adblock) &nbsp;&nbsp;&nbsp; <img loading="lazy" height="25" src="/Images//firewall.avif" alt="Firewall"> [Firewall Stuff](https://github.com/Ven0m0/Firewall)
-
-
+<a href="https://github.com/Ven0m0/Ven0m0-Adblock">
+  <img src="/Images/uBlock-origin.avif" alt="uBlock" height="25" loading="lazy">
+</a>
+<a href="https://github.com/Ven0m0/Firewall">
+  <img src="/Images/firewall.avif" alt="uBlock" height="25" loading="lazy">
+</a>
 
 <img loading="lazy" height="25" src="/Images//autohotkey.avif" alt="AHK"> [AHK scripts/misc tools](https://github.com/Ven0m0/Scripts)
 
