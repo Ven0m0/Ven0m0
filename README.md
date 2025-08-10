@@ -1,10 +1,10 @@
-<img loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0">
+
 
 ```
  _______________________________________________________
 / Ven0m0@github.com                                     \
 | -----------------------                               |
-| Name: Ven0m0                                          |
+| Name: Ven0m0    <img align="right" loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0">                                      |
 | Host: Germany                                         |
 | Uptime: since 15/09/2005                              |
 | Locale: English, German                               |
