@@ -31,8 +31,10 @@
      三三三三三三三三三三三三三三三三三三三三三三三三三三三三
        三三三三三三三三三三三三三三三三三三三三三三三三三三三三
 ```
-<img align="right" loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0">
+
 <img align="right" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=Ven0m0&count_private=true&show_icons=true&theme=transparent&include_all_commits=true&hide_border=truedisable_animations=true&layout=compact">
+
+<img align="right" loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0">
 
 ![](https://komarev.com/ghpvc/?username=Ven0m0) [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
 
