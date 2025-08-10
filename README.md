@@ -38,7 +38,7 @@
 
 
 <a href="https://www.last.fm/user/Ven0m0">
- <img align="right" loading="lazy" src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white">
+ <img loading="lazy" src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white">
 </a>
 
 ### My projects
