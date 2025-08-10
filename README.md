@@ -34,11 +34,10 @@
 
 <img align="right" loading="lazy" src="https://github-readme-stats.vercel.app/api?username=Ven0m0&count_private=true&show_icons=true&theme=transparent&include_all_commits=true&hide_border=truedisable_animations=true&layout=compact">
 
-<div style="text-align: right;">
+<div style="float: right; display: flex; flex-direction: column; gap: 5px;">
   <a href="https://www.last.fm/user/Ven0m0">
     <img loading="lazy" height="25" src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white" alt="last.fm">
   </a>
-  <br>
   <img loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0" alt="Profile views">
 </div>
 
