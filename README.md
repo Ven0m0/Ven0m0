@@ -3,7 +3,7 @@
     <img align="right" loading="lazy" src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white" alt="last.fm">
   </a>
   <br>
-  <img align="right" loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0" alt="Profile views">
+  <img loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0" alt="Profile views">
 </div>
 
 
