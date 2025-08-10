@@ -36,7 +36,9 @@
 
 <img align="right" loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0">
 
-![](https://komarev.com/ghpvc/?username=Ven0m0) [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
+<img align="right" loading="lazy" src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white">
+
+ [![Last.fm](https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white)](https://www.last.fm/user/Ven0m0)
 
 ### My projects
 <a href="https://github.com/Ven0m0/Pihole-Lists">
