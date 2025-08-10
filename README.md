@@ -1,4 +1,4 @@
-<img align="center" loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0">
+<img loading="lazy" src="https://komarev.com/ghpvc/?username=Ven0m0">
 
 ```
  _______________________________________________________
