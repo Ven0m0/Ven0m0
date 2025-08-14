@@ -1,11 +1,10 @@
 # Visit https://github.com/lowlighter/metrics#-documentation for full reference
 name: Metrics
 on:
-  schedule:
-    - cron: "0 0 * * *"            # daily at UTC midnight
   workflow_dispatch:
-  push:
-    branches: ["master", "main"]
+  push: {branches: ["master", "main"]}
+  # daily at UTC midnight
+  schedule: [{cron: "0 0 * * *"}]
 
 jobs:
   github-metrics:
@@ -17,24 +16,21 @@ jobs:
     concurrency:
       group: metrics-update
       cancel-in-progress: true
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Ensure cache directory exists
-        run: mkdir -p ~/.cache
-
+      #- name: Checkout repository
+        #uses: actions/checkout@v4
+      #- name: Ensure cache directory exists
+        #run: mkdir -p ~/.cache
       - name: Cache metrics dependencies
         id: cache-metrics
         uses: actions/cache@v4
         with:
           path: ~/.cache
-          key: ${{ runner.os }}-metrics-cache-${{ hashFiles('.github/workflows/metrics.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-metrics-cache-
-            ${{ runner.os }}-
-
+          #key: ${{ runner.os }}-metrics-cache-${{ hashFiles('.github/workflows/metrics.yml') }}
+          key: ${{ runner.os }}-cache-${{ hashFiles('**/lockfiles') }}
+          #restore-keys: |
+            #${{ runner.os }}-metrics-cache-
+            #${{ runner.os }}-
       - name: Generate metrics
         uses: lowlighter/metrics@latest
         with:
