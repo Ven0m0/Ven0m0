@@ -68,7 +68,7 @@
     </div>
 </details>
 
-### I am feeling confident at [^1]
+### I am feeling confident at
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
 <img loading="lazy" height="40" src="https://github.com/devicons/devicon/raw/master/icons/windows8/windows8-original.svg" alt="Windows10">
 </a>
@@ -85,7 +85,7 @@
     <img loading="lazy" height="40" src="https://upload.wikimedia.org/wikipedia/en/e/ef/Command_prompt_icon_%28windows%29.png" alt="CMD">
 </a>
 
-### I am currently learning [^2]
+### I am currently learning
 <a style="text-decoration:none" href="http://www.Autohotkey.com/">
  <img loading="lazy" height="40" src="/Images//autohotkey.avif" alt="AHK">
 </a>
@@ -105,6 +105,3 @@
 <a href="https://pi-hole.net//" style="text-decoration:none">
     <img loading="lazy" height="40" src="/Images//Pihole.avif" alt="Pihole">
 </a>
-
-[^1]: I spent fairly amount of time in it and I know how to properly use them in a very efficient way.
-[^2]: I started using them in practice
