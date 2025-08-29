@@ -60,7 +60,11 @@
   <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
 </a>
 
+&nbsp;
+
 [Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
+
+&nbsp;
 
 <details>
   <summary>More...</summary>
