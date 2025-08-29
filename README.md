@@ -47,8 +47,8 @@
 <a href="https://github.com/Ven0m0/Ven0m0-Adblock">
   <img src="/Images/uBlock-origin.avif" alt="uBlock" height="25" loading="lazy">
 </a>
-<a href="https://github.com/Ven0m0/Firewall">
-  <img src="/Images/firewall.avif" alt="uBlock" height="25" loading="lazy">
+<a href="https://github.com/Ven0m0/Firefox-opt">
+  <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
 </a>
 <a href="https://github.com/Ven0m0/Scripts">
   <img src="/Images/autohotkey.avif" alt="AHK" height="25" loading="lazy">
@@ -56,15 +56,14 @@
 <a href="https://github.com/Ven0m0/Linux-OS">
   <img src="/Images/Linux.avif" alt="" height="25" loading="lazy">
 </a>
-<a href="https://github.com/Ven0m0/">
+<a href="https://github.com/Ven0m0/Revanced-auto">
   <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
 </a>
 
-&nbsp;
+[Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp; [MC-Server](https://github.com/Ven0m0/MC-Server)
 
-[Linux Kernel patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG)
+[Kernel-patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG) &nbsp; [Firefox-patches]()
 
-&nbsp;
 
 <details>
   <summary>More...</summary>
