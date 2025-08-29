@@ -42,28 +42,28 @@
 
 ### My projects
 <a href="https://github.com/Ven0m0/Pihole-Lists">
-  <img src="/Images/Pihole.avif" alt="Pi-hole adlists" height="25" loading="lazy">
+  <img src="/Images/Pihole.avif" alt="Pi-hole adlists" height="25" loading="lazy" align="left">
 </a>
+
 <a href="https://github.com/Ven0m0/Ven0m0-Adblock">
-  <img src="/Images/uBlock-origin.avif" alt="uBlock" height="25" loading="lazy">
+  <img src="/Images/uBlock-origin.avif" alt="uBlock" height="25" loading="lazy" align="left">
 </a>
+
 <a href="https://github.com/Ven0m0/Firefox-opt">
-  <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
+  <img src="/Images/firefox.avif" alt="" height="25" loading="lazy" align="left">
 </a>
+
 <a href="https://github.com/Ven0m0/Scripts">
-  <img src="/Images/autohotkey.avif" alt="AHK" height="25" loading="lazy">
+  <img src="/Images/autohotkey.avif" alt="AHK" height="25" loading="lazy" align="left">
 </a>
+
 <a href="https://github.com/Ven0m0/Linux-OS">
-  <img src="/Images/Linux.avif" alt="" height="25" loading="lazy">
+  <img src="/Images/Linux.avif" alt="" height="25" loading="lazy" align="left">
 </a>
+
 <a href="https://github.com/Ven0m0/Revanced-auto">
-  <img src="/Images/firefox.avif" alt="" height="25" loading="lazy">
+  <img src="/Images/firefox.avif" alt="" height="25"loading="lazy" align="left">
 </a>
-
-[Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp; [MC-Server](https://github.com/Ven0m0/MC-Server)
-
-[Kernel-patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG) &nbsp; [Firefox-patches]()
-
 
 <details>
   <summary>More...</summary>
@@ -71,6 +71,8 @@
       <img src="/metrics.classic.svg" alt="Metrics" width="100%" loading="lazy">
     </div>
 </details>
+
+[Kernel-patches](https://github.com/Ven0m0/Linux-Kernel-Patches) &nbsp; [Arch PKG's](https://github.com/Ven0m0/PKG) &nbsp; [Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp; [MC-Server](https://github.com/Ven0m0/MC-Server)
 
 ### I am feeling confident at
 <a style="text-decoration:none" href="https://www.microsoft.com/en-us/windows/get-windows-10">
