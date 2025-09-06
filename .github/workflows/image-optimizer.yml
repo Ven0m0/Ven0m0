@@ -1,9 +1,9 @@
 # https://github.com/marketplace/actions/image-optimizer-action
-name: Compress Images (Manual)
+name: Compress Images
 on:
   workflow_dispatch:
-  schedule: [{cron: "0 0 * * 0"}]
-  #push:
+  schedule: [{cron: "0 0 * * *"}]
+  #push: {branches: ["master", "main"]}
 
 jobs:
   build:
