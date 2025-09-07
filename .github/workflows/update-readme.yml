@@ -16,10 +16,10 @@ jobs:
       group: metrics-update
       cancel-in-progress: true
     steps:
-      #- name: Checkout repository
-        #uses: actions/checkout@v4
-      #- name: Ensure cache directory exists
-        #run: mkdir -p ~/.cache
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Ensure cache directory exists
+        run: mkdir -p ~/.cache
       - name: Cache metrics dependencies
         id: cache-metrics
         uses: actions/cache@v4
