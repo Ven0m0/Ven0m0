@@ -1,9 +1,10 @@
 # https://github.com/marketplace/actions/image-optimizer-action
 name: Compress Images
+
 on:
   workflow_dispatch:
-  schedule: [{cron: "0 0 * * *"}]
-  #push: {branches: ["master", "main"]}
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   build:
@@ -14,6 +15,9 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
+
+      - name: Exclude metrics.classic.svg
+        run: mkdir -p .excluded && mv metrics.classic.svg .excluded/ 2>/dev/null || :
 
       - name: Compress Images
         id: compress-images
@@ -28,6 +32,9 @@ jobs:
           compress-webp: true
           compress-avif: true
           replace-original-after-export-webp: true
+
+      - name: Restore excluded files
+        run: mv .excluded/metrics.classic.svg . 2>/dev/null || :
 
       - name: Create New Pull Request If Needed
         if: steps.compress-images.outputs.markdown_report != ''
