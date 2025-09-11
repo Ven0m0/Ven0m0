@@ -4,20 +4,22 @@ name: Compress Images
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # Every day at midnight UTC
 
 jobs:
-  build:
-    name: stellasoftio/image-optimizer-action
-    permissions: write-all
+  compress:
+    name: Compress Images
     runs-on: ubuntu-latest
+    permissions: write-all
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Exclude metrics.classic.svg
-        run: mkdir -p .excluded && mv metrics.classic.svg .excluded/ 2>/dev/null || :
+        run: |
+          mkdir -p .excluded
+          mv metrics.classic.svg .excluded/ 2>/dev/null || true
 
       - name: Compress Images
         id: compress-images
@@ -34,10 +36,11 @@ jobs:
           replace-original-after-export-webp: true
 
       - name: Restore excluded files
-        run: mv .excluded/metrics.classic.svg . 2>/dev/null || :
+        run: |
+          mv .excluded/metrics.classic.svg . 2>/dev/null || true
 
-      - name: Create New Pull Request If Needed
-        if: steps.compress-images.outputs.markdown_report != ''
+      - name: Create Pull Request if Images Were Compressed
+        if: ${{ steps.compress-images.outputs.markdown_report != '' }}
         uses: peter-evans/create-pull-request@v5
         with:
           title: Compressed Images
