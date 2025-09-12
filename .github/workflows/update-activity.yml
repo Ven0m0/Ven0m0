@@ -18,6 +18,6 @@ jobs:
           readme_path: './README.md'
           comment_tag_name: "activity"
           commit_message: "chore: update recent activity"
-          template: "- [$title]($url) $newline"
+          template: "[$title]($url) $newline"
           date_format: "d/m/yy"
 
