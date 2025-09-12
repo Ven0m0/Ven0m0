@@ -2,7 +2,7 @@
 name: Metrics
 on:
   workflow_dispatch:
-  push: {branches: ["master", "main"]}
+  #push: {branches: ["master", "main"]}
   # daily at UTC midnight
   schedule: [{cron: "0 0 * * *"}]
 jobs:
