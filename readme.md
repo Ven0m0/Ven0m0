@@ -51,11 +51,9 @@
 * ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop and DietPi on my Raspberry Pis.
 * ❤️ 🏳️‍🌈 💗💜💙
 
----
-
 ### 💡 What I'm Up To
 
-*This section will automatically update with my recent GitHub activity!*
+<!-- activity -->
 ---
 
 
