@@ -52,8 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### 💡 **What I'm Up To**
+
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
+---
 
 ### 🛠️ My Tech Stack
 
