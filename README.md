@@ -52,7 +52,12 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### 💡 **What I'm Up To**
-<!-- activity:START -->- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/72d479415c...fb17671490) on September 12, 2025- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/ee4e35ed2d...69824395b4) on September 12, 2025- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/4abd4fe93b...72d479415c) on September 12, 2025- [Ven0m0 pushed Linux-OS](https://github.com/Ven0m0/Linux-OS/compare/50ebf41b89...b85adb5a26) on September 12, 2025- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/f55914d769...4abd4fe93b) on September 12, 2025<!-- activity:END -->
+<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/82012d56cb...2ae3da180c) 
+- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/96314b02b8...82012d56cb) 
+- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/72e4e0783f...96314b02b8) 
+- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/209d4133d2...72e4e0783f) 
+- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/30d021177c...87105f3479) 
+<!-- activity:END -->
 ---
 
 ### 🛠️ My Tech Stack
