@@ -17,5 +17,5 @@ jobs:
         with:
           feed_list: "https://github.com/Ven0m0.atom"
           max_post_count: 5
-          comment_tag_name: "activity"
+          #comment_tag_name: "activity"
           commit_message: "chore: update recent activity"
