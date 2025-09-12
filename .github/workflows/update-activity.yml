@@ -16,6 +16,6 @@ jobs:
       - uses: gautamkrishnar/blog-post-workflow@v1
         with:
           feed_list: "https://github.com/Ven0m0.atom"
-          max_post_count: 5
+          #max_post_count: 5
           #comment_tag_name: "activity"
-          commit_message: "chore: update recent activity"
+          #commit_message: "chore: update recent activity"
