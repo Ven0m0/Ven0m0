@@ -16,6 +16,6 @@ jobs:
         with:
           feed_list: "https://github.com/Ven0m0.atom"
           max_post_count: 5
-          readme_path: './readme.md'
+          readme_path: './README.md'
           comment_tag_name: "activity"
           commit_message: "chore: update recent activity"
