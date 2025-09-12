@@ -52,8 +52,8 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### 💡 **What I'm Up To**
-
 <!-- activity:START -->
+*This section will automatically update with my recent GitHub activity!*
 <!-- Bactivity:END -->
 ---
 
