@@ -19,3 +19,5 @@ jobs:
           readme_path: './README.md'
           comment_tag_name: "activity"
           commit_message: "chore: update recent activity"
+          custom_format: "- [$title]($url) on $date"
+          date_format: "mmmm d, yyyy"
