@@ -52,11 +52,8 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### 💡 **What I'm Up To**
-<!-- START_SECTION:activity -->
-**This section will automatically update with my recent GitHub activity**
-<!-- END_SECTION:activity -->
----
-
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
 
 ### 🛠️ My Tech Stack
 
