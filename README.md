@@ -53,7 +53,11 @@
 
 ### 💡 **What I'm Up To**
 <!-- activity:START -->
-*This section will automatically update with my recent GitHub activity!*
+- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/d611861314...2dcd556213)
+- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/1bb8824c77...d611861314)
+- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/4f23204ab5...1bb8824c77)
+- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/64db6075b5...4f23204ab5)
+- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/17cafb7442...64db6075b5)
 <!-- activity:END -->
 ---
 
