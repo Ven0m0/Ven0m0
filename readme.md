@@ -48,12 +48,15 @@
 
 ### 👨‍💻 About Me
 
-* 💬 **Languages**: Im a native german speaker and english (duh) 
-* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop, might swittch though. DietPi on my raspberry pi's
-* 🔧 **Currently Working On**: Improving my ad-blocking lists and learning Rust.
-
+* 💬 **Languages**: I am a native German speaker and fluent in English.
+* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop and DietPi on my Raspberry Pis.
 * ❤️ 🏳️‍🌈 💗💜💙
 
+---
+
+### 💡 What I'm Up To
+
+*This section will automatically update with my recent GitHub activity!*
 ---
 
 ### 🛠️ My Tech Stack
@@ -70,6 +73,8 @@ Here are some of the tools and technologies I'm confident with:
 
 ### 🚀 My Projects
 
+*This is a list of my core projects. See the section above for my most recent activity!*
+
 | Project                                                                | Description                                                                     |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)** | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.  |
@@ -77,11 +82,6 @@ Here are some of the tools and technologies I'm confident with:
 | **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)** | A collection of `user.js` tweaks to harden Firefox for privacy and security.    |
 | **[Scripts](https://github.com/Ven0m0/Scripts)** | A personal repository of useful scripts, mostly for automation with AutoHotkey. |
 | **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** | My personal configurations and setup files for various Linux distributions.     |
-| **[Revanced-auto](https://github.com/Ven0m0/Revanced-auto)** | Automation scripts to simplify the process of patching Android apps with ReVanced. |
-| **[Kernel-Patches](https://github.com/Ven0m0/Linux-Kernel-Patches)** | A collection of patches I use for compiling custom Linux kernels.               |
-| **[Arch PKG's](https://github.com/Ven0m0/PKG)** | My personal `PKGBUILD` files for installing software on Arch Linux.               |
-| **[Dotfiles](https://github.com/Ven0m0/dotfiles)** | My configuration files (`.dotfiles`) for various applications like Bash, Fish, etc. |
-| **[MC-Server](https://github.com/Ven0m0/MC-Server)** | Configuration and setup files for running a personal Minecraft server.            |
 
 ---
 
@@ -91,3 +91,10 @@ Here are some of the tools and technologies I'm confident with:
   <img src="https://github-readme-stats.vercel.app/api?username=Ven0m0&count_private=true&show_icons=true&theme=transparent&include_all_commits=true&hide_border=true&disable_animations=true" alt="GitHub Stats">
   <br/>
 </p>
+
+<details>
+  <summary>Click for more detailed breakdown!</summary>
+  <div align="center">
+    <img src="metrics.classic.svg" alt="Metrics" width="100%">
+  </div>
+</details>
