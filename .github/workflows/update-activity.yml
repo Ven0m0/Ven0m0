@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      actions: write
     name: Update README
     steps:
       - uses: actions/checkout@v4
@@ -16,8 +15,10 @@ jobs:
         with:
           feed_list: "https://github.com/Ven0m0.atom"
           max_post_count: 5
-          readme_path: './README.md'
+          readme_path: './readme.md'
           comment_tag_name: "activity"
           commit_message: "chore: update recent activity"
-          custom_format: "- [$title]($url) on $date"
+          # This is the corrected line
+          template: "- [$title]($url) on $date"
           date_format: "mmmm d, yyyy"
+
