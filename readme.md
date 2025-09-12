@@ -41,17 +41,17 @@
 
 <h1 align="center">Hi there, I'm Ven0m0 👋</h1>
 <p align="center">
-  A developer and tinkerer from Germany with a passion for open-source, privacy, and building useful tools.
+  Just a silly person who gets way too obsessed over small details.
 </p>
 
 ---
 
 ### 👨‍💻 About Me
 
-* 💬 **Languages**: English and German.
-* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) and DietPi. I'm comfortable in Bash, Fish, and Shell.
+* 💬 **Languages**: Im a native german speaker and english (duh) 
+* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop, might swittch though. DietPi on my raspberry pi's
 * 🔧 **Currently Working On**: Improving my ad-blocking lists and learning Rust.
-* ✨ **Hobbies**: Airsoft, Music, Gaming, and tinkering with hardware/software.
+
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ---
