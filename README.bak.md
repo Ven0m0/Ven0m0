@@ -6,7 +6,7 @@
 | Host: Germany                                         |
 | Uptime: since 15/09/2005                              |
 | Locale: English, German                               |
-| Hobbies: Airsoft, Music, Gaming, Tinkering            |
+| Freetime: Airsoft, Music, Gaming, Tinkering           |
 |                                                       |
 | 💗💜💙                                                |
 | OS: Cachyos, Dietpi                                   |
