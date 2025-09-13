@@ -52,7 +52,7 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### 💡 **What I'm Up To**
-<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/82012d56cb...2ae3da180c) 
+<!-- activity:START -->
 - [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/96314b02b8...82012d56cb) 
 - [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/72e4e0783f...96314b02b8) 
 - [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/209d4133d2...72e4e0783f) 
