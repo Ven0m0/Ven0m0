@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->[Ven0m0 starred chainer/chainer](https://github.com/chainer/chainer) 
-[Ven0m0 starred LovecraftianGodsKiller/Revanced-And-Revanced-Extended-Non-Root](https://github.com/LovecraftianGodsKiller/Revanced-And-Revanced-Extended-Non-Root) 
-[Ven0m0 starred LovecraftianGodsKiller/anddea-spotify](https://github.com/LovecraftianGodsKiller/anddea-spotify) 
-[Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/2ae3da180c...48ba6004bb) 
+<!-- activity:START -->[Ven0m0 starred revenge-mod/revenge-bundle-next](https://github.com/revenge-mod/revenge-bundle-next) 
+[Ven0m0 starred TeamNewPipe/NewPipe](https://github.com/TeamNewPipe/NewPipe) 
+[Ven0m0 starred YasserNull/setbox](https://github.com/YasserNull/setbox) 
+[Ven0m0 starred vvb2060/PackageInstaller](https://github.com/vvb2060/PackageInstaller) 
 <!-- activity:END -->
 ---
 
