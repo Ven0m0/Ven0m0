@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->[Ven0m0 starred revenge-mod/revenge-bundle-next](https://github.com/revenge-mod/revenge-bundle-next) 
-[Ven0m0 starred TeamNewPipe/NewPipe](https://github.com/TeamNewPipe/NewPipe) 
-[Ven0m0 starred YasserNull/setbox](https://github.com/YasserNull/setbox) 
-[Ven0m0 starred vvb2060/PackageInstaller](https://github.com/vvb2060/PackageInstaller) 
+<!-- activity:START -->- [Ven0m0 deleted](https://github.com/Ven0m0/revanced-creator/compare/5e5754fe28...0000000000)
+- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/3c651cc463...9b07a612fe)
+- [Ven0m0 deleted](https://github.com/Ven0m0/revanced-creator/compare/5096151060...0000000000)
+- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/e849c459a1...3c651cc463)
 <!-- activity:END -->
 ---
 
