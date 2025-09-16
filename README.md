@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 deleted](https://github.com/Ven0m0/revanced-creator/compare/5e5754fe28...0000000000)
-- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/3c651cc463...9b07a612fe)
-- [Ven0m0 deleted](https://github.com/Ven0m0/revanced-creator/compare/5096151060...0000000000)
-- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/e849c459a1...3c651cc463)
+<!-- activity:START -->- [Ven0m0 starred yokoffing/NextDNS-Config](https://github.com/yokoffing/NextDNS-Config)
+- [Ven0m0 starred qarmin/czkawka](https://github.com/qarmin/czkawka)
+- [Ven0m0 starred ShadowWhisperer/NoGreenWin](https://github.com/ShadowWhisperer/NoGreenWin)
+- [Ven0m0 starred ShadowWhisperer/Service-Split](https://github.com/ShadowWhisperer/Service-Split)
 <!-- activity:END -->
 ---
 
