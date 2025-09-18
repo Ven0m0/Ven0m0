@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/ffabf63844...6e36341102)
-- [Ven0m0 pushed Revanced-auto](https://github.com/Ven0m0/Revanced-auto/compare/5bda43c333...1ee23d511b)
-- [Ven0m0 pushed Linux-OS](https://github.com/Ven0m0/Linux-OS/compare/19a10d685f...d74165125e)
-- [Ven0m0 pushed MC-Server](https://github.com/Ven0m0/MC-Server/compare/9603c9284b...68362235f7)
+<!-- activity:START -->- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/416b91d0dd...a48adebcec)
+- [Ven0m0 starred romkatv/zsh4humans](https://github.com/romkatv/zsh4humans)
+- [Ven0m0 starred romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [Ven0m0 pushed Linux-OS](https://github.com/Ven0m0/Linux-OS/compare/15f4967547...8fee608435)
 <!-- activity:END -->
 ---
 
