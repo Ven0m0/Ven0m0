@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/416b91d0dd...a48adebcec)
-- [Ven0m0 starred romkatv/zsh4humans](https://github.com/romkatv/zsh4humans)
-- [Ven0m0 starred romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- [Ven0m0 pushed Linux-OS](https://github.com/Ven0m0/Linux-OS/compare/15f4967547...8fee608435)
+<!-- activity:START -->- [Ven0m0 starred JingMatrix/Shell](https://github.com/JingMatrix/Shell)
+- [Ven0m0 starred beakthoven/TrickyStoreOSS](https://github.com/beakthoven/TrickyStoreOSS)
+- [Ven0m0 starred JingMatrix/ChromeXt](https://github.com/JingMatrix/ChromeXt)
+- [Ven0m0 starred rust-mobile/xbuild](https://github.com/rust-mobile/xbuild)
 <!-- activity:END -->
 ---
 
