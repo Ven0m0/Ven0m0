@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: production
-    permissions:
-      contents: write
+    permissions: write-all
     concurrency:
       group: metrics-update
       cancel-in-progress: true
@@ -59,3 +58,22 @@ jobs:
           plugin_habits_days: 14
           plugin_habits_facts: yes
           plugin_notable: yes
+
+      # Optimize the generated SVG
+      - name: Optimize SVG metrics
+        uses: stellasoftio/image-optimizer-action@v1
+        with:
+          path: './metrics.classic.svg'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          compress-webp: true
+          replace-original-after-export-webp: true
+
+      # Commit and push optimized SVG only if it changed
+      - name: Commit optimized metrics
+        if: ${{ steps.compress-images.outputs.markdown_report != '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add metrics.classic.svg
+          git diff --cached --quiet || git commit -m "chore: optimize metrics SVG"
+          git push
