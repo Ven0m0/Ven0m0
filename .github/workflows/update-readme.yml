@@ -2,7 +2,6 @@
 name: Metrics
 on:
   workflow_dispatch:
-  #push: {branches: ["master", "main"]}
   # daily at UTC midnight
   schedule: [{cron: "0 0 * * *"}]
 jobs:
@@ -19,22 +18,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Ensure cache directory exists
         run: mkdir -p ~/.cache
+      # Cache Metrics dependencies
       - name: Cache metrics dependencies
         id: cache-metrics
         uses: actions/cache@v4
         with:
           path: ~/.cache
-          #key: ${{ runner.os }}-metrics-cache-${{ hashFiles('.github/workflows/metrics.yml') }}
-          key: ${{ runner.os }}-cache-${{ hashFiles('**/lockfiles') }}
-          #restore-keys: |
-            #${{ runner.os }}-metrics-cache-
-            #${{ runner.os }}-
+          key: ${{ runner.os }}-metrics-${{ hashFiles('**/lockfiles') }}
+          restore-keys: |
+            ${{ runner.os }}-metrics-  
       - name: Generate metrics
         uses: lowlighter/metrics@latest
         with:
-          #output_action: commit
-          #committer_branch: metrics-renders
-          #committer_message: "chore: update metrics"
           use_prebuilt_image: yes
           optimize: svg, css, xml
           experimental_features: --optimize-svg
@@ -59,11 +54,21 @@ jobs:
           plugin_habits_facts: yes
           plugin_notable: yes
 
+      # Cache Image Optimizer dependencies
+      - name: Cache image-optimizer-action
+        id: cache-image-optimizer
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/stellar-image-optimizer
+          key: ${{ runner.os }}-image-optimizer-${{ hashFiles('**/lockfiles') }}
+          restore-keys: |
+            ${{ runner.os }}-image-optimizer-
+
       # Optimize the generated SVG
       - name: Optimize SVG metrics
         uses: stellasoftio/image-optimizer-action@v1
         with:
-          path: './metrics.classic.svg'
+          path: './*.svg'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           compress-webp: true
           replace-original-after-export-webp: true
@@ -74,6 +79,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add metrics.classic.svg
+          git add *.svg
           git diff --cached --quiet || git commit -m "chore: optimize metrics SVG"
           git push
