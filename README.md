@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 starred JingMatrix/Shell](https://github.com/JingMatrix/Shell)
-- [Ven0m0 starred beakthoven/TrickyStoreOSS](https://github.com/beakthoven/TrickyStoreOSS)
-- [Ven0m0 starred JingMatrix/ChromeXt](https://github.com/JingMatrix/ChromeXt)
-- [Ven0m0 starred rust-mobile/xbuild](https://github.com/rust-mobile/xbuild)
+<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/e9ccaa1981...fd1c4584d7)
+- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/ce009426f4...e9ccaa1981)
+- [Ven0m0 starred elenapan/dotfiles](https://github.com/elenapan/dotfiles)
+- [Ven0m0 starred archcraft-os/archcraft](https://github.com/archcraft-os/archcraft)
 <!-- activity:END -->
 ---
 
