@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/e9ccaa1981...fd1c4584d7)
-- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/ce009426f4...e9ccaa1981)
-- [Ven0m0 starred elenapan/dotfiles](https://github.com/elenapan/dotfiles)
-- [Ven0m0 starred archcraft-os/archcraft](https://github.com/archcraft-os/archcraft)
+<!-- activity:START -->- [Ven0m0 pushed revanced-apps](https://github.com/Ven0m0/revanced-apps/compare/d1ebcf170d...adbdea0073)
+- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/17fca32943...a500b2b597)
+- [Ven0m0 starred eth-p/my-dotfiles](https://github.com/eth-p/my-dotfiles)
+- [Ven0m0 starred AmJaradat01/awesome-lazy-zsh](https://github.com/AmJaradat01/awesome-lazy-zsh)
 <!-- activity:END -->
 ---
 
