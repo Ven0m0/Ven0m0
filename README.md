@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 pushed revanced-apps](https://github.com/Ven0m0/revanced-apps/compare/d1ebcf170d...adbdea0073)
-- [Ven0m0 pushed revanced-creator](https://github.com/Ven0m0/revanced-creator/compare/17fca32943...a500b2b597)
-- [Ven0m0 starred eth-p/my-dotfiles](https://github.com/eth-p/my-dotfiles)
-- [Ven0m0 starred AmJaradat01/awesome-lazy-zsh](https://github.com/AmJaradat01/awesome-lazy-zsh)
+<!-- activity:START -->- [Ven0m0 starred whoeevee/EeveeSpotifyReborn](https://github.com/whoeevee/EeveeSpotifyReborn)
+- [Ven0m0 starred akkva/gwfox](https://github.com/akkva/gwfox)
+- [Ven0m0 starred baterblx/BHX](https://github.com/baterblx/BHX)
+- [Ven0m0 starred driftywinds/winget-pkgs](https://github.com/driftywinds/winget-pkgs)
 <!-- activity:END -->
 ---
 
