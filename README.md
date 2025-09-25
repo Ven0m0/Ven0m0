@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 pushed NativeAlphaForAndroid](https://github.com/Ven0m0/NativeAlphaForAndroid/compare/10f29e0f2b...be197bcbd5)
-- [Ven0m0 pushed NativeAlphaForAndroid](https://github.com/Ven0m0/NativeAlphaForAndroid/compare/f1674cc970...10f29e0f2b)
-- [Ven0m0 pushed NativeAlphaForAndroid](https://github.com/Ven0m0/NativeAlphaForAndroid/compare/9e0a3de0e8...f1674cc970)
-- [Ven0m0 pushed NativeAlphaForAndroid](https://github.com/Ven0m0/NativeAlphaForAndroid/compare/e6d3502768...9e0a3de0e8)
+<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/3484d9bb50...cf174ae5fa)
+- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/952861a09d...3484d9bb50)
+- [Ven0m0 starred ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/c82b6e8c05...952861a09d)
 <!-- activity:END -->
 ---
 
