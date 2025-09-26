@@ -52,10 +52,10 @@
 * ❤️ 🏳️‍🌈 💗💜💙
 
 ### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/3484d9bb50...cf174ae5fa)
-- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/952861a09d...3484d9bb50)
-- [Ven0m0 starred ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
-- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/c82b6e8c05...952861a09d)
+<!-- activity:START -->- [Ven0m0 starred sezanzeb/input-remapper](https://github.com/sezanzeb/input-remapper)
+- [Ven0m0 starred lxc/incus](https://github.com/lxc/incus)
+- [Ven0m0 starred Mexit/MultiOS-USB](https://github.com/Mexit/MultiOS-USB)
+- [Ven0m0 starred jsamr/bootiso](https://github.com/jsamr/bootiso)
 <!-- activity:END -->
 ---
 
