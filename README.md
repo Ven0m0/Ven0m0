@@ -73,13 +73,13 @@
 
 *This is a list of my core projects. See the section above for my most recent activity!*
 
-| Project                                                                | Description                                                                     |
-| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)** | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.  |
-| **[Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock)** | Custom filter lists compatible with uBlock Origin and other browser ad-blockers.  |
-| **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)** | A collection of `user.js` tweaks to harden Firefox for privacy and security.    |
-| **[Scripts](https://github.com/Ven0m0/Scripts)** | A personal repository of useful scripts, mostly for automation with AutoHotkey. |
-| **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** | My personal configurations and setup files for various Linux distributions.     |
+| Project                                                        | Description                                                                      |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)**     | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.   |
+| **[Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock)** | Custom filter lists compatible with uBlock Origin and other browser ad-blockers. |
+| **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)**       | A collection of `user.js` tweaks to harden Firefox for privacy and security.     |
+| **[Scripts](https://github.com/Ven0m0/Scripts)**               | A personal repository of useful scripts, mostly for automation with AutoHotkey.  |
+| **[Linux-OS](https://github.com/Ven0m0/Linux-OS)**             | My personal configurations and setup files for various Linux distributions.      |
 
 ---
 
