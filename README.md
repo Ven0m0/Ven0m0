@@ -47,34 +47,36 @@
 
 ### 👨‍💻 About Me
 
-* 💬 **Languages**: I am a native German speaker and fluent in English.
-* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop and DietPi on my Raspberry Pis.
-* ❤️ 🏳️‍🌈 💗💜💙
+* 💬 **Languages**: I am a native German speaker and fluent in English.  
+* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop and DietPi on my Raspberry Pis.  
+* ❤️ 🏳️‍🌈 💗💜💙  
 
-### **✨** **What I'm Up To** **✨**
-<!-- activity:START -->- [Ven0m0 starred charmbracelet/gum](https://github.com/charmbracelet/gum)
-- [Ven0m0 starred kunkunsh/kunkun](https://github.com/kunkunsh/kunkun)
-- [Ven0m0 starred SinTan1729/chhoto-url](https://github.com/SinTan1729/chhoto-url)
-- [Ven0m0 starred Parsa307/filterlists](https://github.com/Parsa307/filterlists)
+---
+
+### ✨ What I'm Up To ✨
+<!-- activity:START -->
+* [Ven0m0 starred charmbracelet/gum](https://github.com/charmbracelet/gum)  
+* [Ven0m0 starred kunkunsh/kunkun](https://github.com/kunkunsh/kunkun)  
+* [Ven0m0 starred SinTan1729/chhoto-url](https://github.com/SinTan1729/chhoto-url)  
+* [Ven0m0 starred Parsa307/filterlists](https://github.com/Parsa307/filterlists)  
 <!-- activity:END -->
+
 ---
 
 ### 🛠️ My Tech Stack
 
-| Languages                                                                                                                                                                                                                           | OS & Tools                                                                                                                                                                                                                                                                                                                                                              |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Languages | OS & Tools |
+| :-------- | :---------- |
 | [![Shell](https://img.shields.io/badge/Shell-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white)](https://www.gnu.org/software/bash/)<br>[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)<br>[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/en-us/windows/)<br>[![CMD](https://img.shields.io/badge/CMD-000000?style=for-the-badge&logo=windows-terminal&logoColor=white)](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands) |
 | **I'm Learning:** | **I Also Love:** |
-| [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)<br>[![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)<br>[![AutoHotkey](https://img.shields.io/badge/AutoHotkey-334455?style=for-the-badge&logo=autohotkey&logoColor=white)](https://www.autohotkey.com/) | [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/)<br>[![Pi-hole](https://img.shields.io/badge/Pi--hole-960018?style=for-the-badge&logo=pi-hole&logoColor=white)](https://pi-hole.net/)                                                                                             |
+| [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)<br>[![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)<br>[![AutoHotkey](https://img.shields.io/badge/AutoHotkey-334455?style=for-the-badge&logo=autohotkey&logoColor=white)](https://www.autohotkey.com/) | [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/)<br>[![Pi-hole](https://img.shields.io/badge/Pi--hole-960018?style=for-the-badge&logo=pi-hole&logoColor=white)](https://pi-hole.net/) |
 
 ---
 
 ### 🚀 My Projects
 
-*This is a list of my core projects. See the section above for my most recent activity!*
-
-| Project                                                        | Description                                                                      |
-| -------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Project | Description |
+| ------- | ----------- |
 | **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)**     | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.   |
 | **[Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock)** | Custom filter lists compatible with uBlock Origin and other browser ad-blockers. |
 | **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)**       | A collection of `user.js` tweaks to harden Firefox for privacy and security.     |
