@@ -9,7 +9,7 @@
 |                                                       |
 | 💗💜💙                                                |
 | OS: Cachyos, Dietpi                                   |
-| DE: Kde Plasma (Wayland)                              | 
+| DE: Kde Plasma (Wayland)                              |
 | Theme: Breeze                                         |
 | Current Setup: Rio, Bash, Fish, Firefox, Lapce        |
 / Languages: Shell, Rust, Python                        /
