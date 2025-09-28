@@ -54,11 +54,10 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->
-* [Ven0m0 starred charmbracelet/gum](https://github.com/charmbracelet/gum)  
-* [Ven0m0 starred kunkunsh/kunkun](https://github.com/kunkunsh/kunkun)  
-* [Ven0m0 starred SinTan1729/chhoto-url](https://github.com/SinTan1729/chhoto-url)  
-* [Ven0m0 starred Parsa307/filterlists](https://github.com/Parsa307/filterlists)  
+<!-- activity:START -->- [Ven0m0 pushed Linux-OS](https://github.com/Ven0m0/Linux-OS/compare/4ea362bf99...63965c95d3)
+- [Ven0m0 pushed Linux-OS](https://github.com/Ven0m0/Linux-OS/compare/f3bdbd33c2...4ea362bf99)
+- [Ven0m0 starred SheMelody/win11-basic-optimizer](https://github.com/SheMelody/win11-basic-optimizer)
+- [Ven0m0 pushed Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock/compare/629b163026...6d2fd95b22)
 <!-- activity:END -->
 
 ---
