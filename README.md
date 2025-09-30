@@ -54,10 +54,10 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- [Ven0m0 pushed Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock/compare/6d2fd95b22...a7f0deca28)
-- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/e7817e6715...4c23d8d625)
-- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/0eeeb9004c...e7817e6715)
-- [Ven0m0 starred OctoPrint/CustoPiZer](https://github.com/OctoPrint/CustoPiZer)
+<!-- activity:START -->- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/5f117dfab6...05751b644b)
+- [Ven0m0 starred Shoukaku39/kdeconnect-android-shizuku](https://github.com/Shoukaku39/kdeconnect-android-shizuku)
+- [Ven0m0 starred varunbala2237/gametuner](https://github.com/varunbala2237/gametuner)
+- [Ven0m0 starred SpikeHD/Dorion](https://github.com/SpikeHD/Dorion)
 <!-- activity:END -->
 
 ---
