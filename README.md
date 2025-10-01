@@ -54,11 +54,10 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- 
-- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/5f117dfab6...05751b644b)
-- [Ven0m0 starred Shoukaku39/kdeconnect-android-shizuku](https://github.com/Shoukaku39/kdeconnect-android-shizuku)
-- [Ven0m0 starred varunbala2237/gametuner](https://github.com/varunbala2237/gametuner)
-- [Ven0m0 starred SpikeHD/Dorion](https://github.com/SpikeHD/Dorion)
+<!-- activity:START -->- [Ven0m0 starred lovell/sharp](https://github.com/lovell/sharp)
+- [Ven0m0 starred lete114/font-minify](https://github.com/lete114/font-minify)
+- [Ven0m0 starred google/closure-compiler](https://github.com/google/closure-compiler)
+- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/16a6d95cd2...809c0ca5c3)
 <!-- activity:END -->
 
 ---
