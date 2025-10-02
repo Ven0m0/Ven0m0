@@ -54,10 +54,10 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- [Ven0m0 starred lovell/sharp](https://github.com/lovell/sharp)
-- [Ven0m0 starred lete114/font-minify](https://github.com/lete114/font-minify)
-- [Ven0m0 starred google/closure-compiler](https://github.com/google/closure-compiler)
-- [Ven0m0 pushed Ven0m0](https://github.com/Ven0m0/Ven0m0/compare/16a6d95cd2...809c0ca5c3)
+<!-- activity:START -->- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/5ae01556b6...afa63be26c)
+- [Ven0m0 starred nohajc/vendor-adb-patched](https://github.com/nohajc/vendor-adb-patched)
+- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/a0125b99b2...5ae01556b6)
+- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/7336b92c43...a0125b99b2)
 <!-- activity:END -->
 
 ---
