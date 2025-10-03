@@ -54,10 +54,10 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/5ae01556b6...afa63be26c)
-- [Ven0m0 starred nohajc/vendor-adb-patched](https://github.com/nohajc/vendor-adb-patched)
-- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/a0125b99b2...5ae01556b6)
-- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/7336b92c43...a0125b99b2)
+<!-- activity:START -->- [Ven0m0 starred GrapheneOS/AppStore](https://github.com/GrapheneOS/AppStore)
+- [Ven0m0 starred Adish08/rvx-builds](https://github.com/Adish08/rvx-builds)
+- [Ven0m0 starred Parsa307/split_optimizer_fish](https://github.com/Parsa307/split_optimizer_fish)
+- [Ven0m0 pushed Linux-Kernel-Patches](https://github.com/Ven0m0/Linux-Kernel-Patches/compare/099ab59bff...0ed01e80a0)
 <!-- activity:END -->
 
 ---
