@@ -54,10 +54,9 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- [Ven0m0 starred pulsar-edit/pulsar](https://github.com/pulsar-edit/pulsar)
-- [Ven0m0 pushed rvx-apks](https://github.com/Ven0m0/rvx-apks/compare/f1e23462ec...a9e996e72d)
-- [Ven0m0 pushed rvx-apks](https://github.com/Ven0m0/rvx-apks/compare/44ddaa8f9f...f1e23462ec)
-- [Ven0m0 pushed rvx-apks](https://github.com/Ven0m0/rvx-apks/compare/bf0367eebd...44ddaa8f9f)
+<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/82f08fce0a...c870939bd3)
+- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/9db2a3a821...82f08fce0a)
+- [Ven0m0 starred Nahvine/TweaksSetEdit](https://github.com/Nahvine/TweaksSetEdit)
 <!-- activity:END -->
 
 ---
