@@ -54,9 +54,9 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/82f08fce0a...c870939bd3)
-- [Ven0m0 pushed dotfiles](https://github.com/Ven0m0/dotfiles/compare/9db2a3a821...82f08fce0a)
-- [Ven0m0 starred Nahvine/TweaksSetEdit](https://github.com/Nahvine/TweaksSetEdit)
+<!-- activity:START -->- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/c4252d5e10...dfd9682ff8)
+- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/faa344abbd...c4252d5e10)
+- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/4d44de4f09...faa344abbd)
 <!-- activity:END -->
 
 ---
