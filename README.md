@@ -47,18 +47,16 @@
 
 ### 👨‍💻 About Me
 
-* 💬 **Languages**: I am a native German speaker and fluent in English.  
-* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop and DietPi on my Raspberry Pis.  
-* ❤️ 🏳️‍🌈 💗💜💙  
+* 💬 **Languages**: I am a native German speaker and fluent in English.
+* ⚙️ **Daily Drivers**: CachyOS (KDE Plasma) on my desktop and DietPi on my Raspberry Pis.
+* ❤️ 🏳️‍🌈 💗💜💙
 
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- [Ven0m0 starred AdguardTeam/FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)
+- [Ven0m0 starred AdguardTeam/FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)
 - [Ven0m0 deleted](https://github.com/Ven0m0/Template/compare/b7936cbe29...0000000000)
 - [Ven0m0 pushed Template](https://github.com/Ven0m0/Template/compare/db1ec522bf...cae62ac903)
-<!-- activity:END -->
-
 ---
 
 ### 🛠️ My Tech Stack
@@ -77,11 +75,11 @@
 
 | Project | Description |
 | ------- | ----------- |
-| **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)**     | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.   |
+| **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)** | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.   |
 | **[Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock)** | Custom filter lists compatible with uBlock Origin and other browser ad-blockers. |
-| **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)**       | A collection of `user.js` tweaks to harden Firefox for privacy and security.     |
-| **[Scripts](https://github.com/Ven0m0/Scripts)**               | A personal repository of useful scripts, mostly for automation with AutoHotkey.  |
-| **[Linux-OS](https://github.com/Ven0m0/Linux-OS)**             | My personal configurations and setup files for various Linux distributions.      |
+| **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)** | A collection of `user.js` tweaks to harden Firefox for privacy and security.     |
+| **[Scripts](https://github.com/Ven0m0/Scripts)** | A personal repository of useful scripts, mostly for automation with AutoHotkey.  |
+| **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** | My personal configurations and setup files for various Linux distributions.      |
 
 ---
 
