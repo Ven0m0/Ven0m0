@@ -6,7 +6,6 @@
 | Host: Germany                                         |
 | Uptime: since 15/09/2005                              |
 | Freetime: Airsoft, Music, Gaming, Tinkering           |
-|                                                       |
 | 💗💜💙                                                |
 | OS: Cachyos, Dietpi                                   |
 | DE: Kde Plasma (Wayland)                              |
