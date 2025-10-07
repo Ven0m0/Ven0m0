@@ -54,9 +54,9 @@
 ---
 
 ### ✨ What I'm Up To ✨
-<!-- activity:START -->- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/c4252d5e10...dfd9682ff8)
-- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/faa344abbd...c4252d5e10)
-- [Ven0m0 pushed dot-termux](https://github.com/Ven0m0/dot-termux/compare/4d44de4f09...faa344abbd)
+<!-- activity:START -->- [Ven0m0 starred AdguardTeam/FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)
+- [Ven0m0 deleted](https://github.com/Ven0m0/Template/compare/b7936cbe29...0000000000)
+- [Ven0m0 pushed Template](https://github.com/Ven0m0/Template/compare/db1ec522bf...cae62ac903)
 <!-- activity:END -->
 
 ---
