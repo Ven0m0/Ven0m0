@@ -1,1 +1,1 @@
-(./Images/other/wifi_channel.webp)
+(Images/other/wifi_channel.webp)
