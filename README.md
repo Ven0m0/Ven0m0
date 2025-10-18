@@ -1,4 +1,4 @@
-<h2 align="left">Hi ! My name is Lucy and I like to tinker way too much</h2>
+<h2 align="left">Hi ! My name is Lucy :rainbow: and I like to tinker way too much</h2>
 
 <pre>
  _______________________________________________________
