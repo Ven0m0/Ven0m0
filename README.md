@@ -1,6 +1,5 @@
 <h2 align="left">Hi ! My name is Lucy and I like to tinker way too much</h2>
 
-
 <pre>
  _______________________________________________________
 / Ven0m0@github.com                                     \
@@ -67,7 +66,6 @@
 
 ###
 
-
 ###
 
 <br clear="both">
@@ -100,32 +98,34 @@
 ---
 
 ### ✨ What I'm Up To ✨
+
 - [Ven0m0 starred AdguardTeam/FiltersRegistry](https://github.com/AdguardTeam/FiltersRegistry)
-- [Ven0m0 deleted](https://github.com/Ven0m0/Template/compare/b7936cbe29...0000000000)
-- [Ven0m0 pushed Template](https://github.com/Ven0m0/Template/compare/db1ec522bf...cae62ac903)
+* [Ven0m0 deleted](https://github.com/Ven0m0/Template/compare/b7936cbe29...0000000000)
+* [Ven0m0 pushed Template](https://github.com/Ven0m0/Template/compare/db1ec522bf...cae62ac903)
+
 ---
 
 ### 🛠️ My Tech Stack
 
-| Languages | OS & Tools |
-| :-------- | :---------- |
+| Languages                                                                                                                                                                                                                                                                         | OS & Tools                                                                                                                                                                                                                                                                                                                                                                                                   |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Shell](https://img.shields.io/badge/Shell-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white)](https://www.gnu.org/software/bash/)<br>[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)<br>[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)<br>[![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://www.mozilla.org/firefox/) |
 
-| I'm Learning | I Also Love |
-| :----------- | :---------- |
+| I'm Learning                                                                                                                                                                                                                                                 | I Also Love                                                                                                                                                                                                                                                                                      |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)<br>[![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/) | [![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)<br>[![KDE](https://img.shields.io/badge/KDE-1d99f3.svg?style=for-the-badge&logo=kde&logoColor=white)](https://kde.org/) |
 
 ---
 
 ### 🚀 My Projects
 
-| Project | Description |
-| ------- | ----------- |
-| **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)** | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.   |
+| Project                                                        | Description                                                                      |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **[Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists)**     | Curated ad-blocking and security lists for Pi-hole to enhance network privacy.   |
 | **[Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock)** | Custom filter lists compatible with uBlock Origin and other browser ad-blockers. |
-| **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)** | A collection of `user.js` tweaks to harden Firefox for privacy and security.     |
-| **[Scripts](https://github.com/Ven0m0/Scripts)** | A personal repository of useful scripts, mostly for automation with AutoHotkey.  |
-| **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** | My personal configurations and setup files for various Linux distributions.      |
+| **[Firefox-opt](https://github.com/Ven0m0/Firefox-opt)**       | A collection of `user.js` tweaks to harden Firefox for privacy and security.     |
+| **[Scripts](https://github.com/Ven0m0/Scripts)**               | A personal repository of useful scripts, mostly for automation with AutoHotkey.  |
+| **[Linux-OS](https://github.com/Ven0m0/Linux-OS)**             | My personal configurations and setup files for various Linux distributions.      |
 
 ---
 
@@ -148,3 +148,4 @@
     <img src="metrics.classic.svg" alt="Metrics" width="100%">
   </div>
 </details>
+
