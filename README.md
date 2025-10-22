@@ -40,7 +40,7 @@ _______________________________________________________
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="30" alt="bash logo" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" height="30" alt="rust logo" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/rust/rust-original.svg" height="30" alt="rust logo" />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo" />
   <img width="12" />
