@@ -7,8 +7,8 @@
 
 ```
 ╭──────────────────────────────────╮
-│  Lucy  •  Germany  •  🏳️‍⚧️       │
-│  💗💜💙 Trans Pride 🩵🩷🤍        │
+│  Lucy  •  Germany  •  🏳️‍⚧️         │
+│        💗💜💙 🩵🩷🤍             │
 ├──────────────────────────────────┤
 │  💻 Shell • Rust • Python        │
 │  🖥️  CachyOS • DietPi            │
