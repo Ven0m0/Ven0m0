@@ -1,10 +1,15 @@
-<h2 align="left">Hi! My name is Lucy :rainbow: and I like to tinker way too much</h2>
+<h2 align="left">✨ Hi! My name is Lucy :rainbow: and I like to tinker way too much ✨</h2>
+
+<div align="right">
+ <img align="right" height="150" src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif"  />
+ <img align="right" height="150" src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif"  />
+</div>
 
 <pre>
- _______________________________________________________
+_______________________________________________________
 / Ven0m0@github.com                                     \
 | -----------------------                               |
-| Name: Ven0m0                                          |
+| Name: Lucy                                            |
 | Host: Germany                                         |
 | Uptime: since 15/09/2005                              |
 | Freetime: Airsoft, Music, Gaming, Tinkering           |
@@ -32,28 +37,21 @@
 
 <br clear="both">
 
-<div align="right">
- <img align="right" height="150" src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif" />
- <img align="right" height="150" src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" />
-</div>
-
 <div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="30" alt="bash logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="30" alt="bash logo"  />
   <img width="12" />
-  <img src="https://github.com/devicons/devicon/blob/master/icons/rust/rust-original.svg" height="30" alt="rust logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" height="30" alt="rust logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="30" alt="linux logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="30" alt="linux logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" height="30" alt="raspberrypi logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" height="30" alt="raspberrypi logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="30" alt="firefox logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="30" alt="firefox logo"  />
 </div>
 
 <br clear="both">
-
-###
 
 <div align="right">
   <a href="https://github.com/Ven0m0" target="_blank">
@@ -70,30 +68,28 @@
   </a>
 </div>
 
-###
-
 <br clear="both">
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ven0m0&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=true&theme=dark&locale=en&hide_border=false" height="150" alt="stats graph"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ven0m0&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=5&theme=dark&hide_border=false" height="150" alt="languages graph"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Ven0m0&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=true&theme=dark&locale=en&hide_border=false" height="150" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ven0m0&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=5&theme=dark&hide_border=false" height="150" alt="languages graph"  />
 </div>
 
----
+<p align="center"> •*◦°*•.¸♡¸.•*◦°*• </p>
 
-## 🛠️ My Tech Stack
+## 🛠️ My Tech Stack 🛠️
 
 | Languages | OS & Tools |
 | :--- | :--- |
 | [![Shell](https://img.shields.io/badge/Shell-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white)](https://www.gnu.org/software/bash/)<br>[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)<br>[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)<br>[![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://www.mozilla.org/firefox/) |
 
-| I'm Learning | I Also Love |
+| I'm Learning 💜 | I Also Love 💜 |
 | :--- | :--- |
 | [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)<br>[![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/) | [![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)<br>[![KDE](https://img.shields.io/badge/KDE-1d99f3.svg?style=for-the-badge&logo=kde&logoColor=white)](https://kde.org/) |
 
----
+<p align="center"> •*◦°*•.¸♡¸.•*◦°*• </p>
 
-## 🚀 My Projects
+## 🚀 My Projects 🚀
 
 | Project | Description |
 | :--- | :--- |
@@ -103,7 +99,7 @@
 | **[Scripts](https://github.com/Ven0m0/Scripts)** | A personal repository of useful scripts, mostly for automation with AutoHotkey. |
 | **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** | My personal configurations and setup files for various Linux distributions. |
 
----
+<p align="center"> •*◦°*•.¸♡¸.•*◦°*• </p>
 
 ## ✨ What I'm Up To ✨
 
@@ -111,9 +107,7 @@
 * [Ven0m0 deleted](https://github.com/Ven0m0/Template/compare/b7936cbe29...0000000000)
 * [Ven0m0 pushed Template](https://github.com/Ven0m0/Template/compare/db1ec522bf...cae62ac903)
 
----
-
-###
+<p align="center"> •*◦°*•.¸♡¸.•*◦°*• </p>
 
 <details>
   <summary>Click for more detailed breakdown!</summary>
