@@ -1,4 +1,4 @@
-## ✨ Hi, I'm Lucy 🏳️‍⚧️ ✨
+## ✨ Hi, I'm Lucy ✨
 
 <div align="right">
 <img align="right" height="150" src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif"/>
