@@ -53,9 +53,9 @@
 
 **Currently Learning:** Rust 🦀 • C++ ⚡ • Go 🐹
 
-**Hobbies:** Airsoft 🎯 • Music Production 🎵 • Gaming 🎮 • Linux Tinkering 🔧
+**Hobbies:** Airsoft 🎯 • Gaming 🎮 • Linux Tinkering 🔧
 
-**Setup:** CachyOS on Wayland with KDE Plasma, Rio terminal, Firefox browser
+**Setup:** CachyOS on Wayland with KDE Plasma, Ghostty as my terminal and of course Firefox browser
 
 ## 🚀 My Projects
 
