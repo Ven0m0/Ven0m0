@@ -1,4 +1,4 @@
-<h2 align="left">✨ Hi! My name is Lucy :rainbow: and I like to tinker way too much ✨</h2>
+<h2 align="left">✨ Hiya! My name is Lucy 🏳️‍⚧️ and I like to tinker way too much ✨</h2>
 
 <div align="right">
  <img align="right" height="150" src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif"  />
@@ -13,7 +13,7 @@ _______________________________________________________
 | Host: Germany                                         |
 | Uptime: since 15/09/2005                              |
 | Freetime: Airsoft, Music, Gaming, Tinkering           |
-| 💗💜💙                                                |
+| 💗💜💙 🩵🩷🤍                                         |
 | OS: Cachyos, Dietpi                                   |
 | DE: Kde Plasma (Wayland)                              |
 | Theme: Breeze                                         |
