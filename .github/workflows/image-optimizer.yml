@@ -3,7 +3,6 @@ name: Compress Images
 on:
   workflow_dispatch:
   #schedule: [{cron: "0 0 * * *"}]
-
 jobs:
   compress:
     name: Compress Images
@@ -11,13 +10,7 @@ jobs:
     permissions: write-all
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Exclude metrics SVGs
-        run: |
-          mkdir -p "$RUNNER_TEMP/excluded"
-          [[ -f metrics.classic.svg ]] && mv metrics.classic.svg "$RUNNER_TEMP/excluded/" || :
-          [[ -f metrics.svg ]] && mv metrics.svg "$RUNNER_TEMP/excluded/" || :
-
+        uses: actions/checkout@v5
       - name: Compress Images
         id: compress-images
         uses: stellasoftio/image-optimizer-action@v1
@@ -31,11 +24,9 @@ jobs:
           compress-webp: true
           compress-avif: true
           replace-original-after-export-webp: true
-
-      - name: Restore excluded files
-        run: |
-          [[ -f "$RUNNER_TEMP/excluded/metrics.classic.svg" ]] && mv "$RUNNER_TEMP/excluded/metrics.classic.svg" . || :
-          [[ -f "$RUNNER_TEMP/excluded/metrics.svg" ]] && mv "$RUNNER_TEMP/excluded/metrics.svg" . || :
+          ignore-paths: |
+            metrics.classic.svg
+            metrics.svg
 
       - name: Create Pull Request if Images Were Compressed
         if: ${{ steps.compress-images.outputs.markdown_report != '' }}
