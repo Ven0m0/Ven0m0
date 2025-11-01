@@ -7,7 +7,7 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: production
     permissions: write-all
     concurrency:
@@ -15,9 +15,11 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
+
       - name: Ensure cache directory exists
         run: mkdir -p ~/.cache
+
       # Cache Metrics dependencies
       - name: Cache metrics dependencies
         id: cache-metrics
@@ -26,7 +28,8 @@ jobs:
           path: ~/.cache
           key: ${{ runner.os }}-metrics-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
-            ${{ runner.os }}-metrics-  
+            ${{ runner.os }}-metrics-
+
       - name: Generate metrics
         uses: lowlighter/metrics@latest
         with:
@@ -64,14 +67,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-image-optimizer-
 
-      # Optimize the generated SVG
+      # Optimize the generated SVG only
       - name: Optimize SVG metrics
+        id: compress-images
         uses: stellasoftio/image-optimizer-action@v1
         with:
-          path: './*.svg'
+          path: './metrics.classic.svg'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          compress-webp: true
-          replace-original-after-export-webp: true
+          compress-svg: true
 
       # Commit and push optimized SVG only if it changed
       - name: Commit optimized metrics
@@ -79,6 +82,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add *.svg
+          git add metrics.classic.svg
           git diff --cached --quiet || git commit -m "chore: optimize metrics SVG"
           git push
