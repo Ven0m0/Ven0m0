@@ -1,17 +1,7 @@
 ## ✨ Hi, I'm Lucy ✨
 
-<div style="display:flex;flex-wrap:wrap-reverse;align-items:flex-start;justify-content:flex-start;gap:12px">
-  <!-- GIF column -->
-  <div style="display:flex;flex-direction:column;gap:8px;flex:0 0 auto">
-    <img src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif"
-         alt="Jinx" width="40%"
-         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
-    <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif"
-         alt="Bridget" width="40%"
-         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
-  </div>
-
-  <!-- Info box column -->
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px">
+  <!-- Info box column: placed first to appear on the left -->
   <div style="flex:1 1 160px;min-width:160px;max-width:65%;">
 <pre style="margin:0;font-family:monospace;white-space:pre-wrap">
 ╭──────────────────────────────────╮
@@ -25,6 +15,15 @@
 │  ✨ Airsoft • Music • Gaming      │
 ╰──────────────────────────────────╯
 </pre>
+  </div>
+  <!-- GIF column: placed second to appear on the right -->
+  <div style="display:flex;flex-direction:column;gap:8px;flex:0 0 auto">
+    <img src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif"
+         alt="Jinx" width="30%"
+         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
+    <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif"
+         alt="Bridget" width="30%"
+         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
   </div>
 </div>
 
