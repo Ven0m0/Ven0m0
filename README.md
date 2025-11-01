@@ -54,6 +54,16 @@
 <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ven0m0&layout=compact&theme=dracula&hide_border=true" style="max-width:100%;height:auto" alt="languages"/>
 </div>
 
+### 📰 Recent Activity (auto-updated)
+<details>
+<summary>Click to expand</summary>
+
+<!--START_SECTION:activity-->
+- _(latest activity will be inserted here)_
+<!--END_SECTION:activity-->
+
+</details>
+
 ## 💜 About Me
 
 **Currently Learning:** Rust 🦀 • C++ ⚡ • Go 🐹
