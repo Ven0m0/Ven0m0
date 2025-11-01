@@ -15,8 +15,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v5
       - name: Ensure cache directory exists
         run: mkdir -p ~/.cache
 
@@ -30,7 +29,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-metrics-
 
-      - name: Generate metrics
+      - name: Generate metrics (classic)
         uses: lowlighter/metrics@latest
         with:
           use_prebuilt_image: yes
@@ -66,22 +65,21 @@ jobs:
           key: ${{ runner.os }}-image-optimizer-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.os }}-image-optimizer-
-
-      # Optimize the generated SVG only
-      - name: Optimize SVG metrics
-        id: compress-images
-        uses: stellasoftio/image-optimizer-action@v1
+      # Optimize the generated SVGs (run separately to keep clear outputs)
+      - name: Optimize metrics.classic.svg
+        id: compress-classic
+        uses: stellasoftio/image-optimizer-action@v1.2.0
         with:
-          path: './metrics.classic.svg'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           compress-svg: true
-
-      # Commit and push optimized SVG only if it changed
+          ignore-paths: |
+            images/**
+      # Commit and push optimized SVGs only if any changed
       - name: Commit optimized metrics
-        if: ${{ steps.compress-images.outputs.markdown_report != '' }}
+        if: ${{ steps.compress-classic.outputs.markdown_report != '' || steps.compress-default.outputs.markdown_report != '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add metrics.classic.svg
-          git diff --cached --quiet || git commit -m "chore: optimize metrics SVG"
+          git add metrics.classic.svg metrics.svg
+          git diff --cached --quiet || git commit -m "chore: optimize metrics SVGs"
           git push
