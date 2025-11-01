@@ -1,11 +1,19 @@
 ## ✨ Hi, I'm Lucy ✨
 
-<div align="center">
-<img src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif" width="45%" style="max-width:100%;height:auto"/>
-<img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" width="45%" style="max-width:100%;height:auto"/>
-</div>
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px">
+  <!-- GIF column: smaller, responsive, stacks earlier on narrow screens -->
+  <div style="display:flex;flex-direction:column;gap:8px;flex:0 0 auto">
+    <img src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif"
+         alt="Jinx" width="40%"
+         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
+    <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif"
+         alt="Bridget" width="40%"
+         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
+  </div>
 
-```
+  <!-- Info box column: reduced min-width to keep side-by-side on narrower viewports -->
+  <div style="flex:1 1 160px;min-width:160px;max-width:65%;">
+<pre style="margin:0;font-family:monospace;white-space:pre-wrap">
 ╭──────────────────────────────────╮
 │  Lucy  •  Germany  •  🏳️‍⚧️         │
 │        💗💜💙 🩵🩷🤍             │
@@ -16,7 +24,9 @@
 │  🎯 Rio • Firefox • Lapce         │
 │  ✨ Airsoft • Music • Gaming      │
 ╰──────────────────────────────────╯
-```
+</pre>
+  </div>
+</div>
 
 ### 🛠️ Tech Stack
 
@@ -70,7 +80,7 @@
 
 <details>
 <summary>📊 Click for detailed metrics</summary>
-<br/>
+
 <div align="center">
 <img src="metrics.classic.svg" alt="Detailed Metrics" style="max-width:100%;height:auto"/>
 </div>
