@@ -16,8 +16,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+
       - name: Ensure cache directory exists
         run: mkdir -p ~/.cache
+
       - name: Cache metrics dependencies
         id: cache-metrics
         uses: actions/cache@v4
@@ -83,8 +85,7 @@ jobs:
           path: ./metrics.classic.svg
           github-token: ${{ secrets.GITHUB_TOKEN }}
           compress-svg: true
-          ignore-paths: |
-            images/**
+
       - name: Optimize metrics.svg
         id: compress-default
         uses: stellasoftio/image-optimizer-action@v1.2.0
@@ -92,8 +93,6 @@ jobs:
           path: ./metrics.svg
           github-token: ${{ secrets.GITHUB_TOKEN }}
           compress-svg: true
-          ignore-paths: |
-            images/**
 
       - name: Commit optimized metrics
         if: ${{ steps.compress-classic.outputs.markdown_report != '' || steps.compress-default.outputs.markdown_report != '' }}
