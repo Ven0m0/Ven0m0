@@ -10,7 +10,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v5
       - name: Auto Merge Dependabot Updates
-        uses: buluma/gh-action-auto-merge-dependabot-updates@1.0.4ction-auto-merge-dependabot-updates@1.0.8
+        uses: buluma/gh-action-auto-merge-dependabot-updates@1.0.8
         with:
           allowed-actors: dependabot-preview[bot], dependabot[bot]
           repo-token: ${{ github.token }}
