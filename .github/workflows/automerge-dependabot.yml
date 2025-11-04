@@ -1,7 +1,6 @@
 name: Auto Merge Dependency Updates
 on:
-  - pull_request_target:
-  - workflow_dispatch:
+  pull_request_target:
 
 jobs:
   run:
