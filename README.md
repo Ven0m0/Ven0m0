@@ -73,11 +73,11 @@
 
 ## 🚀 My Projects
 
-- 🛡️ [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) — curated Pi-hole lists  
-- 🚫 [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock/Adblock filters  
-- 🔒 [Firefox-opt](https://github.com/Ven0m0/Firefox-opt) — user.js hardening tweaks  
-- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) — assorted automation scripts  
-- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) — dotfiles & configs
+- 🛡️ [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) — curated Pi-hole lists
+- 🚫 [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock/Adblock filters & I'm working on some js userscripts
+- 🔒 [PKG's](https://github.com/Ven0m0/PKG) — My flavor of popular packages, mostly some tweaks/patches.
+- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts & Windows stuff
+- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) — dotfiles, scripts & Linux stuff
 
 ---
 
