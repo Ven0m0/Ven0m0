@@ -1,9 +1,10 @@
 ## ✨ Hi, I'm Lucy ✨
 
-<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px">
-  <!-- Info box column: placed first to appear on the left -->
-  <div style="flex:1 1 160px;min-width:160px;max-width:65%;">
-<pre style="margin:0;font-family:monospace;white-space:pre-wrap">
+<table>
+<tr>
+<td valign="top">
+
+```
 ╭──────────────────────────────────╮
 │  Lucy  •  Germany  •  🏳️‍⚧️         │
 │        💗💜💙 🩵🩷🤍             │
@@ -14,18 +15,17 @@
 │  🎯 Rio • Firefox • Lapce         │
 │  ✨ Airsoft • Music • Gaming      │
 ╰──────────────────────────────────╯
-</pre>
-  </div>
-  <!-- GIF column: placed second to appear on the right -->
-  <div style="display:flex;flex-direction:column;gap:8px;flex:0 0 auto">
-    <img src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif"
-         alt="Jinx" width="30%"
-         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
-    <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif"
-         alt="Bridget" width="30%"
-         style="width:80px;max-width:40%;height:auto;border-radius:6px"/>
-  </div>
-</div>
+```
+
+</td>
+<td valign="top">
+
+<img src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif" alt="Jinx" width="120"/>
+<img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" width="120"/>
+
+</td>
+</tr>
+</table>
 
 ### 🛠️ Tech Stack
 
@@ -83,8 +83,10 @@
 ---
 
 <div align="center">
+
 ### ✨ *Trans rights are human rights* ✨  
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff" style="max-width:100%;height:auto"/>
+
 </div>
 
 <details>
@@ -93,4 +95,5 @@
 <div align="center">
 <img src="metrics.classic.svg" alt="Detailed Metrics" style="max-width:100%;height:auto"/>
 </div>
+
 </details>
