@@ -20,7 +20,6 @@
 </td>
 <td valign="top">
 
-<img src="https://media1.tenor.com/m/V9oayDDz59IAAAAC/jinx-jinx-arcane.gif" alt="Jinx" width="120"/>
 <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" width="120"/>
 
 </td>
