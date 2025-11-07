@@ -65,11 +65,11 @@
 
 ## 💜 About Me
 
-**Currently Learning:** Rust 🦀 • C++ ⚡ • Go 🐹
+**Currently Learning:** Bash • Javascript • Python • Rust 🦀
 
-**Hobbies:** Airsoft 🎯 • Gaming 🎮 • Linux Tinkering 🔧
+**Hobbies:** Airsoft 🎯 • Gaming 🎮 • Tinkering 🔧
 
-**Setup:** CachyOS on Wayland with KDE Plasma, Ghostty terminal, Firefox browser
+**Setup:** I use [CachyOS](https://cachyos.org), highly recommended. Go check my dotfiles out ! 
 
 ## 🚀 My Projects
 
