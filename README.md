@@ -43,7 +43,7 @@
 <a href="https://github.com/Ven0m0"><img src="https://komarev.com/ghpvc/?username=Ven0m0&color=blueviolet&style=flat-square" alt="views" /></a>
 <a href="https://youtube.com/@ven0m017"><img src="https://img.shields.io/badge/Youtube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="youtube" /></a>
 <a href="https://linktr.ee/Ven0m0"><img src="https://img.shields.io/badge/Linktree-1de9b6?style=flat-square&logo=linktree&logoColor=white" alt="linktree" /></a>
-<a href="https://www.last.fm/user/Ven0m0"><img src="https://img.shields.io/badge/last.fm-D51007?style=flat-square&logo=last.fm&logoColor=white" alt="lastfm" /></a>
+<a href="https://last.fm/user/Ven0m0"><img src="https://img.shields.io/badge/last.fm-D51007?style=flat-square&logo=last.fm&logoColor=white" alt="lastfm" /></a>
 </div>
 
 ### 📊 Stats
