@@ -1,1 +1,2 @@
-(Images/other/wifi_channel.webp)
+
+<img src="Images/other/wifi_channel.webp" style="height:auto" />
