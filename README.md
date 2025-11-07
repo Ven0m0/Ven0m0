@@ -73,12 +73,11 @@
 
 ## 🚀 My Projects
 
-- 🛡️ [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) — curated Pi-hole lists
-- 🚫 [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock/Adblock filters & I'm working on some js userscripts
+- 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) **|** [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — curated Adblock/Pihole lists & userscripts
 - 🔒 [PKG's](https://github.com/Ven0m0/PKG) **|** [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches)  — My flavor of popular packages, mostly some tweaks/patches.
 - ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts & Windows stuff
 - 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) — dotfiles, scripts & Linux stuff
-- <img height="20px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg"/> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) **|** [rvx-apks](https://github.com/Ven0m0/rvx-apks) — Revanced builds: WIP
+- <img height="18px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg"/> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) **|** [rvx-apks](https://github.com/Ven0m0/rvx-apks) — Revanced builds: WIP
 
 ---
 
