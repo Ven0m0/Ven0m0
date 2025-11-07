@@ -53,7 +53,7 @@
 <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ven0m0&layout=compact&theme=dracula&hide_border=true" style="max-width:100%;height:auto" alt="languages" />
 </div>
 
-### 📰 Recent Activity (auto-updated)
+### 📰 Recent Activity
 <details>
 <summary>Click to expand</summary>
 
