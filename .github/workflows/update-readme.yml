@@ -50,11 +50,6 @@ jobs:
           plugin_traffic: yes
           plugin_calendar: yes
           plugin_calendar_limit: 1
-          plugin_habits: yes
-          plugin_habits_charts_type: classic
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_notable: yes
 
       - name: Generate metrics (default)
         uses: lowlighter/metrics@latest
