@@ -65,7 +65,7 @@
 
 ## 💜 About Me
 
-**Currently Learning:** Bash • Javascript • Python • Rust 🦀
+**Currently Learning:** Bash • Javascript • Python • Autohotkey • Rust
 
 **Hobbies:** Airsoft 🎯 • Gaming 🎮 • Tinkering 🔧
 
@@ -76,8 +76,9 @@
 - 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) **|** [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — curated Adblock/Pihole lists & userscripts
 - 🔒 [PKG's](https://github.com/Ven0m0/PKG) **|** [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches)  — My flavor of popular packages, mostly some tweaks/patches.
 - ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts & Windows stuff
-- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) — dotfiles, scripts & Linux stuff
+- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) **|** [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — dotfiles, scripts & Linux stuff
 - <img height="18px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg"/> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) **|** [rvx-apks](https://github.com/Ven0m0/rvx-apks) — Revanced builds: WIP
+- <img height="18px" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png"/> [MC-Server](https://github.com/Ven0m0/MC-Server) - Minecraft server maintenance/optimization scripts
 
 ---
 
