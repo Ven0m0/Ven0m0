@@ -1,16 +1,25 @@
 name: Auto Merge Dependency Updates
+
 on:
   pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
   workflow_dispatch:
 
 jobs:
-  run:
+  automerge:
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
+    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v5
-      - name: Auto Merge Dependabot Updates
+
+      - name: Auto-merge Dependabot updates
         uses: buluma/gh-action-auto-merge-dependabot-updates@1.0.8
         with:
           allowed-actors: dependabot-preview[bot], dependabot[bot]

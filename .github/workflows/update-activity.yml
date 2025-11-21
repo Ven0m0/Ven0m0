@@ -1,6 +1,8 @@
 name: Update README with Recent Activity
+
 on:
-  schedule: [{cron: "0 0 * * *"}]
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -9,8 +11,11 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
-      - uses: gautamkrishnar/blog-post-workflow@v1
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Update recent activity
+        uses: gautamkrishnar/blog-post-workflow@v1
         with:
           feed_list: https://github.com/Ven0m0.atom
           max_post_count: 3
