@@ -1,15 +1,20 @@
 # Visit https://github.com/lowlighter/metrics#-documentation for full reference
 name: Metrics
+
 on:
   workflow_dispatch:
-  schedule: [{cron: "0 0 * * *"}]
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     environment:
       name: production
-    permissions: write-all
+    permissions:
+      contents: write
+      actions: read
+      repository-projects: read
     concurrency:
       group: metrics-update
       cancel-in-progress: true
@@ -17,15 +22,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Ensure cache directory exists
-        run: mkdir -p ~/.cache
-
       - name: Cache metrics dependencies
         id: cache-metrics
         uses: actions/cache@v4
         with:
           path: ~/.cache
-          key: ${{ runner.os }}-metrics-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.os }}-metrics-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-metrics-
 
@@ -64,12 +66,12 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Europe/Berlin
 
-      - name: Cache image-optimizer-action
+      - name: Cache image optimizer
         id: cache-image-optimizer
         uses: actions/cache@v4
         with:
           path: ~/.cache/stellar-image-optimizer
-          key: ${{ runner.os }}-image-optimizer-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.os }}-image-optimizer-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-image-optimizer-
 
@@ -90,11 +92,10 @@ jobs:
           compress-svg: true
 
       - name: Commit optimized metrics
-        if: ${{ steps.compress-classic.outputs.markdown_report != '' || steps.compress-default.outputs.markdown_report != '' }}
+        if: steps.compress-classic.outputs.markdown_report != '' || steps.compress-default.outputs.markdown_report != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add metrics.classic.svg
-          [[ -f metrics.svg ]] && git add metrics.svg || :
+          git add metrics.classic.svg metrics.svg
           git diff --cached --quiet || git commit -m "chore: optimize metrics SVGs"
           git push

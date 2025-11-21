@@ -1,17 +1,24 @@
 # https://github.com/marketplace/actions/image-optimizer-action
 name: Compress Images
+
 on:
   workflow_dispatch:
-  #schedule: [{cron: "0 0 * * *"}]
+  # Uncomment to run daily:
+  # schedule:
+  #   - cron: "0 0 * * *"
+
 jobs:
   compress:
     name: Compress Images
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v5
-      - name: Compress Images
+
+      - name: Compress images
         id: compress-images
         uses: stellasoftio/image-optimizer-action@v1
         with:
@@ -28,11 +35,11 @@ jobs:
             metrics.classic.svg
             metrics.svg
 
-      - name: Create Pull Request if Images Were Compressed
-        if: ${{ steps.compress-images.outputs.markdown_report != '' }}
+      - name: Create pull request if images were compressed
+        if: steps.compress-images.outputs.markdown_report != ''
         uses: peter-evans/create-pull-request@v7
         with:
-          title: Compressed Images
+          title: "chore: compress images"
           branch-suffix: timestamp
-          commit-message: Compressed Images
+          commit-message: "chore: compress images"
           body: ${{ steps.compress-images.outputs.markdown_report }}
