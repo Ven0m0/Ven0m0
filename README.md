@@ -93,7 +93,7 @@
 
 <!--START_SECTION:activity-->
 
-- _(latest activity will be inserted here)_
+1. 💪 Opened PR [#19](undefined) in [Ven0m0/MC-Server](https://github.com/Ven0m0/MC-Server)
 
 <!--END_SECTION:activity-->
 
