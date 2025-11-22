@@ -93,7 +93,7 @@
 
 <!--START_SECTION:activity-->
 
-1. 💪 Opened PR [#19](undefined) in [Ven0m0/MC-Server](https://github.com/Ven0m0/MC-Server)
+1. 💪 Opened PR [#49](undefined) in [Ven0m0/Linux-OS](https://github.com/Ven0m0/Linux-OS)
 
 <!--END_SECTION:activity-->
 
