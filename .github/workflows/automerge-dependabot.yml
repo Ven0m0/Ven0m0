@@ -17,7 +17,7 @@ jobs:
     if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Auto-merge Dependabot updates
         uses: buluma/gh-action-auto-merge-dependabot-updates@1.0.8
