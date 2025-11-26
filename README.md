@@ -93,7 +93,7 @@
 
 <!--START_SECTION:activity-->
 
-1. 💪 Opened PR [#10](undefined) in [Ven0m0/Linux-Kernel-Patches](https://github.com/Ven0m0/Linux-Kernel-Patches)
+1. 💪 Opened PR [#21](undefined) in [Ven0m0/PKG](https://github.com/Ven0m0/PKG)
 
 <!--END_SECTION:activity-->
 
