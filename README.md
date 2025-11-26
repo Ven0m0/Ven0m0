@@ -93,7 +93,7 @@
 
 <!--START_SECTION:activity-->
 
-1. 💪 Opened PR [#66](undefined) in [Ven0m0/dotfiles](https://github.com/Ven0m0/dotfiles)
+1. 💪 Opened PR [#10](undefined) in [Ven0m0/Linux-Kernel-Patches](https://github.com/Ven0m0/Linux-Kernel-Patches)
 
 <!--END_SECTION:activity-->
 
