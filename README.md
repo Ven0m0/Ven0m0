@@ -93,7 +93,7 @@
 
 <!--START_SECTION:activity-->
 
-1. 💪 Opened PR [#31](undefined) in [Ven0m0/PKG](https://github.com/Ven0m0/PKG)
+1. 💪 Opened PR [#75](undefined) in [Ven0m0/dotfiles](https://github.com/Ven0m0/dotfiles)
 
 <!--END_SECTION:activity-->
 
