@@ -11,7 +11,7 @@
 ├─ OS: <b>CachyOS</b> / <b>DietPi@RPi</b>  🎨 KDE, CLI-obsessed
 ├─ LANG: <b>Shell</b> <b>Python</b> <b>Rust</b>
 ├─ ACTIVITIES: <span style="color:#ba68c8">Airsoft</span> 🎯  <span style="color:#ffb300">Gaming</span> 🎮  <span style="color:#64b5f6">Tinkering</span> 🔧
-└─ Flags: 🏳️‍⚧️ <span style="background:linear-gradient(to right,#2b0a3d,#5eead4)"></span>
+└─ 🏳️‍⚧️ <span style="background:linear-gradient(to right,#2b0a3d,#5eead4)"></span>
 </pre>
 
 <i>
