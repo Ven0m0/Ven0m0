@@ -4,7 +4,7 @@
   <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" width="130" style="border-radius:9px; margin-bottom:-18px;" />
 </a>
 
-<h1 align="center" style="margin-top:-14px;">lucy@Ven0m0 ~ <span style="color:#b39ddb">🐧</span></h1>
+<h1 align="center" style="margin-top:-14px;">Ven0m0 ~ <span style="color:#b39ddb">🐧</span></h1>
 
 <pre align="center" style="background:none; border:none; font-size:1.06em; margin-bottom:0; margin-top:4px;">
 ┌─[lucy@archway]─[~/projects]
@@ -33,7 +33,17 @@ Arch/Wayland, CLI-first workflows, ReVanced patching, Dotfiles hoarder.
 
 ---
 
-### 📊 Stats
+### 🚀 Latest Projects
+
+<!--START_SECTION:repositories-->
+<!-- Repos will be auto-inserted here by GitHub Action. -->
+<!--END_SECTION:repositories-->
+
+---
+
+### 📊 Activity & Stats
+
+<img src="https://github-readme-activity-graph.cyclic.app/graph?username=Ven0m0&theme=dracula&hide_border=true" alt="commit activity graph" />
 
 <table><tr>
 <td>
@@ -64,21 +74,13 @@ Arch/Wayland, CLI-first workflows, ReVanced patching, Dotfiles hoarder.
 ### 📰 Recent Activity
 <details>
 <summary>Expand for latest PRs/issues</summary>
+
 <!--START_SECTION:activity-->
+<!-- This section is auto-generated; do not edit. -->
 1. 💪 Opened PR [#65](https://github.com/Ven0m0/Linux-OS/pull/65) in [Ven0m0/Linux-OS](https://github.com/Ven0m0/Linux-OS)
 <!--END_SECTION:activity-->
+
 </details>
-
----
-
-### 🚀 Projects + Dotfiles
-
-- 🛡️ [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) / [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) – Adblock/Pihole lists & userscripts  
-- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) – AutoHotkey, Windows tools  
-- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS), [Dotfiles](https://github.com/Ven0m0/dotfiles), [Termux-dotfiles](https://github.com/Ven0m0/dot-termux)  
-- 🔧 [PKG's](https://github.com/Ven0m0/PKG), [Kernel Patch](https://github.com/Ven0m0/Linux-Kernel-Patches)  
-- 📱 <img height="16px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto), [rvx-apks](https://github.com/Ven0m0/rvx-apks)  
-- ⛏️ <img height="17px" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png" alt="MC" /> [MC-Server](https://github.com/Ven0m0/MC-Server) – Minecraft server scripts  
 
 ---
 
