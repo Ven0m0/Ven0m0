@@ -22,6 +22,7 @@ Arch/Wayland, CLI-first workflows, ReVanced patching, Dotfiles hoarder.
 <hr style="margin:16px 0 11px 0">
 
 ### 🛠️ Tech Stack
+
 <span>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="26" alt="bash" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="26" alt="python" />
@@ -31,15 +32,17 @@ Arch/Wayland, CLI-first workflows, ReVanced patching, Dotfiles hoarder.
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="26" alt="firefox" />
 </span>
 
----
+______________________________________________________________________
 
 ### 🚀 Latest Projects
 
 <!--START_SECTION:repositories-->
+
 <!-- Repos will be auto-inserted here by GitHub Action. -->
+
 <!--END_SECTION:repositories-->
 
----
+______________________________________________________________________
 
 ### 📊 Activity & Stats
 
@@ -69,30 +72,34 @@ Arch/Wayland, CLI-first workflows, ReVanced patching, Dotfiles hoarder.
   </a>
 </p>
 
----
+______________________________________________________________________
 
 ### 📰 Recent Activity
+
 <details>
 <summary>Expand for latest PRs/issues</summary>
 
 <!--START_SECTION:activity-->
+
 <!-- This section is auto-generated; do not edit. -->
+
 1. 💪 Opened PR [#65](https://github.com/Ven0m0/Linux-OS/pull/65) in [Ven0m0/Linux-OS](https://github.com/Ven0m0/Linux-OS)
+
 <!--END_SECTION:activity-->
 
 </details>
 
----
+______________________________________________________________________
 
 ### 💜 About Me
 
-**Learning:** Bash, Python, JavaScript, AHK, Rust  
-**Hobbies:** Airsoft • Gaming • Tinkering  
-**Desktop:** CachyOS/KDE, CLI workflows  
-**RPi:** DietPi + custom scripts  
+**Learning:** Bash, Python, JavaScript, AHK, Rust\
+**Hobbies:** Airsoft • Gaming • Tinkering\
+**Desktop:** CachyOS/KDE, CLI workflows\
+**RPi:** DietPi + custom scripts\
 **Ethos:** Trans rights, Info freedom, Automate everything
 
----
+______________________________________________________________________
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff" alt="Thanks for visiting!" />
 
