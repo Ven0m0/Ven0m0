@@ -60,10 +60,10 @@
 
 <table><tr>
 <td>
-<img src="https://github-readme-stats.vercel.app/api?username=Ven0m0&theme=dracula&hide_border=true&show_icons=true&count_private=true&include_all_commits=true&custom_title=Ven0m0's%20Stats" alt="stats" height="165" />
+<img src="https://github-readme-stats.vercel.app/api?username=Ven0m0&theme=dracula&hide_border=true&show_icons=true&count_private=true&include_all_commits=true" style="max-width:auto%;height:165" alt="stats" />
 </td>
 <td>
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ven0m0&layout=compact&theme=dracula&hide_border=true&langs_count=8&exclude_repo=Ven0m0" alt="languages" height="165" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ven0m0&layout=compact&theme=dracula&hide_border=true&langs_count=8&exclude_repo=Ven0m0" style="max-width:100%;height:auto" alt="languages" />
 </td>
 </tr></table>
 </details>
