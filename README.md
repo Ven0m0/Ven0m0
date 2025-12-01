@@ -47,19 +47,13 @@
 
 ### 🚀 My Projects
 
-- 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) **|** [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock)  
-  Curated Adblock/Pihole lists & userscripts  
-- 🔒 [PKG's](https://github.com/Ven0m0/PKG) **|** [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches)  
-  My flavor of popular packages, tweaks & patches  
-- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts)  
-  AutoHotkey scripts & Windows tools  
-- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) **|** [Termux-dotfiles](https://github.com/Ven0m0/dot-termux)  
-  Dotfiles, scripts & configs  
-- <img height="18px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) **|** [rvx-apks](https://github.com/Ven0m0/rvx-apks)  
-  ReVanced builds (WIP)  
+- 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) **|** [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) - Curated Adblock/Pihole lists & userscripts
+- 🔒 [PKG's](https://github.com/Ven0m0/PKG) **|** [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) - My flavors of popular packages, tweaks & patches  
+- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) **|** [Win-dotfiles](https://github.com/Ven0m0/Win) - AutoHotkey scripts & Windows tools & configs
+- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) **|** [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) - Dotfiles, scripts & configs
+- <img height="18px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) **|** [rvx-apks](https://github.com/Ven0m0/rvx-apks) - ReVanced builds (WIP)
 - <img height="18px" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png"
-  alt="Minecraft" /> [MC-Server](https://github.com/Ven0m0/MC-Server) —  
-  Minecraft server maintenance/optimization
+  alt="Minecraft" /> [MC-Server](https://github.com/Ven0m0/MC-Server) - Minecraft server maintenance/optimization
 
 ---
 
@@ -79,7 +73,6 @@
 <summary>📈 Contribution Graph</summary>
 
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb)
-
 </details>
 <details open>
 <summary>⚡ GitHub Stats</summary>
@@ -120,19 +113,17 @@
 
 ### 💜 About Me
 
-**🎓 Learning:** Bash, Python, JavaScript, AHK, Rust  
-**🎮 Hobbies:** Airsoft • Gaming • Tinkering • Privacy Hardening  
-**💻 Desktop:** CachyOS/KDE Plasma, CLI-first workflows, Wayland  
-**🍓 RPI:** DietPi + custom automation scripts  
-**🔒 Privacy:** Firefox hardening, ReVanced, FOSS advocate  
-**🏳️‍⚧️ Pronouns:** she/her
+**🎓 Learning:** Bash/Fish, PS1/CMD, AHK, Python, JavaScript, Rust  
+**🎮 Hobbies:** Airsoft • Gaming • Tweaking
+**💻 Desktop:** CachyOS/KDE Plasma, Wayland, Firefox
+**🍓 RPI:** DietPi + Pihole, NextCloud
+**🔒 Privacy:** Hardening, ReVanced + other mods, FOSS  
 <details>
 <summary>🎯 Current Focus</summary>
 
 - 🔧 Optimizing dotfiles & shell workflows
 - 🐧 Linux automation & system hardening
 - 🦀 Learning Rust for CLI tools
-- 🎨 Customizing KDE Plasma themes
 - 📦 Building reproducible dev environments
 </details>
 
