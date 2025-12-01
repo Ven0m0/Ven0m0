@@ -1,110 +1,173 @@
 <div align="center">
+<h2>✨ Hi, I'm Ven0m0 ✨</h2>
 
-<a href="https://github.com/Ven0m0">
-  <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" width="130" style="border-radius:9px; margin-bottom:-18px;" />
-</a>
-
-<h1 align="center" style="margin-top:-14px;">Ven0m0 ~ <span style="color:#b39ddb">🐧</span></h1>
-
-<pre align="center" style="background:none; border:none; font-size:1.06em; margin-bottom:0; margin-top:4px;">
-┌─[lucy@archway]─[~/projects]
-├─ OS: <b>CachyOS</b> / <b>DietPi@RPi</b>  🎨 KDE, CLI-obsessed
-├─ LANG: <b>Shell</b> <b>Python</b> <b>Rust</b>
-├─ ACTIVITIES: <span style="color:#ba68c8">Airsoft</span> 🎯  <span style="color:#ffb300">Gaming</span> 🎮  <span style="color:#64b5f6">Tinkering</span> 🔧
-└─ 🏳️‍⚧️ <span style="background:linear-gradient(to right,#2b0a3d,#5eead4)"></span>
+<div align="left">
+<table>
+<tr>
+<td valign="top" align="left" width="260">
+<pre>
+╭──────────────────────────────────╮
+│  My tech stack & tools           │
+│      💗💜💙 🩵🩷🤍               │
+├──────────────────────────────────┤
+│ Tech stack: TODO add "Tech Stack & Tools" into it │
+│ 🖥️  CachyOS • DietPi             │
+│ 🎨 KDE Plasma                    │
+│ 🎯 Learning • Building • Gaming  │
+│ ✨ Airsoft • Music • Tinkering   │
+╰──────────────────────────────────╯
 </pre>
-
-<i>
-Shell & Linux automation, privacy fiddling, KDE Plasma fan.  
-Arch/Wayland, CLI-first workflows, ReVanced patching, Dotfiles hoarder.
-</i>
-
+</td>
+<td valign="top" align="center" width="140">
+  <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" width="120" style="border-radius:8px; margin-top:6px;" />
+</td>
+</tr>
+</table>
 <hr style="margin:16px 0 11px 0">
 
-### 🛠️ Tech Stack
+### 🛠️ Tech Stack & Tools
 
+<div align="left">
 <span>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="26" alt="bash" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="26" alt="python" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" height="26" alt="rust" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="26" alt="linux" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" height="26" alt="raspberrypi" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="26" alt="firefox" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="28" alt="bash" title="Bash" />
+  <img width="6" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="28" alt="python" title="Python" />
+  <img width="6" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" height="28" alt="rust" title="Rust" />
+  <img width="6" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/archlinux/archlinux-original.svg" height="28" alt="arch" title="Arch Linux" />
+  <img width="6" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" height="28" alt="raspberrypi" title="Raspberry Pi" />
+  <img width="6" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="28" alt="firefox" title="Firefox" />
+  <img width="6" />
 </span>
 
-______________________________________________________________________
+---
+
+### 🚀 My Projects
+
+- 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) **|** [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock)  
+  Curated Adblock/Pihole lists & userscripts  
+- 🔒 [PKG's](https://github.com/Ven0m0/PKG) **|** [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches)  
+  My flavor of popular packages, tweaks & patches  
+- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts)  
+  AutoHotkey scripts & Windows tools  
+- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) **|** [Termux-dotfiles](https://github.com/Ven0m0/dot-termux)  
+  Dotfiles, scripts & configs  
+- <img height="18px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) **|** [rvx-apks](https://github.com/Ven0m0/rvx-apks)  
+  ReVanced builds (WIP)  
+- <img height="18px" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png"
+  alt="Minecraft" /> [MC-Server](https://github.com/Ven0m0/MC-Server) —  
+  Minecraft server maintenance/optimization
+
+---
 
 ### 🚀 Latest Projects
 
 <!--START_SECTION:repositories-->
 
-<!-- Repos will be auto-inserted here by GitHub Action. -->
+<!-- Repos will be auto-inserted here by GitHub Action.  -->
 
 <!--END_SECTION:repositories-->
 
-______________________________________________________________________
+---
 
-### 📊 Activity & Stats
+### 📊 GitHub Activity & Stats
 
-<img src="https://github-readme-activity-graph.cyclic.app/graph?username=Ven0m0&theme=dracula&hide_border=true" alt="commit activity graph" />
+<details open>
+<summary>📈 Contribution Graph</summary>
+
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb)
+
+</details>
+<details open>
+<summary>⚡ GitHub Stats</summary>
 
 <table><tr>
 <td>
-<img src="https://github-readme-stats.vercel.app/api?username=Ven0m0&theme=dracula&hide_border=true&show_icons=true" alt="stats" height="134" />
+<img src="https://github-readme-stats.vercel.app/api?username=Ven0m0&theme=dracula&hide_border=true&show_icons=true&count_private=true&include_all_commits=true&custom_title=Ven0m0's%20Stats" alt="stats" height="165" />
 </td>
 <td>
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=Ven0m0&layout=compact&theme=dracula&hide_border=true" alt="languages" height="134" />
+<img src="https://github-readme-stats.vercel. app/api/top-langs? username=Ven0m0&layout=compact&theme=dracula&hide_border=true&langs_count=8&exclude_repo=Ven0m0" alt="languages" height="165" />
 </td>
 </tr></table>
+</details>
+<details>
+<summary>🔥 Streak Stats</summary>
 
-<p align="center">
-  <a href="https://github.com/Ven0m0">
-    <img src="https://komarev.com/ghpvc/?username=Ven0m0&color=blueviolet&style=flat-square" alt="views" />
-  </a>
-  <a href="https://youtube.com/@ven0m017">
-    <img src="https://img.shields.io/badge/Youtube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="youtube" />
-  </a>
-  <a href="https://linktr.ee/Ven0m0">
-    <img src="https://img.shields.io/badge/Linktree-1de9b6?style=flat-square&logo=linktree&logoColor=white" alt="linktree" />
-  </a>
-  <a href="https://last.fm/user/Ven0m0">
-    <img src="https://img.shields.io/badge/last.fm-D51007?style=flat-square&logo=last.fm&logoColor=white" alt="lastfm" />
-  </a>
-</p>
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0&theme=dracula&hide_border=true&background=0d1117&ring=b39ddb&fire=ba68c8&currStreakLabel=b39ddb)](https://git.io/streak-stats)
+</details>
+<details>
+<summary>🏆 Trophies</summary>
 
-______________________________________________________________________
+[![trophy](https://github-profile-trophy.vercel.app/?username=Ven0m0&theme=dracula&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8)](https://github.com/ryo-ma/github-profile-trophy)
+</details>
+
+---
 
 ### 📰 Recent Activity
 
-<details>
-<summary>Expand for latest PRs/issues</summary>
-
 <!--START_SECTION:activity-->
 
-<!-- This section is auto-generated; do not edit. -->
+<!-- This section is auto-generated; do not edit.  -->
 
 1. 💪 Opened PR [#65](https://github.com/Ven0m0/Linux-OS/pull/65) in [Ven0m0/Linux-OS](https://github.com/Ven0m0/Linux-OS)
 
 <!--END_SECTION:activity-->
 
-</details>
-
-______________________________________________________________________
+---
 
 ### 💜 About Me
 
-**Learning:** Bash, Python, JavaScript, AHK, Rust\
-**Hobbies:** Airsoft • Gaming • Tinkering\
-**Desktop:** CachyOS/KDE, CLI workflows\
-**RPI:** DietPi + custom scripts\
+**🎓 Learning:** Bash, Python, JavaScript, AHK, Rust  
+**🎮 Hobbies:** Airsoft • Gaming • Tinkering • Privacy Hardening  
+**💻 Desktop:** CachyOS/KDE Plasma, CLI-first workflows, Wayland  
+**🍓 RPI:** DietPi + custom automation scripts  
+**🔒 Privacy:** Firefox hardening, ReVanced, FOSS advocate  
+**🏳️‍⚧️ Pronouns:** she/her
+<details>
+<summary>🎯 Current Focus</summary>
 
-______________________________________________________________________
+- 🔧 Optimizing dotfiles & shell workflows
+- 🐧 Linux automation & system hardening
+- 🦀 Learning Rust for CLI tools
+- 🎨 Customizing KDE Plasma themes
+- 📦 Building reproducible dev environments
+</details>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff" alt="Thanks for visiting!" />
+---
+
+### 📫 Connect With Me
+
+<p align="left">
+  <a href="https://github.com/Ven0m0">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+    <img src="https://komarev.com/ghpvc/?username=Ven0m0&color=blueviolet&style=for-the-badge&label=Profile+Views" alt="views" />
+  </a>
+  <a href="https://youtube.com/@ven0m017">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube" />
+  </a>
+  <a href="https://linktr.ee/Ven0m0">
+    <img src="https://img.shields.io/badge/Linktree-1de9b6?style=for-the-badge&logo=linktree&logoColor=white" alt="linktree" />
+  </a>
+  <a href="https://last.fm/user/Ven0m0">
+    <img src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white" alt="lastfm" />
+  </a>
+</p>
+
+---
+
+### 📊 Detailed Metrics
 
 <details>
-<summary>📊 Detailed metrics</summary>
+<summary>📈 Expand for comprehensive stats</summary>
+
 <img src="metrics.classic.svg" alt="Detailed Metrics" style="max-width:100%;height:auto" />
 </details>
+
+---
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff" alt="Thanks for visiting!" />
 
 </div>
