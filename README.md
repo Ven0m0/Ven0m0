@@ -23,7 +23,6 @@
 </td>
 </tr>
 </table>
-<hr style="margin:16px 0 11px 0">
 
 ---
 
