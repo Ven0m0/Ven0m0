@@ -1,0 +1,30 @@
+name: Generate GitHub Stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Generate GitHub stats card
+        uses: cicirello/user-statistician@v2
+        with:
+          colors: "true"
+          animations: "true"
+          svg-mode: "dark"
+
+      - name: Commit and push stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add images/github-stats.svg 2>/dev/null || :
+          git diff --cached --quiet || git commit -m "chore: update github stats"
+          git push
