@@ -30,9 +30,8 @@
 - 🔒 [PKG's](https://github.com/Ven0m0/PKG) **|** [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) - My flavors of popular packages, tweaks & patches  
 - ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) **|** [Win-dotfiles](https://github.com/Ven0m0/Win) - AutoHotkey scripts & Windows tools & configs
 - 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) **|** [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) - Dotfiles, scripts & configs
-- <img height="18px" src="https://raw.githubusercontent.com/ReVanced/. github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Reva[...]
-- <img height="18px" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png"
-  alt="Minecraft" /> [MC-Server](https://github.com/Ven0m0/MC-Server) - Minecraft server maintenance/optimization
+- <img height="18px" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg"/> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) **|** [rvx-apks](https://github.com/Ven0m0/rvx-apks) — Revanced builds: WIP
+- <img height="18px" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png"/> [MC-Server](https://github.com/Ven0m0/MC-Server) - MC server scripts
 
 ---
 
