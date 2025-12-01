@@ -1,6 +1,8 @@
 <div align="center">
 <h2>✨ Hi, I'm Ven0m0 ✨</h2>
 
+<img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" align="right" width="300" style="border-radius:8px; margin-top:6px;" /> 
+
 <div align="left">
 <table>
 <tr>
@@ -17,10 +19,6 @@
 │ ✨ Airsoft • Music • Tinkering   │
 ╰──────────────────────────────────╯
 </pre>
-</td>
-<td valign="top" align="center" width="140">
-  <img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" width="120" style="border-radius:8px; margin-top:6px;" />
-</td>
 </tr>
 </table>
 
