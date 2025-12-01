@@ -96,8 +96,7 @@ ______________________________________________________________________
 **Learning:** Bash, Python, JavaScript, AHK, Rust\
 **Hobbies:** Airsoft • Gaming • Tinkering\
 **Desktop:** CachyOS/KDE, CLI workflows\
-**RPi:** DietPi + custom scripts\
-**Ethos:** Trans rights, Info freedom, Automate everything
+**RPI:** DietPi + custom scripts\
 
 ______________________________________________________________________
 
@@ -107,9 +106,5 @@ ______________________________________________________________________
 <summary>📊 Detailed metrics</summary>
 <img src="metrics.classic.svg" alt="Detailed Metrics" style="max-width:100%;height:auto" />
 </details>
-
-<div align="center" style="margin-top:8px; font-size:1.1em;">
-✨ <b>Trans rights are human rights.</b> ✨
-</div>
 
 </div>
