@@ -24,7 +24,7 @@ jobs:
 
       - name: Cache metrics dependencies
         id: cache-metrics
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache
           key: ${{ runner.os }}-metrics-${{ github.run_id }}
@@ -68,7 +68,7 @@ jobs:
 
       - name: Cache image optimizer
         id: cache-image-optimizer
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/stellar-image-optimizer
           key: ${{ runner.os }}-image-optimizer-${{ github.run_id }}
