@@ -8,6 +8,8 @@ on:
 jobs:
   update-profile-activity:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -16,9 +18,58 @@ jobs:
         uses: gayanvoice/github-profile-activity-generator@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MAX_REPOS: 6
+          MAX_REPOS: 5
           COMMIT_MESSAGE: "chore: update dynamic repo and activity lists"
           REPOSITORY: 'Ven0m0/Ven0m0' # Must match your profile repo
+
+      - name: Update latest repos section
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const core = require('@actions/core');
+            const path = 'README.md';
+            const start = '<!--LAST_REPOS:START-->';
+            const end = '<!--LAST_REPOS:END-->';
+            const owner = 'Ven0m0';
+
+            const repos = await github.paginate(github.rest.repos.listForUser, {
+              username: owner,
+              sort: 'pushed',
+              direction: 'desc',
+              per_page: 100,
+            });
+
+            const latest = repos
+              .filter(repo => !repo.archived && !repo.disabled && !repo.fork)
+              .slice(0, 5)
+              .map(repo => {
+                const desc = repo.description ? repo.description.trim() : 'No description yet';
+                const date = new Date(repo.pushed_at).toISOString().split('T')[0];
+                return `- [${repo.name}](${repo.html_url}) — ${desc} <sub>${date}</sub>`;
+              });
+
+            const content = fs.readFileSync(path, 'utf8');
+            const startIndex = content.indexOf(start);
+            const endIndex = content.indexOf(end);
+
+            if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
+              core.setFailed('Required README markers are missing or out of order.');
+              return;
+            }
+
+            const list = latest.length ? latest.join('\n') : '- No recent repos right now.';
+            const replacement = `${start}\n${list}\n${end}`;
+            const currentSection = content.slice(startIndex, endIndex + end.length);
+            const updated = content.replace(currentSection, replacement);
+
+            if (updated !== content) {
+              fs.writeFileSync(path, updated);
+              core.info('Updated latest repo list.');
+            } else {
+              core.info('Repo list unchanged; no updates were written.');
+            }
 
       - name: Push README
         run: |

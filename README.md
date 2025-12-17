@@ -1,95 +1,64 @@
 <div align="center">
-
-## ✨ Hi, I'm Ven0m0 ✨
-
-<img src="https://media1.tenor.com/m/Fdk1ZDpipXIAAAAd/guilty-gear-bridget.gif" alt="Bridget" align="right" width="260" style="border-radius:10px;margin-top:8px;" />
-
-<p>
-  <img src="https://img.shields.io/github/followers/Ven0m0?label=Followers&style=for-the-badge&color=8e7cc3&logo=github" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/Ven0m0?label=Profile%20Stars&style=for-the-badge&color=ba68c8&logo=github" alt="Stars" />
-  <img src="https://img.shields.io/github/last-commit/Ven0m0/Ven0m0?style=for-the-badge&logo=git&color=9575cd" alt="Last commit" />
-  <img src="https://img.shields.io/github/actions/workflow/status/Ven0m0/Ven0m0/update-readme.yml?label=Metrics&style=for-the-badge&logo=githubactions&color=7e57c2" alt="Metrics workflow" />
-</p>
-
-<table>
-<tr>
-<td valign="top" width="270">
-
-```text
-╭─────────────────────────────╮
-│  My tech stack & tools      │
-├─────────────────────────────┤
-│ 🐧 Bash • Python • Rust     │
-│ 🖥️ CachyOS • DietPi         │
-│ 🎨 KDE Plasma • Wayland     │
-│ 🎯 Learning • Building      │
-│ ✨ Airsoft • Music • Tinkers │
-╰─────────────────────────────╯
-```
-
-<p align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="20" alt="Bash" title="Bash" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="20" alt="Python" title="Python" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" height="20" alt="Rust" title="Rust" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/archlinux/archlinux-original.svg" height="20" alt="Arch Linux" title="Arch Linux" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" height="20" alt="Raspberry Pi" title="Raspberry Pi" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="20" alt="Firefox" title="Firefox" />
-</p>
-
-</td>
-<td valign="top">
-
-### ⚡ Quick pulse
-- 🔧 Optimizing dotfiles, shells, and CI
-- 🦀 Learning Rust for small CLI tools
-- 🛡️ Privacy + network hardening tinkerer
-- 🎮 Airsoft • Gaming • Tweaking
-
-<p>
-  <img src="https://komarev.com/ghpvc/?username=Ven0m0&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
-  <img src="https://img.shields.io/badge/Timezone-Europe%2FBerlin-6a1b9a?style=flat-square&logo=clockify&logoColor=fff" alt="Timezone" />
-</p>
-
-</td>
-</tr>
-</table>
-
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ba68c8,100:f8bbd0&height=120&text=Hi%20I'm%20Ven0m0%20%F0%9F%92%95&fontColor=fff&fontSize=32&animation=twinkling" alt="Header wave" />
 </div>
 
----
+<div align="center">
+  <img src="https://media1.tenor.com/m/su8Zai2H62sAAAAC/sanrio-cinnamoroll.gif" alt="Cinnamoroll typing" width="260" />
+  <p>cozy coder · rust & python learner · shell + dotfiles tinkerer · privacy & network hardening nerd</p>
+</div>
 
-### 🚀 Highlights
-- 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) **|** [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) – Curated Adblock/Pihole lists & userscripts
-- 🔒 [PKG's](https://github.com/Ven0m0/PKG) **|** [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) – Package flavors, tweaks & patches
-- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) **|** [Win-dotfiles](https://github.com/Ven0m0/Win) – Automation scripts & Windows configs
-- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) **|** [Dotfiles](https://github.com/Ven0m0/dotfiles) **|** [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) – Linux & mobile setups
-- <img height="18" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) – Revanced automation
-- <img height="18" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png" alt="Minecraft" /> [MC-Pack](https://github.com/Ven0m0/MC-Pack) – Minecraft tweaks
+<p align="center">
+  <img src="https://img.shields.io/github/followers/Ven0m0?label=Followers&style=for-the-badge&color=ba68c8&logo=github" alt="Followers" />
+  <img src="https://img.shields.io/github/stars/Ven0m0?label=Stars&style=for-the-badge&color=f48fb1&logo=starship" alt="Stars" />
+  <img src="https://img.shields.io/github/last-commit/Ven0m0/Ven0m0?style=for-the-badge&logo=git&color=b388ff" alt="Last commit" />
+  <img src="https://komarev.com/ghpvc/?username=Ven0m0&color=ba68c8&style=for-the-badge&label=Views" alt="Profile Views" />
+  <img src="https://img.shields.io/badge/Timezone-Europe%2FBerlin-b57edc?style=for-the-badge&logo=clockify&logoColor=fff" alt="Timezone" />
+</p>
 
----
+### 🧺 Cozy corner
 
-### 🔄 Latest Projects
-<!--START_SECTION:repositories-->
-<!-- Repos will be auto-inserted here by GitHub Action.  -->
-<!--END_SECTION:repositories-->
+| 🧰 Cozy toolkit | ⚡ Quick pulse |
+| --- | --- |
+| 🐧 Bash · Python · Rust<br/>🖥️ CachyOS · DietPi · KDE · Wayland<br/>🎯 Building neat automations & tiny CLIs<br/>🎶 Airsoft · Music · Tinkering | 🔧 Refining dotfiles, shells & CI so things feel ✨ smooth<br/>🦀 Learning Rust for cute little command line pals<br/>🛡️ Privacy-first network tinkerer (self-hosted vibes)<br/>🎮 Gaming, airsoft, and tiny tweaks everywhere |
 
----
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="28" alt="Bash" title="Bash" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="28" alt="Python" title="Python" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" height="28" alt="Rust" title="Rust" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/archlinux/archlinux-original.svg" height="28" alt="Arch Linux" title="Arch Linux" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" height="28" alt="Raspberry Pi" title="Raspberry Pi" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="28" alt="Firefox" title="Firefox" />
+</p>
 
-### 📊 GitHub Activity & Stats
+<br />
 
-<details open>
-<summary>📈 Contribution Graph</summary>
+### 🌈 Spotlight drops
+- 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;•&nbsp; [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated Adblock/Pihole lists & userscripts
+- 🔒 [PKG's](https://github.com/Ven0m0/PKG) &nbsp;•&nbsp; [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches
+- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) &nbsp;•&nbsp; [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs
+- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) &nbsp;•&nbsp; [Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp;•&nbsp; [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups
+- <img height="18" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
+- <img height="18" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png" alt="Minecraft" /> [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb)
+<hr />
 
-</details>
+### 🔄 Latest tinkers (auto-updates)
+<sup>Freshest 5 repos I touched ✨</sup>
 
-<details open>
-<summary>⚡ GitHub Stats</summary>
+<!--LAST_REPOS:START-->
+- Fetching cozy repos...
+<!--LAST_REPOS:END-->
 
-<img src="images/github-stats.svg" alt="GitHub Stats" style="max-width:100%;height:auto" />
+<hr />
 
-</details>
+### 📊 GitHub glow
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb" alt="Activity graph" />
+</p>
+<p align="center">
+  <img src="images/github-stats.svg" alt="GitHub Stats" />
+</p>
 
 <details>
 <summary>🔥 Streak Stats</summary>
@@ -105,7 +74,7 @@
 
 </details>
 
----
+<hr />
 
 ### 📰 Recent Activity
 
@@ -116,11 +85,11 @@
 
 <!--END_SECTION:activity-->
 
----
+<hr />
 
-### 📫 Connect With Me
+### 🌸 Find me around the net
 
-<p align="left">
+<p align="center">
   <a href="https://github.com/Ven0m0">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
@@ -135,15 +104,15 @@
   </a>
 </p>
 
----
+<hr />
 
 <details>
 <summary>📊 Detailed Metrics</summary>
 
-<img src="metrics.classic.svg" alt="Detailed Metrics" style="max-width:100%;height:auto" />
+<img src="metrics.classic.svg" alt="Detailed Metrics" />
 
 </details>
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff" alt="Thanks for visiting!" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:f8bbd0,100:ba68c8&height=120&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff&animation=twinkling" alt="Thanks for visiting!" />
 </div>
