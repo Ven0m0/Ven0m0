@@ -37,7 +37,7 @@
 - 🔒 [PKG's](https://github.com/Ven0m0/PKG) &nbsp;•&nbsp; [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches
 - ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) &nbsp;•&nbsp; [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs
 - 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) &nbsp;•&nbsp; [Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp;•&nbsp; [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups
-- <img height="18" src="https://raw.githubusercontent.com/ReVanced/.github/main/profile/assets/revanced-logo/revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
+- <img height="18" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
 - <img height="18" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png" alt="Minecraft" /> [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
 
 <hr />
@@ -64,14 +64,11 @@
 <summary>🔥 Streak Stats</summary>
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0&theme=dracula&hide_border=true&background=0d1117&ring=b39ddb&fire=ba68c8&currStreakLabel=b39ddb)](https://git.io/streak-stats)
-
 </details>
-
 <details>
 <summary>🏆 Trophies</summary>
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=Ven0m0&theme=dracula&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8)](https://github.com/ryo-ma/github-profile-trophy)
-
 </details>
 
 <hr />
