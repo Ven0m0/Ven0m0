@@ -1,14 +1,12 @@
 # Visit https://github.com/lowlighter/metrics#-documentation for full reference
 name: Metrics
-
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
-
 jobs:
   github-metrics:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     environment:
       name: production
     permissions:
@@ -21,7 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-
+        with:
+          fetch-depth: 1
       - name: Cache metrics dependencies
         id: cache-metrics
         uses: actions/cache@v5
@@ -30,7 +29,6 @@ jobs:
           key: ${{ runner.os }}-metrics-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-metrics-
-
       - name: Generate metrics (classic)
         uses: lowlighter/metrics@latest
         with:
@@ -52,7 +50,6 @@ jobs:
           plugin_traffic: yes
           plugin_calendar: yes
           plugin_calendar_limit: 1
-
       - name: Generate metrics (default)
         uses: lowlighter/metrics@latest
         with:
@@ -65,7 +62,6 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Europe/Berlin
-
       - name: Cache image optimizer
         id: cache-image-optimizer
         uses: actions/cache@v5
@@ -74,7 +70,6 @@ jobs:
           key: ${{ runner.os }}-image-optimizer-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-image-optimizer-
-
       - name: Optimize metrics.classic.svg
         id: compress-classic
         uses: stellasoftio/image-optimizer-action@v1.2.0
@@ -82,7 +77,6 @@ jobs:
           path: ./metrics.classic.svg
           github-token: ${{ secrets.GITHUB_TOKEN }}
           compress-svg: true
-
       - name: Optimize metrics.svg
         id: compress-default
         uses: stellasoftio/image-optimizer-action@v1.2.0
@@ -90,9 +84,9 @@ jobs:
           path: ./metrics.svg
           github-token: ${{ secrets.GITHUB_TOKEN }}
           compress-svg: true
-
       - name: Commit optimized metrics
         if: steps.compress-classic.outputs.markdown_report != '' || steps.compress-default.outputs.markdown_report != ''
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
