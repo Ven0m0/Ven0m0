@@ -20,6 +20,7 @@ jobs:
           animations: "true"
           svg-mode: "dark"
       - name: Commit and push stats
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
