@@ -1,12 +1,10 @@
 # https://github.com/marketplace/actions/image-optimizer-action
 name: Compress Images
-
 on:
   workflow_dispatch:
   # Uncomment to run daily:
   # schedule:
   #   - cron: "0 0 * * *"
-
 jobs:
   compress:
     name: Compress Images
@@ -17,7 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-
+        with:
+          fetch-depth: 0
       - name: Compress images
         id: compress-images
         uses: stellasoftio/image-optimizer-action@v1
@@ -34,7 +33,6 @@ jobs:
           ignore-paths: |
             metrics.classic.svg
             metrics.svg
-
       - name: Create pull request if images were compressed
         if: steps.compress-images.outputs.markdown_report != ''
         uses: peter-evans/create-pull-request@v8
