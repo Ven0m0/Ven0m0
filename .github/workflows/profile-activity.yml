@@ -20,7 +20,6 @@ jobs:
           MAX_REPOS: 5
           COMMIT_MESSAGE: "chore: update dynamic repo and activity lists"
           REPOSITORY: 'Ven0m0/Ven0m0' # Must match your profile repo
-
       - name: Update latest repos section
         uses: actions/github-script@v7
         with:
@@ -39,7 +38,6 @@ jobs:
               direction: 'desc',
               per_page: 100,
             });
-
             const latest = repos
               .filter(repo => !repo.archived && !repo.disabled && !repo.fork)
               .slice(0, 5)
@@ -48,29 +46,25 @@ jobs:
                 const date = new Date(repo.pushed_at).toISOString().split('T')[0];
                 return `- [${repo.name}](${repo.html_url}) — ${desc} <sub>${date}</sub>`;
               });
-
             const content = fs.readFileSync(path, 'utf8');
             const startIndex = content.indexOf(start);
             const endIndex = content.indexOf(end);
-
             if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
               core.setFailed('Required README markers are missing or out of order.');
               return;
             }
-
             const list = latest.length ? latest.join('\n') : '- No recent repos right now.';
             const replacement = `${start}\n${list}\n${end}`;
             const currentSection = content.slice(startIndex, endIndex + end.length);
             const updated = content.replace(currentSection, replacement);
-
             if (updated !== content) {
               fs.writeFileSync(path, updated);
               core.info('Updated latest repo list.');
             } else {
               core.info('Repo list unchanged; no updates were written.');
             }
-
       - name: Push README
+        shell: bash
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
