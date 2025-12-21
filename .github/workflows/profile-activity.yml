@@ -21,7 +21,7 @@ jobs:
           COMMIT_MESSAGE: "chore: update dynamic repo and activity lists"
           REPOSITORY: 'Ven0m0/Ven0m0' # Must match your profile repo
       - name: Update latest repos section
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
