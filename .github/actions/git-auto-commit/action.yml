@@ -1,0 +1,23 @@
+name: Git Auto Commit
+description: Commits and pushes changes if there are any
+
+inputs:
+  commit_message:
+    description: The commit message to use
+    required: true
+  file_pattern:
+    description: Files to add (default is all changes)
+    required: false
+    default: "."
+
+runs:
+  using: composite
+  steps:
+    - name: Commit and push changes
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add ${{ inputs.file_pattern }}
+        git diff --cached --quiet || git commit -m "${{ inputs.commit_message }}"
+        git push

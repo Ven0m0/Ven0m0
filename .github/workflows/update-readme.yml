@@ -1,12 +1,14 @@
 # Visit https://github.com/lowlighter/metrics#-documentation for full reference
 name: Metrics
+
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
+
 jobs:
   github-metrics:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     environment:
       name: production
     permissions:
@@ -16,11 +18,13 @@ jobs:
     concurrency:
       group: metrics-update
       cancel-in-progress: true
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 1
+
       - name: Cache metrics dependencies
         id: cache-metrics
         uses: actions/cache@v5
@@ -29,6 +33,7 @@ jobs:
           key: ${{ runner.os }}-metrics-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-metrics-
+
       - name: Generate metrics (classic)
         uses: lowlighter/metrics@latest
         with:
@@ -50,6 +55,7 @@ jobs:
           plugin_traffic: yes
           plugin_calendar: yes
           plugin_calendar_limit: 1
+
       - name: Generate metrics (default)
         uses: lowlighter/metrics@latest
         with:
@@ -62,6 +68,7 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Europe/Berlin
+
       - name: Cache image optimizer
         id: cache-image-optimizer
         uses: actions/cache@v5
@@ -70,26 +77,21 @@ jobs:
           key: ${{ runner.os }}-image-optimizer-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-image-optimizer-
-      - name: Optimize metrics.classic.svg
-        id: compress-classic
+
+      - name: Optimize metrics SVGs
+        id: compress-metrics
         uses: stellasoftio/image-optimizer-action@v1.2.0
         with:
-          path: ./metrics.classic.svg
+          path: .
           github-token: ${{ secrets.GITHUB_TOKEN }}
           compress-svg: true
-      - name: Optimize metrics.svg
-        id: compress-default
-        uses: stellasoftio/image-optimizer-action@v1.2.0
+          ignore-paths: |
+            !metrics.classic.svg
+            !metrics.svg
+
+      - name: Commit and push optimized metrics
+        if: steps.compress-metrics.outputs.markdown_report != ''
+        uses: ./.github/actions/git-auto-commit
         with:
-          path: ./metrics.svg
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          compress-svg: true
-      - name: Commit optimized metrics
-        if: steps.compress-classic.outputs.markdown_report != '' || steps.compress-default.outputs.markdown_report != ''
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add metrics.classic.svg metrics.svg
-          git diff --cached --quiet || git commit -m "chore: optimize metrics SVGs"
-          git push
+          commit_message: "chore: optimize metrics SVGs"
+          file_pattern: "metrics.classic.svg metrics.svg"

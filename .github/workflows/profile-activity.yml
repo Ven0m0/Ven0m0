@@ -1,32 +1,40 @@
 name: Update Dynamic Repos and Cool Animations
+
 on:
   schedule:
-    - cron: "0 4 * * *" # Once daily
+    - cron: "0 4 * * *"
   workflow_dispatch:
+
 jobs:
   update-profile-activity:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+
       - name: Update profile README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/update_profile_activity.py
+
       - name: Generate profile details
         uses: gayanvoice/github-profile-activity-generator@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MAX_REPOS: 5
           COMMIT_MESSAGE: "chore: update dynamic repo and activity lists"
-          REPOSITORY: 'Ven0m0/Ven0m0' # Must match your profile repo
+          REPOSITORY: "Ven0m0/Ven0m0"
+
       - name: Update latest repos section
         uses: actions/github-script@v8
         with:
@@ -45,6 +53,7 @@ jobs:
               direction: 'desc',
               per_page: 100,
             });
+
             const latest = repos
               .filter(repo => !repo.archived && !repo.disabled && !repo.fork)
               .slice(0, 5)
@@ -53,28 +62,30 @@ jobs:
                 const date = new Date(repo.pushed_at).toISOString().split('T')[0];
                 return `- [${repo.name}](${repo.html_url}) — ${desc} <sub>${date}</sub>`;
               });
+
             const content = fs.readFileSync(path, 'utf8');
             const startIndex = content.indexOf(start);
             const endIndex = content.indexOf(end);
+
             if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
               core.setFailed('Required README markers are missing or out of order.');
               return;
             }
+
             const list = latest.length ? latest.join('\n') : '- No recent repos right now.';
             const replacement = `${start}\n${list}\n${end}`;
             const currentSection = content.slice(startIndex, endIndex + end.length);
             const updated = content.replace(currentSection, replacement);
+
             if (updated !== content) {
               fs.writeFileSync(path, updated);
               core.info('Updated latest repo list.');
             } else {
               core.info('Repo list unchanged; no updates were written.');
             }
-      - name: Push README
-        shell: bash
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git add README.md
-          git diff --cached --quiet || git commit -m "chore: refresh profile repo activity"
-          git push
+
+      - name: Commit and push changes
+        uses: ./.github/actions/git-auto-commit
+        with:
+          commit_message: "chore: refresh profile repo activity"
+          file_pattern: "README.md"
