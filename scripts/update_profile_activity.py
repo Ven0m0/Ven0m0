@@ -44,7 +44,7 @@ class GithubClient:
       return self._cache[slug]
     url = f"https://api.github.com/repos/{slug}"
     headers = {
-      "Accept": "application/vnd. github+json",
+      "Accept": "application/vnd.github+json",
       "User-Agent": "profile-activity-script",
     }
     if self._token:
@@ -72,14 +72,14 @@ def classify_repo(metadata: dict, now: dt.datetime, active_days: int, partially_
     pushed = None
     if pushed_at:
       try:
-        pushed = dt. datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
+        pushed = dt.datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
       except ValueError:
         logging.warning("Unexpected pushed_at for %s: %s", slug, pushed_at)
     if pushed is None:
       status = "inactive"
     else:
       delta = now - pushed
-      if delta. days <= active_days:
+      if delta.days <= active_days:
         status = "active"
       elif delta.days <= partially_days:
         status = "partially"
@@ -104,7 +104,7 @@ def apply_status_to_line(line: str, status: str)->str:
   return f"{match.group('prefix')}{status_info['emoji']} **{status_info['label']}:**{ws}{rest}"
 
 def parse_args()->argparse.Namespace:
-  parser = argparse. ArgumentParser(description=__doc__)
+  parser = argparse.ArgumentParser(description=__doc__)
   parser.add_argument("--readme", default="README.md", help="Path to profile markdown")
   parser.add_argument("--dry-run", action="store_true", help="Print changes only")
   parser.add_argument("--active-days", type=int, default=120, help="Days for Active threshold")
@@ -116,7 +116,7 @@ def parse_args()->argparse.Namespace:
 def main()->int:
   args = parse_args()
   logging.basicConfig(level=getattr(logging, args.log_level.upper(), logging.INFO), format="%(levelname)s: %(message)s")
-  path = Path(args. readme)
+  path = Path(args.readme)
   if not path.is_file():
     logging.error("README not found at %s", path)
     return 1
@@ -127,8 +127,8 @@ def main()->int:
   processed = 0
   updates = []
   for idx, line in enumerate(lines):
-    if args.max_repos is not None and processed >= args. max_repos:
-      logging. info("Reached max repo limit (%s); stopping early", args. max_repos)
+    if args.max_repos is not None and processed >= args.max_repos:
+      logging.info("Reached max repo limit (%s); stopping early", args.max_repos)
       break
     slug = find_repo_slug(line)
     if not slug:
@@ -138,7 +138,7 @@ def main()->int:
     if not metadata:
       logging.warning("Skipping %s; could not fetch metadata", slug)
       continue
-    result = classify_repo(metadata, now, args.active_days, args. partially_days)
+    result = classify_repo(metadata, now, args.active_days, args.partially_days)
     new_line = apply_status_to_line(line, result.status)
     if new_line != line:
       lines[idx] = new_line
