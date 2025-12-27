@@ -33,7 +33,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            const core = require('@actions/core');
             const path = 'README.md';
             const start = '<!--LAST_REPOS:START-->';
             const end = '<!--LAST_REPOS:END-->';
