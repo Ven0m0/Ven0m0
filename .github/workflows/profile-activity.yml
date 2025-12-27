@@ -27,14 +27,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/update_profile_activity.py
 
-      - name: Generate profile details
-        uses: gayanvoice/github-profile-activity-generator@main
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MAX_REPOS: 5
-          COMMIT_MESSAGE: "chore: update dynamic repo and activity lists"
-          REPOSITORY: "Ven0m0/Ven0m0"
-
       - name: Update latest repos section
         uses: actions/github-script@v8
         with:
