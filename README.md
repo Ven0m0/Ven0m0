@@ -46,7 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- Fetching cozy repos...
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2025-12-28</sub>
+- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2025-12-28</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2025-12-28</sub>
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2025-12-28</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2025-12-28</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
