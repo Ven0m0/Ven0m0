@@ -25,7 +25,7 @@ jobs:
       - name: Update profile README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/update_profile_activity.py
+        run: python3 -O scripts/update_profile_activity.py
 
       - name: Update latest repos section
         uses: actions/github-script@v8
