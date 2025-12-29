@@ -1,4 +1,5 @@
 # Temporary files
+*.log
 *.tmp
 *.temp
 *.bak
