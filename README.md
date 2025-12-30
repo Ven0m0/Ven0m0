@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2025-12-29</sub>
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2025-12-30</sub>
+- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2025-12-30</sub>
 - [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2025-12-29</sub>
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2025-12-29</sub>
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2025-12-29</sub>
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2025-12-29</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2025-12-29</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2025-12-29</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
