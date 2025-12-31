@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2025-12-30</sub>
 - [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2025-12-30</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2025-12-29</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2025-12-29</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2025-12-29</sub>
+- [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2025-12-30</sub>
+- [Nothing-Phone-Mods](https://github.com/Ven0m0/Nothing-Phone-Mods) — No description yet <sub>2025-12-30</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2025-12-30</sub>
+- [.github](https://github.com/Ven0m0/.github) — No description yet <sub>2025-12-30</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
