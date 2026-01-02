@@ -47,10 +47,10 @@
 
 <!--LAST_REPOS:START-->
 - [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-01-01</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-01-01</sub>
 - [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-01-01</sub>
 - [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-01-01</sub>
 - [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-01-01</sub>
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-01-01</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
