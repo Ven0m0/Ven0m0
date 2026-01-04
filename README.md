@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-01-02</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-01-02</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-01-01</sub>
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-01-01</sub>
-- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-01-01</sub>
+- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-01-04</sub>
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-01-04</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-01-04</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-01-04</sub>
+- [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-01-04</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
