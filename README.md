@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-01-06</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-01-06</sub>
 - [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-01-05</sub>
 - [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-01-05</sub>
 - [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-01-05</sub>
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-01-05</sub>
-- [Template](https://github.com/Ven0m0/Template) — No description yet <sub>2026-01-05</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
