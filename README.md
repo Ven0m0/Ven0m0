@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-01-07</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-01-07</sub>
-- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-01-06</sub>
-- [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-01-05</sub>
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-01-05</sub>
+- [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-01-09</sub>
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-01-09</sub>
+- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-01-09</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-01-08</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-01-08</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
