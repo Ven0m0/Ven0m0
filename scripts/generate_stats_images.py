@@ -65,7 +65,7 @@ TEMPLATE_LANGUAGES = """<svg xmlns="http://www.w3.org/2000/svg" width="495" heig
 async def generate_overview(s: Stats, output_dir: Path) -> None:
   try:
     output = TEMPLATE_OVERVIEW
-    output = output.replace("{{ name }}", await s.name)
+    output = output.replace("{{ name }}", html.escape(await s.name))
     output = output.replace("{{ stars }}", f"{await s.stargazers:,}")
     output = output.replace("{{ contributions }}", f"{await s.total_contributions:,}")
     output = output.replace("{{ repos }}", f"{len(await s.all_repos):,}")
