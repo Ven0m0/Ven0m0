@@ -1,31 +1,50 @@
-name: Generate GitHub Stats
+name: Generate Stats Images
 
-on:
+on: 
   workflow_dispatch:
-  schedule:
-    - cron: "0 */6 * * *"
+  schedule: 
+    - cron: "0 */12 * * *"
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/github_stats. py'
+      - 'scripts/generate_stats_images.py'
+      - '.github/workflows/stats-images.yml'
 
 jobs:
-  update-stats:
+  generate:
     runs-on: ubuntu-latest
-    permissions:
+    permissions: 
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v6
         with:
-          fetch-depth: 1
+          fetch-depth:  1
 
-      - name: Generate GitHub stats card
-        uses: cicirello/user-statistician@v2
+      - name: Setup Python
+        uses: actions/setup-python@v6
         with:
-          colors: "true"
-          animations: "true"
-          svg-mode: "dark"
+          python-version: '3.13'
+          cache: 'pip'
 
-      - name: Commit and push stats
+      - name: Install dependencies
+        run: python3 -m pip install --no-cache-dir 'aiohttp>=3.13.3,<4.0.0'
+
+      - name: Generate stats images
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github. repository_owner }}
+          EXCLUDED: ${{ secrets.EXCLUDED }}
+          EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
+          COUNT_STATS_FROM_FORKS: ${{ secrets. COUNT_STATS_FROM_FORKS }}
+          OUTPUT_DIR: images
+        run: python3 -OO scripts/generate_stats_images.py
+
+      - name: Commit stats
         uses: ./.github/actions/git-auto-commit
         with:
-          commit_message: "chore: update github stats"
-          file_pattern: "images/github-stats.svg"
+          commit_message: "chore: update stats images"
+          file_pattern: "images/overview.svg images/languages.svg"
