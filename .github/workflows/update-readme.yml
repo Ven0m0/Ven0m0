@@ -22,17 +22,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-
-      - name: Cache metrics dependencies
-        id: cache-metrics
-        uses: actions/cache@v5
-        with:
-          path: ~/.cache
-          key: ${{ runner.os }}-metrics-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-metrics-
 
       - name: Generate metrics (classic)
         uses: lowlighter/metrics@latest
@@ -69,29 +58,8 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Europe/Berlin
 
-      - name: Cache image optimizer
-        id: cache-image-optimizer
-        uses: actions/cache@v5
-        with:
-          path: ~/.cache/stellar-image-optimizer
-          key: ${{ runner.os }}-image-optimizer-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-image-optimizer-
-
-      - name: Optimize metrics SVGs
-        id: compress-metrics
-        uses: stellasoftio/image-optimizer-action@v1.2.0
-        with:
-          path: .
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          compress-svg: true
-          ignore-paths: |
-            !metrics.classic.svg
-            !metrics.svg
-
-      - name: Commit and push optimized metrics
-        if: steps.compress-metrics.outputs.markdown_report != ''
+      - name: Commit metrics
         uses: ./.github/actions/git-auto-commit
         with:
-          commit_message: "chore: optimize metrics SVGs"
+          commit_message: "chore: update metrics"
           file_pattern: "metrics.classic.svg metrics.svg"

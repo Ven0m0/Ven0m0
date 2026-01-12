@@ -18,22 +18,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
 
       - name: Compress images
         id: compress-images
-        uses: stellasoftio/image-optimizer-action@v1
+        uses: stellasoftio/image-optimizer-action@v1.2.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           export-webp: true
-          export-avif: false
           compress-png: true
           compress-svg: true
           compress-jpg: true
           compress-webp: true
-          compress-avif: true
-          replace-original-after-export-webp: true
           ignore-paths: |
             metrics.classic.svg
             metrics.svg

@@ -9,7 +9,7 @@ on:
     paths:
       - 'scripts/github_stats.py'
       - 'scripts/generate_stats_images.py'
-      - '.github/workflows/stats-images.yml'
+      - '.github/workflows/github-stats.yml'
 
 jobs:
   generate:
@@ -20,8 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
 
       - name: Setup Python
         uses: actions/setup-python@v6
