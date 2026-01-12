@@ -17,15 +17,20 @@ class Queries:
   semaphore: asyncio.Semaphore = field(default_factory=lambda: asyncio.Semaphore(10))
 
   async def query(self, generated_query: str) -> dict:
-    headers = {"Authorization": f"Bearer {self. access_token}"}
+    headers = {"Authorization": f"Bearer {self.access_token}"}
     async with self.semaphore:
-      r = await self.session.post(
-        "https://api.github.com/graphql",
-        headers=headers,
-        json={"query": generated_query},
-        timeout=aiohttp.ClientTimeout(total=30)
-      )
-      return await r.json()
+      try:
+        r = await self.session.post(
+          "https://api.github.com/graphql",
+          headers=headers,
+          json={"query": generated_query},
+          timeout=aiohttp.ClientTimeout(total=30)
+        )
+        r.raise_for_status()
+        return await r.json()
+      except aiohttp.ClientError as e:
+        print(f"GraphQL query failed: {e}")
+        return {}
 
   async def query_rest(self, path: str, params: Optional[dict] = None) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
@@ -33,16 +38,20 @@ class Queries:
     path = path.lstrip("/")
     for attempt in range(60):
       async with self.semaphore:
-        r = await self.session.get(
-          f"https://api.github.com/{path}",
-          headers=headers,
-          params=tuple(params.items()),
-          timeout=aiohttp.ClientTimeout(total=30)
-        )
-        if r.status == 202:
-          await asyncio.sleep(2)
-          continue
-        return await r.json() if r.status == 200 else {}
+        try:
+          r = await self.session.get(
+            f"https://api.github.com/{path}",
+            headers=headers,
+            params=tuple(params.items()),
+            timeout=aiohttp.ClientTimeout(total=30)
+          )
+          if r.status == 202:
+            await asyncio.sleep(2)
+            continue
+          return await r.json() if r.status == 200 else {}
+        except aiohttp.ClientError as e:
+          print(f"REST query failed for {path}: {e}")
+          return {}
     return {}
 
   @staticmethod
@@ -109,7 +118,7 @@ class Stats:
   _ignored_repos: set[str] = field(default_factory=set, init=False)
 
   def __post_init__(self):
-    self.queries = Queries(self. username, self.access_token, self.session)
+    self.queries = Queries(self.username, self.access_token, self.session)
 
   async def get_stats(self) -> None:
     self._stargazers = 0
@@ -132,7 +141,7 @@ class Stats:
       else:
         for repo in contrib_repos.get("nodes", []):
           name = repo.get("nameWithOwner")
-          if name not in self._ignored_repos and name not in self. exclude_repos:
+          if name not in self._ignored_repos and name not in self.exclude_repos:
             self._ignored_repos.add(name)
       for repo in repos:
         name = repo.get("nameWithOwner")
@@ -143,7 +152,7 @@ class Stats:
         self._forks += repo.get("forkCount", 0)
         for lang in repo.get("languages", {}).get("edges", []):
           lname = lang.get("node", {}).get("name", "Other")
-          if lname in self. exclude_langs:
+          if lname in self.exclude_langs:
             continue
           if lname in self._languages:
             self._languages[lname]["size"] += lang.get("size", 0)
@@ -154,14 +163,14 @@ class Stats:
               "occurrences": 1,
               "color": lang.get("node", {}).get("color")
             }
-      if owned_repos. get("pageInfo", {}).get("hasNextPage") or contrib_repos.get("pageInfo", {}).get("hasNextPage"):
+      if owned_repos.get("pageInfo", {}).get("hasNextPage") or contrib_repos.get("pageInfo", {}).get("hasNextPage"):
         next_owned = owned_repos.get("pageInfo", {}).get("endCursor", next_owned)
-        next_contrib = contrib_repos. get("pageInfo", {}).get("endCursor", next_contrib)
+        next_contrib = contrib_repos.get("pageInfo", {}).get("endCursor", next_contrib)
       else:
         break
     langs_total = sum(v.get("size", 0) for v in self._languages.values())
     for v in self._languages.values():
-      v["prop"] = (100 * v. get("size", 0) / langs_total) if langs_total else 0
+      v["prop"] = (100 * v.get("size", 0) / langs_total) if langs_total else 0
 
   @property
   async def name(self) -> str:
@@ -190,7 +199,7 @@ class Stats:
   @property
   async def all_repos(self) -> set[str]:
     if self._repos is None:
-      await self. get_stats()
+      await self.get_stats()
     return (self._repos or set()) | (self._ignored_repos or set())
 
   @property
@@ -232,7 +241,7 @@ class Stats:
       return self._views
     repos = {r for r in await self.all_repos if r not in self._ignored_repos}
     tasks = [self.queries.query_rest(f"/repos/{repo}/traffic/views") for repo in repos]
-    results = await asyncio. gather(*tasks, return_exceptions=True)
+    results = await asyncio.gather(*tasks, return_exceptions=True)
     total = 0
     for r in results:
       if isinstance(r, Exception) or not isinstance(r, dict):

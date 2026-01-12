@@ -63,33 +63,43 @@ TEMPLATE_LANGUAGES = """<svg xmlns="http://www.w3.org/2000/svg" width="495" heig
 </svg>"""
 
 async def generate_overview(s: Stats, output_dir: Path) -> None:
-  output = TEMPLATE_OVERVIEW
-  output = output.replace("{{ name }}", await s.name)
-  output = output.replace("{{ stars }}", f"{await s.stargazers:,}")
-  output = output.replace("{{ contributions }}", f"{await s.total_contributions:,}")
-  output = output.replace("{{ repos }}", f"{len(await s.all_repos):,}")
-  changed = sum(await s.lines_changed)
-  output = output.replace("{{ lines_changed }}", f"{changed: ,}")
-  output_dir.mkdir(parents=True, exist_ok=True)
-  (output_dir / "overview.svg").write_text(output, encoding="utf-8")
+  try:
+    output = TEMPLATE_OVERVIEW
+    output = output.replace("{{ name }}", await s.name)
+    output = output.replace("{{ stars }}", f"{await s.stargazers:,}")
+    output = output.replace("{{ contributions }}", f"{await s.total_contributions:,}")
+    output = output.replace("{{ repos }}", f"{len(await s.all_repos):,}")
+    changed = sum(await s.lines_changed)
+    output = output.replace("{{ lines_changed }}", f"{changed:,}")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "overview.svg").write_text(output, encoding="utf-8")
+    print("Generated overview.svg")
+  except Exception as e:
+    print(f"Error generating overview: {e}", file=sys.stderr)
+    raise
 
 async def generate_languages(s:  Stats, output_dir: Path) -> None:
-  output = TEMPLATE_LANGUAGES
-  progress = ""
-  lang_list = ""
-  sorted_langs = sorted((await s.languages).items(), reverse=True, key=lambda t: t[1]. get("size", 0))
-  for i, (lang, data) in enumerate(sorted_langs):
-    color = data.get("color") or "#888888"
-    prop = data.get("prop", 0)
-    ratio = [0. 99, 0.01] if prop > 50 else [0.98, 0.02]
-    if i == len(sorted_langs) - 1:
-      ratio = [1, 0]
-    progress += f'<span style="background-color:{color};width:{ratio[0] * prop:. 3f}%;margin-right:{ratio[1] * prop:.3f}%" class="progress-item"></span>'
-    lang_list += f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{lang}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>'
-  output = output.replace("{{ progress }}", progress)
-  output = output.replace("{{ lang_list }}", lang_list)
-  output_dir.mkdir(parents=True, exist_ok=True)
-  (output_dir / "languages. svg").write_text(output, encoding="utf-8")
+  try:
+    output = TEMPLATE_LANGUAGES
+    progress = ""
+    lang_list = ""
+    sorted_langs = sorted((await s.languages).items(), reverse=True, key=lambda t: t[1].get("size", 0))
+    for i, (lang, data) in enumerate(sorted_langs):
+      color = data.get("color") or "#888888"
+      prop = data.get("prop", 0)
+      ratio = [0.99, 0.01] if prop > 50 else [0.98, 0.02]
+      if i == len(sorted_langs) - 1:
+        ratio = [1, 0]
+      progress += f'<span style="background-color:{color};width:{ratio[0] * prop:.3f}%;margin-right:{ratio[1] * prop:.3f}%" class="progress-item"></span>'
+      lang_list += f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{lang}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>'
+    output = output.replace("{{ progress }}", progress)
+    output = output.replace("{{ lang_list }}", lang_list)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "languages.svg").write_text(output, encoding="utf-8")
+    print("Generated languages.svg")
+  except Exception as e:
+    print(f"Error generating languages: {e}", file=sys.stderr)
+    raise
 
 async def main() -> int:
   token = os.getenv("ACCESS_TOKEN") or os.getenv("GITHUB_TOKEN")
@@ -103,11 +113,15 @@ async def main() -> int:
   exclude_langs = {x.strip() for x in exclude_langs_str.split(",")} if exclude_langs_str else set()
   consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
   output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
-  async with aiohttp.ClientSession() as session:
-    s = Stats(user, token, session, exclude_repos=exclude_repos, exclude_langs=exclude_langs, consider_forked_repos=consider_forks)
-    await asyncio.gather(generate_overview(s, output_dir), generate_languages(s, output_dir))
-  print(f"Generated stats images in {output_dir}/")
-  return 0
+  try:
+    async with aiohttp.ClientSession() as session:
+      s = Stats(user, token, session, exclude_repos=exclude_repos, exclude_langs=exclude_langs, consider_forked_repos=consider_forks)
+      await asyncio.gather(generate_overview(s, output_dir), generate_languages(s, output_dir))
+    print(f"Generated stats images in {output_dir}/")
+    return 0
+  except Exception as e:
+    print(f"Fatal error: {e}", file=sys.stderr)
+    return 1
 
-if __name__ == "__main__": 
-  sys.exit(asyncio. run(main()))
+if __name__ == "__main__":
+  sys.exit(asyncio.run(main()))
