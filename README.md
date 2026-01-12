@@ -88,6 +88,14 @@
 
 <hr />
 
+### 📊 Live Stats
+
+<p align="center">
+  <img src="images/overview.svg" alt="Overview Stats" />
+  <br/>
+  <img src="images/languages.svg" alt="Language Stats" />
+</p>
+
 ### 🌸 Find me around the net
 
 <p align="center">
