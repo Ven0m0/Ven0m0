@@ -7,9 +7,9 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/github_stats. py'
+      - 'scripts/github_stats.py'
       - 'scripts/generate_stats_images.py'
-      - '.github/workflows/stats-images.yml'
+      - '.github/workflows/github-stats.yml'
 
 jobs:
   generate:
@@ -20,8 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        with:
-          fetch-depth:  1
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -36,10 +34,10 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ github. repository_owner }}
+          GITHUB_ACTOR: ${{ github.repository_owner }}
           EXCLUDED: ${{ secrets.EXCLUDED }}
           EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
-          COUNT_STATS_FROM_FORKS: ${{ secrets. COUNT_STATS_FROM_FORKS }}
+          COUNT_STATS_FROM_FORKS: ${{ secrets.COUNT_STATS_FROM_FORKS }}
           OUTPUT_DIR: images
         run: python3 -OO scripts/generate_stats_images.py
 
