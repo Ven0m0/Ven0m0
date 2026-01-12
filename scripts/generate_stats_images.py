@@ -91,7 +91,7 @@ async def generate_languages(s:  Stats, output_dir: Path) -> None:
       if i == len(sorted_langs) - 1:
         ratio = [1, 0]
       progress += f'<span style="background-color:{color};width:{ratio[0] * prop:.3f}%;margin-right:{ratio[1] * prop:.3f}%" class="progress-item"></span>'
-      lang_list += f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{lang}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>'
+      lang_list += f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{html.escape(lang)}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>'
     output = output.replace("{{ progress }}", progress)
     output = output.replace("{{ lang_list }}", lang_list)
     output_dir.mkdir(parents=True, exist_ok=True)
