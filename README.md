@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-01-14</sub>
 - [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-01-14</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-01-13</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-01-14</sub>
 - [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-01-13</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-01-13</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-01-13</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
