@@ -20,11 +20,8 @@ runs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
 
-        # Add files (handle file pattern safely)
-        IFS=' ' read -ra FILES <<< "${{ inputs.file_pattern }}"
-        for file in "${FILES[@]}"; do
-          git add "$file" || echo "Warning: Could not add $file"
-        done
+        # Add files using the provided pattern(s) directly
+        git add ${{ inputs.file_pattern }} || echo "Warning: Could not add specified file pattern(s): ${{ inputs.file_pattern }}"
 
         # Check if there are changes to commit
         if ! git diff --cached --quiet; then
