@@ -3,14 +3,14 @@ name: Compress Images
 
 on:
   workflow_dispatch:
-  # Uncomment to run daily:
-  # schedule:
-  #   - cron: "0 0 * * *"
+  schedule:
+    - cron: "0 2 * * 0"  # Weekly on Sunday at 2 AM
 
 jobs:
   compress:
     name: Compress Images
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
       pull-requests: write

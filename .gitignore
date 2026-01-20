@@ -20,3 +20,10 @@ Thumbs.db
 .idea/
 *.sublime-workspace
 megalinter-reports/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python

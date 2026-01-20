@@ -8,6 +8,7 @@ on:
 jobs:
   update-profile-activity:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
 
@@ -19,6 +20,7 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.13"
+          cache: 'pip'
 
       - name: Update profile README
         env:
@@ -29,13 +31,15 @@ jobs:
         uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          retries: 3
           script: |
             const fs = require('fs');
             const path = 'README.md';
             const start = '<!--LAST_REPOS:START-->';
             const end = '<!--LAST_REPOS:END-->';
-            const owner = 'Ven0m0';
+            const owner = context.repo.owner;
 
+            core.info(`Fetching repositories for ${owner}...`);
             const repos = await github.paginate(github.rest.repos.listForUser, {
               username: owner,
               sort: 'pushed',
@@ -51,6 +55,8 @@ jobs:
                 const date = new Date(repo.pushed_at).toISOString().split('T')[0];
                 return `- [${repo.name}](${repo.html_url}) — ${desc} <sub>${date}</sub>`;
               });
+
+            core.info(`Found ${latest.length} repos to display`);
 
             const content = fs.readFileSync(path, 'utf8');
             const startIndex = content.indexOf(start);
@@ -68,7 +74,7 @@ jobs:
 
             if (updated !== content) {
               fs.writeFileSync(path, updated);
-              core.info('Updated latest repo list.');
+              core.info('✓ Updated latest repo list.');
             } else {
               core.info('Repo list unchanged; no updates were written.');
             }
