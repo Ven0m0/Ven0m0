@@ -62,6 +62,7 @@ class Queries:
           if attempt < max_attempts - 1:
             await asyncio.sleep(min(2 ** min(attempt // 5, 3), 8))
             continue
+          print(f"REST query for {path} failed with status {r.status} after {max_attempts} attempts")
           return {}
         except aiohttp.ClientError as e:
           if attempt == max_attempts - 1:
