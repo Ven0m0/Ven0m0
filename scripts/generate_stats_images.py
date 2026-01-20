@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import html
 import os
 import sys
 from pathlib import Path
@@ -64,26 +65,36 @@ TEMPLATE_LANGUAGES = """<svg xmlns="http://www.w3.org/2000/svg" width="495" heig
 
 async def generate_overview(s: Stats, output_dir: Path) -> None:
   try:
+    print("Fetching overview stats...")
     output = TEMPLATE_OVERVIEW
-    output = output.replace("{{ name }}", html.escape(await s.name))
-    output = output.replace("{{ stars }}", f"{await s.stargazers:,}")
-    output = output.replace("{{ contributions }}", f"{await s.total_contributions:,}")
-    output = output.replace("{{ repos }}", f"{len(await s.all_repos):,}")
-    changed = sum(await s.lines_changed)
+    name = await s.name
+    output = output.replace("{{ name }}", html.escape(name))
+    stars = await s.stargazers
+    output = output.replace("{{ stars }}", f"{stars:,}")
+    contributions = await s.total_contributions
+    output = output.replace("{{ contributions }}", f"{contributions:,}")
+    repos = await s.all_repos
+    output = output.replace("{{ repos }}", f"{len(repos):,}")
+    lines = await s.lines_changed
+    changed = sum(lines)
     output = output.replace("{{ lines_changed }}", f"{changed:,}")
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "overview.svg").write_text(output, encoding="utf-8")
-    print("Generated overview.svg")
+    output_file = output_dir / "overview.svg"
+    output_file.write_text(output, encoding="utf-8")
+    print(f"✓ Generated {output_file} ({stars:,} stars, {contributions:,} contributions)")
   except Exception as e:
-    print(f"Error generating overview: {e}", file=sys.stderr)
+    print(f"✗ Error generating overview: {e}", file=sys.stderr)
     raise
 
 async def generate_languages(s:  Stats, output_dir: Path) -> None:
   try:
+    print("Fetching language stats...")
     output = TEMPLATE_LANGUAGES
     progress_parts = []
     lang_list_parts = []
-    sorted_langs = sorted((await s.languages).items(), reverse=True, key=lambda t: t[1].get("size", 0))
+    languages = await s.languages
+    sorted_langs = sorted(languages.items(), reverse=True, key=lambda t: t[1].get("size", 0))
+    print(f"Found {len(sorted_langs)} languages")
     for i, (lang, data) in enumerate(sorted_langs):
       color = data.get("color") or "#888888"
       prop = data.get("prop", 0)
@@ -91,14 +102,15 @@ async def generate_languages(s:  Stats, output_dir: Path) -> None:
       if i == len(sorted_langs) - 1:
         ratio = [1, 0]
       progress_parts.append(f'<span style="background-color:{color};width:{ratio[0] * prop:.3f}%;margin-right:{ratio[1] * prop:.3f}%" class="progress-item"></span>')
-      lang_list_parts.append(f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{lang}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>')
+      lang_list_parts.append(f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{html.escape(lang)}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>')
     output = output.replace("{{ progress }}", "".join(progress_parts))
     output = output.replace("{{ lang_list }}", "".join(lang_list_parts))
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "languages.svg").write_text(output, encoding="utf-8")
-    print("Generated languages.svg")
+    output_file = output_dir / "languages.svg"
+    output_file.write_text(output, encoding="utf-8")
+    print(f"✓ Generated {output_file} (top: {sorted_langs[0][0] if sorted_langs else 'none'})")
   except Exception as e:
-    print(f"Error generating languages: {e}", file=sys.stderr)
+    print(f"✗ Error generating languages: {e}", file=sys.stderr)
     raise
 
 async def main() -> int:

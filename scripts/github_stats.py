@@ -14,29 +14,36 @@ class Queries:
   username: str
   access_token:  str
   session: aiohttp.ClientSession
-  semaphore: asyncio.Semaphore = field(default_factory=lambda: asyncio.Semaphore(10))
+  max_concurrent: int = 10
+  semaphore: asyncio.Semaphore = field(init=False)
 
-  async def query(self, generated_query: str) -> dict:
+  def __post_init__(self):
+    self.semaphore = asyncio.Semaphore(self.max_concurrent)
+
+  async def query(self, generated_query: str, retries: int = 3) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
     async with self.semaphore:
-      try:
-        r = await self.session.post(
-          "https://api.github.com/graphql",
-          headers=headers,
-          json={"query": generated_query},
-          timeout=aiohttp.ClientTimeout(total=30)
-        )
-        r.raise_for_status()
-        return await r.json()
-      except aiohttp.ClientError as e:
-        print(f"GraphQL query failed: {e}")
-        return {}
+      for attempt in range(retries):
+        try:
+          r = await self.session.post(
+            "https://api.github.com/graphql",
+            headers=headers,
+            json={"query": generated_query},
+            timeout=aiohttp.ClientTimeout(total=30)
+          )
+          r.raise_for_status()
+          return await r.json()
+        except aiohttp.ClientError as e:
+          if attempt == retries - 1:
+            print(f"GraphQL query failed after {retries} attempts: {e}")
+            return {}
+          await asyncio.sleep(2 ** attempt)
 
-  async def query_rest(self, path: str, params: Optional[dict] = None) -> dict:
+  async def query_rest(self, path: str, params: Optional[dict] = None, max_attempts: int = 60) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
     params = params or {}
     path = path.lstrip("/")
-    for attempt in range(60):
+    for attempt in range(max_attempts):
       async with self.semaphore:
         try:
           r = await self.session.get(
@@ -46,12 +53,21 @@ class Queries:
             timeout=aiohttp.ClientTimeout(total=30)
           )
           if r.status == 202:
-            await asyncio.sleep(2)
+            await asyncio.sleep(min(2 ** min(attempt // 10, 3), 8))
             continue
-          return await r.json() if r.status == 200 else {}
-        except aiohttp.ClientError as e:
-          print(f"REST query failed for {path}: {e}")
+          if r.status == 200:
+            return await r.json()
+          if r.status == 404:
+            return {}
+          if attempt < max_attempts - 1:
+            await asyncio.sleep(min(2 ** min(attempt // 5, 3), 8))
+            continue
           return {}
+        except aiohttp.ClientError as e:
+          if attempt == max_attempts - 1:
+            print(f"REST query failed for {path} after {max_attempts} attempts: {e}")
+            return {}
+          await asyncio.sleep(min(2 ** min(attempt // 5, 3), 8))
     return {}
 
   @staticmethod
@@ -208,6 +224,8 @@ class Stats:
       return self._total_contributions
     self._total_contributions = 0
     years = (await self.queries.query(self.queries.contrib_years())).get("data", {}).get("viewer", {}).get("contributionsCollection", {}).get("contributionYears", [])
+    if not years:
+      return self._total_contributions
     by_year = (await self.queries.query(self.queries.all_contribs(years))).get("data", {}).get("viewer", {}).values()
     for year in by_year:
       self._total_contributions += year.get("contributionCalendar", {}).get("totalContributions", 0)
