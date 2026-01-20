@@ -21,7 +21,7 @@ runs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
 
         # Add files using the provided pattern(s) directly
-        git add ${{ inputs.file_pattern }} || echo "Warning: Could not add specified file pattern(s): ${{ inputs.file_pattern }}"
+        git add ${{ inputs.file_pattern }}
 
         # Check if there are changes to commit
         if ! git diff --cached --quiet; then

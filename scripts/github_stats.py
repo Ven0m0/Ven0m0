@@ -22,8 +22,8 @@ class Queries:
 
   async def query(self, generated_query: str, retries: int = 3) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
-    async with self.semaphore:
-      for attempt in range(retries):
+    for attempt in range(retries):
+      async with self.semaphore:
         try:
           r = await self.session.post(
             "https://api.github.com/graphql",
@@ -37,13 +37,15 @@ class Queries:
           if attempt == retries - 1:
             print(f"GraphQL query failed after {retries} attempts: {e}")
             return {}
-          await asyncio.sleep(2 ** attempt)
+      # Sleep outside the semaphore context to avoid blocking other requests
+      await asyncio.sleep(2 ** attempt)
 
   async def query_rest(self, path: str, params: Optional[dict] = None, max_attempts: int = 60) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
     params = params or {}
     path = path.lstrip("/")
     for attempt in range(max_attempts):
+      status = None
       async with self.semaphore:
         try:
           r = await self.session.get(
@@ -52,22 +54,23 @@ class Queries:
             params=tuple(params.items()),
             timeout=aiohttp.ClientTimeout(total=30)
           )
-          if r.status == 202:
-            await asyncio.sleep(min(2 ** min(attempt // 10, 3), 8))
-            continue
+          status = r.status
           if r.status == 200:
             return await r.json()
           if r.status == 404:
             return {}
-          if attempt < max_attempts - 1:
-            await asyncio.sleep(min(2 ** min(attempt // 5, 3), 8))
-            continue
-          return {}
         except aiohttp.ClientError as e:
           if attempt == max_attempts - 1:
             print(f"REST query failed for {path} after {max_attempts} attempts: {e}")
             return {}
-          await asyncio.sleep(min(2 ** min(attempt // 5, 3), 8))
+      # Sleep outside the semaphore context to avoid blocking other requests
+      if status == 202:
+        await asyncio.sleep(min(2 ** min(attempt // 10, 3), 8))
+        continue
+      if attempt < max_attempts - 1:
+        await asyncio.sleep(min(2 ** min(attempt // 5, 3), 8))
+        continue
+      return {}
     return {}
 
   @staticmethod
