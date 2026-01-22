@@ -82,7 +82,7 @@ async def generate_overview(s: Stats, output_dir: Path) -> None:
   output_file.write_text(output, encoding="utf-8")
   print(f"✓ Generated {output_file} ({stars:,} stars, {contributions:,} contributions)")
 
-async def generate_languages(s:  Stats, output_dir: Path) -> None:
+async def generate_languages(s: Stats, output_dir: Path) -> None:
   print("Fetching language stats...")
   output = TEMPLATE_LANGUAGES
   progress_parts = []
