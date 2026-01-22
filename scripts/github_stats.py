@@ -38,6 +38,8 @@ class Queries:
             print(f"GraphQL query returned errors: {error_msg}")
             if attempt == retries - 1:
               raise RuntimeError(f"GraphQL API errors: {error_msg}")
+            # On non-final attempts, retry instead of returning a result with errors
+            continue
           return result
         except aiohttp.ClientError as e:
           if attempt == retries - 1:
