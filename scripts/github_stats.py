@@ -35,10 +35,11 @@ class Queries:
           result = await r.json()
           if "errors" in result:
             error_msg = "; ".join(e.get("message", "Unknown error") for e in result.get("errors", []))
+          if "errors" in result:
+            error_msg = "; ".join(e.get("message", "Unknown error") for e in result.get("errors", []))
             print(f"GraphQL query returned errors: {error_msg}")
             if attempt == retries - 1:
               raise RuntimeError(f"GraphQL API errors: {error_msg}")
-            # On non-final attempts, retry instead of returning a result with errors
             continue
           return result
         except aiohttp.ClientError as e:
