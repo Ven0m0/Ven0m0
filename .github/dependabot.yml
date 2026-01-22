@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     groups:
       github-actions-all:
         patterns:
@@ -11,4 +11,3 @@ updates:
         update-types:
           - "minor"
           - "patch"
-    rebase-strategy: "auto"
