@@ -46,7 +46,6 @@ class Queries:
       # Sleep outside the semaphore context to avoid blocking other requests
       if attempt < retries - 1:
         await asyncio.sleep(2 ** attempt)
-    return {}
 
   async def query_rest(self, path: str, params: Optional[dict] = None, max_attempts: int = 60) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
