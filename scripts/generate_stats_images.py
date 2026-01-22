@@ -64,60 +64,58 @@ TEMPLATE_LANGUAGES = """<svg xmlns="http://www.w3.org/2000/svg" width="495" heig
 </svg>"""
 
 async def generate_overview(s: Stats, output_dir: Path) -> None:
-  try:
-    print("Fetching overview stats...")
-    output = TEMPLATE_OVERVIEW
-    name = await s.name
-    output = output.replace("{{ name }}", html.escape(name))
-    stars = await s.stargazers
-    output = output.replace("{{ stars }}", f"{stars:,}")
-    contributions = await s.total_contributions
-    output = output.replace("{{ contributions }}", f"{contributions:,}")
-    repos = await s.all_repos
-    output = output.replace("{{ repos }}", f"{len(repos):,}")
-    lines = await s.lines_changed
-    changed = sum(lines)
-    output = output.replace("{{ lines_changed }}", f"{changed:,}")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = output_dir / "overview.svg"
-    output_file.write_text(output, encoding="utf-8")
-    print(f"✓ Generated {output_file} ({stars:,} stars, {contributions:,} contributions)")
-  except Exception as e:
-    print(f"✗ Error generating overview: {e}", file=sys.stderr)
-    raise
+  print("Fetching overview stats...")
+  output = TEMPLATE_OVERVIEW
+  name = await s.name
+  output = output.replace("{{ name }}", html.escape(name))
+  stars = await s.stargazers
+  output = output.replace("{{ stars }}", f"{stars:,}")
+  contributions = await s.total_contributions
+  output = output.replace("{{ contributions }}", f"{contributions:,}")
+  repos = await s.all_repos
+  output = output.replace("{{ repos }}", f"{len(repos):,}")
+  lines = await s.lines_changed
+  changed = sum(lines)
+  output = output.replace("{{ lines_changed }}", f"{changed:,}")
+  output_dir.mkdir(parents=True, exist_ok=True)
+  output_file = output_dir / "overview.svg"
+  output_file.write_text(output, encoding="utf-8")
+  print(f"✓ Generated {output_file} ({stars:,} stars, {contributions:,} contributions)")
 
 async def generate_languages(s:  Stats, output_dir: Path) -> None:
-  try:
-    print("Fetching language stats...")
-    output = TEMPLATE_LANGUAGES
-    progress_parts = []
-    lang_list_parts = []
-    languages = await s.languages
-    sorted_langs = sorted(languages.items(), reverse=True, key=lambda t: t[1].get("size", 0))
-    print(f"Found {len(sorted_langs)} languages")
-    for i, (lang, data) in enumerate(sorted_langs):
-      color = data.get("color") or "#888888"
-      prop = data.get("prop", 0)
-      ratio = [0.99, 0.01] if prop > 50 else [0.98, 0.02]
-      if i == len(sorted_langs) - 1:
-        ratio = [1, 0]
-      progress_parts.append(f'<span style="background-color:{color};width:{ratio[0] * prop:.3f}%;margin-right:{ratio[1] * prop:.3f}%" class="progress-item"></span>')
-      lang_list_parts.append(f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{html.escape(lang)}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>')
-    output = output.replace("{{ progress }}", "".join(progress_parts))
-    output = output.replace("{{ lang_list }}", "".join(lang_list_parts))
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = output_dir / "languages.svg"
-    output_file.write_text(output, encoding="utf-8")
-    print(f"✓ Generated {output_file} (top: {sorted_langs[0][0] if sorted_langs else 'none'})")
-  except Exception as e:
-    print(f"✗ Error generating languages: {e}", file=sys.stderr)
-    raise
+  print("Fetching language stats...")
+  output = TEMPLATE_LANGUAGES
+  progress_parts = []
+  lang_list_parts = []
+  languages = await s.languages
+  sorted_langs = sorted(languages.items(), reverse=True, key=lambda t: t[1].get("size", 0))
+  print(f"Found {len(sorted_langs)} languages")
+  if not sorted_langs:
+    print("Warning: No languages found. This may indicate an issue with repository access.")
+  for i, (lang, data) in enumerate(sorted_langs):
+    color = data.get("color") or "#888888"
+    prop = data.get("prop", 0)
+    ratio = [0.99, 0.01] if prop > 50 else [0.98, 0.02]
+    if i == len(sorted_langs) - 1:
+      ratio = [1, 0]
+    progress_parts.append(f'<span style="background-color:{color};width:{ratio[0] * prop:.3f}%;margin-right:{ratio[1] * prop:.3f}%" class="progress-item"></span>')
+    lang_list_parts.append(f'<li style="animation-delay:{i * 150}ms"><svg xmlns="http://www.w3.org/2000/svg" style="fill:{color};margin-right:8px" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="4"/></svg><span class="lang">{html.escape(lang)}</span><span class="percent" style="margin-left:auto">{prop:.2f}%</span></li>')
+  output = output.replace("{{ progress }}", "".join(progress_parts))
+  output = output.replace("{{ lang_list }}", "".join(lang_list_parts))
+  output_dir.mkdir(parents=True, exist_ok=True)
+  output_file = output_dir / "languages.svg"
+  output_file.write_text(output, encoding="utf-8")
+  print(f"✓ Generated {output_file} (top: {sorted_langs[0][0] if sorted_langs else 'none'})")
 
 async def main() -> int:
   token = os.getenv("ACCESS_TOKEN") or os.getenv("GITHUB_TOKEN")
   user = os.getenv("GITHUB_ACTOR") or os.getenv("GITHUB_REPOSITORY_OWNER")
-  if not token or not user:
-    print("Error: ACCESS_TOKEN and GITHUB_ACTOR required", file=sys.stderr)
+  if not token:
+    print("Error: ACCESS_TOKEN or GITHUB_TOKEN environment variable required", file=sys.stderr)
+    print("The token must have 'repo' and 'read:user' scopes", file=sys.stderr)
+    return 1
+  if not user:
+    print("Error: GITHUB_ACTOR or GITHUB_REPOSITORY_OWNER environment variable required", file=sys.stderr)
     return 1
   exclude_repos_str = os.getenv("EXCLUDED", "")
   exclude_repos = {x.strip() for x in exclude_repos_str.split(",")} if exclude_repos_str else set()
@@ -125,14 +123,25 @@ async def main() -> int:
   exclude_langs = {x.strip() for x in exclude_langs_str.split(",")} if exclude_langs_str else set()
   consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
   output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
+  print(f"Generating GitHub stats for user: {user}")
+  print(f"Output directory: {output_dir}")
   try:
     async with aiohttp.ClientSession() as session:
       s = Stats(user, token, session, exclude_repos=exclude_repos, exclude_langs=exclude_langs, consider_forked_repos=consider_forks)
       await asyncio.gather(generate_overview(s, output_dir), generate_languages(s, output_dir))
-    print(f"Generated stats images in {output_dir}/")
+    print(f"✓ Successfully generated stats images in {output_dir}/")
     return 0
+  except RuntimeError as e:
+    print(f"✗ Failed to generate stats: {e}", file=sys.stderr)
+    print("\nTroubleshooting:", file=sys.stderr)
+    print("1. Ensure ACCESS_TOKEN is set with a valid GitHub Personal Access Token", file=sys.stderr)
+    print("2. Token must have these scopes: 'repo', 'read:user'", file=sys.stderr)
+    print("3. Create a token at: https://github.com/settings/tokens/new", file=sys.stderr)
+    return 1
   except Exception as e:
-    print(f"Fatal error: {e}", file=sys.stderr)
+    print(f"✗ Unexpected error: {e}", file=sys.stderr)
+    import traceback
+    traceback.print_exc()
     return 1
 
 if __name__ == "__main__":

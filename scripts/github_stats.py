@@ -32,14 +32,21 @@ class Queries:
             timeout=aiohttp.ClientTimeout(total=30)
           )
           r.raise_for_status()
-          return await r.json()
+          result = await r.json()
+          if "errors" in result:
+            error_msg = "; ".join(e.get("message", "Unknown error") for e in result.get("errors", []))
+            print(f"GraphQL query returned errors: {error_msg}")
+            if attempt == retries - 1:
+              raise RuntimeError(f"GraphQL API errors: {error_msg}")
+          return result
         except aiohttp.ClientError as e:
           if attempt == retries - 1:
-            print(f"GraphQL query failed after {retries} attempts: {e}")
-            return {}
+            raise RuntimeError(f"GraphQL query failed after {retries} attempts: {e}")
+          print(f"GraphQL attempt {attempt + 1}/{retries} failed: {e}")
       # Sleep outside the semaphore context to avoid blocking other requests
       if attempt < retries - 1:
         await asyncio.sleep(2 ** attempt)
+    return {}
 
   async def query_rest(self, path: str, params: Optional[dict] = None, max_attempts: int = 60) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
@@ -60,16 +67,21 @@ class Queries:
             return await r.json()
           if r.status == 404:
             return {}
+          if r.status == 401 or r.status == 403:
+            error_body = await r.text()
+            raise RuntimeError(f"Authentication failed for {path} (status {r.status}): {error_body}")
           if r.status == 202:
             should_retry = True
             sleep_duration = min(2 ** min(attempt // 10, 3), 8)
           elif attempt < max_attempts - 1:
             should_retry = True
             sleep_duration = min(2 ** min(attempt // 5, 3), 8)
+          else:
+            error_body = await r.text()
+            raise RuntimeError(f"REST API request failed for {path} with status {r.status}: {error_body}")
         except aiohttp.ClientError as e:
           if attempt == max_attempts - 1:
-            print(f"REST query failed for {path} after {max_attempts} attempts: {e}")
-            return {}
+            raise RuntimeError(f"REST query failed for {path} after {max_attempts} attempts: {e}")
           should_retry = True
           sleep_duration = min(2 ** min(attempt // 5, 3), 8)
       # Sleep outside the semaphore context to avoid blocking other requests
@@ -153,11 +165,21 @@ class Stats:
     self._ignored_repos = set()
     next_owned = None
     next_contrib = None
+    first_iteration = True
     while True:
       raw = await self.queries.query(self.queries.repos_overview(next_contrib, next_owned))
       raw = raw or {}
+      if not raw.get("data"):
+        raise RuntimeError(f"GitHub API returned no data. Check if ACCESS_TOKEN has required permissions (repo, read:user)")
       viewer = raw.get("data", {}).get("viewer", {})
-      self._name = viewer.get("name") or viewer.get("login", "No Name")
+      if not viewer:
+        raise RuntimeError("GitHub API returned no viewer data. Token may be invalid.")
+      if first_iteration:
+        self._name = viewer.get("name") or viewer.get("login")
+        if not self._name:
+          raise RuntimeError("Could not retrieve username from GitHub API. Token may be invalid.")
+        print(f"Fetching stats for: {self._name}")
+        first_iteration = False
       contrib_repos = viewer.get("repositoriesContributedTo", {})
       owned_repos = viewer.get("repositories", {})
       repos = owned_repos.get("nodes", [])
@@ -201,7 +223,9 @@ class Stats:
   async def name(self) -> str:
     if self._name is None:
       await self.get_stats()
-    return self._name or "No Name"
+    if not self._name:
+      raise RuntimeError("Unable to fetch GitHub username. API authentication may have failed.")
+    return self._name
 
   @property
   async def stargazers(self) -> int:
