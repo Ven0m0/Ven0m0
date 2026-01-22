@@ -6,6 +6,7 @@ import asyncio
 import html
 import os
 import sys
+import traceback
 from pathlib import Path
 
 import aiohttp
