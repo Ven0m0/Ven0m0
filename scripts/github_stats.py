@@ -169,7 +169,7 @@ class Stats:
       raw = await self.queries.query(self.queries.repos_overview(next_contrib, next_owned))
       raw = raw or {}
       if not raw.get("data"):
-        raise RuntimeError(f"GitHub API returned no data. Check if ACCESS_TOKEN has required permissions (repo, read:user)")
+        raise RuntimeError("GitHub API returned no data. Check if ACCESS_TOKEN has required permissions (repo, read:user)")
       viewer = raw.get("data", {}).get("viewer", {})
       if not viewer:
         raise RuntimeError("GitHub API returned no viewer data. Token may be invalid.")
