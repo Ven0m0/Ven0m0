@@ -140,7 +140,6 @@ async def main() -> int:
     return 1
   except Exception as e:
     print(f"✗ Unexpected error: {e}", file=sys.stderr)
-    import traceback
     traceback.print_exc()
     return 1
 
