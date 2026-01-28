@@ -35,8 +35,6 @@ class Queries:
           result = await r.json()
           if "errors" in result:
             error_msg = "; ".join(e.get("message", "Unknown error") for e in result.get("errors", []))
-          if "errors" in result:
-            error_msg = "; ".join(e.get("message", "Unknown error") for e in result.get("errors", []))
             print(f"GraphQL query returned errors: {error_msg}")
             if attempt == retries - 1:
               raise RuntimeError(f"GraphQL API errors: {error_msg}")
@@ -49,6 +47,7 @@ class Queries:
       # Sleep outside the semaphore context to avoid blocking other requests
       if attempt < retries - 1:
         await asyncio.sleep(2 ** attempt)
+    return {}
 
   async def query_rest(self, path: str, params: Optional[dict] = None, max_attempts: int = 60) -> dict:
     headers = {"Authorization": f"Bearer {self.access_token}"}
@@ -257,13 +256,14 @@ class Stats:
   async def total_contributions(self) -> int:
     if self._total_contributions is not None:
       return self._total_contributions
-    self._total_contributions = 0
+    total = 0
     years = (await self.queries.query(self.queries.contrib_years())).get("data", {}).get("viewer", {}).get("contributionsCollection", {}).get("contributionYears", [])
-    if not years:
-      return self._total_contributions
-    by_year = (await self.queries.query(self.queries.all_contribs(years))).get("data", {}).get("viewer", {}).values()
-    for year in by_year:
-      self._total_contributions += year.get("contributionCalendar", {}).get("totalContributions", 0)
+    if years:
+      by_year = (await self.queries.query(self.queries.all_contribs(years))).get("data", {}).get("viewer", {}).values()
+      for year in by_year:
+        if isinstance(year, dict):
+          total += year.get("contributionCalendar", {}).get("totalContributions", 0)
+    self._total_contributions = total
     return self._total_contributions
 
   @property

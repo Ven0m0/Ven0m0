@@ -70,7 +70,7 @@ class GithubClient:
 def classify_repo(
     metadata: dict, now: dt.datetime, active_days: int, partially_days: int
 ) -> RepoResult:
-    slug = metadata.get("full_name")
+    slug = metadata.get("full_name", "")
     archived = metadata.get("archived", False)
     pushed_at = metadata.get("pushed_at")
     if archived:
