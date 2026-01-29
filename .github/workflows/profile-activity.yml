@@ -14,21 +14,21 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v6
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: "3.13"
-          cache: 'pip'
+          enable-cache: true
 
       - name: Update profile README
         env:
+          PYTHONOPTIMIZE: "1"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 -O scripts/update_profile_activity.py
+        run: uv run --python 3.13 scripts/update_profile_activity.py
 
       - name: Update latest repos section
-        uses: actions/github-script@v8
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           retries: 3

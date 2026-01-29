@@ -11,9 +11,10 @@ import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
 from urllib import error as urlerror
 from urllib import request
+
+logger = logging.getLogger(__name__)
 
 STATUS_MAP = {
     "active": {"emoji": "🟢", "label": "Active"},
@@ -24,7 +25,7 @@ STATUS_MAP = {
 
 GITHUB_RE = re.compile(r"https://github\.com/(?P<owner>[\w.-]+)/(?P<repo>[\w.-]+)")
 LINE_RE = re.compile(
-    r"^(?P<prefix>\s*-\s*)(?:(?P<emoji>\S+)\s+)?\*\*(?P<label>[^*]+?)\*\*(?P<ws>\s*)(?P<rest>.+)$"
+    r"^(?P<prefix>\s*-\s*)(?:(?P<emoji>\S+)\s+)?\*\*(?P<label>[^*]+?)\*\*(?P<ws>\s*)(?P<rest>.+)$",
 )
 
 
@@ -32,18 +33,18 @@ LINE_RE = re.compile(
 class RepoResult:
     repo: str
     status: str
-    pushed_at: Optional[str]
+    pushed_at: str | None
     archived: bool
 
 
 class GithubClient:
-    def __init__(self, token: Optional[str] = None) -> None:
+    def __init__(self, token: str | None = None) -> None:
         self._token = (
             token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
         )
-        self._cache: dict[str, Optional[dict]] = {}
+        self._cache: dict[str, dict | None] = {}
 
-    def fetch(self, slug: str) -> Optional[dict]:
+    def fetch(self, slug: str) -> dict | None:
         if slug in self._cache:
             return self._cache[slug]
         url = f"https://api.github.com/repos/{slug}"
@@ -58,19 +59,19 @@ class GithubClient:
             with request.urlopen(req, timeout=10) as resp:
                 payload = json.loads(resp.read().decode("utf-8"))
         except urlerror.HTTPError as exc:
-            logging.error("GitHub request failed for %s: %s", slug, exc)
+            logger.error("GitHub request failed for %s: %s", slug, exc)
             payload = None
         except urlerror.URLError as exc:
-            logging.error("Unable to reach GitHub for %s: %s", slug, exc)
+            logger.error("Unable to reach GitHub for %s: %s", slug, exc)
             payload = None
         self._cache[slug] = payload
         return payload
 
 
 def classify_repo(
-    metadata: dict, now: dt.datetime, active_days: int, partially_days: int
+    metadata: dict, now: dt.datetime, active_days: int, partially_days: int,
 ) -> RepoResult:
-    slug = metadata.get("full_name")
+    slug = metadata.get("full_name", "")
     archived = metadata.get("archived", False)
     pushed_at = metadata.get("pushed_at")
     if archived:
@@ -80,10 +81,10 @@ def classify_repo(
         if pushed_at:
             try:
                 pushed = dt.datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ").replace(
-                    tzinfo=dt.timezone.utc
+                    tzinfo=dt.timezone.utc,
                 )
             except ValueError:
-                logging.warning("Unexpected pushed_at for %s: %s", slug, pushed_at)
+                logger.warning("Unexpected pushed_at for %s: %s", slug, pushed_at)
         if pushed is None:
             status = "inactive"
         else:
@@ -97,7 +98,7 @@ def classify_repo(
     return RepoResult(repo=slug, status=status, pushed_at=pushed_at, archived=archived)
 
 
-def find_repo_slug(line: str) -> Optional[str]:
+def find_repo_slug(line: str) -> str | None:
     match = GITHUB_RE.search(line)
     if not match:
         return None
@@ -112,17 +113,20 @@ def apply_status_to_line(line: str, status: str) -> str:
         return line
     ws = match.group("ws") or " "
     rest = match.group("rest")
-    return f"{match.group('prefix')}{status_info['emoji']} **{status_info['label']}:**{ws}{rest}"
+    prefix = match.group("prefix")
+    emoji = status_info["emoji"]
+    label = status_info["label"]
+    return f"{prefix}{emoji} **{label}:**{ws}{rest}"
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--readme", default="README.md", help="Path to profile markdown"
+        "--readme", default="README.md", help="Path to profile markdown",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print changes only")
     parser.add_argument(
-        "--active-days", type=int, default=120, help="Days for Active threshold"
+        "--active-days", type=int, default=120, help="Days for Active threshold",
     )
     parser.add_argument(
         "--partially-days",
@@ -143,17 +147,20 @@ def main() -> int:
     )
     path = Path(args.readme)
     if not path.is_file():
-        logging.error("README not found at %s", path)
+        logger.error("README not found at %s", path)
         return 1
     client = GithubClient()
     text = path.read_text(encoding="utf-8")
     lines = text.splitlines()
     now = dt.datetime.now(tz=dt.timezone.utc)
     processed = 0
-    updates = []
+    updates: list[tuple[str, str]] = []
     for idx, line in enumerate(lines):
         if args.max_repos is not None and processed >= args.max_repos:
-            logging.info("Reached max repo limit (%s); stopping early", args.max_repos)
+            logger.info(
+                "Reached max repo limit (%s); stopping early",
+                args.max_repos,
+            )
             break
         slug = find_repo_slug(line)
         if not slug:
@@ -161,23 +168,23 @@ def main() -> int:
         metadata = client.fetch(slug)
         processed += 1
         if not metadata:
-            logging.warning("Skipping %s; could not fetch metadata", slug)
+            logger.warning("Skipping %s; could not fetch metadata", slug)
             continue
         result = classify_repo(metadata, now, args.active_days, args.partially_days)
         new_line = apply_status_to_line(line, result.status)
         if new_line != line:
             lines[idx] = new_line
             updates.append((slug, result.status))
-            logging.info("Updating %s => %s", slug, result.status)
+            logger.info("Updating %s => %s", slug, result.status)
     if not updates:
-        logging.info("No updates needed")
+        logger.info("No updates needed")
         return 0
     new_contents = "\n".join(lines) + "\n"
     if args.dry_run:
-        logging.info("Dry run: %s lines would change", len(updates))
+        logger.info("Dry run: %s lines would change", len(updates))
         return 0
     path.write_text(new_contents, encoding="utf-8")
-    logging.info("Updated %s lines", len(updates))
+    logger.info("Updated %s lines", len(updates))
     return 0
 
 
