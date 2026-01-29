@@ -1,8 +1,8 @@
 name: Generate Stats Images
 
-on: 
+on:
   workflow_dispatch:
-  schedule: 
+  schedule:
     - cron: "0 */12 * * *"
   push:
     branches: [main]
@@ -19,23 +19,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v6
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: '3.13'
-
-      - name: Cache dependencies
-        uses: actions/cache@v5
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}-aiohttp-3.13.3
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      - name: Install dependencies
-        run: python3 -m pip install 'aiohttp>=3.13.3,<4.0.0'
+          enable-cache: true
 
       - name: Generate stats images
         env:
@@ -49,7 +38,7 @@ jobs:
           EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
           COUNT_STATS_FROM_FORKS: ${{ secrets.COUNT_STATS_FROM_FORKS }}
           OUTPUT_DIR: images
-        run: python3 -OO scripts/generate_stats_images.py
+        run: uv run --python 3.13 --with 'aiohttp>=3.11,<4' scripts/generate_stats_images.py
 
       - name: Commit stats
         uses: ./.github/actions/git-auto-commit
