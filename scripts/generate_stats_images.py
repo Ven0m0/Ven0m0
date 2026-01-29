@@ -563,11 +563,50 @@ async def generate_languages(s: Stats, output_dir: Path) -> None:
 # =============================================================================
 
 
+async def try_generate_stats(
+    user: str,
+    token: str,
+    token_name: str,
+    output_dir: Path,
+    exclude_repos: set[str],
+    exclude_langs: set[str],
+    consider_forks: bool,
+) -> bool:
+    """Try to generate stats with a given token. Returns True on success."""
+    print(f"Trying {token_name}...")
+    try:
+        async with aiohttp.ClientSession() as session:
+            s = Stats(
+                user,
+                token,
+                session,
+                exclude_repos=exclude_repos,
+                exclude_langs=exclude_langs,
+                consider_forked_repos=consider_forks,
+            )
+            await asyncio.gather(
+                generate_overview(s, output_dir),
+                generate_languages(s, output_dir),
+            )
+        print(f"✓ Successfully generated stats images in {output_dir}/")
+        return True
+    except RuntimeError as e:
+        error_str = str(e).lower()
+        # Check if it's an authentication error
+        if "authentication" in error_str or "401" in error_str or "403" in error_str:
+            print(f"✗ {token_name} authentication failed: {e}", file=sys.stderr)
+            return False
+        # For non-auth errors, re-raise
+        raise
+
+
 async def main() -> int:
     """Main entry point for the script."""
-    token = os.getenv("ACCESS_TOKEN") or os.getenv("GITHUB_TOKEN")
+    access_token = os.getenv("ACCESS_TOKEN")
+    github_token = os.getenv("GITHUB_TOKEN")
     user = os.getenv("GITHUB_ACTOR") or os.getenv("GITHUB_REPOSITORY_OWNER")
-    if not token:
+
+    if not access_token and not github_token:
         print(
             "Error: ACCESS_TOKEN or GITHUB_TOKEN environment variable required",
             file=sys.stderr,
@@ -584,6 +623,7 @@ async def main() -> int:
             file=sys.stderr,
         )
         return 1
+
     exclude_repos_str = os.getenv("EXCLUDED", "")
     if exclude_repos_str:
         exclude_repos = {x.strip() for x in exclude_repos_str.split(",")}
@@ -596,44 +636,57 @@ async def main() -> int:
         exclude_langs = set()
     consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
     output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
+
     print(f"Generating GitHub stats for user: {user}")
     print(f"Output directory: {output_dir}")
-    try:
-        async with aiohttp.ClientSession() as session:
-            s = Stats(
-                user,
-                token,
-                session,
+
+    # Build list of tokens to try (ACCESS_TOKEN first, then GITHUB_TOKEN)
+    tokens_to_try: list[tuple[str, str]] = []
+    if access_token:
+        tokens_to_try.append((access_token, "ACCESS_TOKEN"))
+    if github_token and github_token != access_token:
+        tokens_to_try.append((github_token, "GITHUB_TOKEN"))
+
+    last_error: Exception | None = None
+    for token, token_name in tokens_to_try:
+        try:
+            success = await try_generate_stats(
+                user=user,
+                token=token,
+                token_name=token_name,
+                output_dir=output_dir,
                 exclude_repos=exclude_repos,
                 exclude_langs=exclude_langs,
-                consider_forked_repos=consider_forks,
+                consider_forks=consider_forks,
             )
-            await asyncio.gather(
-                generate_overview(s, output_dir),
-                generate_languages(s, output_dir),
-            )
-        print(f"✓ Successfully generated stats images in {output_dir}/")
-        return 0
-    except RuntimeError as e:
-        print(f"✗ Failed to generate stats: {e}", file=sys.stderr)
-        print("\nTroubleshooting:", file=sys.stderr)
-        print(
-            "1. Ensure ACCESS_TOKEN is set with a valid GitHub PAT",
-            file=sys.stderr,
-        )
-        print(
-            "2. Token must have these scopes: 'repo', 'read:user'",
-            file=sys.stderr,
-        )
-        print(
-            "3. Create a token at: https://github.com/settings/tokens/new",
-            file=sys.stderr,
-        )
-        return 1
-    except Exception as e:
-        print(f"✗ Unexpected error: {e}", file=sys.stderr)
-        traceback.print_exc()
-        return 1
+            if success:
+                return 0
+        except RuntimeError as e:
+            last_error = e
+            print(f"✗ Failed with {token_name}: {e}", file=sys.stderr)
+        except Exception as e:
+            print(f"✗ Unexpected error with {token_name}: {e}", file=sys.stderr)
+            traceback.print_exc()
+            last_error = e
+
+    # All tokens failed
+    print("\n✗ All tokens failed.", file=sys.stderr)
+    print("\nTroubleshooting:", file=sys.stderr)
+    print(
+        "1. Ensure ACCESS_TOKEN is set with a valid GitHub PAT",
+        file=sys.stderr,
+    )
+    print(
+        "2. Token must have these scopes: 'repo', 'read:user'",
+        file=sys.stderr,
+    )
+    print(
+        "3. Create a token at: https://github.com/settings/tokens/new",
+        file=sys.stderr,
+    )
+    if last_error:
+        print(f"\nLast error: {last_error}", file=sys.stderr)
+    return 1
 
 
 if __name__ == "__main__":
