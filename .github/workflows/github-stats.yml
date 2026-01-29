@@ -28,6 +28,7 @@ jobs:
 
       - name: Generate stats images
         env:
+          PYTHONOPTIMIZE: "1"
           # ACCESS_TOKEN should be a GitHub Personal Access Token with 'repo' and 'read:user' scopes
           # Create one at: https://github.com/settings/tokens/new
           # The default GITHUB_TOKEN has limited permissions and may not work properly

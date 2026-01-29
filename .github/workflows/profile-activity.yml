@@ -23,6 +23,7 @@ jobs:
 
       - name: Update profile README
         env:
+          PYTHONOPTIMIZE: "1"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run --python 3.13 scripts/update_profile_activity.py
 
