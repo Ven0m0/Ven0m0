@@ -7,7 +7,6 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/github_stats.py'
       - 'scripts/generate_stats_images.py'
       - '.github/workflows/github-stats.yml'
 
