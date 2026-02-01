@@ -1,1 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195"><defs><style>.label{font:400 12px&quot;Segoe UI&quot;,Ubuntu,sans-serif;fill:#b39ddb}.value{font:600 16px&quot;Segoe UI&quot;,Ubuntu,sans-serif;fill:#fff}</style></defs><rect width="495" height="195" fill="#0d1117" rx="6"/><text x="20" y="35" style="font:600 18px&quot;Segoe UI&quot;,Ubuntu,sans-serif;fill:#ba68c8">Ven0m0&apos;s GitHub Stats</text><text y="20" class="label" transform="translate(20 60)">Total Stars Earned</text><text x="200" y="20" class="value" transform="translate(20 60)">19</text><text y="20" class="label" transform="translate(20 90)">Total Commits</text><text x="200" y="20" class="value" transform="translate(20 90)">15,766</text><text y="20" class="label" transform="translate(20 120)">Total Repositories</text><text x="200" y="20" class="value" transform="translate(20 120)">45</text><text y="20" class="label" transform="translate(20 150)">Lines Changed</text><text x="200" y="20" class="value" transform="translate(20 150)">4,350,456</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
+  <defs>
+    <style>
+      .header{font: 600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}
+      .stat{font:400 14px 'Segoe UI',Ubuntu,sans-serif;fill:#f8bbd0}
+      .label{font:400 12px 'Segoe UI',Ubuntu,sans-serif;fill:#b39ddb}
+      .value{font:600 16px 'Segoe UI',Ubuntu,sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect width="495" height="195" fill="#0d1117" rx="6"/>
+  <text x="20" y="35" class="header">Ven0m0's GitHub Stats</text>
+  <g transform="translate(20, 60)">
+    <text y="20" class="label">Total Stars Earned</text>
+    <text y="20" x="200" class="value">19</text>
+  </g>
+  <g transform="translate(20, 90)">
+    <text y="20" class="label">Total Commits</text>
+    <text y="20" x="200" class="value">15,790</text>
+  </g>
+  <g transform="translate(20, 120)">
+    <text y="20" class="label">Total Repositories</text>
+    <text y="20" x="200" class="value">45</text>
+  </g>
+  <g transform="translate(20, 150)">
+    <text y="20" class="label">Lines Changed</text>
+    <text y="20" x="200" class="value">4,467,907</text>
+  </g>
+</svg>
