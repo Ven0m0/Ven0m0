@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-02-03</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-02-02</sub>
+- [Template](https://github.com/Ven0m0/Template) — No description yet <sub>2026-02-02</sub>
 - [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-02-02</sub>
 - [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-02-02</sub>
-- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-02-02</sub>
-- [.github](https://github.com/Ven0m0/.github) — No description yet <sub>2026-02-02</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-02-02</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
