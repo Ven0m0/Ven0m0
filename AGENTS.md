@@ -3,7 +3,7 @@
 **Repository Type**: GitHub Profile (README)  
 **Primary Purpose**: Automated GitHub profile with dynamic statistics, metrics, and activity tracking  
 **Tech Stack**: Python 3.13, GitHub Actions, Shell scripting  
-**Package Managers**: `uv` (Python), `bun` (JavaScript fallback)
+**Package Managers**: `uv` (Python)  
 
 ---
 
