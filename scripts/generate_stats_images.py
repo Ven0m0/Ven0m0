@@ -17,10 +17,6 @@ from pathlib import Path
 
 import aiohttp
 
-# =============================================================================
-# GitHub API Client Classes
-# =============================================================================
-
 
 @dataclass(slots=True)
 class Queries:
@@ -64,7 +60,6 @@ class Queries:
                         msg = f"GraphQL query failed after {retries} attempts: {e}"
                         raise RuntimeError(msg)
                     print(f"GraphQL attempt {attempt + 1}/{retries} failed: {e}")
-            # Sleep outside the semaphore context to avoid blocking other requests
             if attempt < retries - 1:
                 await asyncio.sleep(2**attempt)
         return {}
@@ -123,7 +118,6 @@ class Queries:
                         raise RuntimeError(msg)
                     should_retry = True
                     sleep_duration = min(2 ** min(attempt // 5, 3), 8)
-            # Sleep outside the semaphore context to avoid blocking other requests
             if should_retry:
                 await asyncio.sleep(sleep_duration)
             else:
@@ -303,7 +297,6 @@ class Stats:
 
     @property
     async def name(self) -> str:
-        """Get user's display name."""
         if self._name is None:
             await self.get_stats()
         if not self._name:
@@ -313,35 +306,30 @@ class Stats:
 
     @property
     async def stargazers(self) -> int:
-        """Get total stargazers across all repositories."""
         if self._stargazers is None:
             await self.get_stats()
         return self._stargazers or 0
 
     @property
     async def forks(self) -> int:
-        """Get total forks across all repositories."""
         if self._forks is None:
             await self.get_stats()
         return self._forks or 0
 
     @property
     async def languages(self) -> dict:
-        """Get language statistics."""
         if self._languages is None:
             await self.get_stats()
         return self._languages or {}
 
     @property
     async def all_repos(self) -> set[str]:
-        """Get all repository names."""
         if self._repos is None:
             await self.get_stats()
         return (self._repos or set()) | (self._ignored_repos or set())
 
     @property
     async def total_contributions(self) -> int:
-        """Get total contributions across all years."""
         if self._total_contributions is not None:
             return self._total_contributions
         total = 0
@@ -367,7 +355,6 @@ class Stats:
 
     @property
     async def lines_changed(self) -> tuple[int, int]:
-        """Get total lines added and deleted."""
         if self._lines_changed is not None:
             return self._lines_changed
         additions = deletions = 0
@@ -396,7 +383,6 @@ class Stats:
 
     @property
     async def views(self) -> int:
-        """Get total repository views."""
         if self._views is not None:
             return self._views
         repos = {r for r in await self.all_repos if r not in self._ignored_repos}
@@ -415,74 +401,50 @@ class Stats:
         return total
 
 
-# =============================================================================
-# SVG Templates
-# =============================================================================
+TEMPLATE_OVERVIEW = """\
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
+  <defs>
+    <style>
+      .header{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}
+      .label{font:400 12px 'Segoe UI',Ubuntu,sans-serif;fill:#b39ddb}
+      .value{font:600 16px 'Segoe UI',Ubuntu,sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect width="495" height="195" fill="#0d1117" rx="6"/>
+  <text x="20" y="35" class="header">{{ name }}'s GitHub Stats</text>
+  <g transform="translate(20, 60)">
+    <text y="20" class="label">Total Stars Earned</text>
+    <text y="20" x="200" class="value">{{ stars }}</text>
+  </g>
+  <g transform="translate(20, 90)">
+    <text y="20" class="label">Total Commits</text>
+    <text y="20" x="200" class="value">{{ contributions }}</text>
+  </g>
+  <g transform="translate(20, 120)">
+    <text y="20" class="label">Total Repositories</text>
+    <text y="20" x="200" class="value">{{ repos }}</text>
+  </g>
+  <g transform="translate(20, 150)">
+    <text y="20" class="label">Lines Changed</text>
+    <text y="20" x="200" class="value">{{ lines_changed }}</text>
+  </g>
+</svg>"""
 
-TEMPLATE_OVERVIEW = (
-    '<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" '
-    'viewBox="0 0 495 195">\n'
-    "  <defs>\n"
-    "    <style>\n"
-    "      .header{font: 600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}\n"
-    "      .stat{font:400 14px 'Segoe UI',Ubuntu,sans-serif;fill:#f8bbd0}\n"
-    "      .label{font:400 12px 'Segoe UI',Ubuntu,sans-serif;fill:#b39ddb}\n"
-    "      .value{font:600 16px 'Segoe UI',Ubuntu,sans-serif;fill:#fff}\n"
-    "    </style>\n"
-    "  </defs>\n"
-    '  <rect width="495" height="195" fill="#0d1117" rx="6"/>\n'
-    '  <text x="20" y="35" class="header">{{ name }}\'s GitHub Stats</text>\n'
-    '  <g transform="translate(20, 60)">\n'
-    '    <text y="20" class="label">Total Stars Earned</text>\n'
-    '    <text y="20" x="200" class="value">{{ stars }}</text>\n'
-    "  </g>\n"
-    '  <g transform="translate(20, 90)">\n'
-    '    <text y="20" class="label">Total Commits</text>\n'
-    '    <text y="20" x="200" class="value">{{ contributions }}</text>\n'
-    "  </g>\n"
-    '  <g transform="translate(20, 120)">\n'
-    '    <text y="20" class="label">Total Repositories</text>\n'
-    '    <text y="20" x="200" class="value">{{ repos }}</text>\n'
-    "  </g>\n"
-    '  <g transform="translate(20, 150)">\n'
-    '    <text y="20" class="label">Lines Changed</text>\n'
-    '    <text y="20" x="200" class="value">{{ lines_changed }}</text>\n'
-    "  </g>\n"
-    "</svg>"
-)
-
-TEMPLATE_LANGUAGES = (
-    '<svg xmlns="http://www.w3.org/2000/svg" width="495" height="285" '
-    'viewBox="0 0 495 285">\n'
-    "  <defs>\n"
-    "    <style>\n"
-    "      .header{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}\n"
-    "      .lang{font:400 14px 'Segoe UI',Ubuntu,sans-serif;fill:#fff}\n"
-    "      .percent{font:600 14px 'Segoe UI',Ubuntu,sans-serif;fill:#b39ddb}\n"
-    "      .progress-item{height:8px;display:inline-block}\n"
-    "      li{list-style:none;margin:8px 0;display:flex;align-items:center;"
-    "animation:slideIn 0.3s ease-in-out forwards;opacity:0}\n"
-    "      @keyframes slideIn{to{opacity:1}}\n"
-    "    </style>\n"
-    "  </defs>\n"
-    '  <rect width="495" height="285" fill="#0d1117" rx="6"/>\n'
-    '  <text x="20" y="35" class="header">Most Used Languages</text>\n'
-    '  <foreignObject x="20" y="50" width="455" height="10">\n'
-    '    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;'
-    'width:100%;height:8px;border-radius:4px;overflow:hidden">'
-    "{{ progress }}</div>\n"
-    "  </foreignObject>\n"
-    '  <foreignObject x="20" y="70" width="455" height="200">\n'
-    '    <ul xmlns="http://www.w3.org/1999/xhtml" style="padding:0;margin:0">'
-    "{{ lang_list }}</ul>\n"
-    "  </foreignObject>\n"
-    "</svg>"
-)
-
-
-# =============================================================================
-# SVG Generation Functions
-# =============================================================================
+TEMPLATE_LANGUAGES = """\
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="285" viewBox="0 0 495 285">
+  <defs>
+    <style>
+      .header{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}
+      .lang{font:400 14px 'Segoe UI',Ubuntu,sans-serif;fill:#fff}
+      .percent{font:600 14px 'Segoe UI',Ubuntu,sans-serif;fill:#b39ddb}
+    </style>
+    <clipPath id="progress-clip"><rect width="455" height="8" rx="4"/></clipPath>
+  </defs>
+  <rect width="495" height="285" fill="#0d1117" rx="6"/>
+  <text x="20" y="35" class="header">Most Used Languages</text>
+  <g transform="translate(20, 50)" clip-path="url(#progress-clip)">{{ progress }}</g>
+  <g transform="translate(20, 80)">{{ lang_list }}</g>
+</svg>"""
 
 
 async def generate_overview(s: Stats, output_dir: Path) -> None:
@@ -503,18 +465,12 @@ async def generate_overview(s: Stats, output_dir: Path) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     output_file = output_dir / "overview.svg"
     output_file.write_text(output, encoding="utf-8")
-    print(
-        f"✓ Generated {output_file} "
-        f"({stars:,} stars, {contributions:,} contributions)",
-    )
+    print(f"✓ Generated {output_file} ({stars:,} stars, {contributions:,} contributions)")
 
 
 async def generate_languages(s: Stats, output_dir: Path) -> None:
-    """Generate the languages statistics SVG."""
+    """Generate the languages statistics SVG using pure SVG elements."""
     print("Fetching language stats...")
-    output = TEMPLATE_LANGUAGES
-    progress_parts: list[str] = []
-    lang_list_parts: list[str] = []
     languages = await s.languages
     sorted_langs = sorted(
         languages.items(),
@@ -523,32 +479,34 @@ async def generate_languages(s: Stats, output_dir: Path) -> None:
     )
     print(f"Found {len(sorted_langs)} languages")
     if not sorted_langs:
-        print(
-            "Warning: No languages found. "
-            "This may indicate an issue with repository access.",
-        )
+        print("Warning: No languages found. This may indicate an issue with repository access.")
+
+    progress_parts: list[str] = []
+    lang_list_parts: list[str] = []
+    x_offset = 0.0
+    bar_width = 455.0
+
     for i, (lang, data) in enumerate(sorted_langs):
         color = data.get("color") or "#888888"
         prop = data.get("prop", 0)
-        ratio = [0.99, 0.01] if prop > 50 else [0.98, 0.02]
-        if i == len(sorted_langs) - 1:
-            ratio = [1, 0]
-        progress_parts.append(
-            f'<span style="background-color:{color};'
-            f"width:{ratio[0] * prop:.3f}%;"
-            f'margin-right:{ratio[1] * prop:.3f}%" '
-            f'class="progress-item"></span>',
-        )
+        width = (prop / 100) * bar_width
+        if width > 0:
+            gap = 1 if i < len(sorted_langs) - 1 and width > 2 else 0
+            progress_parts.append(
+                f'<rect x="{x_offset:.2f}" y="0" width="{width - gap:.2f}" height="8" fill="{color}"/>'
+            )
+            x_offset += width
+
+        y_pos = i * 28
         lang_list_parts.append(
-            f'<li style="animation-delay:{i * 150}ms">'
-            f'<svg xmlns="http://www.w3.org/2000/svg" '
-            f'style="fill:{color};margin-right:8px" '
-            f'viewBox="0 0 16 16" width="16" height="16">'
-            f'<circle cx="8" cy="8" r="4"/></svg>'
-            f'<span class="lang">{html.escape(lang)}</span>'
-            f'<span class="percent" style="margin-left:auto">'
-            f"{prop:.2f}%</span></li>",
+            f'<g transform="translate(0, {y_pos})">'
+            f'<circle cx="6" cy="10" r="6" fill="{color}"/>'
+            f'<text x="20" y="14" class="lang">{html.escape(lang)}</text>'
+            f'<text x="435" y="14" class="percent" text-anchor="end">{prop:.2f}%</text>'
+            f'</g>'
         )
+
+    output = TEMPLATE_LANGUAGES
     output = output.replace("{{ progress }}", "".join(progress_parts))
     output = output.replace("{{ lang_list }}", "".join(lang_list_parts))
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -558,9 +516,63 @@ async def generate_languages(s: Stats, output_dir: Path) -> None:
     print(f"✓ Generated {output_file} (top: {top_lang})")
 
 
-# =============================================================================
-# Main Entry Point
-# =============================================================================
+async def generate_combined(s: Stats, output_dir: Path) -> None:
+    """Generate a combined github-stats.svg with overview and top languages."""
+    print("Generating combined stats...")
+    name = await s.name
+    stars = await s.stargazers
+    contributions = await s.total_contributions
+    repos = await s.all_repos
+    lines = await s.lines_changed
+    languages = await s.languages
+    sorted_langs = sorted(languages.items(), reverse=True, key=lambda t: t[1].get("size", 0))[:5]
+
+    lang_bars = []
+    y = 0
+    for lang, data in sorted_langs:
+        color = data.get("color") or "#888888"
+        prop = data.get("prop", 0)
+        lang_bars.append(
+            f'<g transform="translate(260, {180 + y})">'
+            f'<circle cx="6" cy="6" r="5" fill="{color}"/>'
+            f'<text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">{html.escape(lang)}</text>'
+            f'<text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">{prop:.1f}%</text>'
+            f'</g>'
+        )
+        y += 22
+
+    svg = f"""\
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="310" viewBox="0 0 495 310">
+  <defs>
+    <style>
+      .header{{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}}
+      .subheader{{font:600 14px 'Segoe UI',Ubuntu,sans-serif;fill:#f8bbd0}}
+      .label{{font:400 12px 'Segoe UI',Ubuntu,sans-serif;fill:#b39ddb}}
+      .value{{font:600 14px 'Segoe UI',Ubuntu,sans-serif;fill:#fff}}
+    </style>
+  </defs>
+  <rect width="495" height="310" fill="#0d1117" rx="6"/>
+  <text x="20" y="30" class="header">{html.escape(name)}'s GitHub Stats</text>
+  <line x1="20" y1="45" x2="475" y2="45" stroke="#30363d" stroke-width="1"/>
+  <g transform="translate(20, 60)">
+    <text y="14" class="label">⭐ Stars</text>
+    <text y="14" x="120" class="value">{stars:,}</text>
+    <text y="38" class="label">📝 Commits</text>
+    <text y="38" x="120" class="value">{contributions:,}</text>
+    <text y="62" class="label">📦 Repos</text>
+    <text y="62" x="120" class="value">{len(repos):,}</text>
+    <text y="86" class="label">📊 Lines</text>
+    <text y="86" x="120" class="value">{sum(lines):,}</text>
+  </g>
+  <line x1="20" y1="165" x2="475" y2="165" stroke="#30363d" stroke-width="1"/>
+  <text x="260" y="158" class="subheader">Top Languages</text>
+  {''.join(lang_bars)}
+</svg>"""
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / "github-stats.svg"
+    output_file.write_text(svg, encoding="utf-8")
+    print(f"✓ Generated {output_file}")
 
 
 async def try_generate_stats(
@@ -587,16 +599,15 @@ async def try_generate_stats(
             await asyncio.gather(
                 generate_overview(s, output_dir),
                 generate_languages(s, output_dir),
+                generate_combined(s, output_dir),
             )
         print(f"✓ Successfully generated stats images in {output_dir}/")
         return True
     except RuntimeError as e:
         error_str = str(e).lower()
-        # Check if it's an authentication error
         if "authentication" in error_str or "401" in error_str or "403" in error_str:
             print(f"✗ {token_name} authentication failed: {e}", file=sys.stderr)
             return False
-        # For non-auth errors, re-raise
         raise
 
 
@@ -607,40 +618,23 @@ async def main() -> int:
     user = os.getenv("GITHUB_ACTOR") or os.getenv("GITHUB_REPOSITORY_OWNER")
 
     if not access_token and not github_token:
-        print(
-            "Error: ACCESS_TOKEN or GITHUB_TOKEN environment variable required",
-            file=sys.stderr,
-        )
-        print(
-            "The token must have 'repo' and 'read:user' scopes",
-            file=sys.stderr,
-        )
+        print("Error: ACCESS_TOKEN or GITHUB_TOKEN environment variable required", file=sys.stderr)
+        print("The token must have 'repo' and 'read:user' scopes", file=sys.stderr)
         return 1
     if not user:
-        print(
-            "Error: GITHUB_ACTOR or GITHUB_REPOSITORY_OWNER "
-            "environment variable required",
-            file=sys.stderr,
-        )
+        print("Error: GITHUB_ACTOR or GITHUB_REPOSITORY_OWNER environment variable required", file=sys.stderr)
         return 1
 
     exclude_repos_str = os.getenv("EXCLUDED", "")
-    if exclude_repos_str:
-        exclude_repos = {x.strip() for x in exclude_repos_str.split(",")}
-    else:
-        exclude_repos = set()
+    exclude_repos = {x.strip() for x in exclude_repos_str.split(",") if x.strip()}
     exclude_langs_str = os.getenv("EXCLUDED_LANGS", "")
-    if exclude_langs_str:
-        exclude_langs = {x.strip() for x in exclude_langs_str.split(",")}
-    else:
-        exclude_langs = set()
+    exclude_langs = {x.strip() for x in exclude_langs_str.split(",") if x.strip()}
     consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
     output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
 
     print(f"Generating GitHub stats for user: {user}")
     print(f"Output directory: {output_dir}")
 
-    # Build list of tokens to try (ACCESS_TOKEN first, then GITHUB_TOKEN)
     tokens_to_try: list[tuple[str, str]] = []
     if access_token:
         tokens_to_try.append((access_token, "ACCESS_TOKEN"))
@@ -669,21 +663,11 @@ async def main() -> int:
             traceback.print_exc()
             last_error = e
 
-    # All tokens failed
     print("\n✗ All tokens failed.", file=sys.stderr)
     print("\nTroubleshooting:", file=sys.stderr)
-    print(
-        "1. Ensure ACCESS_TOKEN is set with a valid GitHub PAT",
-        file=sys.stderr,
-    )
-    print(
-        "2. Token must have these scopes: 'repo', 'read:user'",
-        file=sys.stderr,
-    )
-    print(
-        "3. Create a token at: https://github.com/settings/tokens/new",
-        file=sys.stderr,
-    )
+    print("1. Ensure ACCESS_TOKEN is set with a valid GitHub PAT", file=sys.stderr)
+    print("2. Token must have these scopes: 'repo', 'read:user'", file=sys.stderr)
+    print("3. Create a token at: https://github.com/settings/tokens/new", file=sys.stderr)
     if last_error:
         print(f"\nLast error: {last_error}", file=sys.stderr)
     return 1
