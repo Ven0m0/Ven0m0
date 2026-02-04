@@ -68,8 +68,7 @@ This is a special GitHub profile repository (`Ven0m0/Ven0m0`) that displays on t
 ├── .gitignore                         # Ignored files/patterns
 ├── .megalinter.yml                    # Linter configuration
 ├── .shellcheckrc                      # ShellCheck settings
-├── README.md                          # Profile page content
-└── README-bak.md                      # Backup of README
+└── README.md                          # Profile page content
 ```
 
 ---
