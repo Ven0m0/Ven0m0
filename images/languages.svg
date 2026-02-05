@@ -4,17 +4,11 @@
       .header{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}
       .lang{font:400 14px 'Segoe UI',Ubuntu,sans-serif;fill:#fff}
       .percent{font:600 14px 'Segoe UI',Ubuntu,sans-serif;fill:#b39ddb}
-      .progress-item{height:8px;display:inline-block}
-      li{list-style:none;margin:8px 0;display:flex;align-items:center;animation:slideIn 0.3s ease-in-out forwards;opacity:0}
-      @keyframes slideIn{to{opacity:1}}
     </style>
+    <clipPath id="progress-clip"><rect width="455" height="8" rx="4"/></clipPath>
   </defs>
   <rect width="495" height="285" fill="#0d1117" rx="6"/>
   <text x="20" y="35" class="header">Most Used Languages</text>
-  <foreignObject x="20" y="50" width="455" height="10">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;width:100%;height:8px;border-radius:4px;overflow:hidden"></div>
-  </foreignObject>
-  <foreignObject x="20" y="70" width="455" height="200">
-    <ul xmlns="http://www.w3.org/1999/xhtml" style="padding:0;margin:0"></ul>
-  </foreignObject>
+  <g transform="translate(20, 50)" clip-path="url(#progress-clip)"></g>
+  <g transform="translate(20, 80)"></g>
 </svg>
