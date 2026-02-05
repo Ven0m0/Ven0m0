@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Update profile README repo activity badges based on latest GitHub data."""
+
 from __future__ import annotations
 
 import argparse
@@ -69,7 +70,10 @@ class GithubClient:
 
 
 def classify_repo(
-    metadata: dict, now: dt.datetime, active_days: int, partially_days: int,
+    metadata: dict,
+    now: dt.datetime,
+    active_days: int,
+    partially_days: int,
 ) -> RepoResult:
     slug = metadata.get("full_name", "")
     archived = metadata.get("archived", False)
@@ -99,6 +103,8 @@ def classify_repo(
 
 
 def find_repo_slug(line: str) -> str | None:
+    if "https://github.com/" not in line:
+        return None
     match = GITHUB_RE.search(line)
     if not match:
         return None
@@ -122,11 +128,16 @@ def apply_status_to_line(line: str, status: str) -> str:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--readme", default="README.md", help="Path to profile markdown",
+        "--readme",
+        default="README.md",
+        help="Path to profile markdown",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print changes only")
     parser.add_argument(
-        "--active-days", type=int, default=120, help="Days for Active threshold",
+        "--active-days",
+        type=int,
+        default=120,
+        help="Days for Active threshold",
     )
     parser.add_argument(
         "--partially-days",
