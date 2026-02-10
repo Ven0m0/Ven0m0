@@ -4,6 +4,7 @@
 This script collects GitHub statistics using GraphQL and REST APIs,
 then generates SVG images for display on a GitHub profile README.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -167,17 +168,14 @@ after: {contrib_cursor_json}) {{
     @staticmethod
     def contrib_years() -> str:
         """Generate GraphQL query for contribution years."""
-        return (
-            "query { viewer { contributionsCollection "
-            "{ contributionYears } } }"
-        )
+        return "query { viewer { contributionsCollection " "{ contributionYears } } }"
 
     @staticmethod
     def contribs_by_year(year: str) -> str:
         """Generate GraphQL query fragment for contributions in a year."""
         next_year = int(year) + 1
         return (
-            f'year{year}: contributionsCollection('
+            f"year{year}: contributionsCollection("
             f'from: "{year}-01-01T00:00:00Z", '
             f'to: "{next_year}-01-01T00:00:00Z") '
             f"{{ contributionCalendar {{ totalContributions }} }}"
@@ -200,6 +198,7 @@ class Stats:
     exclude_repos: set[str] = field(default_factory=set)
     exclude_langs: set[str] = field(default_factory=set)
     consider_forked_repos: bool = False
+    traffic_limit: int = 20
     queries: Queries = field(init=False)
     _name: str | None = field(default=None, init=False)
     _stargazers: int | None = field(default=None, init=False)
@@ -210,6 +209,7 @@ class Stats:
     _lines_changed: tuple[int, int] | None = field(default=None, init=False)
     _views: int | None = field(default=None, init=False)
     _ignored_repos: set[str] = field(default_factory=set, init=False)
+    _repo_details: list[tuple[str, int]] = field(default_factory=list, init=False)
 
     def __post_init__(self) -> None:
         self.queries = Queries(self.username, self.access_token, self.session)
@@ -221,6 +221,7 @@ class Stats:
         self._languages = {}
         self._repos = set()
         self._ignored_repos = set()
+        self._repo_details = []
         next_owned = None
         next_contrib = None
         first_iteration = True
@@ -263,7 +264,9 @@ class Stats:
                 if name in self._repos or name in self.exclude_repos:
                     continue
                 self._repos.add(name)
-                self._stargazers += repo.get("stargazers", {}).get("totalCount", 0)
+                stars = repo.get("stargazers", {}).get("totalCount", 0)
+                self._stargazers += stars
+                self._repo_details.append((name, stars))
                 self._forks += repo.get("forkCount", 0)
                 for lang in repo.get("languages", {}).get("edges", []):
                     lname = lang.get("node", {}).get("name", "Other")
@@ -347,8 +350,8 @@ class Stats:
             by_year = contribs_query.get("data", {}).get("viewer", {}).values()
             for year in by_year:
                 if isinstance(year, dict):
-                    total += (
-                        year.get("contributionCalendar", {}).get("totalContributions", 0)
+                    total += year.get("contributionCalendar", {}).get(
+                        "totalContributions", 0
                     )
         self._total_contributions = total
         return self._total_contributions
@@ -385,10 +388,17 @@ class Stats:
     async def views(self) -> int:
         if self._views is not None:
             return self._views
-        repos = {r for r in await self.all_repos if r not in self._ignored_repos}
+        if self._repos is None:
+            await self.get_stats()
+
+        # Optimize: Only fetch traffic for top N repos by stars
+        sorted_repos = sorted(self._repo_details, key=lambda x: x[1], reverse=True)[
+            : self.traffic_limit
+        ]
+        repos = [r[0] for r in sorted_repos]
+
         tasks = [
-            self.queries.query_rest(f"/repos/{repo}/traffic/views")
-            for repo in repos
+            self.queries.query_rest(f"/repos/{repo}/traffic/views") for repo in repos
         ]
         results = await asyncio.gather(*tasks, return_exceptions=True)
         total = 0
@@ -465,7 +475,9 @@ async def generate_overview(s: Stats, output_dir: Path) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     output_file = output_dir / "overview.svg"
     output_file.write_text(output, encoding="utf-8")
-    print(f"✓ Generated {output_file} ({stars:,} stars, {contributions:,} contributions)")
+    print(
+        f"✓ Generated {output_file} ({stars:,} stars, {contributions:,} contributions)"
+    )
 
 
 async def generate_languages(s: Stats, output_dir: Path) -> None:
@@ -479,7 +491,9 @@ async def generate_languages(s: Stats, output_dir: Path) -> None:
     )
     print(f"Found {len(sorted_langs)} languages")
     if not sorted_langs:
-        print("Warning: No languages found. This may indicate an issue with repository access.")
+        print(
+            "Warning: No languages found. This may indicate an issue with repository access."
+        )
 
     progress_parts: list[str] = []
     lang_list_parts: list[str] = []
@@ -503,7 +517,7 @@ async def generate_languages(s: Stats, output_dir: Path) -> None:
             f'<circle cx="6" cy="10" r="6" fill="{color}"/>'
             f'<text x="20" y="14" class="lang">{html.escape(lang)}</text>'
             f'<text x="435" y="14" class="percent" text-anchor="end">{prop:.2f}%</text>'
-            f'</g>'
+            f"</g>"
         )
 
     output = TEMPLATE_LANGUAGES
@@ -525,7 +539,9 @@ async def generate_combined(s: Stats, output_dir: Path) -> None:
     repos = await s.all_repos
     lines = await s.lines_changed
     languages = await s.languages
-    sorted_langs = sorted(languages.items(), reverse=True, key=lambda t: t[1].get("size", 0))[:5]
+    sorted_langs = sorted(
+        languages.items(), reverse=True, key=lambda t: t[1].get("size", 0)
+    )[:5]
 
     lang_bars = []
     y = 0
@@ -537,7 +553,7 @@ async def generate_combined(s: Stats, output_dir: Path) -> None:
             f'<circle cx="6" cy="6" r="5" fill="{color}"/>'
             f'<text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">{html.escape(lang)}</text>'
             f'<text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">{prop:.1f}%</text>'
-            f'</g>'
+            f"</g>"
         )
         y += 22
 
@@ -583,6 +599,7 @@ async def try_generate_stats(
     exclude_repos: set[str],
     exclude_langs: set[str],
     consider_forks: bool,
+    traffic_limit: int,
 ) -> bool:
     """Try to generate stats with a given token. Returns True on success."""
     print(f"Trying {token_name}...")
@@ -594,6 +611,7 @@ async def try_generate_stats(
                 session,
                 exclude_repos=exclude_repos,
                 exclude_langs=exclude_langs,
+                traffic_limit=traffic_limit,
                 consider_forked_repos=consider_forks,
             )
             await asyncio.gather(
@@ -618,11 +636,17 @@ async def main() -> int:
     user = os.getenv("GITHUB_ACTOR") or os.getenv("GITHUB_REPOSITORY_OWNER")
 
     if not access_token and not github_token:
-        print("Error: ACCESS_TOKEN or GITHUB_TOKEN environment variable required", file=sys.stderr)
+        print(
+            "Error: ACCESS_TOKEN or GITHUB_TOKEN environment variable required",
+            file=sys.stderr,
+        )
         print("The token must have 'repo' and 'read:user' scopes", file=sys.stderr)
         return 1
     if not user:
-        print("Error: GITHUB_ACTOR or GITHUB_REPOSITORY_OWNER environment variable required", file=sys.stderr)
+        print(
+            "Error: GITHUB_ACTOR or GITHUB_REPOSITORY_OWNER environment variable required",
+            file=sys.stderr,
+        )
         return 1
 
     exclude_repos_str = os.getenv("EXCLUDED", "")
@@ -630,6 +654,7 @@ async def main() -> int:
     exclude_langs_str = os.getenv("EXCLUDED_LANGS", "")
     exclude_langs = {x.strip() for x in exclude_langs_str.split(",") if x.strip()}
     consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
+    traffic_limit = int(os.getenv("TRAFFIC_LIMIT", "20"))
     output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
 
     print(f"Generating GitHub stats for user: {user}")
@@ -651,6 +676,7 @@ async def main() -> int:
                 output_dir=output_dir,
                 exclude_repos=exclude_repos,
                 exclude_langs=exclude_langs,
+                traffic_limit=traffic_limit,
                 consider_forks=consider_forks,
             )
             if success:
@@ -667,7 +693,9 @@ async def main() -> int:
     print("\nTroubleshooting:", file=sys.stderr)
     print("1. Ensure ACCESS_TOKEN is set with a valid GitHub PAT", file=sys.stderr)
     print("2. Token must have these scopes: 'repo', 'read:user'", file=sys.stderr)
-    print("3. Create a token at: https://github.com/settings/tokens/new", file=sys.stderr)
+    print(
+        "3. Create a token at: https://github.com/settings/tokens/new", file=sys.stderr
+    )
     if last_error:
         print(f"\nLast error: {last_error}", file=sys.stderr)
     return 1
