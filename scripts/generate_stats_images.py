@@ -168,10 +168,10 @@ after: {contrib_cursor_json}) {{
     @staticmethod
     def contrib_years() -> str:
         """Generate GraphQL query for contribution years."""
-        return "query { viewer { contributionsCollection " "{ contributionYears } } }"
+        return "query { viewer { contributionsCollection { contributionYears } } }"
 
     @staticmethod
-    def contribs_by_year(year: str) -> str:
+    def contribs_by_year(year: int | str) -> str:
         """Generate GraphQL query fragment for contributions in a year."""
         next_year = int(year) + 1
         return (
@@ -182,7 +182,7 @@ after: {contrib_cursor_json}) {{
         )
 
     @classmethod
-    def all_contribs(cls, years: list[str]) -> str:
+    def all_contribs(cls, years: list[int | str]) -> str:
         """Generate GraphQL query for all contribution years."""
         by_years = "\n".join(map(cls.contribs_by_year, years))
         return f"query {{ viewer {{ {by_years} }} }}"
@@ -216,7 +216,6 @@ class Stats:
 
     async def get_stats(self) -> None:
         """Fetch all repository statistics from GitHub."""
-        self._repo_stats_futures = []
         self._stargazers = 0
         self._forks = 0
         self._languages = {}
@@ -367,7 +366,10 @@ class Stats:
                     if not isinstance(author_obj, dict):
                         continue
                     author = author_obj.get("author", {})
-                    if isinstance(author, dict) and author.get("login") == self.username:
+                    if (
+                        isinstance(author, dict)
+                        and author.get("login") == self.username
+                    ):
                         for week in author_obj.get("weeks", []):
                             additions += week.get("a", 0)
                             deletions += week.get("d", 0)
@@ -382,9 +384,12 @@ class Stats:
         if self._lines_changed is not None:
             return self._lines_changed
         additions = deletions = 0
-        await self.all_repos
+        if self._repos is None:
+            await self.get_stats()
+        repos = self._repos or set()
         results = await asyncio.gather(
-            *self._repo_stats_futures, return_exceptions=True
+            *(self._fetch_and_parse_repo_stats(repo) for repo in repos),
+            return_exceptions=True,
         )
         for r in results:
             if isinstance(r, Exception):
@@ -594,7 +599,7 @@ async def generate_combined(s: Stats, output_dir: Path) -> None:
   </g>
   <line x1="20" y1="165" x2="475" y2="165" stroke="#30363d" stroke-width="1"/>
   <text x="260" y="158" class="subheader">Top Languages</text>
-  {''.join(lang_bars)}
+  {"".join(lang_bars)}
 </svg>"""
 
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -669,7 +674,10 @@ async def main() -> int:
     try:
         traffic_limit = int(os.getenv("TRAFFIC_LIMIT", "20"))
     except ValueError:
-        print("Warning: Invalid TRAFFIC_LIMIT value. Using default of 20.", file=sys.stderr)
+        print(
+            "Warning: Invalid TRAFFIC_LIMIT value. Using default of 20.",
+            file=sys.stderr,
+        )
         traffic_limit = 20
     output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
 
