@@ -19,10 +19,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        uses: actions/checkout@v4
 
       - name: Generate metrics (classic)
-        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
+        uses: lowlighter/metrics@v3.34
         with:
           use_prebuilt_image: yes
           optimize: svg, css, xml
@@ -44,7 +44,7 @@ jobs:
           plugin_calendar_limit: 1
 
       - name: Generate metrics (default)
-        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
+        uses: lowlighter/metrics@v3.34
         with:
           use_prebuilt_image: yes
           optimize: svg, css, xml
