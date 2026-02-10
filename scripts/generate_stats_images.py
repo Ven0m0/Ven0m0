@@ -654,7 +654,11 @@ async def main() -> int:
     exclude_langs_str = os.getenv("EXCLUDED_LANGS", "")
     exclude_langs = {x.strip() for x in exclude_langs_str.split(",") if x.strip()}
     consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
-    traffic_limit = int(os.getenv("TRAFFIC_LIMIT", "20"))
+    try:
+        traffic_limit = int(os.getenv("TRAFFIC_LIMIT", "20"))
+    except ValueError:
+        print("Warning: Invalid TRAFFIC_LIMIT value. Using default of 20.", file=sys.stderr)
+        traffic_limit = 20
     output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
 
     print(f"Generating GitHub stats for user: {user}")
