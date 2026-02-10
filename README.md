@@ -69,11 +69,6 @@
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0&theme=dracula&hide_border=true&background=0d1117&ring=b39ddb&fire=ba68c8&currStreakLabel=b39ddb)](https://git.io/streak-stats)
 </details>
-<details>
-<summary>🏆 Trophies</summary>
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=Ven0m0&theme=dracula&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8)](https://github.com/ryo-ma/github-profile-trophy)
-</details>
 
 <hr />
 
