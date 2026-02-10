@@ -198,6 +198,7 @@ class Stats:
     exclude_repos: set[str] = field(default_factory=set)
     exclude_langs: set[str] = field(default_factory=set)
     consider_forked_repos: bool = False
+    traffic_limit: int = 20
     queries: Queries = field(init=False)
     _name: str | None = field(default=None, init=False)
     _stargazers: int | None = field(default=None, init=False)
@@ -208,7 +209,7 @@ class Stats:
     _lines_changed: tuple[int, int] | None = field(default=None, init=False)
     _views: int | None = field(default=None, init=False)
     _ignored_repos: set[str] = field(default_factory=set, init=False)
-    _repo_stats_futures: list[asyncio.Task] = field(default_factory=list, init=False)
+    _repo_details: list[tuple[str, int]] = field(default_factory=list, init=False)
 
     def __post_init__(self) -> None:
         self.queries = Queries(self.username, self.access_token, self.session)
@@ -221,6 +222,7 @@ class Stats:
         self._languages = {}
         self._repos = set()
         self._ignored_repos = set()
+        self._repo_details = []
         next_owned = None
         next_contrib = None
         first_iteration = True
@@ -263,10 +265,9 @@ class Stats:
                 if name in self._repos or name in self.exclude_repos:
                     continue
                 self._repos.add(name)
-                self._repo_stats_futures.append(
-                    self._fetch_and_parse_repo_stats(name)
-                )
-                self._stargazers += repo.get("stargazers", {}).get("totalCount", 0)
+                stars = repo.get("stargazers", {}).get("totalCount", 0)
+                self._stargazers += stars
+                self._repo_details.append((name, stars))
                 self._forks += repo.get("forkCount", 0)
                 for lang in repo.get("languages", {}).get("edges", []):
                     lname = lang.get("node", {}).get("name", "Other")
@@ -399,7 +400,15 @@ class Stats:
     async def views(self) -> int:
         if self._views is not None:
             return self._views
-        repos = {r for r in await self.all_repos if r not in self._ignored_repos}
+        if self._repos is None:
+            await self.get_stats()
+
+        # Optimize: Only fetch traffic for top N repos by stars
+        sorted_repos = sorted(self._repo_details, key=lambda x: x[1], reverse=True)[
+            : self.traffic_limit
+        ]
+        repos = [r[0] for r in sorted_repos]
+
         tasks = [
             self.queries.query_rest(f"/repos/{repo}/traffic/views") for repo in repos
         ]
@@ -602,6 +611,7 @@ async def try_generate_stats(
     exclude_repos: set[str],
     exclude_langs: set[str],
     consider_forks: bool,
+    traffic_limit: int,
 ) -> bool:
     """Try to generate stats with a given token. Returns True on success."""
     print(f"Trying {token_name}...")
@@ -613,6 +623,7 @@ async def try_generate_stats(
                 session,
                 exclude_repos=exclude_repos,
                 exclude_langs=exclude_langs,
+                traffic_limit=traffic_limit,
                 consider_forked_repos=consider_forks,
             )
             await asyncio.gather(
@@ -655,6 +666,11 @@ async def main() -> int:
     exclude_langs_str = os.getenv("EXCLUDED_LANGS", "")
     exclude_langs = {x.strip() for x in exclude_langs_str.split(",") if x.strip()}
     consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
+    try:
+        traffic_limit = int(os.getenv("TRAFFIC_LIMIT", "20"))
+    except ValueError:
+        print("Warning: Invalid TRAFFIC_LIMIT value. Using default of 20.", file=sys.stderr)
+        traffic_limit = 20
     output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
 
     print(f"Generating GitHub stats for user: {user}")
@@ -676,6 +692,7 @@ async def main() -> int:
                 output_dir=output_dir,
                 exclude_repos=exclude_repos,
                 exclude_langs=exclude_langs,
+                traffic_limit=traffic_limit,
                 consider_forks=consider_forks,
             )
             if success:
