@@ -61,7 +61,7 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb" alt="Activity graph" />
 </p>
 <p align="center">
-  <img src="images/github-stats.svg" alt="GitHub Stats" />
+  <img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/images/github-stats.svg" alt="GitHub Stats" />
 </p>
 
 <details>
@@ -91,9 +91,9 @@
 ### 📊 Live Stats
 
 <p align="center">
-  <img src="images/overview.svg" alt="Overview Stats" />
+  <img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/images/overview.svg" alt="Overview Stats" />
   <br/>
-  <img src="images/languages.svg" alt="Language Stats" />
+  <img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/images/languages.svg" alt="Language Stats" />
 </p>
 
 ### 🌸 Find me around the net
@@ -118,7 +118,7 @@
 <details>
 <summary>📊 Detailed Metrics</summary>
 
-<img src="metrics.classic.svg" alt="Detailed Metrics" />
+<img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/metrics.classic.svg" alt="Detailed Metrics" />
 
 </details>
 
