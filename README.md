@@ -72,17 +72,6 @@
 
 <hr />
 
-### 📰 Recent Activity
-
-<!--START_SECTION:activity-->
-<!-- This section is auto-generated; do not edit.  -->
-
-1. 💪 Opened PR [#65](https://github.com/Ven0m0/Linux-OS/pull/65) in [Ven0m0/Linux-OS](https://github.com/Ven0m0/Linux-OS)
-
-<!--END_SECTION:activity-->
-
-<hr />
-
 ### 🌸 Find me around the net
 
 <p align="center">
@@ -101,13 +90,6 @@
 </p>
 
 <hr />
-
-<details>
-<summary>📊 Detailed Metrics</summary>
-
-<img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/metrics.classic.svg" alt="Detailed Metrics" />
-
-</details>
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:f8bbd0,100:ba68c8&height=120&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff&animation=twinkling" alt="Thanks for visiting!" />
