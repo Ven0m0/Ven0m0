@@ -3,7 +3,7 @@ import sys
 import os
 
 # Add scripts directory to path to import the module
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from scripts.update_profile_activity import classify_repo, RepoResult
 
