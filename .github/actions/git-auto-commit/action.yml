@@ -15,17 +15,20 @@ runs:
   steps:
     - name: Commit and push changes
       shell: bash
+      env:
+        FILE_PATTERN: ${{ inputs.file_pattern }}
+        COMMIT_MESSAGE: ${{ inputs.commit_message }}
       run: |
         set -e
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
 
         # Add files using the provided pattern(s) directly
-        git add ${{ inputs.file_pattern }}
+        git add ${FILE_PATTERN}
 
         # Check if there are changes to commit
         if ! git diff --cached --quiet; then
-          git commit -m "${{ inputs.commit_message }}"
+          git commit -m "${COMMIT_MESSAGE}"
 
           # Push with retry logic (exponential backoff)
           max_attempts=4

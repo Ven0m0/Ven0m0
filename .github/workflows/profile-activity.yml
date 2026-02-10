@@ -5,6 +5,10 @@ on:
     - cron: "0 4 * * *"
   workflow_dispatch:
 
+concurrency:
+  group: profile-activity
+  cancel-in-progress: true
+
 jobs:
   update-profile-activity:
     runs-on: ubuntu-latest
@@ -14,10 +18,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup uv
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b # v7
         with:
           enable-cache: true
 
@@ -28,7 +32,7 @@ jobs:
         run: uv run --python 3.13 scripts/update_profile_activity.py
 
       - name: Update latest repos section
-        uses: actions/github-script@v8
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           retries: 3
