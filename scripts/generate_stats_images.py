@@ -264,7 +264,7 @@ class Stats:
                     continue
                 self._repos.add(name)
                 self._repo_stats_futures.append(
-                    asyncio.create_task(self._fetch_and_parse_repo_stats(name))
+                    self._fetch_and_parse_repo_stats(name)
                 )
                 self._stargazers += repo.get("stargazers", {}).get("totalCount", 0)
                 self._forks += repo.get("forkCount", 0)
