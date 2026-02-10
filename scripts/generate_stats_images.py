@@ -366,13 +366,11 @@ class Stats:
                     if not isinstance(author_obj, dict):
                         continue
                     author = author_obj.get("author", {})
-                    if not isinstance(author, dict):
-                        continue
-                    if author.get("login") != self.username:
-                        continue
-                    for week in author_obj.get("weeks", []):
-                        additions += week.get("a", 0)
-                        deletions += week.get("d", 0)
+                    if isinstance(author, dict) and author.get("login") == self.username:
+                        for week in author_obj.get("weeks", []):
+                            additions += week.get("a", 0)
+                            deletions += week.get("d", 0)
+                        break
         except Exception as e:
             print(f"Error fetching stats for {repo}: {e}", file=sys.stderr)
             return 0, 0
