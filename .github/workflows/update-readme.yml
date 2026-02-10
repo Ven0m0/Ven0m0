@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate metrics (classic)
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           use_prebuilt_image: yes
           optimize: svg, css, xml
@@ -44,7 +44,7 @@ jobs:
           plugin_calendar_limit: 1
 
       - name: Generate metrics (default)
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           use_prebuilt_image: yes
           optimize: svg, css, xml

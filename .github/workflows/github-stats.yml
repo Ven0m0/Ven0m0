@@ -10,6 +10,10 @@ on:
       - 'scripts/generate_stats_images.py'
       - '.github/workflows/github-stats.yml'
 
+concurrency:
+  group: github-stats
+  cancel-in-progress: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
