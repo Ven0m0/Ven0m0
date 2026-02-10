@@ -84,7 +84,7 @@ def classify_repo(
         pushed = None
         if pushed_at:
             try:
-                pushed = dt.datetime.fromisoformat(pushed_at)
+                pushed = dt.datetime.fromisoformat(pushed_at.replace('Z', '+00:00'))
                 if pushed.tzinfo is None:
                     pushed = pushed.replace(tzinfo=dt.timezone.utc)
             except ValueError:
