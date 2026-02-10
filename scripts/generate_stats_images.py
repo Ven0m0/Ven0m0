@@ -216,6 +216,7 @@ class Stats:
 
     async def get_stats(self) -> None:
         """Fetch all repository statistics from GitHub."""
+        self._repo_stats_futures = []
         self._stargazers = 0
         self._forks = 0
         self._languages = {}
@@ -356,31 +357,42 @@ class Stats:
         self._total_contributions = total
         return self._total_contributions
 
+    async def _fetch_and_parse_repo_stats(self, repo: str) -> tuple[int, int]:
+        """Fetch and parse contributor stats for a single repository."""
+        additions = deletions = 0
+        try:
+            r = await self.queries.query_rest(f"/repos/{repo}/stats/contributors")
+            if isinstance(r, list):
+                for author_obj in r:
+                    if not isinstance(author_obj, dict):
+                        continue
+                    author = author_obj.get("author", {})
+                    if isinstance(author, dict) and author.get("login") == self.username:
+                        for week in author_obj.get("weeks", []):
+                            additions += week.get("a", 0)
+                            deletions += week.get("d", 0)
+                        break
+        except Exception as e:
+            print(f"Error fetching stats for {repo}: {e}", file=sys.stderr)
+            return 0, 0
+        return additions, deletions
+
     @property
     async def lines_changed(self) -> tuple[int, int]:
         if self._lines_changed is not None:
             return self._lines_changed
         additions = deletions = 0
-        repos = await self.all_repos
-        tasks = [
-            self.queries.query_rest(f"/repos/{repo}/stats/contributors")
-            for repo in repos
-        ]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
+        await self.all_repos
+        results = await asyncio.gather(
+            *self._repo_stats_futures, return_exceptions=True
+        )
         for r in results:
-            if isinstance(r, Exception) or not isinstance(r, list):
+            if isinstance(r, Exception):
                 continue
-            for author_obj in r:
-                if not isinstance(author_obj, dict):
-                    continue
-                author = author_obj.get("author", {})
-                if not isinstance(author, dict):
-                    continue
-                if author.get("login") != self.username:
-                    continue
-                for week in author_obj.get("weeks", []):
-                    additions += week.get("a", 0)
-                    deletions += week.get("d", 0)
+            if isinstance(r, tuple) and len(r) == 2:
+                a, d = r
+                additions += a
+                deletions += d
         self._lines_changed = (additions, deletions)
         return self._lines_changed
 
