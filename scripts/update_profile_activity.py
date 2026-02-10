@@ -84,9 +84,9 @@ def classify_repo(
         pushed = None
         if pushed_at:
             try:
-                pushed = dt.datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ").replace(
-                    tzinfo=dt.timezone.utc,
-                )
+                pushed = dt.datetime.fromisoformat(pushed_at)
+                if pushed.tzinfo is None:
+                    pushed = pushed.replace(tzinfo=dt.timezone.utc)
             except ValueError:
                 logger.warning("Unexpected pushed_at for %s: %s", slug, pushed_at)
         if pushed is None:
