@@ -88,14 +88,6 @@
 
 <hr />
 
-### 📊 Live Stats
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/images/overview.svg" alt="Overview Stats" />
-  <br/>
-  <img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/images/languages.svg" alt="Language Stats" />
-</p>
-
 ### 🌸 Find me around the net
 
 <p align="center">
