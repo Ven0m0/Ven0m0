@@ -10,11 +10,11 @@
   <text x="20" y="35" class="header">Ven0m0's GitHub Stats</text>
   <g transform="translate(20, 60)">
     <text y="20" class="label">Total Stars Earned</text>
-    <text y="20" x="200" class="value">20</text>
+    <text y="20" x="200" class="value">21</text>
   </g>
   <g transform="translate(20, 90)">
     <text y="20" class="label">Total Commits</text>
-    <text y="20" x="200" class="value">16,497</text>
+    <text y="20" x="200" class="value">16,536</text>
   </g>
   <g transform="translate(20, 120)">
     <text y="20" class="label">Total Repositories</text>
@@ -22,6 +22,6 @@
   </g>
   <g transform="translate(20, 150)">
     <text y="20" class="label">Lines Changed</text>
-    <text y="20" x="200" class="value">5,028,169</text>
+    <text y="20" x="200" class="value">5,039,311</text>
   </g>
 </svg>
