@@ -14,11 +14,11 @@
     <text y="14" class="label">⭐ Stars</text>
     <text y="14" x="120" class="value">21</text>
     <text y="38" class="label">📝 Commits</text>
-    <text y="38" x="120" class="value">16,740</text>
+    <text y="38" x="120" class="value">16,757</text>
     <text y="62" class="label">📦 Repos</text>
     <text y="62" x="120" class="value">45</text>
     <text y="86" class="label">📊 Lines</text>
-    <text y="86" x="120" class="value">5,061,635</text>
+    <text y="86" x="120" class="value">5,061,947</text>
   </g>
   <line x1="20" y1="165" x2="475" y2="165" stroke="#30363d" stroke-width="1"/>
   <text x="260" y="158" class="subheader">Top Languages</text>
