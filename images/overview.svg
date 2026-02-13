@@ -14,14 +14,14 @@
   </g>
   <g transform="translate(20, 90)">
     <text y="20" class="label">Total Commits</text>
-    <text y="20" x="200" class="value">16,757</text>
+    <text y="20" x="200" class="value">16,832</text>
   </g>
   <g transform="translate(20, 120)">
     <text y="20" class="label">Total Repositories</text>
-    <text y="20" x="200" class="value">45</text>
+    <text y="20" x="200" class="value">44</text>
   </g>
   <g transform="translate(20, 150)">
     <text y="20" class="label">Lines Changed</text>
-    <text y="20" x="200" class="value">5,061,947</text>
+    <text y="20" x="200" class="value">5,068,740</text>
   </g>
 </svg>
