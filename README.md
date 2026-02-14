@@ -46,11 +46,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-02-14</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-02-14</sub>
 - [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-02-13</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-02-13</sub>
-- [.github](https://github.com/Ven0m0/.github) — No description yet <sub>2026-02-13</sub>
 - [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-02-13</sub>
-- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-02-13</sub>
+- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-02-13</sub>
 <!--LAST_REPOS:END-->
 
 <hr />
