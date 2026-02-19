@@ -14,13 +14,13 @@
     <text y="14" class="label">⭐ Stars</text>
     <text y="14" x="120" class="value">21</text>
     <text y="38" class="label">📝 Commits</text>
-    <text y="38" x="120" class="value">17,310</text>
+    <text y="38" x="120" class="value">17,387</text>
     <text y="62" class="label">📦 Repos</text>
     <text y="62" x="120" class="value">45</text>
     <text y="86" class="label">📊 Lines</text>
-    <text y="86" x="120" class="value">5,148,653</text>
+    <text y="86" x="120" class="value">5,188,596</text>
   </g>
   <line x1="20" y1="165" x2="475" y2="165" stroke="#30363d" stroke-width="1"/>
   <text x="260" y="158" class="subheader">Top Languages</text>
-  <g transform="translate(260, 180)"><circle cx="6" cy="6" r="5" fill="#89e051"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">Shell</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">41.4%</text></g><g transform="translate(260, 202)"><circle cx="6" cy="6" r="5" fill="#3572A5"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">Python</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">18.8%</text></g><g transform="translate(260, 224)"><circle cx="6" cy="6" r="5" fill="#3178c6"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">TypeScript</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">12.9%</text></g><g transform="translate(260, 246)"><circle cx="6" cy="6" r="5" fill="#012456"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">PowerShell</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">7.0%</text></g><g transform="translate(260, 268)"><circle cx="6" cy="6" r="5" fill="#f1e05a"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">JavaScript</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">5.2%</text></g>
+  <g transform="translate(260, 180)"><circle cx="6" cy="6" r="5" fill="#89e051"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">Shell</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">41.4%</text></g><g transform="translate(260, 202)"><circle cx="6" cy="6" r="5" fill="#3572A5"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">Python</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">18.8%</text></g><g transform="translate(260, 224)"><circle cx="6" cy="6" r="5" fill="#3178c6"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">TypeScript</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">12.9%</text></g><g transform="translate(260, 246)"><circle cx="6" cy="6" r="5" fill="#012456"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">PowerShell</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">7.0%</text></g><g transform="translate(260, 268)"><circle cx="6" cy="6" r="5" fill="#f1e05a"/><text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">JavaScript</text><text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">5.4%</text></g>
 </svg>
