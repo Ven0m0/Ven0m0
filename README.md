@@ -1,9 +1,6 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ba68c8,100:f8bbd0&height=120&text=Hi%20I'm%20Ven0m0%20%F0%9F%92%95&fontColor=fff&fontSize=32&animation=twinkling" alt="Header wave" />
-</div>
-
-<div align="center">
-  <img src="https://media1.tenor.com/m/su8Zai2H62sAAAAC/sanrio-cinnamoroll.gif" alt="Cinnamoroll typing" width="260" />
+  <img src="https://media1.tenor.com/m/su8Zai2H62sAAAAC/sanrio-cinnamoroll.gif" alt="Cinnamoroll typing" width="260" /><br />
   <p>cozy coder · rust & python learner · shell + dotfiles tinkerer · privacy & network hardening nerd</p>
 </div>
 
@@ -30,17 +27,15 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="28" alt="Firefox" title="Firefox" />
 </p>
 
-<br />
-
 ### 🌈 Spotlight drops
 - 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;•&nbsp; [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated Adblock/Pihole lists & userscripts
 - 🔒 [PKG's](https://github.com/Ven0m0/PKG) &nbsp;•&nbsp; [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches
 - ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) &nbsp;•&nbsp; [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs
 - 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) &nbsp;•&nbsp; [Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp;•&nbsp; [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups
 - <img height="18" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
-- <img height="18" src="https://purepng.com/public/uploads/large/71502582731v7y8uylzhygvo3zf71tqjtrwkhwdowkysgsdhsq3vr35woaluanwa4zotpkewhamxijlulfxcrilendabjrjtozyfrqwogphaoic.png" alt="Minecraft" /> [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
+- ⛏️ [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
 
-<hr />
+---
 
 ### 🔄 Latest tinkers (auto-updates)
 <sup>Freshest 5 repos I touched ✨</sup>
@@ -53,43 +48,34 @@
 - [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-02-19</sub>
 <!--LAST_REPOS:END-->
 
-<hr />
+---
 
 ### 📊 GitHub glow
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb" alt="Activity graph" />
-</p>
-<p align="center">
+  <br />
   <img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/images/github-stats.svg" alt="GitHub Stats" />
 </p>
 
-<details>
+<details open>
 <summary>🔥 Streak Stats</summary>
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0&theme=dracula&hide_border=true&background=0d1117&ring=b39ddb&fire=ba68c8&currStreakLabel=b39ddb)](https://git.io/streak-stats)
 </details>
 
-<hr />
+---
 
 ### 🌸 Find me around the net
 
 <p align="center">
-  <a href="https://github.com/Ven0m0">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://www.youtube.com/@ven0m017">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
-  </a>
-  <a href="https://linktr.ee/Ven0m0">
-    <img src="https://img.shields.io/badge/Linktree-1de9b6?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree" />
-  </a>
-  <a href="https://www.last.fm/user/Ven0m0">
-    <img src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white" alt="Last.fm" />
-  </a>
+  <a href="https://github.com/Ven0m0"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://www.youtube.com/@ven0m017"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" /></a>
+  <a href="https://linktr.ee/Ven0m0"><img src="https://img.shields.io/badge/Linktree-1de9b6?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree" /></a>
+  <a href="https://www.last.fm/user/Ven0m0"><img src="https://img.shields.io/badge/last.fm-D51007?style=for-the-badge&logo=last.fm&logoColor=white" alt="Last.fm" /></a>
 </p>
 
-<hr />
+---
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:f8bbd0,100:ba68c8&height=120&text=Thanks%20for%20visiting!&fontSize=24&fontColor=fff&animation=twinkling" alt="Thanks for visiting!" />
