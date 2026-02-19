@@ -52,7 +52,7 @@ jobs:
             });
 
             const latest = repos
-              .filter(repo => !repo.archived && !repo.disabled && !repo.fork)
+              .filter(repo => !repo.archived && !repo.disabled && !repo.fork && repo.name !== '.github')
               .slice(0, 5)
               .map(repo => {
                 const desc = repo.description ? repo.description.trim() : 'No description yet';
