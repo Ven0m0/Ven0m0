@@ -41,11 +41,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-02-18</sub>
-- [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-02-18</sub>
-- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-02-18</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-02-18</sub>
-- [.github](https://github.com/Ven0m0/.github) — No description yet <sub>2026-02-18</sub>
+- [texture-packs](https://github.com/Ven0m0/texture-packs) — No description yet <sub>2026-02-19</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-02-19</sub>
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-02-19</sub>
+- [.github](https://github.com/Ven0m0/.github) — No description yet <sub>2026-02-19</sub>
+- [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-02-19</sub>
 <!--LAST_REPOS:END-->
 
 ---
