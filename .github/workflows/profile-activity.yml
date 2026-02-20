@@ -51,13 +51,24 @@ jobs:
               per_page: 100,
             });
 
+            function escapeHtml(unsafe) {
+              return unsafe
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+            }
+
             const latest = repos
               .filter(repo => !repo.archived && !repo.disabled && !repo.fork && repo.name !== '.github')
               .slice(0, 5)
               .map(repo => {
-                const desc = repo.description ? repo.description.trim() : 'No description yet';
+                const descRaw = repo.description ? repo.description.trim() : 'No description yet';
+                const desc = escapeHtml(descRaw);
+                const name = escapeHtml(repo.name);
                 const date = new Date(repo.pushed_at).toISOString().split('T')[0];
-                return `- [${repo.name}](${repo.html_url}) — ${desc} <sub>${date}</sub>`;
+                return `- [${name}](${repo.html_url}) — ${desc} <sub>${date}</sub>`;
               });
 
             core.info(`Found ${latest.length} repos to display`);
