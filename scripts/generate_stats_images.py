@@ -136,8 +136,7 @@ class Queries:
         return f"""{{
   viewer {{
     login name
-    repositories(first: 100, orderBy: {{field: UPDATED_AT, direction: DESC}}, \
-isFork: false, after: {owned_cursor_json}) {{
+    repositories(first: 100, orderBy: {{field: UPDATED_AT, direction: DESC}}, isFork: false, after: {owned_cursor_json}) {{
       pageInfo {{ hasNextPage endCursor }}
       nodes {{
         nameWithOwner
@@ -148,10 +147,7 @@ isFork: false, after: {owned_cursor_json}) {{
         }}
       }}
     }}
-    repositoriesContributedTo(first: 100, includeUserRepositories: false, \
-orderBy: {{field: UPDATED_AT, direction: DESC}}, \
-contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY, PULL_REQUEST_REVIEW], \
-after: {contrib_cursor_json}) {{
+    repositoriesContributedTo(first: 100, includeUserRepositories: false, orderBy: {{field: UPDATED_AT, direction: DESC}}, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY, PULL_REQUEST_REVIEW], after: {contrib_cursor_json}) {{
       pageInfo {{ hasNextPage endCursor }}
       nodes {{
         nameWithOwner
@@ -198,7 +194,6 @@ class Stats:
     exclude_repos: set[str] = field(default_factory=set)
     exclude_langs: set[str] = field(default_factory=set)
     consider_forked_repos: bool = False
-    traffic_limit: int = 20
     queries: Queries = field(init=False)
     _name: str | None = field(default=None, init=False)
     _stargazers: int | None = field(default=None, init=False)
@@ -207,9 +202,7 @@ class Stats:
     _languages: dict[str, dict] | None = field(default=None, init=False)
     _repos: set[str] | None = field(default=None, init=False)
     _lines_changed: tuple[int, int] | None = field(default=None, init=False)
-    _views: int | None = field(default=None, init=False)
     _ignored_repos: set[str] = field(default_factory=set, init=False)
-    _repo_details: list[tuple[str, int]] = field(default_factory=list, init=False)
 
     def __post_init__(self) -> None:
         self.queries = Queries(self.username, self.access_token, self.session)
@@ -221,7 +214,6 @@ class Stats:
         self._languages = {}
         self._repos = set()
         self._ignored_repos = set()
-        self._repo_details = []
         next_owned = None
         next_contrib = None
         first_iteration = True
@@ -266,7 +258,6 @@ class Stats:
                 self._repos.add(name)
                 stars = repo.get("stargazers", {}).get("totalCount", 0)
                 self._stargazers += stars
-                self._repo_details.append((name, stars))
                 self._forks += repo.get("forkCount", 0)
                 for lang in repo.get("languages", {}).get("edges", []):
                     lname = lang.get("node", {}).get("name", "Other")
@@ -401,35 +392,8 @@ class Stats:
         self._lines_changed = (additions, deletions)
         return self._lines_changed
 
-    @property
-    async def views(self) -> int:
-        if self._views is not None:
-            return self._views
-        if self._repos is None:
-            await self.get_stats()
 
-        # Optimize: Only fetch traffic for top N repos by stars
-        sorted_repos = sorted(self._repo_details, key=lambda x: x[1], reverse=True)[
-            : self.traffic_limit
-        ]
-        repos = [r[0] for r in sorted_repos]
-
-        tasks = [
-            self.queries.query_rest(f"/repos/{repo}/traffic/views") for repo in repos
-        ]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-        total = 0
-        for r in results:
-            if isinstance(r, Exception) or not isinstance(r, dict):
-                continue
-            for view in r.get("views", []):
-                total += view.get("count", 0)
-        self._views = total
-        return total
-
-
-TEMPLATE_OVERVIEW = """\
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
+TEMPLATE_OVERVIEW = """<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
   <defs>
     <style>
       .header{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}
@@ -457,8 +421,7 @@ TEMPLATE_OVERVIEW = """\
   </g>
 </svg>"""
 
-TEMPLATE_LANGUAGES = """\
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="285" viewBox="0 0 495 285">
+TEMPLATE_LANGUAGES = """<svg xmlns="http://www.w3.org/2000/svg" width="495" height="285" viewBox="0 0 495 285">
   <defs>
     <style>
       .header{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}
@@ -574,8 +537,7 @@ async def generate_combined(s: Stats, output_dir: Path) -> None:
         )
         y += 22
 
-    svg = f"""\
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="310" viewBox="0 0 495 310">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="495" height="310" viewBox="0 0 495 310">
   <defs>
     <style>
       .header{{font:600 18px 'Segoe UI',Ubuntu,sans-serif;fill:#ba68c8}}
@@ -616,7 +578,6 @@ async def try_generate_stats(
     exclude_repos: set[str],
     exclude_langs: set[str],
     consider_forks: bool,
-    traffic_limit: int,
 ) -> bool:
     """Try to generate stats with a given token. Returns True on success."""
     print(f"Trying {token_name}...")
@@ -628,7 +589,6 @@ async def try_generate_stats(
                 session,
                 exclude_repos=exclude_repos,
                 exclude_langs=exclude_langs,
-                traffic_limit=traffic_limit,
                 consider_forked_repos=consider_forks,
             )
             await asyncio.gather(
@@ -671,14 +631,7 @@ async def main() -> int:
     exclude_langs_str = os.getenv("EXCLUDED_LANGS", "")
     exclude_langs = {x.strip() for x in exclude_langs_str.split(",") if x.strip()}
     consider_forks = bool(os.getenv("COUNT_STATS_FROM_FORKS", ""))
-    try:
-        traffic_limit = int(os.getenv("TRAFFIC_LIMIT", "20"))
-    except ValueError:
-        print(
-            "Warning: Invalid TRAFFIC_LIMIT value. Using default of 20.",
-            file=sys.stderr,
-        )
-        traffic_limit = 20
+
     output_dir = Path(os.getenv("OUTPUT_DIR", "images"))
 
     print(f"Generating GitHub stats for user: {user}")
@@ -700,7 +653,6 @@ async def main() -> int:
                 output_dir=output_dir,
                 exclude_repos=exclude_repos,
                 exclude_langs=exclude_langs,
-                traffic_limit=traffic_limit,
                 consider_forks=consider_forks,
             )
             if success:
