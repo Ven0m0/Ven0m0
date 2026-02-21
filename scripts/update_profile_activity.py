@@ -26,7 +26,7 @@ STATUS_MAP = {
 
 GITHUB_RE = re.compile(r"https://github\.com/(?P<owner>[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)/(?P<repo>(?=.*[a-zA-Z0-9])[\w.-]+)")
 LINE_RE = re.compile(
-    r"^(?P<prefix>\s*-\s*)(?:(?P<emoji>\S+)\s+)?\*\*(?P<label>[^*]+?)\*\*(?P<ws>\s*)(?P<rest>.+)$",
+    r"^(?P<prefix>\s*-\s*)(?:(?P<emoji>\S+)\s+)?(?:(?P<label_full>\*\*(?P<label>[^*]+?)\*\*)(?P<ws>\s*))?(?P<rest>\[.+)$"
 )
 
 
