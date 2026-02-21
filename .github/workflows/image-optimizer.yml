@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Compress images
         id: compress-images
@@ -38,7 +38,7 @@ jobs:
 
       - name: Create pull request if images were compressed
         if: steps.compress-images.outputs.markdown_report != ''
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@v7
         with:
           title: "chore: compress images"
           branch-suffix: timestamp
