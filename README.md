@@ -41,11 +41,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Linux-Kernel-Patches](https://github.com/Ven0m0/Linux-Kernel-Patches) — No description yet <sub>2026-02-19</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-02-19</sub>
-- [Template](https://github.com/Ven0m0/Template) — No description yet <sub>2026-02-19</sub>
-- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-02-19</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-02-19</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-02-21</sub>
+- [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-02-21</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-02-21</sub>
+- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-02-21</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-02-21</sub>
 <!--LAST_REPOS:END-->
 
 ---
