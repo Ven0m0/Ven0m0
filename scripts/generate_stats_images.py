@@ -19,6 +19,16 @@ from pathlib import Path
 import aiohttp
 
 
+def sanitize_text(text: str, secrets: list[str]) -> str:
+    """Sanitize sensitive information from text."""
+    if not text:
+        return text
+    for secret in sorted(secrets, key=len, reverse=True):
+        if secret and secret in text:
+            text = text.replace(secret, "[REDACTED]")
+    return text
+
+
 @dataclass(slots=True)
 class Queries:
     """Handles GraphQL and REST API queries to GitHub."""
@@ -601,7 +611,11 @@ async def try_generate_stats(
     except RuntimeError as e:
         error_str = str(e).lower()
         if "authentication" in error_str or "401" in error_str or "403" in error_str:
-            print(f"✗ {token_name} authentication failed: {e}", file=sys.stderr)
+            sanitized_msg = sanitize_text(str(e), [token])
+            print(
+                f"✗ {token_name} authentication failed: {sanitized_msg}",
+                file=sys.stderr,
+            )
             return False
         raise
 
@@ -638,10 +652,13 @@ async def main() -> int:
     print(f"Output directory: {output_dir}")
 
     tokens_to_try: list[tuple[str, str]] = []
+    all_secrets = []
     if access_token:
         tokens_to_try.append((access_token, "ACCESS_TOKEN"))
+        all_secrets.append(access_token)
     if github_token and github_token != access_token:
         tokens_to_try.append((github_token, "GITHUB_TOKEN"))
+        all_secrets.append(github_token)
 
     last_error: Exception | None = None
     for token, token_name in tokens_to_try:
@@ -659,10 +676,16 @@ async def main() -> int:
                 return 0
         except RuntimeError as e:
             last_error = e
-            print(f"✗ Failed with {token_name}: {e}", file=sys.stderr)
+            sanitized_msg = sanitize_text(str(e), all_secrets)
+            print(f"✗ Failed with {token_name}: {sanitized_msg}", file=sys.stderr)
         except Exception as e:
-            print(f"✗ Unexpected error with {token_name}: {e}", file=sys.stderr)
-            traceback.print_exc()
+            sanitized_msg = sanitize_text(str(e), all_secrets)
+            print(
+                f"✗ Unexpected error with {token_name}: {sanitized_msg}",
+                file=sys.stderr,
+            )
+            sanitized_tb = sanitize_text(traceback.format_exc(), all_secrets)
+            print(sanitized_tb, file=sys.stderr)
             last_error = e
 
     print("\n✗ All tokens failed.", file=sys.stderr)
@@ -673,7 +696,8 @@ async def main() -> int:
         "3. Create a token at: https://github.com/settings/tokens/new", file=sys.stderr
     )
     if last_error:
-        print(f"\nLast error: {last_error}", file=sys.stderr)
+        sanitized_msg = sanitize_text(str(last_error), all_secrets)
+        print(f"\nLast error: {sanitized_msg}", file=sys.stderr)
     return 1
 
 
