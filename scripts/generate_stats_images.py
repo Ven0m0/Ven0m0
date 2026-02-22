@@ -23,7 +23,7 @@ def sanitize_text(text: str, secrets: list[str]) -> str:
     """Sanitize sensitive information from text."""
     if not text:
         return text
-    for secret in secrets:
+    for secret in sorted(secrets, key=len, reverse=True):
         if secret and secret in text:
             text = text.replace(secret, "[REDACTED]")
     return text
