@@ -320,21 +320,137 @@ class Stats:
         return self._languages
 
 
+def _write_svg(title: str, lines: list[str], output_path: Path) -> None:
+    """Write a very simple SVG file with the given title and text lines."""
+    # Basic layout: one line per row, simple vertical spacing.
+    width = 500
+    line_height = 20
+    height = max(60, 40 + line_height * len(lines))
+
+    escaped_title = html.escape(title)
+    svg_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">',
+        f'  <title>{escaped_title}</title>',
+        '  <style>',
+        '    text {',
+        '      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";',
+        '      font-size: 14px;',
+        '      fill: #24292e;',
+        '    }',
+        '  </style>',
+        f'  <text x="20" y="30" font-size="16" font-weight="bold">{escaped_title}</text>',
+    ]
+
+    y = 55
+    for line in lines:
+        if not line:
+            y += line_height
+            continue
+        svg_lines.append(f'  <text x="20" y="{y}">{html.escape(str(line))}</text>')
+        y += line_height
+
+    svg_lines.append('</svg>')
+    output_path.write_text("\n".join(svg_lines), encoding="utf-8")
+
+
 async def generate_overview(stats: Stats, output_dir: Path) -> None:
     """Generate overview SVG."""
-    # This is a simplified placeholder as the original code was cut off in previous reads
-    # But since we only need to fix logging in main and try_generate_stats,
-    # and the original file is small enough, I should have read the whole thing.
-    # Wait, I only read chunks. I should construct the file content carefully.
-    # I'll rely on reading the original file content fully to ensure I don't miss anything.
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Retrieve core stats. These are defined as async properties on the Stats class.
+    followers = await stats.followers
+    contributions = await stats.contributions
+    stargazers = await stats.stargazers
+    forks = await stats.forks
+
+    lines: list[str] = [
+        f"Followers: {followers}",
+        f"Contributions (last year): {contributions}",
+        f"Stars: {stargazers}",
+        f"Forks: {forks}",
+    ]
+
+    overview_path = output_dir / "overview.svg"
+    _write_svg("GitHub Overview", lines, overview_path)
+
 
 async def generate_languages(stats: Stats, output_dir: Path) -> None:
     """Generate languages SVG."""
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    languages_stats = await stats.languages
+
+    # languages_stats is expected to be a dict like {language: { ... }}.
+    # We try to sort by a "size" field when available, otherwise keep insertion order.
+    items = list(languages_stats.items()) if isinstance(languages_stats, dict) else []
+
+    def _sort_key(item: tuple[str, object]) -> int:
+        lang_data = item[1]
+        if isinstance(lang_data, dict):
+            size = lang_data.get("size") or lang_data.get("bytes") or 0
+            try:
+                return int(size)
+            except (TypeError, ValueError):
+                return 0
+        return 0
+
+    items.sort(key=_sort_key, reverse=True)
+
+    lines: list[str] = []
+    for name, data in items[:10]:
+        display = str(name)
+        if isinstance(data, dict):
+            size = data.get("size") or data.get("bytes")
+            if size is not None:
+                display = f"{name}: {size}"
+        lines.append(display)
+
+    if not lines:
+        lines.append("No language data available.")
+
+    languages_path = output_dir / "languages.svg"
+    _write_svg("Top Languages", lines, languages_path)
+
 
 async def generate_combined(stats: Stats, output_dir: Path) -> None:
     """Generate combined stats SVG."""
-    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
 
+    followers = await stats.followers
+    contributions = await stats.contributions
+    stargazers = await stats.stargazers
+    forks = await stats.forks
+    languages_stats = await stats.languages
+
+    items = list(languages_stats.items()) if isinstance(languages_stats, dict) else []
+
+    def _sort_key(item: tuple[str, object]) -> int:
+        lang_data = item[1]
+        if isinstance(lang_data, dict):
+            size = lang_data.get("size") or lang_data.get("bytes") or 0
+            try:
+                return int(size)
+            except (TypeError, ValueError):
+                return 0
+        return 0
+
+    items.sort(key=_sort_key, reverse=True)
+    top_langs = [str(name) for name, _ in items[:5]]
+
+    lines: list[str] = [
+        f"Followers: {followers}",
+        f"Contributions (last year): {contributions}",
+        f"Stars: {stargazers}",
+        f"Forks: {forks}",
+    ]
+
+    if top_langs:
+        lines.append("")
+        lines.append("Top languages:")
+        for lang in top_langs:
+            lines.append(f"- {lang}")
+
+    combined_path = output_dir / "combined.svg"
+    _write_svg("GitHub Stats", lines, combined_path)
 # ... (rest of the file)
