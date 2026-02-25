@@ -15,6 +15,7 @@ import sys
 import traceback
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any, Awaitable, Callable
 
 import aiohttp
 
@@ -42,38 +43,88 @@ class Queries:
     def __post_init__(self) -> None:
         self.semaphore = asyncio.Semaphore(self.max_concurrent)
 
+    async def _request_with_retry(
+        self,
+        method: str,
+        url: str,
+        retries: int,
+        backoff_cap: float = 8.0,
+        validate_func: (
+            Callable[[aiohttp.ClientResponse, int], Awaitable[tuple[bool, Any]]] | None
+        ) = None,
+        **kwargs,
+    ) -> Any:
+        """Execute a request with retry logic.
+
+        Args:
+            method: HTTP method (GET, POST, etc.)
+            url: Request URL
+            retries: Maximum number of retries
+            backoff_cap: Maximum sleep duration in seconds
+            validate_func: Async callback that takes (response, attempt_index)
+                           and returns (should_retry, result).
+                           If should_retry is False, result is returned.
+                           If should_retry is True, loop continues.
+                           Can raise exceptions to abort retries.
+            **kwargs: Arguments passed to session.request
+        """
+        for attempt in range(retries):
+            should_retry = False
+            sleep_duration = 0.0
+            async with self.semaphore:
+                try:
+                    async with self.session.request(
+                        method,
+                        url,
+                        timeout=aiohttp.ClientTimeout(total=30),
+                        **kwargs,
+                    ) as r:
+                        if validate_func:
+                            should_retry, result = await validate_func(r, attempt)
+                            if not should_retry:
+                                return result
+                            # Standard backoff for retryable responses
+                            sleep_duration = min(2 ** min(attempt, 3), backoff_cap)
+                        else:
+                            r.raise_for_status()
+                            return await r.json()
+                except aiohttp.ClientError as e:
+                    if attempt == retries - 1:
+                        raise RuntimeError(
+                            f"Request failed for {url} after {retries} attempts: {e}"
+                        )
+                    should_retry = True
+                    sleep_duration = min(2 ** min(attempt, 3), backoff_cap)
+
+            if should_retry:
+                await asyncio.sleep(sleep_duration)
+        return {}
+
     async def query(self, generated_query: str, retries: int = 3) -> dict:
         """Execute a GraphQL query against GitHub API."""
         headers = {"Authorization": f"Bearer {self.access_token}"}
-        for attempt in range(retries):
-            async with self.semaphore:
-                try:
-                    r = await self.session.post(
-                        "https://api.github.com/graphql",
-                        headers=headers,
-                        json={"query": generated_query},
-                        timeout=aiohttp.ClientTimeout(total=30),
-                    )
-                    r.raise_for_status()
-                    result = await r.json()
-                    if "errors" in result:
-                        errors = result.get("errors", [])
-                        error_msg = "; ".join(
-                            e.get("message", "Unknown error") for e in errors
-                        )
-                        print(f"GraphQL query returned errors: {error_msg}")
-                        if attempt == retries - 1:
-                            raise RuntimeError(f"GraphQL API errors: {error_msg}")
-                        continue
-                    return result
-                except aiohttp.ClientError as e:
-                    if attempt == retries - 1:
-                        msg = f"GraphQL query failed after {retries} attempts: {e}"
-                        raise RuntimeError(msg)
-                    print(f"GraphQL attempt {attempt + 1}/{retries} failed: {e}")
-            if attempt < retries - 1:
-                await asyncio.sleep(2**attempt)
-        return {}
+
+        async def validate(r: aiohttp.ClientResponse, attempt: int) -> tuple[bool, Any]:
+            r.raise_for_status()
+            result = await r.json()
+            if "errors" in result:
+                errors = result.get("errors", [])
+                error_msg = "; ".join(e.get("message", "Unknown error") for e in errors)
+                print(f"GraphQL query returned errors: {error_msg}")
+                if attempt == retries - 1:
+                    raise RuntimeError(f"GraphQL API errors: {error_msg}")
+                return True, None
+            return False, result
+
+        result = await self._request_with_retry(
+            "POST",
+            "https://api.github.com/graphql",
+            retries=retries,
+            headers=headers,
+            json={"query": generated_query},
+            validate_func=validate,
+        )
+        return result
 
     async def query_rest(
         self,
@@ -85,55 +136,41 @@ class Queries:
         headers = {"Authorization": f"Bearer {self.access_token}"}
         params = params or {}
         path = path.lstrip("/")
-        for attempt in range(max_attempts):
-            should_retry = False
-            sleep_duration = 0
-            async with self.semaphore:
-                try:
-                    r = await self.session.get(
-                        f"https://api.github.com/{path}",
-                        headers=headers,
-                        params=tuple(params.items()),
-                        timeout=aiohttp.ClientTimeout(total=30),
-                    )
-                    if r.status == 200:
-                        return await r.json()
-                    if r.status == 404:
-                        return {}
-                    if r.status in (401, 403):
-                        error_body = await r.text()
-                        msg = (
-                            f"Authentication failed for {path} "
-                            f"(status {r.status}): {error_body}"
-                        )
-                        raise RuntimeError(msg)
-                    if r.status == 202:
-                        should_retry = True
-                        sleep_duration = min(2 ** min(attempt // 10, 3), 8)
-                    elif attempt < max_attempts - 1:
-                        should_retry = True
-                        sleep_duration = min(2 ** min(attempt // 5, 3), 8)
-                    else:
-                        error_body = await r.text()
-                        msg = (
-                            f"REST API request failed for {path} "
-                            f"with status {r.status}: {error_body}"
-                        )
-                        raise RuntimeError(msg)
-                except aiohttp.ClientError as e:
-                    if attempt == max_attempts - 1:
-                        msg = (
-                            f"REST query failed for {path} "
-                            f"after {max_attempts} attempts: {e}"
-                        )
-                        raise RuntimeError(msg)
-                    should_retry = True
-                    sleep_duration = min(2 ** min(attempt // 5, 3), 8)
-            if should_retry:
-                await asyncio.sleep(sleep_duration)
-            else:
-                return {}
-        return {}
+
+        async def validate(r: aiohttp.ClientResponse, attempt: int) -> tuple[bool, Any]:
+            if r.status == 200:
+                return False, await r.json()
+            if r.status == 404:
+                return False, {}
+            if r.status in (401, 403):
+                error_body = await r.text()
+                msg = (
+                    f"Authentication failed for {path} "
+                    f"(status {r.status}): {error_body}"
+                )
+                raise RuntimeError(msg)
+            if r.status == 202:
+                # 202 Accepted (processing)
+                return True, None
+
+            # Other errors
+            if attempt == max_attempts - 1:
+                error_body = await r.text()
+                msg = (
+                    f"REST API request failed for {path} "
+                    f"with status {r.status}: {error_body}"
+                )
+                raise RuntimeError(msg)
+            return True, None
+
+        return await self._request_with_retry(
+            "GET",
+            f"https://api.github.com/{path}",
+            retries=max_attempts,
+            headers=headers,
+            params=params,
+            validate_func=validate,
+        )
 
     @staticmethod
     def repos_overview(
