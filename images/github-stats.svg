@@ -18,7 +18,7 @@
     <text y="62" class="label">📦 Repos</text>
     <text y="62" x="120" class="value">44</text>
     <text y="86" class="label">📊 Lines</text>
-    <text y="86" x="120" class="value">3,419,180</text>
+    <text y="86" x="120" class="value">5,286,773</text>
   </g>
   <line x1="20" y1="165" x2="475" y2="165" stroke="#30363d" stroke-width="1"/>
   <text x="260" y="158" class="subheader">Top Languages</text>
