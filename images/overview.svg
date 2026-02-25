@@ -14,7 +14,7 @@
   </g>
   <g transform="translate(20, 90)">
     <text y="20" class="label">Total Commits</text>
-    <text y="20" x="200" class="value">17,718</text>
+    <text y="20" x="200" class="value">17,756</text>
   </g>
   <g transform="translate(20, 120)">
     <text y="20" class="label">Total Repositories</text>
@@ -22,6 +22,6 @@
   </g>
   <g transform="translate(20, 150)">
     <text y="20" class="label">Lines Changed</text>
-    <text y="20" x="200" class="value">5,286,773</text>
+    <text y="20" x="200" class="value">5,290,548</text>
   </g>
 </svg>
