@@ -1,7 +1,8 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ba68c8,100:f8bbd0&height=120&text=Hi%20I'm%20Ven0m0%20%F0%9F%92%95&fontColor=fff&fontSize=32&animation=twinkling" alt="Header wave" />
   <img src="https://media1.tenor.com/m/su8Zai2H62sAAAAC/sanrio-cinnamoroll.gif" alt="Cinnamoroll typing" width="260" /><br />
-  <p>cozy coder · rust & python learner · shell + dotfiles tinkerer · privacy & network hardening nerd</p>
+
+  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=BA68C8&center=true&vCenter=true&multiline=true&repeat=true&width=520&height=70&lines=cozy+coder+%C2%B7+shell+%26+dotfiles+tinkerer;rust+%26+python+learner+%C2%B7+privacy+nerd;CachyOS+%C2%B7+Arch+Linux+%C2%B7+self-hosted+vibes)](https://git.io/typing-svg)
 </div>
 
 <p align="center">
@@ -27,6 +28,34 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg" height="28" alt="Firefox" title="Firefox" />
 </p>
 
+---
+
+### 📊 GitHub glow
+
+<p align="center">
+  <img src="https://github-readme-stats-beta-ten-76.vercel.app/api?username=Ven0m0&show_icons=true&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8&hide_border=false&include_all_commits=true&count_private=true" alt="GitHub Stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&border_color=ba68c8&hide_border=false&langs_count=8" alt="Top Languages" />
+</p>
+
+<details>
+<summary>📈 Contribution Graph</summary>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb" alt="Activity graph" />
+</p>
+</details>
+
+<details>
+<summary>🔥 Streak Stats</summary>
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0&theme=dracula&hide_border=true&background=0d1117&ring=b39ddb&fire=ba68c8&currStreakLabel=b39ddb)](https://git.io/streak-stats)
+</details>
+
+---
+
 ### 🌈 Spotlight drops
 - 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;•&nbsp; [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated Adblock/Pihole lists & userscripts
 - 🔒 [PKG's](https://github.com/Ven0m0/PKG) &nbsp;•&nbsp; [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches
@@ -34,6 +63,23 @@
 - 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) &nbsp;•&nbsp; [Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp;•&nbsp; [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups
 - <img height="18" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
 - ⛏️ [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
+
+<p align="center">
+  <a href="https://github.com/Ven0m0/Pihole-Lists">
+    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=Pihole-Lists&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="Pihole-Lists" />
+  </a>
+  <a href="https://github.com/Ven0m0/Scripts">
+    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=Scripts&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="Scripts" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/Ven0m0/dotfiles">
+    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=dotfiles&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="dotfiles" />
+  </a>
+  <a href="https://github.com/Ven0m0/Revanced-auto">
+    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=Revanced-auto&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="Revanced-auto" />
+  </a>
+</p>
 
 ---
 
@@ -47,22 +93,6 @@
 - [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-03-01</sub>
 - [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-01</sub>
 <!--LAST_REPOS:END-->
-
----
-
-### 📊 GitHub glow
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb" alt="Activity graph" />
-  <br />
-  <img src="https://raw.githubusercontent.com/Ven0m0/Ven0m0/main/images/github-stats.svg" alt="GitHub Stats" />
-</p>
-
-<details open>
-<summary>🔥 Streak Stats</summary>
-
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0&theme=dracula&hide_border=true&background=0d1117&ring=b39ddb&fire=ba68c8&currStreakLabel=b39ddb)](https://git.io/streak-stats)
-</details>
 
 ---
 
