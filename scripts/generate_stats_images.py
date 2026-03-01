@@ -50,7 +50,11 @@ class Queries:
         retries: int,
         backoff_cap: float = 8.0,
         validate_func: (
-            Callable[[aiohttp.ClientResponse, int], Awaitable[tuple[bool, Any]]] | None
+            Callable[
+                [aiohttp.ClientResponse, int],
+                Awaitable[tuple[bool, Any] | tuple[bool, Any, float]],
+            ]
+            | None
         ) = None,
         **kwargs,
     ) -> Any:
@@ -62,9 +66,11 @@ class Queries:
             retries: Maximum number of retries
             backoff_cap: Maximum sleep duration in seconds
             validate_func: Async callback that takes (response, attempt_index)
-                           and returns (should_retry, result).
+                           and returns (should_retry, result) or
+                           (should_retry, result, sleep_override).
                            If should_retry is False, result is returned.
                            If should_retry is True, loop continues.
+                           An optional third element overrides the sleep duration.
                            Can raise exceptions to abort retries.
             **kwargs: Arguments passed to session.request
         """
@@ -80,11 +86,17 @@ class Queries:
                         **kwargs,
                     ) as r:
                         if validate_func:
-                            should_retry, result = await validate_func(r, attempt)
+                            ret = await validate_func(r, attempt)
+                            should_retry = ret[0]
+                            result = ret[1]
                             if not should_retry:
                                 return result
-                            # Standard backoff for retryable responses
-                            sleep_duration = min(2 ** min(attempt, 3), backoff_cap)
+                            # Use caller-supplied sleep or fall back to standard backoff
+                            sleep_duration = (
+                                ret[2]
+                                if len(ret) > 2
+                                else min(2 ** min(attempt, 3), backoff_cap)
+                            )
                         else:
                             r.raise_for_status()
                             return await r.json()
@@ -137,7 +149,9 @@ class Queries:
         params = params or {}
         path = path.lstrip("/")
 
-        async def validate(r: aiohttp.ClientResponse, attempt: int) -> tuple[bool, Any]:
+        async def validate(
+            r: aiohttp.ClientResponse, attempt: int
+        ) -> tuple[bool, Any] | tuple[bool, Any, float]:
             if r.status == 200:
                 return False, await r.json()
             if r.status == 404:
@@ -150,8 +164,8 @@ class Queries:
                 )
                 raise RuntimeError(msg)
             if r.status == 202:
-                # 202 Accepted (processing)
-                return True, None
+                # 202 Accepted: data still processing — use a gentler backoff
+                return True, None, min(2 ** min(attempt // 10, 3), 8.0)
 
             # Other errors
             if attempt == max_attempts - 1:
@@ -161,7 +175,7 @@ class Queries:
                     f"with status {r.status}: {error_body}"
                 )
                 raise RuntimeError(msg)
-            return True, None
+            return True, None, min(2 ** min(attempt // 5, 3), 8.0)
 
         return await self._request_with_retry(
             "GET",
@@ -183,22 +197,22 @@ class Queries:
         return f"""{{
   viewer {{
     login name
-    repositories(first: 100, orderBy: {{field: UPDATED_AT, direction: DESC}}, isFork: false, after: {owned_cursor_json}) {{
+    repositories(first: 100, privacy: PUBLIC, isFork: false, ownerAffiliations: OWNER, orderBy: {{field: STARGAZERS, direction: DESC}}, after: {owned_cursor_json}) {{
       pageInfo {{ hasNextPage endCursor }}
       nodes {{
         nameWithOwner
-        stargazers {{ totalCount }}
+        stargazerCount
         forkCount
         languages(first: 10, orderBy: {{field: SIZE, direction: DESC}}) {{
           edges {{ size node {{ name color }} }}
         }}
       }}
     }}
-    repositoriesContributedTo(first: 100, includeUserRepositories: false, orderBy: {{field: UPDATED_AT, direction: DESC}}, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY, PULL_REQUEST_REVIEW], after: {contrib_cursor_json}) {{
+    repositoriesContributedTo(first: 100, privacy: PUBLIC, includeUserRepositories: false, orderBy: {{field: STARGAZERS, direction: DESC}}, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY, PULL_REQUEST_REVIEW], after: {contrib_cursor_json}) {{
       pageInfo {{ hasNextPage endCursor }}
       nodes {{
         nameWithOwner
-        stargazers {{ totalCount }}
+        stargazerCount
         forkCount
         languages(first: 10, orderBy: {{field: SIZE, direction: DESC}}) {{
           edges {{ size node {{ name color }} }}
@@ -303,8 +317,7 @@ class Stats:
                 if name in self._repos or name in self.exclude_repos:
                     continue
                 self._repos.add(name)
-                stars = repo.get("stargazers", {}).get("totalCount", 0)
-                self._stargazers += stars
+                self._stargazers += repo.get("stargazerCount", 0)
                 self._forks += repo.get("forkCount", 0)
                 for lang in repo.get("languages", {}).get("edges", []):
                     lname = lang.get("node", {}).get("name", "Other")
@@ -312,11 +325,9 @@ class Stats:
                         continue
                     if lname in self._languages:
                         self._languages[lname]["size"] += lang.get("size", 0)
-                        self._languages[lname]["occurrences"] += 1
                     else:
                         self._languages[lname] = {
                             "size": lang.get("size", 0),
-                            "occurrences": 1,
                             "color": lang.get("node", {}).get("color"),
                         }
             owned_has_next = owned_repos.get("pageInfo", {}).get("hasNextPage")
