@@ -87,11 +87,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-03-05</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-03-05</sub>
-- [opencode-web](https://github.com/Ven0m0/opencode-web) — opencode webwrapper <sub>2026-03-05</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-03-05</sub>
-- [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-03-04</sub>
+- [pkgbuild-action](https://github.com/Ven0m0/pkgbuild-action) — GitHub action to build and check a PKGBUILD package <sub>2026-03-06</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-03-06</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-03-05</sub>
+- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-03-05</sub>
+- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-03-05</sub>
 <!--LAST_REPOS:END-->
 
 ---
