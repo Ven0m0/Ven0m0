@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import datetime as dt
 import json
 import logging
 import os
 import re
 import sys
+import threading
 from dataclasses import dataclass
 from pathlib import Path
 from urllib import error as urlerror
@@ -24,7 +26,9 @@ STATUS_MAP = {
     "archived": {"emoji": "📥", "label": "Archived"},
 }
 
-GITHUB_RE = re.compile(r"https://github\.com/(?P<owner>[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)/(?P<repo>(?=.*[a-zA-Z0-9])[\w.-]+)")
+GITHUB_RE = re.compile(
+    r"https://github\.com/(?P<owner>[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)/(?P<repo>(?=.*[a-zA-Z0-9])[\w.-]+)"
+)
 LINE_RE = re.compile(
     r"^(?P<prefix>\s*-\s*)(?:(?P<emoji>\S+)\s+)?(?P<label_full>\*\*(?P<label>[^*]+?)\*\*)(?P<ws>\s*)(?P<rest>\[.+)$"
 )
@@ -44,10 +48,12 @@ class GithubClient:
             token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
         )
         self._cache: dict[str, dict | None] = {}
+        self._lock = threading.Lock()
 
     def fetch(self, slug: str) -> dict | None:
-        if slug in self._cache:
-            return self._cache[slug]
+        with self._lock:
+            if slug in self._cache:
+                return self._cache[slug]
         url = f"https://api.github.com/repos/{slug}"
         headers = {
             "Accept": "application/vnd.github+json",
@@ -65,7 +71,8 @@ class GithubClient:
         except urlerror.URLError as exc:
             logger.error("Unable to reach GitHub for %s: %s", slug, exc)
             payload = None
-        self._cache[slug] = payload
+        with self._lock:
+            self._cache[slug] = payload
         return payload
 
 
@@ -145,6 +152,12 @@ def parse_args() -> argparse.Namespace:
         default=240,
         help="Days for Partially maintained threshold",
     )
+    parser.add_argument(
+        "--max-concurrent",
+        type=int,
+        default=5,
+        help="Max concurrent network requests",
+    )
     parser.add_argument("--max-repos", type=int, help="Cap number of repos processed")
     parser.add_argument("--log-level", default="INFO", help="Logging level")
     return parser.parse_args()
@@ -164,14 +177,32 @@ def main() -> int:
     text = path.read_text(encoding="utf-8")
     lines = text.splitlines()
     now = dt.datetime.now(tz=dt.timezone.utc)
+
+    # Pass 1: Collect slugs to fetch
+    slugs_to_fetch = []
+    processed = 0
+    for line in lines:
+        if args.max_repos is not None and processed >= args.max_repos:
+            logger.info("Reached max repo limit (%s); stopping early", args.max_repos)
+            break
+        slug = find_repo_slug(line)
+        if not slug:
+            continue
+        slugs_to_fetch.append(slug)
+        processed += 1
+
+    if slugs_to_fetch:
+        logger.info("Prefetching %s repositories concurrently...", len(slugs_to_fetch))
+        with concurrent.futures.ThreadPoolExecutor(
+            max_workers=args.max_concurrent
+        ) as executor:
+            list(executor.map(client.fetch, slugs_to_fetch))
+
+    # Pass 2: Process lines
     processed = 0
     updates: list[tuple[str, str]] = []
     for idx, line in enumerate(lines):
         if args.max_repos is not None and processed >= args.max_repos:
-            logger.info(
-                "Reached max repo limit (%s); stopping early",
-                args.max_repos,
-            )
             break
         slug = find_repo_slug(line)
         if not slug:
