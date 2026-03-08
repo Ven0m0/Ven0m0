@@ -263,88 +263,96 @@ class Stats:
     _repos: set[str] | None = field(default=None, init=False)
     _lines_changed: tuple[int, int] | None = field(default=None, init=False)
     _ignored_repos: set[str] = field(default_factory=set, init=False)
+    _stats_lock: asyncio.Lock | None = field(default=None, init=False)
+    _total_contributions_lock: asyncio.Lock | None = field(default=None, init=False)
 
     def __post_init__(self) -> None:
+        object.__setattr__(self, "_stats_lock", asyncio.Lock())
+        object.__setattr__(self, "_total_contributions_lock", asyncio.Lock())
         self.queries = Queries(self.access_token, self.session)
 
     async def get_stats(self) -> None:
         """Fetch all repository statistics from GitHub."""
-        self._stargazers = 0
-        self._forks = 0
-        self._languages = {}
-        self._repos = set()
-        self._ignored_repos = set()
-        next_owned = None
-        next_contrib = None
-        first_iteration = True
-        while True:
-            query = self.queries.repos_overview(next_contrib, next_owned)
-            raw = await self.queries.query(query)
-            raw = raw or {}
-            if not raw.get("data"):
-                raise RuntimeError(
-                    "GitHub API returned no data. "
-                    "Check if ACCESS_TOKEN has required permissions (repo, read:user)",
-                )
-            viewer = raw.get("data", {}).get("viewer", {})
-            if not viewer:
-                msg = "GitHub API returned no viewer data. Token may be invalid."
-                raise RuntimeError(msg)
-            if first_iteration:
-                self._name = viewer.get("name") or viewer.get("login")
-                if not self._name:
-                    msg = (
-                        "Could not retrieve username from GitHub API. "
-                        "Token may be invalid."
+        assert self._stats_lock is not None
+        async with self._stats_lock:
+            if self._repos is not None:
+                return
+            self._stargazers = 0
+            self._forks = 0
+            self._languages = {}
+            self._repos = set()
+            self._ignored_repos = set()
+            next_owned = None
+            next_contrib = None
+            first_iteration = True
+            while True:
+                query = self.queries.repos_overview(next_contrib, next_owned)
+                raw = await self.queries.query(query)
+                raw = raw or {}
+                if not raw.get("data"):
+                    raise RuntimeError(
+                        "GitHub API returned no data. "
+                        "Check if ACCESS_TOKEN has required permissions (repo, read:user)",
                     )
+                viewer = raw.get("data", {}).get("viewer", {})
+                if not viewer:
+                    msg = "GitHub API returned no viewer data. Token may be invalid."
                     raise RuntimeError(msg)
-                print(f"Fetching stats for: {self._name}")
-                first_iteration = False
-            contrib_repos = viewer.get("repositoriesContributedTo", {})
-            owned_repos = viewer.get("repositories", {})
-            repos = owned_repos.get("nodes", [])
-            if self.consider_forked_repos:
-                repos += contrib_repos.get("nodes", [])
-            else:
-                for repo in contrib_repos.get("nodes", []):
+                if first_iteration:
+                    self._name = viewer.get("name") or viewer.get("login")
+                    if not self._name:
+                        msg = (
+                            "Could not retrieve username from GitHub API. "
+                            "Token may be invalid."
+                        )
+                        raise RuntimeError(msg)
+                    print(f"Fetching stats for: {self._name}")
+                    first_iteration = False
+                contrib_repos = viewer.get("repositoriesContributedTo", {})
+                owned_repos = viewer.get("repositories", {})
+                repos = owned_repos.get("nodes", [])
+                if self.consider_forked_repos:
+                    repos += contrib_repos.get("nodes", [])
+                else:
+                    for repo in contrib_repos.get("nodes", []):
+                        name = repo.get("nameWithOwner")
+                        if name not in self._ignored_repos:
+                            if name not in self.exclude_repos:
+                                self._ignored_repos.add(name)
+                for repo in repos:
                     name = repo.get("nameWithOwner")
-                    if name not in self._ignored_repos:
-                        if name not in self.exclude_repos:
-                            self._ignored_repos.add(name)
-            for repo in repos:
-                name = repo.get("nameWithOwner")
-                if name in self._repos or name in self.exclude_repos:
-                    continue
-                self._repos.add(name)
-                self._stargazers += repo.get("stargazerCount", 0)
-                self._forks += repo.get("forkCount", 0)
-                for lang in repo.get("languages", {}).get("edges", []):
-                    lname = lang.get("node", {}).get("name", "Other")
-                    if lname in self.exclude_langs:
+                    if name in self._repos or name in self.exclude_repos:
                         continue
-                    if lname in self._languages:
-                        self._languages[lname]["size"] += lang.get("size", 0)
-                    else:
-                        self._languages[lname] = {
-                            "size": lang.get("size", 0),
-                            "color": lang.get("node", {}).get("color"),
-                        }
-            owned_has_next = owned_repos.get("pageInfo", {}).get("hasNextPage")
-            contrib_has_next = contrib_repos.get("pageInfo", {}).get("hasNextPage")
-            if owned_has_next or contrib_has_next:
-                next_owned = owned_repos.get("pageInfo", {}).get(
-                    "endCursor",
-                    next_owned,
-                )
-                next_contrib = contrib_repos.get("pageInfo", {}).get(
-                    "endCursor",
-                    next_contrib,
-                )
-            else:
-                break
-        langs_total = sum(v.get("size", 0) for v in self._languages.values())
-        for v in self._languages.values():
-            v["prop"] = (100 * v.get("size", 0) / langs_total) if langs_total else 0
+                    self._repos.add(name)
+                    self._stargazers += repo.get("stargazerCount", 0)
+                    self._forks += repo.get("forkCount", 0)
+                    for lang in repo.get("languages", {}).get("edges", []):
+                        lname = lang.get("node", {}).get("name", "Other")
+                        if lname in self.exclude_langs:
+                            continue
+                        if lname in self._languages:
+                            self._languages[lname]["size"] += lang.get("size", 0)
+                        else:
+                            self._languages[lname] = {
+                                "size": lang.get("size", 0),
+                                "color": lang.get("node", {}).get("color"),
+                            }
+                owned_has_next = owned_repos.get("pageInfo", {}).get("hasNextPage")
+                contrib_has_next = contrib_repos.get("pageInfo", {}).get("hasNextPage")
+                if owned_has_next or contrib_has_next:
+                    next_owned = owned_repos.get("pageInfo", {}).get(
+                        "endCursor",
+                        next_owned,
+                    )
+                    next_contrib = contrib_repos.get("pageInfo", {}).get(
+                        "endCursor",
+                        next_contrib,
+                    )
+                else:
+                    break
+            langs_total = sum(v.get("size", 0) for v in self._languages.values())
+            for v in self._languages.values():
+                v["prop"] = (100 * v.get("size", 0) / langs_total) if langs_total else 0
 
     @property
     async def name(self) -> str:
@@ -383,26 +391,29 @@ class Stats:
     async def total_contributions(self) -> int:
         if self._total_contributions is not None:
             return self._total_contributions
-        total = 0
-        years_query = await self.queries.query(self.queries.contrib_years())
-        years = (
-            years_query.get("data", {})
-            .get("viewer", {})
-            .get("contributionsCollection", {})
-            .get("contributionYears", [])
-        )
-        if years:
-            contribs_query = await self.queries.query(
-                self.queries.all_contribs(years),
+        async with self._total_contributions_lock:
+            if self._total_contributions is not None:
+                return self._total_contributions
+            total = 0
+            years_query = await self.queries.query(self.queries.contrib_years())
+            years = (
+                years_query.get("data", {})
+                .get("viewer", {})
+                .get("contributionsCollection", {})
+                .get("contributionYears", [])
             )
-            by_year = contribs_query.get("data", {}).get("viewer", {}).values()
-            for year in by_year:
-                if isinstance(year, dict):
-                    total += year.get("contributionCalendar", {}).get(
-                        "totalContributions", 0
-                    )
-        self._total_contributions = total
-        return self._total_contributions
+            if years:
+                contribs_query = await self.queries.query(
+                    self.queries.all_contribs(years),
+                )
+                by_year = contribs_query.get("data", {}).get("viewer", {}).values()
+                for year in by_year:
+                    if isinstance(year, dict):
+                        total += year.get("contributionCalendar", {}).get(
+                            "totalContributions", 0
+                        )
+            self._total_contributions = total
+            return self._total_contributions
 
     async def _fetch_and_parse_repo_stats(self, repo: str) -> tuple[int, int]:
         """Fetch and parse contributor stats for a single repository."""
