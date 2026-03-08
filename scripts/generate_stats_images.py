@@ -264,9 +264,11 @@ class Stats:
     _lines_changed: tuple[int, int] | None = field(default=None, init=False)
     _ignored_repos: set[str] = field(default_factory=set, init=False)
     _stats_lock: asyncio.Lock | None = field(default=None, init=False)
+    _total_contributions_lock: asyncio.Lock | None = field(default=None, init=False)
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "_stats_lock", asyncio.Lock())
+        object.__setattr__(self, "_total_contributions_lock", asyncio.Lock())
         self.queries = Queries(self.access_token, self.session)
 
     async def get_stats(self) -> None:
@@ -389,26 +391,29 @@ class Stats:
     async def total_contributions(self) -> int:
         if self._total_contributions is not None:
             return self._total_contributions
-        total = 0
-        years_query = await self.queries.query(self.queries.contrib_years())
-        years = (
-            years_query.get("data", {})
-            .get("viewer", {})
-            .get("contributionsCollection", {})
-            .get("contributionYears", [])
-        )
-        if years:
-            contribs_query = await self.queries.query(
-                self.queries.all_contribs(years),
+        async with self._total_contributions_lock:
+            if self._total_contributions is not None:
+                return self._total_contributions
+            total = 0
+            years_query = await self.queries.query(self.queries.contrib_years())
+            years = (
+                years_query.get("data", {})
+                .get("viewer", {})
+                .get("contributionsCollection", {})
+                .get("contributionYears", [])
             )
-            by_year = contribs_query.get("data", {}).get("viewer", {}).values()
-            for year in by_year:
-                if isinstance(year, dict):
-                    total += year.get("contributionCalendar", {}).get(
-                        "totalContributions", 0
-                    )
-        self._total_contributions = total
-        return self._total_contributions
+            if years:
+                contribs_query = await self.queries.query(
+                    self.queries.all_contribs(years),
+                )
+                by_year = contribs_query.get("data", {}).get("viewer", {}).values()
+                for year in by_year:
+                    if isinstance(year, dict):
+                        total += year.get("contributionCalendar", {}).get(
+                            "totalContributions", 0
+                        )
+            self._total_contributions = total
+            return self._total_contributions
 
     async def _fetch_and_parse_repo_stats(self, repo: str) -> tuple[int, int]:
         """Fetch and parse contributor stats for a single repository."""
