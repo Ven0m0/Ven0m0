@@ -540,6 +540,7 @@ async def generate_languages(s: Stats, output_dir: Path) -> None:
 
     for i, (lang, data) in enumerate(sorted_langs):
         color = data.get("color") or "#888888"
+        color = html.escape(color)
         prop = data.get("prop", 0)
         width = (prop / 100) * bar_width
         if width > 0:
@@ -585,6 +586,7 @@ async def generate_combined(s: Stats, output_dir: Path) -> None:
     y = 0
     for lang, data in sorted_langs:
         color = data.get("color") or "#888888"
+        color = html.escape(color)
         prop = data.get("prop", 0)
         lang_bars.append(
             f'<g transform="translate(260, {180 + y})">'
