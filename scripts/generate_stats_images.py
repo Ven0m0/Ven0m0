@@ -545,14 +545,14 @@ async def generate_languages(s: Stats, output_dir: Path) -> None:
         if width > 0:
             gap = 1 if i < len(sorted_langs) - 1 and width > 2 else 0
             progress_parts.append(
-                f'<rect x="{x_offset:.2f}" y="0" width="{width - gap:.2f}" height="8" fill="{color}"/>'
+                f'<rect x="{x_offset:.2f}" y="0" width="{width - gap:.2f}" height="8" fill="{html.escape(color)}"/>'
             )
             x_offset += width
 
         y_pos = i * 28
         lang_list_parts.append(
             f'<g transform="translate(0, {y_pos})">'
-            f'<circle cx="6" cy="10" r="6" fill="{color}"/>'
+            f'<circle cx="6" cy="10" r="6" fill="{html.escape(color)}"/>'
             f'<text x="20" y="14" class="lang">{html.escape(lang)}</text>'
             f'<text x="435" y="14" class="percent" text-anchor="end">{prop:.2f}%</text>'
             f"</g>"
@@ -589,7 +589,7 @@ async def generate_combined(s: Stats, output_dir: Path) -> None:
         prop = data.get("prop", 0)
         lang_bars.append(
             f'<g transform="translate(260, {180 + y})">'
-            f'<circle cx="6" cy="6" r="5" fill="{color}"/>'
+            f'<circle cx="6" cy="6" r="5" fill="{html.escape(color)}"/>'
             f'<text x="16" y="10" style="font:400 12px sans-serif;fill:#fff">{html.escape(lang)}</text>'
             f'<text x="220" y="10" style="font:600 12px sans-serif;fill:#b39ddb" text-anchor="end">{prop:.1f}%</text>'
             f"</g>"
