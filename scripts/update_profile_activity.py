@@ -24,7 +24,9 @@ STATUS_MAP = {
     "archived": {"emoji": "📥", "label": "Archived"},
 }
 
-GITHUB_RE = re.compile(r"https://github\.com/(?P<owner>[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)/(?P<repo>(?=.*[a-zA-Z0-9])[\w.-]+)")
+GITHUB_RE = re.compile(
+    r"https://github\.com/(?P<owner>[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)/(?P<repo>(?=.*[a-zA-Z0-9])[\w.-]+)"
+)
 LINE_RE = re.compile(
     r"^(?P<prefix>\s*-\s*)(?:(?P<emoji>\S+)\s+)?(?P<label_full>\*\*(?P<label>[^*]+?)\*\*)(?P<ws>\s*)(?P<rest>\[.+)$"
 )
@@ -84,7 +86,7 @@ def classify_repo(
         pushed = None
         if pushed_at:
             try:
-                pushed = dt.datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
+                pushed = dt.datetime.fromisoformat(pushed_at)
                 if pushed.tzinfo is None:
                     pushed = pushed.replace(tzinfo=dt.timezone.utc)
             except ValueError:
