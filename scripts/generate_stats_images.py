@@ -34,7 +34,6 @@ def sanitize_text(text: str, secrets: list[str]) -> str:
 class Queries:
     """Handles GraphQL and REST API queries to GitHub."""
 
-    username: str
     access_token: str
     session: aiohttp.ClientSession
     max_concurrent: int = 10
@@ -266,7 +265,7 @@ class Stats:
     _ignored_repos: set[str] = field(default_factory=set, init=False)
 
     def __post_init__(self) -> None:
-        self.queries = Queries(self.username, self.access_token, self.session)
+        self.queries = Queries(self.access_token, self.session)
 
     async def get_stats(self) -> None:
         """Fetch all repository statistics from GitHub."""
