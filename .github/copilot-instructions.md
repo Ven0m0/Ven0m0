@@ -11,4 +11,4 @@
 - **Workflow Troubleshooting**: For fixing failed pipelines, see the **Troubleshooting** and **Development Workflows** sections in `AGENTS.md`.
 - **Code Linting**: For formatting rules, review the **Code Conventions** section in `AGENTS.md`.
 
-For the complete repository knowledge base, refer to [`AGENTS.md`](../AGENTS.md).
+For the complete repository knowledge base, refer to [`AGENTS.md`](/AGENTS.md).
