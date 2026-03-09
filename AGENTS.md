@@ -73,7 +73,10 @@ This is a special GitHub profile repository (`Ven0m0/Ven0m0`) that displays on t
 
 ---
 
-## Core Components
+
+<details>
+<summary><b>Core Components</b></summary>
+
 
 ### 1. Statistics Generator (@scripts/generate_stats_images.py)
 
@@ -174,7 +177,13 @@ uv run --python 3.13 scripts/update_profile_activity.py
 
 ---
 
-## Development Workflows
+
+</details>
+
+
+<details>
+<summary><b>Development Workflows</b></summary>
+
 
 ### Workflow Schedule Overview
 
@@ -280,7 +289,13 @@ uv run --python 3.13 scripts/update_profile_activity.py
 
 ---
 
-## Code Conventions
+
+</details>
+
+
+<details>
+<summary><b>Code Conventions</b></summary>
+
 
 ### Python (@.editorconfig, @.megalinter.yml)
 
@@ -379,7 +394,13 @@ git config user.email "github-actions[bot]@users.noreply.github.com"
 
 ---
 
-## Automation & CI/CD
+
+</details>
+
+
+<details>
+<summary><b>Automation & CI/CD</b></summary>
+
 
 ### Concurrency Control
 
@@ -420,7 +441,13 @@ concurrency:
 
 ---
 
-## Configuration Files
+
+</details>
+
+
+<details>
+<summary><b>Configuration Files</b></summary>
+
 
 ### @.editorconfig
 
@@ -497,7 +524,13 @@ concurrency:
 
 ---
 
-## Common Tasks
+
+</details>
+
+
+<details>
+<summary><b>Common Tasks</b></summary>
+
 
 ### Adding New Statistics
 
@@ -638,7 +671,13 @@ prettier --write .github/workflows/*.yml
 
 ---
 
-## Troubleshooting
+
+</details>
+
+
+<details>
+<summary><b>Troubleshooting</b></summary>
+
 
 ### Issue: Stats not updating
 
@@ -771,7 +810,13 @@ prettier --write .github/workflows/*.yml
 
 ---
 
-## Additional Resources
+
+</details>
+
+
+<details>
+<summary><b>Additional Resources</b></summary>
+
 
 ### GitHub API Documentation
 - **GraphQL API**: https://docs.github.com/en/graphql
@@ -792,7 +837,13 @@ prettier --write .github/workflows/*.yml
 
 ---
 
-## Quick Reference
+
+</details>
+
+
+<details>
+<summary><b>Quick Reference</b></summary>
+
 
 ### File Patterns
 - **Python scripts**: `scripts/*.py`
@@ -832,3 +883,6 @@ act -j generate -s ACCESS_TOKEN="ghp_..."
 **Last Updated**: 2026-02-04  
 **Maintainer**: Ven0m0  
 **License**: Not specified
+
+
+</details>
