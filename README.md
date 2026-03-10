@@ -87,11 +87,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-09</sub>
-- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-03-09</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-03-09</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-03-09</sub>
-- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-03-09</sub>
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-03-10</sub>
+- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-03-10</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-10</sub>
+- [opencode-web](https://github.com/Ven0m0/opencode-web) — opencode webwrapper <sub>2026-03-10</sub>
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-03-10</sub>
 <!--LAST_REPOS:END-->
 
 ---
