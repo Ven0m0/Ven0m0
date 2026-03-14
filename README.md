@@ -87,11 +87,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-03-12</sub>
+- [opencode-web](https://github.com/Ven0m0/opencode-web) — opencode webwrapper <sub>2026-03-14</sub>
+- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-03-13</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-03-13</sub>
 - [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-12</sub>
 - [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-03-12</sub>
-- [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-03-12</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-03-12</sub>
 <!--LAST_REPOS:END-->
 
 ---
