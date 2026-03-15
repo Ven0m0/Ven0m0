@@ -87,11 +87,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [opencode-web](https://github.com/Ven0m0/opencode-web) — opencode webwrapper <sub>2026-03-14</sub>
-- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-03-13</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-03-13</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-12</sub>
-- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-03-12</sub>
+- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-03-15</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-03-15</sub>
+- [pkgbuild-action](https://github.com/Ven0m0/pkgbuild-action) — GitHub action to build and check a PKGBUILD package <sub>2026-03-14</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-14</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-03-14</sub>
 <!--LAST_REPOS:END-->
 
 ---
