@@ -10,7 +10,7 @@
   <text x="20" y="35" class="header">Ven0m0's GitHub Stats</text>
   <g transform="translate(20, 60)">
     <text y="20" class="label">Total Stars Earned</text>
-    <text y="20" x="200" class="value">23</text>
+    <text y="20" x="200" class="value">24</text>
   </g>
   <g transform="translate(20, 90)">
     <text y="20" class="label">Total Commits</text>
