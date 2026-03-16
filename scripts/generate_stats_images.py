@@ -271,6 +271,95 @@ class Stats:
         object.__setattr__(self, "_total_contributions_lock", asyncio.Lock())
         self.queries = Queries(self.access_token, self.session)
 
+    def _validate_and_get_viewer(self, raw: dict | None) -> dict:
+        """Validate the GraphQL response and extract viewer data."""
+        raw = raw or {}
+        if not raw.get("data"):
+            raise RuntimeError(
+                "GitHub API returned no data. "
+                "Check if ACCESS_TOKEN has required permissions (repo, read:user)",
+            )
+        viewer = raw.get("data", {}).get("viewer", {})
+        if not viewer:
+            msg = "GitHub API returned no viewer data. Token may be invalid."
+            raise RuntimeError(msg)
+        return viewer
+
+    def _setup_user(self, viewer: dict) -> None:
+        """Extract and set the username from viewer data."""
+        self._name = viewer.get("name") or viewer.get("login")
+        if not self._name:
+            msg = (
+                "Could not retrieve username from GitHub API. " "Token may be invalid."
+            )
+            raise RuntimeError(msg)
+        print(f"Fetching stats for: {self._name}")
+
+    def _get_repos_to_process(self, viewer: dict) -> list[dict]:
+        """Determine which repositories should be processed."""
+        contrib_repos = viewer.get("repositoriesContributedTo", {})
+        owned_repos = viewer.get("repositories", {})
+        repos = owned_repos.get("nodes", [])
+        if self.consider_forked_repos:
+            repos += contrib_repos.get("nodes", [])
+        else:
+            for repo in contrib_repos.get("nodes", []):
+                name = repo.get("nameWithOwner")
+                if name not in self._ignored_repos:
+                    if name not in self.exclude_repos:
+                        self._ignored_repos.add(name)
+        return repos
+
+    def _process_repo_stats(self, repos: list[dict]) -> None:
+        """Update statistics from the list of repositories."""
+        for repo in repos:
+            name = repo.get("nameWithOwner")
+            if name in self._repos or name in self.exclude_repos:
+                continue
+            self._repos.add(name)
+            self._stargazers += repo.get("stargazerCount", 0)
+            self._forks += repo.get("forkCount", 0)
+            for lang in repo.get("languages", {}).get("edges", []):
+                lname = lang.get("node", {}).get("name", "Other")
+                if lname in self.exclude_langs:
+                    continue
+                if lname in self._languages:
+                    self._languages[lname]["size"] += lang.get("size", 0)
+                else:
+                    self._languages[lname] = {
+                        "size": lang.get("size", 0),
+                        "color": lang.get("node", {}).get("color"),
+                    }
+
+    def _get_next_cursors(
+        self, viewer: dict, current_owned: str | None, current_contrib: str | None
+    ) -> tuple[str | None, str | None]:
+        """Determine the next pagination cursors."""
+        owned_repos = viewer.get("repositories", {})
+        contrib_repos = viewer.get("repositoriesContributedTo", {})
+        owned_has_next = owned_repos.get("pageInfo", {}).get("hasNextPage")
+        contrib_has_next = contrib_repos.get("pageInfo", {}).get("hasNextPage")
+        next_owned = current_owned
+        next_contrib = current_contrib
+        if owned_has_next or contrib_has_next:
+            next_owned = owned_repos.get("pageInfo", {}).get(
+                "endCursor",
+                next_owned,
+            )
+            next_contrib = contrib_repos.get("pageInfo", {}).get(
+                "endCursor",
+                next_contrib,
+            )
+        else:
+            return None, None
+        return next_owned, next_contrib
+
+    def _calculate_language_proportions(self) -> None:
+        """Calculate the proportion of each language used."""
+        langs_total = sum(v.get("size", 0) for v in self._languages.values())
+        for v in self._languages.values():
+            v["prop"] = (100 * v.get("size", 0) / langs_total) if langs_total else 0
+
     async def get_stats(self) -> None:
         """Fetch all repository statistics from GitHub."""
         assert self._stats_lock is not None
@@ -288,71 +377,23 @@ class Stats:
             while True:
                 query = self.queries.repos_overview(next_contrib, next_owned)
                 raw = await self.queries.query(query)
-                raw = raw or {}
-                if not raw.get("data"):
-                    raise RuntimeError(
-                        "GitHub API returned no data. "
-                        "Check if ACCESS_TOKEN has required permissions (repo, read:user)",
-                    )
-                viewer = raw.get("data", {}).get("viewer", {})
-                if not viewer:
-                    msg = "GitHub API returned no viewer data. Token may be invalid."
-                    raise RuntimeError(msg)
+                viewer = self._validate_and_get_viewer(raw)
+
                 if first_iteration:
-                    self._name = viewer.get("name") or viewer.get("login")
-                    if not self._name:
-                        msg = (
-                            "Could not retrieve username from GitHub API. "
-                            "Token may be invalid."
-                        )
-                        raise RuntimeError(msg)
-                    print(f"Fetching stats for: {self._name}")
+                    self._setup_user(viewer)
                     first_iteration = False
-                contrib_repos = viewer.get("repositoriesContributedTo", {})
-                owned_repos = viewer.get("repositories", {})
-                repos = owned_repos.get("nodes", [])
-                if self.consider_forked_repos:
-                    repos += contrib_repos.get("nodes", [])
-                else:
-                    for repo in contrib_repos.get("nodes", []):
-                        name = repo.get("nameWithOwner")
-                        if name not in self._ignored_repos:
-                            if name not in self.exclude_repos:
-                                self._ignored_repos.add(name)
-                for repo in repos:
-                    name = repo.get("nameWithOwner")
-                    if name in self._repos or name in self.exclude_repos:
-                        continue
-                    self._repos.add(name)
-                    self._stargazers += repo.get("stargazerCount", 0)
-                    self._forks += repo.get("forkCount", 0)
-                    for lang in repo.get("languages", {}).get("edges", []):
-                        lname = lang.get("node", {}).get("name", "Other")
-                        if lname in self.exclude_langs:
-                            continue
-                        if lname in self._languages:
-                            self._languages[lname]["size"] += lang.get("size", 0)
-                        else:
-                            self._languages[lname] = {
-                                "size": lang.get("size", 0),
-                                "color": lang.get("node", {}).get("color"),
-                            }
-                owned_has_next = owned_repos.get("pageInfo", {}).get("hasNextPage")
-                contrib_has_next = contrib_repos.get("pageInfo", {}).get("hasNextPage")
-                if owned_has_next or contrib_has_next:
-                    next_owned = owned_repos.get("pageInfo", {}).get(
-                        "endCursor",
-                        next_owned,
-                    )
-                    next_contrib = contrib_repos.get("pageInfo", {}).get(
-                        "endCursor",
-                        next_contrib,
-                    )
-                else:
+
+                repos = self._get_repos_to_process(viewer)
+                self._process_repo_stats(repos)
+
+                next_owned_new, next_contrib_new = self._get_next_cursors(
+                    viewer, next_owned, next_contrib
+                )
+                if next_owned_new is None and next_contrib_new is None:
                     break
-            langs_total = sum(v.get("size", 0) for v in self._languages.values())
-            for v in self._languages.values():
-                v["prop"] = (100 * v.get("size", 0) / langs_total) if langs_total else 0
+                next_owned, next_contrib = next_owned_new, next_contrib_new
+
+            self._calculate_language_proportions()
 
     @property
     async def name(self) -> str:
