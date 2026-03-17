@@ -12,7 +12,8 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 from urllib import error as urlerror
-from urllib import parse, request
+from urllib import request
+from urllib.parse import urlencode
 
 logger = logging.getLogger(__name__)
 
@@ -57,21 +58,25 @@ class GitHubClient:
             payload = json.loads(response.read().decode("utf-8"))
 
         if not isinstance(payload, list):
-            raise RuntimeError(f"Unexpected GitHub API response for {url!r}")
+            raise RuntimeError(
+                f"Unexpected GitHub API response for {url!r}: "
+                f"expected list, got {type(payload).__name__}"
+            )
         return payload
 
     def fetch_latest_repos(self, limit: int) -> list[RepoEntry]:
         latest: list[RepoEntry] = []
 
+        query_params = {
+            "sort": "pushed",
+            "direction": "desc",
+            "per_page": 100,
+            "page": 1,
+        }
+
         for page in range(1, 11):
-            query = parse.urlencode(
-                {
-                    "sort": "pushed",
-                    "direction": "desc",
-                    "per_page": 100,
-                    "page": page,
-                }
-            )
+            query_params["page"] = page
+            query = urlencode(query_params)
             url = (
                 f"https://api.github.com/users/{self.username}/repos?{query}"
             )
