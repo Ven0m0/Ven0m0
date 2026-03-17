@@ -1,164 +1,137 @@
 #!/usr/bin/env python3
-"""Update profile README repo activity badges based on latest GitHub data."""
+"""Update the latest repository activity section in README.md."""
 
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
-import datetime as dt
+import html
 import json
 import logging
 import os
-import re
 import sys
-import threading
 from dataclasses import dataclass
 from pathlib import Path
 from urllib import error as urlerror
 from urllib import request
+from urllib.parse import urlencode
 
 logger = logging.getLogger(__name__)
 
-STATUS_MAP = {
-    "active": {"emoji": "🟢", "label": "Active"},
-    "partially": {"emoji": "🟡", "label": "Partially maintained"},
-    "inactive": {"emoji": "🔴", "label": "Inactive"},
-    "archived": {"emoji": "📥", "label": "Archived"},
-}
-
-GITHUB_RE = re.compile(
-    r"https://github\.com/(?P<owner>[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)/(?P<repo>(?=.*[a-zA-Z0-9])[\w.-]+)"
-)
-LINE_RE = re.compile(
-    r"^(?P<prefix>\s*-\s*)(?:(?P<emoji>\S+)\s+)?(?P<label_full>\*\*(?P<label>[^*]+?)\*\*)(?P<ws>\s*)(?P<rest>\[.+)$"
-)
+START_MARKER = "<!--LAST_REPOS:START-->"
+END_MARKER = "<!--LAST_REPOS:END-->"
 
 
 @dataclass(slots=True)
-class RepoResult:
-    repo: str
-    status: str
-    pushed_at: str | None
-    archived: bool
+class RepoEntry:
+    name: str
+    html_url: str
+    description: str
+    pushed_at: str
+
+    def to_markdown(self) -> str:
+        date = self.pushed_at.split("T", maxsplit=1)[0]
+        return (
+            f"- [{html.escape(self.name)}]({self.html_url})"
+            f" — {html.escape(self.description)} <sub>{date}</sub>"
+        )
 
 
-class GithubClient:
-    def __init__(self, token: str | None = None) -> None:
-        self._token = (
+class GitHubClient:
+    """Fetch repository data from the GitHub REST API."""
+
+    def __init__(self, username: str, token: str | None = None) -> None:
+        self.username = username
+        self.token = (
             token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
         )
-        self._cache: dict[str, dict | None] = {}
-        self._lock = threading.Lock()
 
-    def fetch(self, slug: str) -> dict | None:
-        with self._lock:
-            if slug in self._cache:
-                return self._cache[slug]
-        url = f"https://api.github.com/repos/{slug}"
+    def _request_json(self, url: str) -> list[dict]:
         headers = {
             "Accept": "application/vnd.github+json",
             "User-Agent": "profile-activity-script",
         }
-        if self._token:
-            headers["Authorization"] = f"Bearer {self._token}"
+        if self.token:
+            headers["Authorization"] = f"Bearer {self.token}"
+
         req = request.Request(url, headers=headers)
-        try:
-            with request.urlopen(req, timeout=10) as resp:
-                payload = json.loads(resp.read().decode("utf-8"))
-        except urlerror.HTTPError as exc:
-            logger.error("GitHub request failed for %s: %s", slug, exc)
-            payload = None
-        except urlerror.URLError as exc:
-            logger.error("Unable to reach GitHub for %s: %s", slug, exc)
-            payload = None
-        with self._lock:
-            self._cache[slug] = payload
+        with request.urlopen(req, timeout=10) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+
+        if not isinstance(payload, list):
+            raise RuntimeError(
+                f"Unexpected GitHub API response for {url!r}: "
+                f"expected list, got {type(payload).__name__}"
+            )
         return payload
 
+    def fetch_latest_repos(self, limit: int) -> list[RepoEntry]:
+        latest: list[RepoEntry] = []
 
-def classify_repo(
-    metadata: dict,
-    now: dt.datetime,
-    active_days: int,
-    partially_days: int,
-) -> RepoResult:
-    slug = metadata.get("full_name", "")
-    archived = metadata.get("archived", False)
-    pushed_at = metadata.get("pushed_at")
-    if archived:
-        status = "archived"
-    else:
-        pushed = None
-        if pushed_at:
-            try:
-                pushed = dt.datetime.fromisoformat(pushed_at)
-                if pushed.tzinfo is None:
-                    pushed = pushed.replace(tzinfo=dt.timezone.utc)
-            except ValueError:
-                logger.warning("Unexpected pushed_at for %s: %s", slug, pushed_at)
-        if pushed is None:
-            status = "inactive"
-        else:
-            delta = now - pushed
-            if delta.days <= active_days:
-                status = "active"
-            elif delta.days <= partially_days:
-                status = "partially"
-            else:
-                status = "inactive"
-    return RepoResult(repo=slug, status=status, pushed_at=pushed_at, archived=archived)
+        query_params = {
+            "sort": "pushed",
+            "direction": "desc",
+            "per_page": 100,
+            "page": 1,
+        }
 
+        for page in range(1, 11):
+            query_params["page"] = page
+            query = urlencode(query_params)
+            url = (
+                f"https://api.github.com/users/{self.username}/repos?{query}"
+            )
+            repos = self._request_json(url)
+            if not repos:
+                break
 
-def find_repo_slug(line: str) -> str | None:
-    if "https://github.com/" not in line:
-        return None
-    match = GITHUB_RE.search(line)
-    if not match:
-        return None
-    owner, repo = match.group("owner"), match.group("repo")
-    return f"{owner}/{repo}" if repo else None
+            for repo in repos:
+                if repo.get("archived") or repo.get("disabled") or repo.get("fork"):
+                    continue
+                if repo.get("name") == ".github":
+                    continue
+
+                latest.append(
+                    RepoEntry(
+                        name=repo["name"],
+                        html_url=repo["html_url"],
+                        description=(repo.get("description") or "No description yet").strip(),
+                        pushed_at=repo["pushed_at"],
+                    )
+                )
+                if len(latest) >= limit:
+                    return latest
+
+        return latest
 
 
-def apply_status_to_line(line: str, status: str) -> str:
-    status_info = STATUS_MAP[status]
-    match = LINE_RE.match(line)
-    if not match:
-        return line
-    ws = match.group("ws") or " "
-    rest = match.group("rest")
-    prefix = match.group("prefix")
-    emoji = status_info["emoji"]
-    label = status_info["label"]
-    return f"{prefix}{emoji} **{label}:**{ws}{rest}"
+def replace_latest_repo_section(readme_text: str, repo_lines: list[str]) -> str:
+    start_index = readme_text.find(START_MARKER)
+    end_index = readme_text.find(END_MARKER)
+
+    if start_index == -1 or end_index == -1 or end_index <= start_index:
+        raise ValueError("Required README markers are missing or out of order.")
+
+    section_body = "\n".join(repo_lines) if repo_lines else "- No recent repos right now."
+    replacement = f"{START_MARKER}\n{section_body}\n{END_MARKER}"
+    current = readme_text[start_index : end_index + len(END_MARKER)]
+    return readme_text.replace(current, replacement, 1)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--readme", default="README.md", help="Path to profile markdown")
+    parser.add_argument("--dry-run", action="store_true", help="Validate without writing")
     parser.add_argument(
-        "--readme",
-        default="README.md",
-        help="Path to profile markdown",
-    )
-    parser.add_argument("--dry-run", action="store_true", help="Print changes only")
-    parser.add_argument(
-        "--active-days",
-        type=int,
-        default=120,
-        help="Days for Active threshold",
-    )
-    parser.add_argument(
-        "--partially-days",
-        type=int,
-        default=240,
-        help="Days for Partially maintained threshold",
-    )
-    parser.add_argument(
-        "--max-concurrent",
+        "--max-repos",
         type=int,
         default=5,
-        help="Max concurrent network requests",
+        help="Number of repositories to include in the latest section",
     )
-    parser.add_argument("--max-repos", type=int, help="Cap number of repos processed")
+    parser.add_argument(
+        "--username",
+        default=os.environ.get("GITHUB_ACTOR"),
+        help="GitHub username to query (defaults to GITHUB_ACTOR)",
+    )
     parser.add_argument("--log-level", default="INFO", help="Logging level")
     return parser.parse_args()
 
@@ -169,64 +142,38 @@ def main() -> int:
         level=getattr(logging, args.log_level.upper(), logging.INFO),
         format="%(levelname)s: %(message)s",
     )
+
+    if not args.username:
+        logger.error("A GitHub username is required via --username or GITHUB_ACTOR")
+        return 1
+
     path = Path(args.readme)
     if not path.is_file():
         logger.error("README not found at %s", path)
         return 1
-    client = GithubClient()
-    text = path.read_text(encoding="utf-8")
-    lines = text.splitlines()
-    now = dt.datetime.now(tz=dt.timezone.utc)
 
-    # Pass 1: Collect slugs to fetch
-    slugs_to_fetch = []
-    processed = 0
-    for line in lines:
-        if args.max_repos is not None and processed >= args.max_repos:
-            logger.info("Reached max repo limit (%s); stopping early", args.max_repos)
-            break
-        slug = find_repo_slug(line)
-        if not slug:
-            continue
-        slugs_to_fetch.append(slug)
-        processed += 1
+    current = path.read_text(encoding="utf-8")
 
-    if slugs_to_fetch:
-        logger.info("Prefetching %s repositories concurrently...", len(slugs_to_fetch))
-        with concurrent.futures.ThreadPoolExecutor(
-            max_workers=args.max_concurrent
-        ) as executor:
-            list(executor.map(client.fetch, slugs_to_fetch))
+    try:
+        repo_entries = GitHubClient(args.username).fetch_latest_repos(args.max_repos)
+        updated = replace_latest_repo_section(
+            current,
+            [entry.to_markdown() for entry in repo_entries],
+        )
+    except (RuntimeError, ValueError, urlerror.URLError) as exc:
+        logger.error("Failed to update profile activity: %s", exc)
+        return 1
 
-    # Pass 2: Process lines
-    processed = 0
-    updates: list[tuple[str, str]] = []
-    for idx, line in enumerate(lines):
-        if args.max_repos is not None and processed >= args.max_repos:
-            break
-        slug = find_repo_slug(line)
-        if not slug:
-            continue
-        metadata = client.fetch(slug)
-        processed += 1
-        if not metadata:
-            logger.warning("Skipping %s; could not fetch metadata", slug)
-            continue
-        result = classify_repo(metadata, now, args.active_days, args.partially_days)
-        new_line = apply_status_to_line(line, result.status)
-        if new_line != line:
-            lines[idx] = new_line
-            updates.append((slug, result.status))
-            logger.info("Updating %s => %s", slug, result.status)
-    if not updates:
-        logger.info("No updates needed")
+    if updated == current:
+        logger.info("Latest repos section is already up to date")
         return 0
-    new_contents = "\n".join(lines) + "\n"
+
     if args.dry_run:
-        logger.info("Dry run: %s lines would change", len(updates))
+        logger.info("Dry run: latest repos section would be updated")
         return 0
-    path.write_text(new_contents, encoding="utf-8")
-    logger.info("Updated %s lines", len(updates))
+
+    path.write_text(updated, encoding="utf-8")
+    logger.info("Updated latest repos section in %s", path)
     return 0
 
 

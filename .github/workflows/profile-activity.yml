@@ -1,4 +1,5 @@
-name: Update Dynamic Repos and Cool Animations
+---
+name: Update Profile Activity
 
 on:
   schedule:
@@ -25,74 +26,12 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Update profile README
+      - name: Update latest repos section
         env:
           PYTHONOPTIMIZE: "1"
+          GITHUB_ACTOR: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run --python 3.13 scripts/update_profile_activity.py
-
-      - name: Update latest repos section
-        uses: actions/github-script@v8
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          retries: 3
-          script: |
-            const fs = require('fs');
-            const path = 'README.md';
-            const start = '<!--LAST_REPOS:START-->';
-            const end = '<!--LAST_REPOS:END-->';
-            const owner = context.repo.owner;
-
-            core.info(`Fetching repositories for ${owner}...`);
-            const repos = await github.paginate(github.rest.repos.listForUser, {
-              username: owner,
-              sort: 'pushed',
-              direction: 'desc',
-              per_page: 100,
-            });
-
-            function escapeHtml(unsafe) {
-              return unsafe
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#039;');
-            }
-
-            const latest = repos
-              .filter(repo => !repo.archived && !repo.disabled && !repo.fork && repo.name !== '.github')
-              .slice(0, 5)
-              .map(repo => {
-                const descRaw = repo.description ? repo.description.trim() : 'No description yet';
-                const desc = escapeHtml(descRaw);
-                const name = escapeHtml(repo.name);
-                const date = new Date(repo.pushed_at).toISOString().split('T')[0];
-                return `- [${name}](${repo.html_url}) — ${desc} <sub>${date}</sub>`;
-              });
-
-            core.info(`Found ${latest.length} repos to display`);
-
-            const content = fs.readFileSync(path, 'utf8');
-            const startIndex = content.indexOf(start);
-            const endIndex = content.indexOf(end);
-
-            if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
-              core.setFailed('Required README markers are missing or out of order.');
-              return;
-            }
-
-            const list = latest.length ? latest.join('\n') : '- No recent repos right now.';
-            const replacement = `${start}\n${list}\n${end}`;
-            const currentSection = content.slice(startIndex, endIndex + end.length);
-            const updated = content.replace(currentSection, replacement);
-
-            if (updated !== content) {
-              fs.writeFileSync(path, updated);
-              core.info('✓ Updated latest repo list.');
-            } else {
-              core.info('Repo list unchanged; no updates were written.');
-            }
 
       - name: Commit and push changes
         uses: ./.github/actions/git-auto-commit
