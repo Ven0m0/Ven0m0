@@ -301,7 +301,7 @@ class Stats:
         owned_repos = viewer.get("repositories", {})
         repos = owned_repos.get("nodes", [])
         if self.consider_forked_repos:
-            repos += contrib_repos.get("nodes", [])
+            repos.extend(contrib_repos.get("nodes", []))
         else:
             for repo in contrib_repos.get("nodes", []):
                 name = repo.get("nameWithOwner")
