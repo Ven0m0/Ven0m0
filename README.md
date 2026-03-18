@@ -87,11 +87,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-17</sub>
-- [Ven0m0](https://github.com/Ven0m0/Ven0m0) — No description yet <sub>2026-03-17</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-03-17</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-16</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-03-16</sub>
+- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-03-18</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-03-18</sub>
+- [Template](https://github.com/Ven0m0/Template) — No description yet <sub>2026-03-17</sub>
+- [gh-actions-web](https://github.com/Ven0m0/gh-actions-web) — No description yet <sub>2026-03-17</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-17</sub>
 <!--LAST_REPOS:END-->
 
 ---
