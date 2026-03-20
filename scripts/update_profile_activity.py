@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 
 START_MARKER = "<!--LAST_REPOS:START-->"
 END_MARKER = "<!--LAST_REPOS:END-->"
+MAX_PAGES = 10
 
 
 @dataclass(slots=True)
@@ -74,7 +75,7 @@ class GitHubClient:
             "page": 1,
         }
 
-        for page in range(1, 11):
+        for page in range(1, MAX_PAGES + 1):
             query_params["page"] = page
             query = urlencode(query_params)
             url = (
