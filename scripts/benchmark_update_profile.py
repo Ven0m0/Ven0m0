@@ -5,7 +5,7 @@ import os
 # Add the scripts directory to sys.path so we can import replace_latest_repo_section
 sys.path.append(os.path.join(os.getcwd(), 'scripts'))
 
-from update_profile_activity import START_MARKER, END_MARKER
+from update_profile_activity import START_MARKER, END_MARKER, replace_latest_repo_section as optimized_implementation
 
 # Ensure START_MARKER and END_MARKER are near the end of a large string
 BASE_TEXT = "This is some filler text.\n" * 10
