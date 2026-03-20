@@ -113,8 +113,7 @@ def replace_latest_repo_section(readme_text: str, repo_lines: list[str]) -> str:
 
     section_body = "\n".join(repo_lines) if repo_lines else "- No recent repos right now."
     replacement = f"{START_MARKER}\n{section_body}\n{END_MARKER}"
-    current = readme_text[start_index : end_index + len(END_MARKER)]
-    return readme_text.replace(current, replacement, 1)
+    return f"{readme_text[:start_index]}{replacement}{readme_text[end_index + len(END_MARKER):]}"
 
 
 def parse_args() -> argparse.Namespace:
