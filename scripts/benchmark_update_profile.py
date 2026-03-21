@@ -2,8 +2,11 @@ import timeit
 import sys
 import os
 
-# Add the scripts directory to sys.path so we can import replace_latest_repo_section
-sys.path.append(os.path.join(os.getcwd(), 'scripts'))
+# Ensure the directory containing this script is at the front of sys.path so we can
+# reliably import update_profile_activity regardless of the current working directory.
+scripts_dir = os.path.dirname(os.path.abspath(__file__))
+if scripts_dir not in sys.path:
+    sys.path.insert(0, scripts_dir)
 
 from update_profile_activity import START_MARKER, END_MARKER, replace_latest_repo_section as optimized_implementation
 
