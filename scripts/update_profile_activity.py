@@ -74,7 +74,7 @@ class GitHubClient:
             "page": 1,
         }
 
-        encoded_username = quote(self.username)
+        encoded_username = quote(self.username, safe='')
         for page in range(1, 11):
             query_params["page"] = page
             query = urlencode(query_params)
