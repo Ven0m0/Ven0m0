@@ -37,5 +37,18 @@ class TestUpdateProfileActivity(unittest.TestCase):
         with self.assertRaises(ValueError):
             replace_latest_repo_section(readme_text, ["- Repo 1"])
 
+    def test_replace_latest_repo_section_unrelated_early_end_marker(self):
+        # An unrelated END_MARKER appears before the valid START_MARKER/END_MARKER pair.
+        readme_text = (
+            f"Intro section\n"
+            f"{END_MARKER}\n"
+            f"Some other content\n"
+            f"{START_MARKER}\n"
+            f"Old Content\n"
+            f"{END_MARKER}\n"
+            f"Footer section"
+        )
+        with self.assertRaises(ValueError):
+            replace_latest_repo_section(readme_text, ["- Repo 1"])
 if __name__ == "__main__":
     unittest.main()
