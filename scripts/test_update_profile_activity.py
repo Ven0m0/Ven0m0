@@ -1,6 +1,15 @@
 import unittest
-from scripts.update_profile_activity import replace_latest_repo_section, START_MARKER, END_MARKER
+from importlib.machinery import SourceFileLoader
+from pathlib import Path
 
+_module_path = Path(__file__).resolve().parent / "update_profile_activity.py"
+_update_profile_activity = SourceFileLoader(
+    "update_profile_activity",
+    str(_module_path),
+).load_module()
+replace_latest_repo_section = _update_profile_activity.replace_latest_repo_section
+START_MARKER = _update_profile_activity.START_MARKER
+END_MARKER = _update_profile_activity.END_MARKER
 class TestUpdateProfileActivity(unittest.TestCase):
     def test_replace_latest_repo_section_success(self):
         readme_text = f"Header\n{START_MARKER}\nOld Content\n{END_MARKER}\nFooter"
