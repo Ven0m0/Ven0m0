@@ -11,19 +11,19 @@ class TestUpdateProfileActivity(unittest.TestCase):
     def test_replace_missing_start_marker(self):
         readme_text = f"Header\nOld content\n{END_MARKER}\nFooter"
         repo_lines = ["- Repo 1"]
-        with self.assertRaisesRegex(ValueError, "Required README markers are missing or out of order."):
+        with self.assertRaisesRegex(ValueError, "Required README markers are missing or out of order\."):
             replace_latest_repo_section(readme_text, repo_lines)
 
     def test_replace_missing_end_marker(self):
         readme_text = f"Header\n{START_MARKER}\nOld content\nFooter"
         repo_lines = ["- Repo 1"]
-        with self.assertRaisesRegex(ValueError, "Required README markers are missing or out of order."):
+        with self.assertRaisesRegex(ValueError, "Required README markers are missing or out of order\."):
             replace_latest_repo_section(readme_text, repo_lines)
 
     def test_replace_markers_out_of_order(self):
         readme_text = f"Header\n{END_MARKER}\nOld content\n{START_MARKER}\nFooter"
         repo_lines = ["- Repo 1"]
-        with self.assertRaisesRegex(ValueError, "Required README markers are missing or out of order."):
+        with self.assertRaisesRegex(ValueError, "Required README markers are missing or out of order\."):
             replace_latest_repo_section(readme_text, repo_lines)
 
     def test_replace_empty_repo_lines(self):
