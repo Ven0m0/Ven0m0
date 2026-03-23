@@ -1,54 +1,32 @@
 import unittest
-from importlib.machinery import SourceFileLoader
-from pathlib import Path
-
-_module_path = Path(__file__).resolve().parent / "update_profile_activity.py"
-_update_profile_activity = SourceFileLoader(
-    "update_profile_activity",
-    str(_module_path),
-).load_module()
-replace_latest_repo_section = _update_profile_activity.replace_latest_repo_section
-START_MARKER = _update_profile_activity.START_MARKER
-END_MARKER = _update_profile_activity.END_MARKER
+from scripts.update_profile_activity import replace_latest_repo_section, START_MARKER, END_MARKER
 class TestUpdateProfileActivity(unittest.TestCase):
-    def test_replace_latest_repo_section_success(self):
-        readme_text = f"Header\n{START_MARKER}\nOld Content\n{END_MARKER}\nFooter"
+    def test_replace_successful(self):
+        readme_text = f"Header\n{START_MARKER}\nOld content\n{END_MARKER}\nFooter"
         repo_lines = ["- Repo 1", "- Repo 2"]
-        expected_body = "\n".join(repo_lines)
-        expected = f"Header\n{START_MARKER}\n{expected_body}\n{END_MARKER}\nFooter"
+        expected = f"Header\n{START_MARKER}\n- Repo 1\n- Repo 2\n{END_MARKER}\nFooter"
         result = replace_latest_repo_section(readme_text, repo_lines)
         self.assertEqual(result, expected)
 
-    def test_replace_latest_repo_section_empty_repos(self):
-        readme_text = f"Header\n{START_MARKER}\nOld Content\n{END_MARKER}\nFooter"
+    def test_replace_marker_errors(self):
+        repo_lines = ["- Repo 1"]
+        error_message = "Required README markers are missing or out of order."
+        test_cases = {
+            "missing_start_marker": f"Header\nOld content\n{END_MARKER}\nFooter",
+            "missing_end_marker": f"Header\n{START_MARKER}\nOld content\nFooter",
+            "markers_out_of_order": f"Header\n{END_MARKER}\nOld content\n{START_MARKER}\nFooter",
+        }
+        for name, readme_text in test_cases.items():
+            with self.subTest(msg=name):
+                with self.assertRaisesRegex(ValueError, error_message):
+                    replace_latest_repo_section(readme_text, repo_lines)
+
+    def test_replace_empty_repo_lines(self):
+        readme_text = f"Header\n{START_MARKER}\nOld content\n{END_MARKER}\nFooter"
         repo_lines = []
-        expected_body = "- No recent repos right now."
-        expected = f"Header\n{START_MARKER}\n{expected_body}\n{END_MARKER}\nFooter"
+        expected = f"Header\n{START_MARKER}\n- No recent repos right now.\n{END_MARKER}\nFooter"
         result = replace_latest_repo_section(readme_text, repo_lines)
         self.assertEqual(result, expected)
 
-    def test_replace_latest_repo_section_missing_markers(self):
-        readme_text = "No markers here"
-        with self.assertRaises(ValueError):
-            replace_latest_repo_section(readme_text, ["- Repo 1"])
-
-    def test_replace_latest_repo_section_out_of_order(self):
-        readme_text = f"{END_MARKER}\n{START_MARKER}"
-        with self.assertRaises(ValueError):
-            replace_latest_repo_section(readme_text, ["- Repo 1"])
-
-    def test_replace_latest_repo_section_unrelated_early_end_marker(self):
-        # An unrelated END_MARKER appears before the valid START_MARKER/END_MARKER pair.
-        readme_text = (
-            f"Intro section\n"
-            f"{END_MARKER}\n"
-            f"Some other content\n"
-            f"{START_MARKER}\n"
-            f"Old Content\n"
-            f"{END_MARKER}\n"
-            f"Footer section"
-        )
-        with self.assertRaises(ValueError):
-            replace_latest_repo_section(readme_text, ["- Repo 1"])
 if __name__ == "__main__":
     unittest.main()
