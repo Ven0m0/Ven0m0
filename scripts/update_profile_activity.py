@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from urllib import error as urlerror
 from urllib import request
-from urllib.parse import urlencode
+from urllib.parse import quote, urlencode
 
 logger = logging.getLogger(__name__)
 
@@ -74,11 +74,12 @@ class GitHubClient:
             "page": 1,
         }
 
+        encoded_username = quote(self.username, safe='')
         for page in range(1, 11):
             query_params["page"] = page
             query = urlencode(query_params)
             url = (
-                f"https://api.github.com/users/{self.username}/repos?{query}"
+                f"https://api.github.com/users/{encoded_username}/repos?{query}"
             )
             repos = self._request_json(url)
             if not repos:
@@ -113,8 +114,7 @@ def replace_latest_repo_section(readme_text: str, repo_lines: list[str]) -> str:
 
     section_body = "\n".join(repo_lines) if repo_lines else "- No recent repos right now."
     replacement = f"{START_MARKER}\n{section_body}\n{END_MARKER}"
-    current = readme_text[start_index : end_index + len(END_MARKER)]
-    return readme_text.replace(current, replacement, 1)
+    return f"{readme_text[:start_index]}{replacement}{readme_text[end_index + len(END_MARKER):]}"
 
 
 def parse_args() -> argparse.Namespace:
