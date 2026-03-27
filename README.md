@@ -64,7 +64,7 @@
 - <img height="18" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
 - ⛏️ [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
 
-### ⭐ Star magnets
+### ⭐ Top starred repos
 <sup>Auto-picked from your public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->

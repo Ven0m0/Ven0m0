@@ -40,7 +40,7 @@ class RepoEntry:
         )
 
     def to_top_starred_markdown(self) -> str:
-        star_label = "star" if self.stargazers_count == 1 else "stars"
+        star_label = "stars" if self.stargazers_count != 1 else "star"
         return (
             f"- ⭐ **[{html.escape(self.name)}]({self.html_url})**"
             f" — {self.stargazers_count} {star_label} · "
@@ -98,14 +98,15 @@ class GitHubClient:
                 break
 
             for repo in repos:
+                repo_name = repo.get("name", "")
                 if repo.get("archived") or repo.get("disabled") or repo.get("fork"):
                     continue
-                if repo.get("name") == ".github":
+                if repo_name == ".github" or repo_name.casefold() == self.username.casefold():
                     continue
 
                 repos_to_display.append(
                     RepoEntry(
-                        name=repo["name"],
+                        name=repo_name,
                         html_url=repo["html_url"],
                         description=(repo.get("description") or "No description yet").strip(),
                         pushed_at=repo["pushed_at"],
@@ -196,15 +197,15 @@ def main() -> int:
         return 1
 
     if updated == current:
-        logger.info("Latest repos section is already up to date")
+        logger.info("Profile activity sections are already up to date")
         return 0
 
     if args.dry_run:
-        logger.info("Dry run: latest repos section would be updated")
+        logger.info("Dry run: profile activity sections would be updated")
         return 0
 
     path.write_text(updated, encoding="utf-8")
-    logger.info("Updated latest repos section in %s", path)
+    logger.info("Updated profile activity sections in %s", path)
     return 0
 
 
