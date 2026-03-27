@@ -17,8 +17,10 @@ from urllib.parse import quote, urlencode
 
 logger = logging.getLogger(__name__)
 
-START_MARKER = "<!--LAST_REPOS:START-->"
-END_MARKER = "<!--LAST_REPOS:END-->"
+LATEST_START_MARKER = "<!--LAST_REPOS:START-->"
+LATEST_END_MARKER = "<!--LAST_REPOS:END-->"
+TOP_STARRED_START_MARKER = "<!--TOP_STARRED_REPOS:START-->"
+TOP_STARRED_END_MARKER = "<!--TOP_STARRED_REPOS:END-->"
 MAX_PAGES = 10
 
 
@@ -28,12 +30,21 @@ class RepoEntry:
     html_url: str
     description: str
     pushed_at: str
+    stargazers_count: int
 
-    def to_markdown(self) -> str:
+    def to_latest_markdown(self) -> str:
         date = self.pushed_at.split("T", maxsplit=1)[0]
         return (
             f"- [{html.escape(self.name)}]({self.html_url})"
             f" — {html.escape(self.description)} <sub>{date}</sub>"
+        )
+
+    def to_top_starred_markdown(self) -> str:
+        star_label = "stars" if self.stargazers_count != 1 else "star"
+        return (
+            f"- ⭐ **[{html.escape(self.name)}]({self.html_url})**"
+            f" — {self.stargazers_count} {star_label} · "
+            f"{html.escape(self.description)}"
         )
 
 
@@ -65,8 +76,9 @@ class GitHubClient:
             )
         return payload
 
-    def fetch_latest_repos(self, limit: int) -> list[RepoEntry]:
-        latest: list[RepoEntry] = []
+    def fetch_repos(self) -> list[RepoEntry]:
+        repos_to_display: list[RepoEntry] = []
+        encoded_username = quote(self.username, safe="")
 
         query_params = {
             "sort": "pushed",
@@ -86,35 +98,40 @@ class GitHubClient:
                 break
 
             for repo in repos:
+                repo_name = repo.get("name", "")
                 if repo.get("archived") or repo.get("disabled") or repo.get("fork"):
                     continue
-                if repo.get("name") == ".github":
+                if repo_name == ".github" or repo_name.casefold() == self.username.casefold():
                     continue
 
-                latest.append(
+                repos_to_display.append(
                     RepoEntry(
-                        name=repo["name"],
+                        name=repo_name,
                         html_url=repo["html_url"],
                         description=(repo.get("description") or "No description yet").strip(),
                         pushed_at=repo["pushed_at"],
+                        stargazers_count=repo.get("stargazers_count", 0),
                     )
                 )
-                if len(latest) >= limit:
-                    return latest
-
-        return latest
+        return repos_to_display
 
 
-def replace_latest_repo_section(readme_text: str, repo_lines: list[str]) -> str:
-    start_index = readme_text.find(START_MARKER)
-    end_index = readme_text.find(END_MARKER)
+def replace_repo_section(
+    readme_text: str,
+    start_marker: str,
+    end_marker: str,
+    repo_lines: list[str],
+    empty_message: str,
+) -> str:
+    start_index = readme_text.find(start_marker)
+    end_index = readme_text.find(end_marker)
 
     if start_index == -1 or end_index == -1 or end_index <= start_index:
         raise ValueError("Required README markers are missing or out of order.")
 
-    section_body = "\n".join(repo_lines) if repo_lines else "- No recent repos right now."
-    replacement = f"{START_MARKER}\n{section_body}\n{END_MARKER}"
-    return f"{readme_text[:start_index]}{replacement}{readme_text[end_index + len(END_MARKER):]}"
+    section_body = "\n".join(repo_lines) if repo_lines else empty_message
+    replacement = f"{start_marker}\n{section_body}\n{end_marker}"
+    return f"{readme_text[:start_index]}{replacement}{readme_text[end_index + len(end_marker):]}"
 
 
 def parse_args() -> argparse.Namespace:
@@ -155,25 +172,40 @@ def main() -> int:
     current = path.read_text(encoding="utf-8")
 
     try:
-        repo_entries = GitHubClient(args.username).fetch_latest_repos(args.max_repos)
-        updated = replace_latest_repo_section(
+        repo_entries = GitHubClient(args.username).fetch_repos()
+        latest_entries = repo_entries[: args.max_repos]
+        top_starred_entries = sorted(
+            repo_entries,
+            key=lambda entry: (-entry.stargazers_count, entry.name.lower()),
+        )[: args.max_repos]
+        updated = replace_repo_section(
             current,
-            [entry.to_markdown() for entry in repo_entries],
+            TOP_STARRED_START_MARKER,
+            TOP_STARRED_END_MARKER,
+            [entry.to_top_starred_markdown() for entry in top_starred_entries],
+            "- No standout repos to highlight just yet.",
+        )
+        updated = replace_repo_section(
+            updated,
+            LATEST_START_MARKER,
+            LATEST_END_MARKER,
+            [entry.to_latest_markdown() for entry in latest_entries],
+            "- No recent repos right now.",
         )
     except (RuntimeError, ValueError, urlerror.URLError) as exc:
         logger.error("Failed to update profile activity: %s", exc)
         return 1
 
     if updated == current:
-        logger.info("Latest repos section is already up to date")
+        logger.info("Profile activity sections are already up to date")
         return 0
 
     if args.dry_run:
-        logger.info("Dry run: latest repos section would be updated")
+        logger.info("Dry run: profile activity sections would be updated")
         return 0
 
     path.write_text(updated, encoding="utf-8")
-    logger.info("Updated latest repos section in %s", path)
+    logger.info("Updated profile activity sections in %s", path)
     return 0
 
 

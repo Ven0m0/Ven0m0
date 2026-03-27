@@ -64,6 +64,17 @@
 - <img height="18" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
 - ⛏️ [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
 
+### ⭐ Top starred repos
+<sup>Auto-picked from your public repos with the most love ✨</sup>
+
+<!--TOP_STARRED_REPOS:START-->
+- ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 12 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
+- ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 6 stars · Autohotkey scripts to automate tasks or enhance apps
+- ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 3 stars · my archlinux dotfiles
+- ⭐ **[dot-termux](https://github.com/Ven0m0/dot-termux)** — 2 stars · my termux dotfiles
+- ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 1 star · No description yet
+<!--TOP_STARRED_REPOS:END-->
+
 <p align="center">
   <a href="https://github.com/Ven0m0/Pihole-Lists">
     <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=Pihole-Lists&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="Pihole-Lists" />
@@ -87,11 +98,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-03-22</sub>
-- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-03-22</sub>
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-03-22</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-21</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-21</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-27</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-03-27</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-03-27</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-03-27</sub>
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-03-27</sub>
 <!--LAST_REPOS:END-->
 
 ---
