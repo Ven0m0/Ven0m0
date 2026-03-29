@@ -162,14 +162,14 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    log_levels = {
+    LOG_LEVELS = {
         "DEBUG": logging.DEBUG,
         "INFO": logging.INFO,
         "WARNING": logging.WARNING,
         "ERROR": logging.ERROR,
         "CRITICAL": logging.CRITICAL,
     }
-    log_level = log_levels.get(args.log_level.upper(), logging.INFO)
+    log_level = LOG_LEVELS.get(args.log_level.upper(), logging.INFO)
 
     logging.basicConfig(
         level=log_level,
