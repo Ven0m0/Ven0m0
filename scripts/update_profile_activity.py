@@ -76,6 +76,14 @@ class GitHubClient:
             )
         return payload
 
+    def _is_valid_repo(self, repo: dict) -> bool:
+        if repo.get("archived") or repo.get("disabled") or repo.get("fork"):
+            return False
+        repo_name = repo.get("name", "")
+        if repo_name == ".github" or repo_name.casefold() == self.username.casefold():
+            return False
+        return True
+
     def fetch_repos(self) -> list[RepoEntry]:
         repos_to_display: list[RepoEntry] = []
         encoded_username = quote(self.username, safe="")
@@ -96,15 +104,10 @@ class GitHubClient:
                 break
 
             for repo in repos:
-                repo_name = repo.get("name", "")
-                if repo.get("archived") or repo.get("disabled") or repo.get("fork"):
-                    continue
-                if (
-                    repo_name == ".github"
-                    or repo_name.casefold() == self.username.casefold()
-                ):
+                if not self._is_valid_repo(repo):
                     continue
 
+                repo_name = repo.get("name", "")
                 repos_to_display.append(
                     RepoEntry(
                         name=repo_name,
