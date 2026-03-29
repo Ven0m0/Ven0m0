@@ -61,8 +61,6 @@ class TestRepoEntry(unittest.TestCase):
         self.assertEqual(entry.to_markdown(), expected)
 
 
-
-
 class TestGitHubClientRepoFiltering(unittest.TestCase):
     def setUp(self):
         self.client = GitHubClient("testuser")
