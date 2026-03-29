@@ -107,10 +107,9 @@ class GitHubClient:
                 break
 
             for repo in repos:
-                if not self._is_valid_repo(repo):
-                    continue
-
                 repo_name = repo.get("name", "")
+                if not self._is_valid_repo(repo, repo_name):
+                    continue
                 repos_to_display.append(
                     RepoEntry(
                         name=repo_name,
