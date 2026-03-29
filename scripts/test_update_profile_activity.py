@@ -1,9 +1,12 @@
 import unittest
+from unittest.mock import patch
+
 from scripts.update_profile_activity import (
     replace_repo_section as replace_latest_repo_section,
     LATEST_START_MARKER as START_MARKER,
     LATEST_END_MARKER as END_MARKER,
     RepoEntry,
+    GitHubClient,
 )
 class TestUpdateProfileActivity(unittest.TestCase):
     def test_replace_successful(self):
@@ -57,6 +60,43 @@ class TestRepoEntry(unittest.TestCase):
         expected = "- [&lt;test &amp; repo&gt;](https://github.com/user/test-repo) — &lt;script&gt;alert(1)&lt;/script&gt; &amp; more <sub>2023-10-27</sub>"
         self.assertEqual(entry.to_markdown(), expected)
 
+
+class TestGitHubClientRepoFiltering(unittest.TestCase):
+    def setUp(self):
+        self.client = GitHubClient("testuser")
+
+    def test_is_valid_repo_invalid_cases(self):
+        invalid_cases = [
+            ("archived", {"archived": True}, "repo1"),
+            ("disabled", {"disabled": True}, "repo1"),
+            ("fork", {"fork": True}, "repo1"),
+            ("dot_github", {}, ".github"),
+            ("self_named", {}, "testuser"),
+            ("self_named_case_insensitive", {}, "TestUser"),
+        ]
+        for name, repo_dict, repo_name in invalid_cases:
+            with self.subTest(msg=name):
+                self.assertFalse(self.client._is_valid_repo(repo_dict, repo_name))
+
+    def test_is_valid_repo_valid(self):
+        self.assertTrue(self.client._is_valid_repo({"archived": False, "disabled": False, "fork": False}, "normal-repo"))
+
+    @patch.object(GitHubClient, '_request_json')
+    def test_fetch_repos_filtering(self, mock_request_json):
+        mock_repos = [
+            {"name": "valid-repo", "html_url": "url1", "pushed_at": "date1", "stargazers_count": 1},
+            {"name": ".github", "html_url": "url2", "pushed_at": "date2", "stargazers_count": 2},
+            {"name": "forked-repo", "fork": True, "html_url": "url3", "pushed_at": "date3", "stargazers_count": 3},
+            {"name": "testuser", "html_url": "url4", "pushed_at": "date4", "stargazers_count": 4},
+            {"name": "archived-repo", "archived": True, "html_url": "url5", "pushed_at": "date5", "stargazers_count": 5},
+            {"name": "disabled-repo", "disabled": True, "html_url": "url6", "pushed_at": "date6", "stargazers_count": 6},
+        ]
+        mock_request_json.side_effect = [mock_repos, []]
+
+        repos = self.client.fetch_repos()
+
+        self.assertEqual(len(repos), 1)
+        self.assertEqual(repos[0].name, "valid-repo")
 
 if __name__ == "__main__":
     unittest.main()
