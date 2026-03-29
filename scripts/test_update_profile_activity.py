@@ -63,7 +63,7 @@ class TestRepoEntry(unittest.TestCase):
 
 
 
-class TestGitHubClientValidRepo(unittest.TestCase):
+class TestGitHubClientRepoFiltering(unittest.TestCase):
     def setUp(self):
         self.client = GitHubClient("testuser")
 
