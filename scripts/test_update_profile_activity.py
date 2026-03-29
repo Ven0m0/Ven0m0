@@ -1,6 +1,5 @@
 import unittest
-from unittest import mock
-import json
+from unittest.mock import patch
 
 from scripts.update_profile_activity import (
     replace_repo_section as replace_latest_repo_section,
@@ -62,23 +61,42 @@ class TestRepoEntry(unittest.TestCase):
         self.assertEqual(entry.to_markdown(), expected)
 
 
-
-class TestGitHubClient(unittest.TestCase):
+class TestGitHubClientRepoFiltering(unittest.TestCase):
     def setUp(self):
-        self.client = GitHubClient("testuser", "testtoken")
+        self.client = GitHubClient("testuser")
 
-    @mock.patch("scripts.update_profile_activity.request.urlopen")
-    def test_request_json_non_list_response(self, mock_urlopen):
-        # Mock a successful response but with a non-list JSON payload (e.g., dict)
-        mock_response = mock.MagicMock()
-        mock_response.read.return_value = json.dumps({"message": "Not Found"}).encode("utf-8")
+    def test_is_valid_repo_invalid_cases(self):
+        invalid_cases = [
+            ("archived", {"archived": True}, "repo1"),
+            ("disabled", {"disabled": True}, "repo1"),
+            ("fork", {"fork": True}, "repo1"),
+            ("dot_github", {}, ".github"),
+            ("self_named", {}, "testuser"),
+            ("self_named_case_insensitive", {}, "TestUser"),
+        ]
+        for name, repo_dict, repo_name in invalid_cases:
+            with self.subTest(msg=name):
+                self.assertFalse(self.client._is_valid_repo(repo_dict, repo_name))
 
-        # Make the context manager work
-        mock_urlopen.return_value.__enter__.return_value = mock_response
+    def test_is_valid_repo_valid(self):
+        self.assertTrue(self.client._is_valid_repo({"archived": False, "disabled": False, "fork": False}, "normal-repo"))
 
-        with self.assertRaisesRegex(RuntimeError, r"Unexpected GitHub API response for 'https://api.github.com/users/testuser/repos': expected list, got dict"):
-            self.client._request_json("https://api.github.com/users/testuser/repos")
+    @patch.object(GitHubClient, '_request_json')
+    def test_fetch_repos_filtering(self, mock_request_json):
+        mock_repos = [
+            {"name": "valid-repo", "html_url": "url1", "pushed_at": "date1", "stargazers_count": 1},
+            {"name": ".github", "html_url": "url2", "pushed_at": "date2", "stargazers_count": 2},
+            {"name": "forked-repo", "fork": True, "html_url": "url3", "pushed_at": "date3", "stargazers_count": 3},
+            {"name": "testuser", "html_url": "url4", "pushed_at": "date4", "stargazers_count": 4},
+            {"name": "archived-repo", "archived": True, "html_url": "url5", "pushed_at": "date5", "stargazers_count": 5},
+            {"name": "disabled-repo", "disabled": True, "html_url": "url6", "pushed_at": "date6", "stargazers_count": 6},
+        ]
+        mock_request_json.side_effect = [mock_repos, []]
 
+        repos = self.client.fetch_repos()
+
+        self.assertEqual(len(repos), 1)
+        self.assertEqual(repos[0].name, "valid-repo")
 
 if __name__ == "__main__":
     unittest.main()
