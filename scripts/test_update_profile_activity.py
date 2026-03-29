@@ -1,6 +1,10 @@
 import unittest
-from scripts.update_profile_activity import replace_repo_section as replace_latest_repo_section, LATEST_START_MARKER as START_MARKER, LATEST_END_MARKER as END_MARKER
-from scripts.update_profile_activity import RepoEntry
+from scripts.update_profile_activity import (
+    replace_repo_section as replace_latest_repo_section,
+    LATEST_START_MARKER as START_MARKER,
+    LATEST_END_MARKER as END_MARKER,
+    RepoEntry,
+)
 class TestUpdateProfileActivity(unittest.TestCase):
     def test_replace_successful(self):
         readme_text = f"Header\n{START_MARKER}\nOld content\n{END_MARKER}\nFooter"
