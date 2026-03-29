@@ -98,11 +98,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-03-28</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-03-27</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-27</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-03-27</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-03-27</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-03-29</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-29</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-29</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-03-29</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-03-29</sub>
 <!--LAST_REPOS:END-->
 
 ---
