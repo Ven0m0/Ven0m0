@@ -1,7 +1,6 @@
 import unittest
 from unittest import mock
 import json
-from urllib import error as urlerror
 
 from scripts.update_profile_activity import (
     replace_repo_section as replace_latest_repo_section,
