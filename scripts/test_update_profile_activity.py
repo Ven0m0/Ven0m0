@@ -35,6 +35,7 @@ class TestUpdateProfileActivity(unittest.TestCase):
 
 
 class TestRepoEntry(unittest.TestCase):
+    def test_to_markdown_basic(self):
         entry = RepoEntry(
             name="test-repo",
             html_url="https://github.com/user/test-repo",

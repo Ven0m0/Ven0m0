@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import html
 import json
 import logging
@@ -87,7 +88,7 @@ class GitHubClient:
             )
         )
 
-    def fetch_repos(self) -> list[RepoEntry]:
+    def fetch_repos(self, max_concurrent: int = 5) -> list[RepoEntry]:
         repos_to_display: list[RepoEntry] = []
         encoded_username = quote(self.username, safe="")
 
@@ -98,15 +99,8 @@ class GitHubClient:
             "page": 1,
         }
 
-        for page in range(1, MAX_PAGES + 1):
-            query_params["page"] = page
-            query = urlencode(query_params)
-            url = f"https://api.github.com/users/{encoded_username}/repos?{query}"
-            repos = self._request_json(url)
-            if not repos:
-                break
-
-            for repo in repos:
+        def process_repos(repos_list):
+            for repo in repos_list:
                 repo_name = repo.get("name", "")
                 if not self._is_valid_repo(repo, repo_name):
                     continue
@@ -121,6 +115,44 @@ class GitHubClient:
                         stargazers_count=repo.get("stargazers_count", 0),
                     )
                 )
+
+        query = urlencode(query_params)
+        url = f"https://api.github.com/users/{encoded_username}/repos?{query}"
+        try:
+            repos = self._request_json(url)
+        except Exception as e:
+            logger.warning("Failed to fetch page 1: %s", e)
+            return repos_to_display
+
+        if not repos:
+            return repos_to_display
+
+        process_repos(repos)
+
+        if len(repos) < 100 or MAX_PAGES <= 1:
+            return repos_to_display
+
+        urls = []
+        for page in range(2, MAX_PAGES + 1):
+            query_params["page"] = page
+            query = urlencode(query_params)
+            urls.append(f"https://api.github.com/users/{encoded_username}/repos?{query}")
+
+        def fetch_page(page_url):
+            try:
+                return self._request_json(page_url)
+            except Exception as e:
+                logger.warning("Failed to fetch %s: %s", page_url, e)
+                return []
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_concurrent) as executor:
+            pages = list(executor.map(fetch_page, urls))
+
+        for repos_page in pages:
+            if not repos_page:
+                break
+            process_repos(repos_page)
+
         return repos_to_display
 
 
@@ -149,6 +181,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--dry-run", action="store_true", help="Validate without writing"
+    )
+    parser.add_argument(
+        "--max-concurrent",
+        type=int,
+        default=5,
+        help="Maximum number of concurrent API requests",
     )
     parser.add_argument(
         "--max-repos",
@@ -193,7 +231,7 @@ def main() -> int:
     current = path.read_text(encoding="utf-8")
 
     try:
-        repo_entries = GitHubClient(args.username).fetch_repos()
+        repo_entries = GitHubClient(args.username).fetch_repos(args.max_concurrent)
         latest_entries = repo_entries[: args.max_repos]
         top_starred_entries = sorted(
             repo_entries,
