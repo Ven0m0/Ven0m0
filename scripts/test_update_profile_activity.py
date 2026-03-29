@@ -29,8 +29,8 @@ class TestUpdateProfileActivity(unittest.TestCase):
         result = replace_latest_repo_section(readme_text, START_MARKER, END_MARKER, repo_lines, '- No recent repos right now.')
         self.assertEqual(result, expected)
 
+
 class TestRepoEntry(unittest.TestCase):
-    def test_to_markdown_standard(self):
         entry = RepoEntry(
             name="test-repo",
             html_url="https://github.com/user/test-repo",
