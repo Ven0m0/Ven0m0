@@ -32,7 +32,7 @@ class RepoEntry:
     pushed_at: str
     stargazers_count: int
 
-    def to_latest_markdown(self) -> str:
+    def to_markdown(self) -> str:
         date = self.pushed_at.split("T", maxsplit=1)[0]
         return (
             f"- [{html.escape(self.name)}]({self.html_url})"
@@ -205,7 +205,7 @@ def main() -> int:
             updated,
             LATEST_START_MARKER,
             LATEST_END_MARKER,
-            [entry.to_latest_markdown() for entry in latest_entries],
+            [entry.to_markdown() for entry in latest_entries],
             "- No recent repos right now.",
         )
     except (RuntimeError, ValueError, urlerror.URLError) as exc:
