@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 from scripts.update_profile_activity import (
     replace_repo_section as replace_latest_repo_section,
