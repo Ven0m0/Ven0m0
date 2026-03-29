@@ -122,7 +122,7 @@ class GitHubClient:
             repos = self._request_json(url)
         except Exception as e:
             logger.warning("Failed to fetch page 1: %s", e)
-            return repos_to_display
+            raise
 
         if not repos:
             return repos_to_display
