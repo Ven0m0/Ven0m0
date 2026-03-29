@@ -90,9 +90,7 @@ class GitHubClient:
         for page in range(1, MAX_PAGES + 1):
             query_params["page"] = page
             query = urlencode(query_params)
-            url = (
-                f"https://api.github.com/users/{encoded_username}/repos?{query}"
-            )
+            url = f"https://api.github.com/users/{encoded_username}/repos?{query}"
             repos = self._request_json(url)
             if not repos:
                 break
@@ -101,14 +99,19 @@ class GitHubClient:
                 repo_name = repo.get("name", "")
                 if repo.get("archived") or repo.get("disabled") or repo.get("fork"):
                     continue
-                if repo_name == ".github" or repo_name.casefold() == self.username.casefold():
+                if (
+                    repo_name == ".github"
+                    or repo_name.casefold() == self.username.casefold()
+                ):
                     continue
 
                 repos_to_display.append(
                     RepoEntry(
                         name=repo_name,
                         html_url=repo["html_url"],
-                        description=(repo.get("description") or "No description yet").strip(),
+                        description=(
+                            repo.get("description") or "No description yet"
+                        ).strip(),
                         pushed_at=repo["pushed_at"],
                         stargazers_count=repo.get("stargazers_count", 0),
                     )
@@ -136,8 +139,12 @@ def replace_repo_section(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--readme", default="README.md", help="Path to profile markdown")
-    parser.add_argument("--dry-run", action="store_true", help="Validate without writing")
+    parser.add_argument(
+        "--readme", default="README.md", help="Path to profile markdown"
+    )
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Validate without writing"
+    )
     parser.add_argument(
         "--max-repos",
         type=int,
@@ -155,8 +162,17 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    LOG_LEVELS = {
+        "DEBUG": logging.DEBUG,
+        "INFO": logging.INFO,
+        "WARNING": logging.WARNING,
+        "ERROR": logging.ERROR,
+        "CRITICAL": logging.CRITICAL,
+    }
+    log_level = LOG_LEVELS.get(args.log_level.upper(), logging.INFO)
+
     logging.basicConfig(
-        level=getattr(logging, args.log_level.upper(), logging.INFO),
+        level=log_level,
         format="%(levelname)s: %(message)s",
     )
 
