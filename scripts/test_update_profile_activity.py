@@ -67,21 +67,18 @@ class TestGitHubClientValidRepo(unittest.TestCase):
     def setUp(self):
         self.client = GitHubClient("testuser")
 
-    def test_is_valid_repo_archived(self):
-        self.assertFalse(self.client._is_valid_repo({"archived": True}, "repo1"))
-
-    def test_is_valid_repo_disabled(self):
-        self.assertFalse(self.client._is_valid_repo({"disabled": True}, "repo1"))
-
-    def test_is_valid_repo_fork(self):
-        self.assertFalse(self.client._is_valid_repo({"fork": True}, "repo1"))
-
-    def test_is_valid_repo_dot_github(self):
-        self.assertFalse(self.client._is_valid_repo({}, ".github"))
-
-    def test_is_valid_repo_self_named(self):
-        self.assertFalse(self.client._is_valid_repo({}, "testuser"))
-        self.assertFalse(self.client._is_valid_repo({}, "TestUser"))
+    def test_is_valid_repo_invalid_cases(self):
+        invalid_cases = [
+            ("archived", {"archived": True}, "repo1"),
+            ("disabled", {"disabled": True}, "repo1"),
+            ("fork", {"fork": True}, "repo1"),
+            ("dot_github", {}, ".github"),
+            ("self_named", {}, "testuser"),
+            ("self_named_case_insensitive", {}, "TestUser"),
+        ]
+        for name, repo_dict, repo_name in invalid_cases:
+            with self.subTest(msg=name):
+                self.assertFalse(self.client._is_valid_repo(repo_dict, repo_name))
 
     def test_is_valid_repo_valid(self):
         self.assertTrue(self.client._is_valid_repo({"archived": False, "disabled": False, "fork": False}, "normal-repo"))
