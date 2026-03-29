@@ -90,6 +90,8 @@ class TestGitHubClientValidRepo(unittest.TestCase):
             {"name": ".github", "html_url": "url2", "pushed_at": "date2", "stargazers_count": 2},
             {"name": "forked-repo", "fork": True, "html_url": "url3", "pushed_at": "date3", "stargazers_count": 3},
             {"name": "testuser", "html_url": "url4", "pushed_at": "date4", "stargazers_count": 4},
+            {"name": "archived-repo", "archived": True, "html_url": "url5", "pushed_at": "date5", "stargazers_count": 5},
+            {"name": "disabled-repo", "disabled": True, "html_url": "url6", "pushed_at": "date6", "stargazers_count": 6},
         ]
         mock_request_json.side_effect = [mock_repos, []]
 
