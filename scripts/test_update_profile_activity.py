@@ -1,9 +1,12 @@
 import unittest
+from unittest.mock import MagicMock, patch
+
 from scripts.update_profile_activity import (
     replace_repo_section as replace_latest_repo_section,
     LATEST_START_MARKER as START_MARKER,
     LATEST_END_MARKER as END_MARKER,
     RepoEntry,
+    GitHubClient,
 )
 class TestUpdateProfileActivity(unittest.TestCase):
     def test_replace_successful(self):
@@ -35,6 +38,7 @@ class TestUpdateProfileActivity(unittest.TestCase):
 
 
 class TestRepoEntry(unittest.TestCase):
+    def test_to_markdown(self):
         entry = RepoEntry(
             name="test-repo",
             html_url="https://github.com/user/test-repo",
@@ -56,6 +60,46 @@ class TestRepoEntry(unittest.TestCase):
         expected = "- [&lt;test &amp; repo&gt;](https://github.com/user/test-repo) — &lt;script&gt;alert(1)&lt;/script&gt; &amp; more <sub>2023-10-27</sub>"
         self.assertEqual(entry.to_markdown(), expected)
 
+
+
+
+class TestGitHubClientValidRepo(unittest.TestCase):
+    def setUp(self):
+        self.client = GitHubClient("testuser")
+
+    def test_is_valid_repo_archived(self):
+        self.assertFalse(self.client._is_valid_repo({"archived": True}, "repo1"))
+
+    def test_is_valid_repo_disabled(self):
+        self.assertFalse(self.client._is_valid_repo({"disabled": True}, "repo1"))
+
+    def test_is_valid_repo_fork(self):
+        self.assertFalse(self.client._is_valid_repo({"fork": True}, "repo1"))
+
+    def test_is_valid_repo_dot_github(self):
+        self.assertFalse(self.client._is_valid_repo({}, ".github"))
+
+    def test_is_valid_repo_self_named(self):
+        self.assertFalse(self.client._is_valid_repo({}, "testuser"))
+        self.assertFalse(self.client._is_valid_repo({}, "TestUser"))
+
+    def test_is_valid_repo_valid(self):
+        self.assertTrue(self.client._is_valid_repo({"archived": False, "disabled": False, "fork": False}, "normal-repo"))
+
+    @patch.object(GitHubClient, '_request_json')
+    def test_fetch_repos_filtering(self, mock_request_json):
+        mock_repos = [
+            {"name": "valid-repo", "html_url": "url1", "pushed_at": "date1", "stargazers_count": 1},
+            {"name": ".github", "html_url": "url2", "pushed_at": "date2", "stargazers_count": 2},
+            {"name": "forked-repo", "fork": True, "html_url": "url3", "pushed_at": "date3", "stargazers_count": 3},
+            {"name": "testuser", "html_url": "url4", "pushed_at": "date4", "stargazers_count": 4},
+        ]
+        mock_request_json.side_effect = [mock_repos, []]
+
+        repos = self.client.fetch_repos()
+
+        self.assertEqual(len(repos), 1)
+        self.assertEqual(repos[0].name, "valid-repo")
 
 if __name__ == "__main__":
     unittest.main()
