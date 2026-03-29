@@ -28,5 +28,14 @@ class TestUpdateProfileActivity(unittest.TestCase):
         result = replace_latest_repo_section(readme_text, START_MARKER, END_MARKER, repo_lines, '- No recent repos right now.')
         self.assertEqual(result, expected)
 
+
+    def test_replace_repo_section_empty_repos_edge_case(self):
+        readme_text = f"Header\n{START_MARKER}\nOld content\n{END_MARKER}\nFooter"
+        repo_lines = []
+        custom_empty_message = "- No custom recent repos right now."
+        expected = f"Header\n{START_MARKER}\n{custom_empty_message}\n{END_MARKER}\nFooter"
+        result = replace_latest_repo_section(readme_text, START_MARKER, END_MARKER, repo_lines, custom_empty_message)
+        self.assertEqual(result, expected)
+
 if __name__ == "__main__":
     unittest.main()
