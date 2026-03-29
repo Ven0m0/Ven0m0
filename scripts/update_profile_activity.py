@@ -143,12 +143,22 @@ class GitHubClient:
                 return self._request_json(page_url)
             except Exception as e:
                 logger.warning("Failed to fetch %s: %s", page_url, e)
-                return []
+                # Use a sentinel value (None) to distinguish request failure
+                # from a successful but empty page.
+                return None
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_concurrent) as executor:
             pages = list(executor.map(fetch_page, urls))
 
+        # If any page failed to load, abort to avoid updating with partial data.
+        if any(page is None for page in pages):
+            raise RuntimeError(
+                "Failed to fetch all repository pages; aborting to avoid partial data."
+            )
+
         for repos_page in pages:
+            if repos_page is None:
+                continue
             if not repos_page:
                 break
             process_repos(repos_page)
