@@ -1,5 +1,7 @@
 # Agent Documentation for GitHub Profile Repository
 
+[![Maintainability](https://qlty.sh/gh/Ven0m0/projects/Ven0m0/maintainability.svg)](https://qlty.sh/gh/Ven0m0/projects/Ven0m0)
+
 **Repository Type**: GitHub profile README automation  
 **Primary Purpose**: Keep the profile README current with a lightweight scheduled workflow  
 **Tech Stack**: Python 3.13, GitHub Actions, Markdown  
