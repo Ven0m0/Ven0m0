@@ -98,11 +98,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-03-30</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-03-30</sub>
-- [dotfiles-pi](https://github.com/Ven0m0/dotfiles-pi) — My raspberry pi debian dotfiles and stuff <sub>2026-03-30</sub>
-- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-03-30</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-03-30</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-03-31</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-03-31</sub>
+- [Linux-OS](https://github.com/Ven0m0/Linux-OS) — My personal linux related stuff. Experimental and only meant for fun and for myself <sub>2026-03-31</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-03-31</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-03-31</sub>
 <!--LAST_REPOS:END-->
 
 ---
