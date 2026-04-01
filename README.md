@@ -17,7 +17,7 @@
 
 | 🧰 Cozy toolkit | ⚡ Quick pulse |
 | --- | --- |
-| 🐧 Bash · Python · Rust<br/>🖥️ CachyOS · DietPi · KDE · Wayland<br/>🎯 Building neat automations & tiny CLIs<br/>🎶 Airsoft · Music · Tinkering | 🔧 Refining dotfiles, shells & CI so things feel ✨ smooth<br/>🦀 Learning Rust for cute little command line pals<br/>🛡️ Privacy-first network tinkerer (self-hosted vibes)<br/>🎮 Gaming, airsoft, and tiny tweaks everywhere |
+| 🐧 Bash · Python · Rust<br/>🖥️ CachyOS · DietPi · KDE · Wayland<br/>🎯 Building neat automations & tiny CLIs<br/>🎶 Music · Tinkering · Airsoft | 🔧 Refining dotfiles, shells & CI so things feel ✨ smooth<br/>🦀 Learning Rust for cute little command line pals<br/>🛡️ Privacy-first network tinkerer (self-hosted vibes)<br/>🎮 Gaming & tiny tweaks everywhere |
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="28" alt="Bash" title="Bash" />
@@ -57,15 +57,18 @@
 ---
 
 ### 🌈 Spotlight drops
-- 🚫 [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) &nbsp;•&nbsp; [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated Adblock/Pihole lists & userscripts
-- 🔒 [PKG's](https://github.com/Ven0m0/PKG) &nbsp;•&nbsp; [Kernel](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches
-- ⚙️ [Scripts](https://github.com/Ven0m0/Scripts) &nbsp;•&nbsp; [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs
-- 🐧 [Linux-OS](https://github.com/Ven0m0/Linux-OS) &nbsp;•&nbsp; [Dotfiles](https://github.com/Ven0m0/dotfiles) &nbsp;•&nbsp; [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups
-- <img height="18" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Revanced-logo-round.svg" alt="ReVanced" /> [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — Revanced automation
-- ⛏️ [MC-Pack](https://github.com/Ven0m0/MC-Pack) — Minecraft tweaks
+
+| Category | Projects |
+| --- | --- |
+| 🚫 Privacy & Adblock | [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) · [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated adblock lists & userscripts |
+| 🔒 System & Kernel | [PKG's](https://github.com/Ven0m0/PKG) · [Kernel Patches](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches |
+| ⚙️ Scripts & Config | [Scripts](https://github.com/Ven0m0/Scripts) · [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs |
+| 🐧 Linux & Mobile | [Linux-OS](https://github.com/Ven0m0/Linux-OS) · [Dotfiles](https://github.com/Ven0m0/dotfiles) · [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups |
+| 📱 Apps & Games | [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) · [MC-Pack](https://github.com/Ven0m0/MC-Pack) — ReVanced automation & Minecraft tweaks |
 
 ### ⭐ Top starred repos
-<sup>Auto-picked from your public repos with the most love ✨</sup>
+
+<sup>Auto-picked from public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 12 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
@@ -75,26 +78,9 @@
 - ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 1 star · No description yet
 <!--TOP_STARRED_REPOS:END-->
 
-<p align="center">
-  <a href="https://github.com/Ven0m0/Pihole-Lists">
-    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=Pihole-Lists&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="Pihole-Lists" />
-  </a>
-  <a href="https://github.com/Ven0m0/Scripts">
-    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=Scripts&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="Scripts" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/Ven0m0/dotfiles">
-    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=dotfiles&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="dotfiles" />
-  </a>
-  <a href="https://github.com/Ven0m0/Revanced-auto">
-    <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/pin/?username=Ven0m0&repo=Revanced-auto&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8" alt="Revanced-auto" />
-  </a>
-</p>
-
 ---
 
-### 🔄 Latest tinkers (auto-updates)
+### 🔄 Latest tinkers
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
