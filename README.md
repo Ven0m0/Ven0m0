@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-04-06</sub>
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-04-06</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-04-06</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-06</sub>
 - [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-04-04</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-04</sub>
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-04-04</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-04-04</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-04-04</sub>
 <!--LAST_REPOS:END-->
 
 ---
