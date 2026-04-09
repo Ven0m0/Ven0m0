@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-08</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-04-08</sub>
+- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-04-08</sub>
 - [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-04-07</sub>
 - [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-04-06</sub>
-- [Template](https://github.com/Ven0m0/Template) — No description yet <sub>2026-04-06</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-04-06</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-04-06</sub>
 <!--LAST_REPOS:END-->
 
 ---
