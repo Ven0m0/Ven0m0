@@ -155,9 +155,17 @@ class TestMain(unittest.TestCase):
                 self.assertEqual(main(), 0)
 
             updated = readme_path.read_text(encoding="utf-8")
-            self.assertIn("steelseriesgg-rs", updated)
-            self.assertIn("Linux-OS", updated)
-            self.assertEqual(updated.count("steelseriesgg-rs"), 1)
+            top_section = updated.split(TOP_STARRED_START_MARKER, maxsplit=1)[1].split(
+                TOP_STARRED_END_MARKER, maxsplit=1
+            )[0]
+            latest_section = updated.split(START_MARKER, maxsplit=1)[1].split(
+                END_MARKER, maxsplit=1
+            )[0]
+
+            self.assertIn("steelseriesgg-rs", top_section)
+            self.assertIn("Linux-OS", top_section)
+            self.assertIn("Linux-OS", latest_section)
+            self.assertNotIn("steelseriesgg-rs", latest_section)
 
 if __name__ == "__main__":
     unittest.main()
