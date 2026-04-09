@@ -32,6 +32,7 @@ class RepoEntry:
     description: str
     pushed_at: str
     stargazers_count: int
+    fork: bool = False
 
     def to_markdown(self) -> str:
         date = self.pushed_at.split("T", maxsplit=1)[0]
@@ -82,7 +83,6 @@ class GitHubClient:
             (
                 repo.get("archived"),
                 repo.get("disabled"),
-                repo.get("fork"),
                 repo_name == ".github",
                 repo_name.casefold() == self.username.casefold(),
             )
@@ -113,6 +113,7 @@ class GitHubClient:
                         ).strip(),
                         pushed_at=repo["pushed_at"],
                         stargazers_count=repo.get("stargazers_count", 0),
+                        fork=repo.get("fork", False),
                     )
                 )
 
@@ -242,7 +243,9 @@ def main() -> int:
 
     try:
         repo_entries = GitHubClient(args.username).fetch_repos(args.max_concurrent)
-        latest_entries = repo_entries[: args.max_repos]
+        latest_entries = [
+            entry for entry in repo_entries if not entry.fork
+        ][: args.max_repos]
         top_starred_entries = sorted(
             repo_entries,
             key=lambda entry: (-entry.stargazers_count, entry.name.lower()),

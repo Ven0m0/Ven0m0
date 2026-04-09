@@ -71,11 +71,11 @@
 <sup>Auto-picked from public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->
+- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 17 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 12 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 6 stars · Autohotkey scripts to automate tasks or enhance apps
 - ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 3 stars · my archlinux dotfiles
 - ⭐ **[dot-termux](https://github.com/Ven0m0/dot-termux)** — 2 stars · my termux dotfiles
-- ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 1 star · No description yet
 <!--TOP_STARRED_REPOS:END-->
 
 ---
@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-08</sub>
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-04-08</sub>
-- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-04-08</sub>
-- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-04-07</sub>
-- [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-04-06</sub>
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-04-09</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-04-09</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-04-09</sub>
+- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-04-09</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-09</sub>
 <!--LAST_REPOS:END-->
 
 ---

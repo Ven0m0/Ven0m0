@@ -1,12 +1,17 @@
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 from scripts.update_profile_activity import (
     replace_repo_section as replace_latest_repo_section,
     LATEST_START_MARKER as START_MARKER,
     LATEST_END_MARKER as END_MARKER,
+    TOP_STARRED_START_MARKER,
+    TOP_STARRED_END_MARKER,
     RepoEntry,
     GitHubClient,
+    main,
 )
 class TestUpdateProfileActivity(unittest.TestCase):
     def test_replace_successful(self):
@@ -69,7 +74,6 @@ class TestGitHubClientRepoFiltering(unittest.TestCase):
         invalid_cases = [
             ("archived", {"archived": True}, "repo1"),
             ("disabled", {"disabled": True}, "repo1"),
-            ("fork", {"fork": True}, "repo1"),
             ("dot_github", {}, ".github"),
             ("self_named", {}, "testuser"),
             ("self_named_case_insensitive", {}, "TestUser"),
@@ -95,8 +99,73 @@ class TestGitHubClientRepoFiltering(unittest.TestCase):
 
         repos = self.client.fetch_repos()
 
-        self.assertEqual(len(repos), 1)
+        self.assertEqual(len(repos), 2)
         self.assertEqual(repos[0].name, "valid-repo")
+        self.assertEqual(repos[1].name, "forked-repo")
+        self.assertTrue(repos[1].fork)
+
+
+class TestMain(unittest.TestCase):
+    @patch("scripts.update_profile_activity.GitHubClient.fetch_repos")
+    def test_main_includes_fork_in_top_starred_only(self, mock_fetch_repos):
+        mock_fetch_repos.return_value = [
+            RepoEntry(
+                name="steelseriesgg-rs",
+                html_url="https://github.com/Ven0m0/steelseriesgg-rs",
+                description="SteelSeries GG replacement",
+                pushed_at="2026-04-03T14:57:39Z",
+                stargazers_count=17,
+                fork=True,
+            ),
+            RepoEntry(
+                name="Linux-OS",
+                html_url="https://github.com/Ven0m0/Linux-OS",
+                description="Linux stuff",
+                pushed_at="2026-04-04T10:00:00Z",
+                stargazers_count=12,
+            ),
+        ]
+
+        with TemporaryDirectory() as temp_dir:
+            readme_path = Path(temp_dir) / "README.md"
+            readme_path.write_text(
+                "\n".join(
+                    [
+                        TOP_STARRED_START_MARKER,
+                        "old top",
+                        TOP_STARRED_END_MARKER,
+                        START_MARKER,
+                        "old latest",
+                        END_MARKER,
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            with patch(
+                "sys.argv",
+                [
+                    "update_profile_activity.py",
+                    "--readme",
+                    str(readme_path),
+                    "--username",
+                    "Ven0m0",
+                ],
+            ):
+                self.assertEqual(main(), 0)
+
+            updated = readme_path.read_text(encoding="utf-8")
+            top_section = updated.split(TOP_STARRED_START_MARKER, maxsplit=1)[1].split(
+                TOP_STARRED_END_MARKER, maxsplit=1
+            )[0]
+            latest_section = updated.split(START_MARKER, maxsplit=1)[1].split(
+                END_MARKER, maxsplit=1
+            )[0]
+
+            self.assertIn("steelseriesgg-rs", top_section)
+            self.assertIn("Linux-OS", top_section)
+            self.assertIn("Linux-OS", latest_section)
+            self.assertNotIn("steelseriesgg-rs", latest_section)
 
 if __name__ == "__main__":
     unittest.main()
