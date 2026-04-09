@@ -112,7 +112,7 @@ uv run --python 3.13 scripts/update_profile_activity.py
 
 ```bash
 python3 -m py_compile scripts/update_profile_activity.py
-yamllint .github/workflows/profile-activity.yml
+yamllint .github
 ```
 
 ---
