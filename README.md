@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-12</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-04-12</sub>
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-04-12</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-04-11</sub>
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-04-11</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-04-13</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-04-13</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-13</sub>
+- [coder-web](https://github.com/Ven0m0/coder-web) — No description yet <sub>2026-04-13</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-04-13</sub>
 <!--LAST_REPOS:END-->
 
 ---
