@@ -25,13 +25,13 @@ jobs:
           python-version: "3.13"
           enable-cache: true
           cache-dependency-glob: "scripts/update_profile_activity.py"
-          cache-python: "true"
+          cache-python: true
       - name: Update latest repos section
         env:
           PYTHONOPTIMIZE: "1"
           GITHUB_ACTOR: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: uv run scripts/update_profile_activity.py
+        run: uv run --python 3.13 scripts/update_profile_activity.py
 
       - name: Commit and push changes
         uses: ./.github/actions/git-auto-commit
