@@ -86,9 +86,9 @@
 <!--LAST_REPOS:START-->
 - [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-20</sub>
 - [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-04-20</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-04-19</sub>
-- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-04-19</sub>
-- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-04-19</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — Lightweight LAN-accessible web UI for the Gemini CLI, providing a minimal chat and code-assist interface. <sub>2026-04-20</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-04-20</sub>
+- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-04-20</sub>
 <!--LAST_REPOS:END-->
 
 ---
