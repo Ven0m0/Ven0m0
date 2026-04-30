@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-04-29</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-04-29</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-04-29</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-29</sub>
-- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-04-29</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-04-30</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-04-30</sub>
+- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-04-30</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-04-30</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-04-30</sub>
 <!--LAST_REPOS:END-->
 
 ---
