@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-03</sub>
-- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-05-03</sub>
-- [Firewall](https://github.com/Ven0m0/Firewall) — No description yet <sub>2026-05-03</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-05-03</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-05-03</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-04</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-05-04</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-05-04</sub>
+- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-05-04</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-05-04</sub>
 <!--LAST_REPOS:END-->
 
 ---
