@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-05-05</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-05</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-05-05</sub>
 - [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-05-05</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-05</sub>
 - [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-05-04</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-05-04</sub>
 <!--LAST_REPOS:END-->
 
 ---
