@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-05-20</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-05-20</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-20</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-05-20</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-05-20</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-05-22</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-05-22</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-05-22</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-05-21</sub>
+- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-05-21</sub>
 <!--LAST_REPOS:END-->
 
 ---
