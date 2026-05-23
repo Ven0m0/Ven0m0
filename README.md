@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-23</sub>
+- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-05-22</sub>
 - [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-05-22</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-05-22</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-05-22</sub>
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-05-22</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-05-21</sub>
-- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-05-21</sub>
 <!--LAST_REPOS:END-->
 
 ---
