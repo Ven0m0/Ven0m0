@@ -71,11 +71,11 @@
 <sup>Auto-picked from public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->
-- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 30 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
+- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 31 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 13 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 8 stars · Autohotkey scripts to automate tasks or enhance apps
 - ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 4 stars · my archlinux dotfiles
-- ⭐ **[apk-tweak](https://github.com/Ven0m0/apk-tweak)** — 2 stars · No description yet
+- ⭐ **[gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper)** — 3 stars · A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs.
 <!--TOP_STARRED_REPOS:END-->
 
 ---
@@ -84,11 +84,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-05-25</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-05-25</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-24</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-05-24</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-05-24</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-05-26</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-05-26</sub>
+- [apk-tweak](https://github.com/Ven0m0/apk-tweak) — No description yet <sub>2026-05-26</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-05-26</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-05-25</sub>
 <!--LAST_REPOS:END-->
 
 ---
