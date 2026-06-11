@@ -64,7 +64,7 @@
 | 🔒 System & Kernel | [PKG's](https://github.com/Ven0m0/PKG) · [Kernel Patches](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches |
 | ⚙️ Scripts & Config | [Scripts](https://github.com/Ven0m0/Scripts) · [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs |
 | 🐧 Linux & Mobile | [Linux-OS](https://github.com/Ven0m0/Linux-OS) · [Dotfiles](https://github.com/Ven0m0/dotfiles) · [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups |
-| 📱 Apps & Games | [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) · [MC-Pack](https://github.com/Ven0m0/MC-Pack) — ReVanced automation & Minecraft tweaks |
+| 📱 Apps & Games | [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) · [MC-Server](https://github.com/Ven0m0/MC-Server) — ReVanced automation & Minecraft tweaks |
 
 ### ⭐ Top starred repos
 
