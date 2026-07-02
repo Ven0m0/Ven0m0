@@ -85,10 +85,10 @@
 
 <!--LAST_REPOS:START-->
 - [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-01</sub>
+- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-07-01</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-01</sub>
 - [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-07-01</sub>
 - [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-07-01</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-01</sub>
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-07-01</sub>
 <!--LAST_REPOS:END-->
 
 ---
