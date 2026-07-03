@@ -78,8 +78,6 @@
 - ⭐ **[gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper)** — 4 stars · A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs.
 <!--TOP_STARRED_REPOS:END-->
 
----
-
 ### 🔄 Latest tinkers
 <sup>Freshest 5 repos I touched ✨</sup>
 
