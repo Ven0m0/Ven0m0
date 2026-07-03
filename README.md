@@ -13,9 +13,9 @@
   <img src="https://img.shields.io/badge/Timezone-Europe%2FBerlin-b57edc?style=for-the-badge&logo=clockify&logoColor=fff" alt="Timezone" />
 </p>
 
-### 🧺 Cozy corner
+### 🧺 My corner
 
-| 🧰 Cozy toolkit | ⚡ Quick pulse |
+| 🧰 toolkit | ⚡ Quick pulse |
 | --- | --- |
 | 🐧 Bash · Python · Rust<br/>🖥️ CachyOS · DietPi · KDE · Wayland<br/>🎯 Building neat automations & tiny CLIs<br/>🎶 Music · Tinkering · Airsoft | 🔧 Refining dotfiles, shells & CI so things feel ✨ smooth<br/>🦀 Learning Rust for cute little command line pals<br/>🛡️ Privacy-first network tinkerer (self-hosted vibes)<br/>🎮 Gaming & tiny tweaks everywhere |
 
