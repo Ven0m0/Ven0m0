@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ba68c8,100:f8bbd0&height=120&text=Hi%20I'm%20Ven0m0%20%F0%9F%92%95&fontColor=fff&fontSize=32&animation=twinkling" alt="Header wave" />
   <img src="https://media1.tenor.com/m/su8Zai2H62sAAAAC/sanrio-cinnamoroll.gif" alt="Cinnamoroll typing" width="260" /><br />
 
-  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=BA68C8&center=true&vCenter=true&multiline=true&repeat=true&width=520&height=70&lines=cozy+coder+%C2%B7+shell+%26+dotfiles+tinkerer;rust+%26+python+learner+%C2%B7+privacy+nerd;CachyOS+%C2%B7+Arch+Linux+%C2%B7+self-hosted+vibes)](https://git.io/typing-svg)
+  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=BA68C8&center=true&vCenter=true&multiline=true&repeat=true&width=520&height=70&lines=coder+%C2%B7+shell+%26+dotfiles+tinkerer;rust+%26+python+learner+%C2%B7+privacy+nerd;CachyOS+%C2%B7+Arch+Linux+%C2%B7+self-hosted+vibes)](https://git.io/typing-svg)
 </div>
 
 <p align="center">
