@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-07-04</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-04</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-04</sub>
-- [Template](https://github.com/Ven0m0/Template) — No description yet <sub>2026-07-04</sub>
-- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-07-04</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-07-06</sub>
+- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-07-06</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-06</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-05</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-07-05</sub>
 <!--LAST_REPOS:END-->
 
 ---
