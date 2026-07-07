@@ -73,7 +73,7 @@
 <!--TOP_STARRED_REPOS:START-->
 - ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 36 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 14 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
-- ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 9 stars · Autohotkey scripts to automate tasks or enhance apps
+- ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 10 stars · Autohotkey scripts to automate tasks or enhance apps
 - ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 4 stars · my archlinux dotfiles
 - ⭐ **[gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper)** — 4 stars · A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs.
 <!--TOP_STARRED_REPOS:END-->
@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-07-06</sub>
-- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-07-06</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-06</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-05</sub>
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-07-05</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-07-07</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-07</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-07</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-07</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-07-06</sub>
 <!--LAST_REPOS:END-->
 
 ---
