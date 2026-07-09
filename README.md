@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-07</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-07-07</sub>
-- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-07-07</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-07</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-07</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-09</sub>
+- [gh-actions-web](https://github.com/Ven0m0/gh-actions-web) — No description yet <sub>2026-07-08</sub>
+- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-07-08</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-07-08</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-08</sub>
 <!--LAST_REPOS:END-->
 
 ---
