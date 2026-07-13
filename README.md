@@ -71,7 +71,7 @@
 <sup>Auto-picked from public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->
-- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 36 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
+- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 37 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 14 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 10 stars · Autohotkey scripts to automate tasks or enhance apps
 - ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 4 stars · my archlinux dotfiles
@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-12</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-07-11</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-11</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-07-11</sub>
-- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-07-10</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-13</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-13</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-07-13</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-12</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-07-12</sub>
 <!--LAST_REPOS:END-->
 
 ---
