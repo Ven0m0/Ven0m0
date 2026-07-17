@@ -71,22 +71,22 @@
 <sup>Auto-picked from public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->
-- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 38 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
+- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 39 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 14 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 10 stars · Autohotkey scripts to automate tasks or enhance apps
+- ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 4 stars · No description yet
 - ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 4 stars · my archlinux dotfiles
-- ⭐ **[gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper)** — 4 stars · A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs.
 <!--TOP_STARRED_REPOS:END-->
 
 ### 🔄 Latest tinkers
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-16</sub>
 - [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-15</sub>
 - [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-07-15</sub>
 - [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-07-15</sub>
 - [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-15</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-15</sub>
 <!--LAST_REPOS:END-->
 
 ---
