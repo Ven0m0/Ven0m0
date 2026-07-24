@@ -74,7 +74,7 @@
 - ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 41 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 14 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 10 stars · Autohotkey scripts to automate tasks or enhance apps
-- ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 5 stars · No description yet
+- ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 6 stars · No description yet
 - ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 4 stars · my archlinux dotfiles
 <!--TOP_STARRED_REPOS:END-->
 
@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-24</sub>
+- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-07-23</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-23</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-07-23</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-23</sub>
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-07-22</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-22</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-22</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-22</sub>
 <!--LAST_REPOS:END-->
 
 ---
