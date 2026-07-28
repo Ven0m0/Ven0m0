@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [dotfiles](https://github.com/Ven0m0/dotfiles) — my archlinux dotfiles <sub>2026-07-27</sub>
-- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-07-27</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-27</sub>
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-07-27</sub>
 - [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-07-27</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-07-27</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-07-27</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-07-27</sub>
+- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-07-27</sub>
 <!--LAST_REPOS:END-->
 
 ---
