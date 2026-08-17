@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-08-16</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-08-17</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-08-17</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-08-17</sub>
+- [Scripts](https://github.com/Ven0m0/Scripts) — Autohotkey scripts to automate tasks or enhance apps <sub>2026-08-17</sub>
 - [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-08-16</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-08-16</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-08-16</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-08-16</sub>
 <!--LAST_REPOS:END-->
 
 ---
