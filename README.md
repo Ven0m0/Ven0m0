@@ -84,9 +84,9 @@
 <!--LAST_REPOS:START-->
 - [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-08-18</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-08-18</sub>
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-08-18</sub>
 - [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-08-18</sub>
 - [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-08-18</sub>
-- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-08-18</sub>
 <!--LAST_REPOS:END-->
 
 ---
