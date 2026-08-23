@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-08-20</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-08-22</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-08-22</sub>
 - [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-08-20</sub>
 - [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-08-19</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-08-18</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-08-18</sub>
 <!--LAST_REPOS:END-->
 
 ---
