@@ -71,7 +71,7 @@
 <sup>Auto-picked from public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->
-- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 61 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
+- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 62 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 14 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 10 stars · Autohotkey scripts to automate tasks or enhance apps
 - ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 7 stars · No description yet
