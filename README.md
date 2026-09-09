@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-09-08</sub>
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-09-08</sub>
 - [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-09-08</sub>
 - [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-09-08</sub>
 - [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-09-07</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-09-07</sub>
-- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-09-07</sub>
 <!--LAST_REPOS:END-->
 
 ---
