@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-09-16</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-09-16</sub>
-- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-09-16</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-09-15</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-09-15</sub>
+- [PKG](https://github.com/Ven0m0/PKG) — Linux packages, mostly archlinux pkgbuilds <sub>2026-09-17</sub>
+- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-09-17</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-09-17</sub>
+- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-09-17</sub>
+- [mc-rcon](https://github.com/Ven0m0/mc-rcon) — A unified Python RCON client for Minecraft servers, featuring both a synchronous/asynchronous library, a Command Line Interface (CLI), and a Graphical User Interface (GUI). <sub>2026-09-17</sub>
 <!--LAST_REPOS:END-->
 
 ---
