@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-09-21</sub>
-- [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — uBlock adlists and userscripts with automated maintenance <sub>2026-09-21</sub>
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-09-21</sub>
-- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-09-21</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-09-21</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-09-22</sub>
+- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-09-22</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-09-22</sub>
+- [dotfiles-pi](https://github.com/Ven0m0/dotfiles-pi) — My raspberry pi debian dotfiles and stuff <sub>2026-09-22</sub>
+- [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-09-22</sub>
 <!--LAST_REPOS:END-->
 
 ---
