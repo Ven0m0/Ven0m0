@@ -75,18 +75,18 @@
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 14 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 10 stars · Autohotkey scripts to automate tasks or enhance apps
 - ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 7 stars · No description yet
-- ⭐ **[gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper)** — 5 stars · A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs.
+- ⭐ **[dotfiles](https://github.com/Ven0m0/dotfiles)** — 5 stars · my archlinux dotfiles
 <!--TOP_STARRED_REPOS:END-->
 
 ### 🔄 Latest tinkers
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-09-23</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-09-23</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-09-23</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-09-22</sub>
 - [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-09-22</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-09-22</sub>
-- [dotfiles-pi](https://github.com/Ven0m0/dotfiles-pi) — My raspberry pi debian dotfiles and stuff <sub>2026-09-22</sub>
-- [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-09-22</sub>
 <!--LAST_REPOS:END-->
 
 ---
