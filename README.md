@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-09-29</sub>
+- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-09-30</sub>
+- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-09-29</sub>
 - [mcpe](https://github.com/Ven0m0/mcpe) — Minecraft bedrock behavior packs/texture packs <sub>2026-09-28</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-09-28</sub>
 - [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-09-28</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-09-28</sub>
 <!--LAST_REPOS:END-->
 
 ---
