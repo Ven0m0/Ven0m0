@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-10-08</sub>
-- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-10-07</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-10-07</sub>
+- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-10-09</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-10-09</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-10-09</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-10-08</sub>
 - [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-10-07</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-10-07</sub>
 <!--LAST_REPOS:END-->
 
 ---
