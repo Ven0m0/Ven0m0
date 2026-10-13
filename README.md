@@ -82,11 +82,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-10-12</sub>
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-10-12</sub>
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-10-12</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-10-12</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-10-12</sub>
 - [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-10-12</sub>
+- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-10-12</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-10-12</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-10-12</sub>
 <!--LAST_REPOS:END-->
 
 ---
