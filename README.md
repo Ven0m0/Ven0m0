@@ -33,11 +33,10 @@
 ### 📊 GitHub glow
 
 <p align="center">
-  <img src="https://github-readme-stats-beta-ten-76.vercel.app/api?username=Ven0m0&show_icons=true&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&icon_color=f48fb1&border_color=ba68c8&hide_border=false&include_all_commits=true&count_private=true" alt="GitHub Stats" />
+  <img src="https://github-stats-extended.vercel.app/api?username=Ven0m0&include_all_commits=true&disable_animations=true&theme=transparent" />
 </p>
-
 <p align="center">
-  <img src="https://github-readme-stats-beta-ten-76.vercel.app/api/top-langs/?username=Ven0m0&layout=compact&theme=dracula&bg_color=0d1117&title_color=ba68c8&text_color=b39ddb&border_color=ba68c8&hide_border=false&langs_count=8" alt="Top Languages" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs?username=Ven0m0&layout=compact&langs_count=4&disable_animations=true&theme=transparent)](https://github-stats-extended.vercel.app/api/top-langs?username=Ven0m0&layout=compact&langs_count=4&disable_animations=true&theme=transparent" />
 </p>
 
 <details>
