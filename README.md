@@ -39,20 +39,6 @@
   <img src="https://github-stats-extended.vercel.app/api/top-langs?username=Ven0m0&layout=compact&langs_count=4&disable_animations=true&theme=transparent)](https://github-stats-extended.vercel.app/api/top-langs?username=Ven0m0&layout=compact&langs_count=4&disable_animations=true&theme=transparent" />
 </p>
 
-<details>
-<summary>📈 Contribution Graph</summary>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ven0m0&theme=dracula&hide_border=true&bg_color=0d1117&color=b39ddb&line=ba68c8&point=ffffff&area=true&area_color=b39ddb" alt="Activity graph" />
-</p>
-</details>
-
-<details>
-<summary>🔥 Streak Stats</summary>
-
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Ven0m0&theme=dracula&hide_border=true&background=0d1117&ring=b39ddb&fire=ba68c8&currStreakLabel=b39ddb)](https://git.io/streak-stats)
-</details>
-
 ---
 
 ### 🌈 Spotlight drops
