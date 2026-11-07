@@ -67,11 +67,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-11-06</sub>
-- [MC-Server](https://github.com/Ven0m0/MC-Server) — Minecraft server management scripts <sub>2026-11-06</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-11-06</sub>
-- [scoop-bucket](https://github.com/Ven0m0/scoop-bucket) — No description yet <sub>2026-11-05</sub>
-- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-11-05</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-11-07</sub>
+- [android](https://github.com/Ven0m0/android) — No description yet <sub>2026-11-07</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-11-07</sub>
+- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-11-07</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-11-06</sub>
 <!--LAST_REPOS:END-->
 
 ---
