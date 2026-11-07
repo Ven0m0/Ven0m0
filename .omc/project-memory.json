@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1794014195958,
+  "projectRoot": "C:\\Users\\Ven0m0\\project\\Ven0m0",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "scripts"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 3,
+      "lastAccessed": 1794014195931,
+      "keyFiles": [
+        "benchmark_update_profile.py",
+        "test_update_profile_activity.py",
+        "update_profile_activity.py"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "README.md",
+      "accessCount": 2.9996155169167658,
+      "lastAccessed": 1794014234613,
+      "type": "directory"
+    }
+  ],
+  "userDirectives": []
+}

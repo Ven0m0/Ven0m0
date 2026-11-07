@@ -36,7 +36,7 @@
   <img src="https://github-stats-extended.vercel.app/api?username=Ven0m0&include_all_commits=true&disable_animations=true&theme=transparent" />
 </p>
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api/top-langs?username=Ven0m0&layout=compact&langs_count=4&disable_animations=true&theme=transparent)](https://github-stats-extended.vercel.app/api/top-langs?username=Ven0m0&layout=compact&langs_count=4&disable_animations=true&theme=transparent" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs?username=Ven0m0&layout=compact&langs_count=4&disable_animations=true&theme=transparent" />
 </p>
 
 ---
