@@ -45,11 +45,13 @@
 
 | Category | Projects |
 | --- | --- |
+| 🎧 Hardware | [steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs) — Open-source SteelSeries GG replacement for Linux (RGB, GameSense, profiles) |
+| 🤖 AI tooling | [claude-config](https://github.com/Ven0m0/claude-config) — Claude Code & OpenCode config, plugins and tools |
 | 🚫 Privacy & Adblock | [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated adblock lists & userscripts |
 | 🔒 System | [PKG's](https://github.com/Ven0m0/PKG) · [Scoop bucket](https://github.com/Ven0m0/scoop-bucket) — Packages |
 | ⚙️ Scripts & Config | [Scripts](https://github.com/Ven0m0/Scripts) · [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs |
 | 🐧 Linux | [Linux-OS](https://github.com/Ven0m0/Linux-OS) · [Dotfiles](https://github.com/Ven0m0/dotfiles) · [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups |
-| 📱 Apps & Games | [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) · [MC-Server](https://github.com/Ven0m0/MC-Server) — ReVanced automation & Minecraft tweaks |
+| 📱 Apps & Games | [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) · [MC-Server](https://github.com/Ven0m0/MC-Server) · [MCPE](https://github.com/Ven0m0/mcpe) — ReVanced automation, Minecraft tweaks & Minecraft Bedrock packs |
 
 ### ⭐ Top starred repos
 
