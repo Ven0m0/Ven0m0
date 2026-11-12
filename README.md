@@ -45,7 +45,7 @@
 
 | Category | Projects |
 | --- | --- |
-| 🚫 Privacy & Adblock | [Pihole-Lists](https://github.com/Ven0m0/Pihole-Lists) · [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated adblock lists & userscripts |
+| 🚫 Privacy & Adblock | [Ven0m0-Adblock](https://github.com/Ven0m0/Ven0m0-Adblock) — Curated adblock lists & userscripts |
 | 🔒 System & Kernel | [PKG's](https://github.com/Ven0m0/PKG) · [Kernel Patches](https://github.com/Ven0m0/Linux-Kernel-Patches) — Package flavors, tweaks & patches |
 | ⚙️ Scripts & Config | [Scripts](https://github.com/Ven0m0/Scripts) · [Win-dotfiles](https://github.com/Ven0m0/Win) — Automation scripts & Windows configs |
 | 🐧 Linux & Mobile | [Linux-OS](https://github.com/Ven0m0/Linux-OS) · [Dotfiles](https://github.com/Ven0m0/dotfiles) · [Termux-dotfiles](https://github.com/Ven0m0/dot-termux) — Linux & mobile setups |
