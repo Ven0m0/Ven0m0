@@ -58,7 +58,7 @@
 <sup>Auto-picked from public repos with the most love ✨</sup>
 
 <!--TOP_STARRED_REPOS:START-->
-- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 82 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
+- ⭐ **[steelseriesgg-rs](https://github.com/Ven0m0/steelseriesgg-rs)** — 81 stars · Open-source SteelSeries GG replacement for Linux. Control SteelSeries keyboards and headsets: RGB lighting, GameSense-compatible server, profiles, and (optional) audio/Sonar integration.
 - ⭐ **[Linux-OS](https://github.com/Ven0m0/Linux-OS)** — 14 stars · My personal linux related stuff. Experimental and only meant for fun and for myself
 - ⭐ **[Scripts](https://github.com/Ven0m0/Scripts)** — 10 stars · Autohotkey scripts to automate tasks or enhance apps
 - ⭐ **[claude-config](https://github.com/Ven0m0/claude-config)** — 7 stars · No description yet
@@ -69,11 +69,11 @@
 <sup>Freshest 5 repos I touched ✨</sup>
 
 <!--LAST_REPOS:START-->
-- [Win](https://github.com/Ven0m0/Win) — Windows stuff <sub>2026-11-16</sub>
-- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-11-16</sub>
-- [dot-termux](https://github.com/Ven0m0/dot-termux) — my termux dotfiles <sub>2026-11-16</sub>
-- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-11-16</sub>
-- [auto-attributes](https://github.com/Ven0m0/auto-attributes) — Fabric client mod: weapon-swap attack combos and spear lunge <sub>2026-11-16</sub>
+- [winiso](https://github.com/Ven0m0/winiso) — No description yet <sub>2026-11-17</sub>
+- [moderation-scanner](https://github.com/Ven0m0/moderation-scanner) — Multi-source account intelligence: Reddit toxicity analysis + Sherlock username search across multiple platforms. Optimized for performance <sub>2026-11-17</sub>
+- [gemini-web-wrapper](https://github.com/Ven0m0/gemini-web-wrapper) — A Bun + FastAPI monorepo for running a mobile-friendly AI workspace in the browser, backed by a configurable LLM gateway and repository indexing APIs. <sub>2026-11-17</sub>
+- [Revanced-auto](https://github.com/Ven0m0/Revanced-auto) — No description yet <sub>2026-11-17</sub>
+- [claude-config](https://github.com/Ven0m0/claude-config) — No description yet <sub>2026-11-17</sub>
 <!--LAST_REPOS:END-->
 
 ---
